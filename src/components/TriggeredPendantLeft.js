@@ -1,4 +1,4 @@
-import { React, useRef, useEffect } from "react"
+import { React, useRef, useEffect} from "react"
 import styled from "@emotion/styled"
 import { gsap } from "gsap" 
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const PendantContainer = styled.div`
 	display: flex;
-	justify-content: flex-end;
+	justify-content: flex-start;
 	overflow-x: visible;
 `
 export default function TriggeredPendantRight(props){
@@ -24,16 +24,17 @@ export default function TriggeredPendantRight(props){
 	height: 80px;
 	position: relative;
 	font-size: 3em;
-	padding-left: 96px;
+
+	padding-right: 96px;
 	&:after{
 		content: '';
 		position: absolute;
 		top: 0;
-		right: -100%;
+		left: -100%;
 		width: 200%;
 		height: 100%;
-		background: ${(props) => props.theme.colors[color]};
-		transform-origin: 100% 0;
+		background: ${props => props.theme.colors[color]};
+		transform-origin: 0 100%;
 		transform: skew(-25deg);
 		z-index: -1;
 	}
@@ -43,7 +44,7 @@ export default function TriggeredPendantRight(props){
 		const ref = useRef(null);
 		useEffect(()=>{
 			gsap.from(ref.current,{
-					x: '115%',
+					x: '-115%',
 					duration: .5,
 					scrollTrigger:{
 						trigger:ref.current,
@@ -56,7 +57,7 @@ export default function TriggeredPendantRight(props){
 		})
 		return(
 			<PendantContainer>
-				<Pendant  ref={ref} >
+				<Pendant ref={ref} >
 					{props.children}
 				</Pendant>
 			</PendantContainer>

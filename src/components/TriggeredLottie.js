@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import Lottie from "react-lottie"
+import Lottie from "react-lottie-player"
 import { gsap } from "gsap" 
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
@@ -11,18 +11,17 @@ gsap.registerPlugin(ScrollTrigger)
 	constructor(props){
 		super(props);
 		this.state = {
-			isStopped: true ,
-			isPaused: false
+			play: false ,
 		}
 		this.ref = React.createRef();
 	}
 
   	triggerAnim = () => {
-    this.setState({isStopped:false})
+    this.setState({play:true})
   }
   
 	stopAnim = () => {
-    this.setState({isStopped:true})
+    this.setState({play:false})
   }
 
   componentDidMount(){
@@ -37,24 +36,13 @@ gsap.registerPlugin(ScrollTrigger)
   }
 	render(){
 
-		const defaultOptions = {
-			autoplay: false,
-			loop: this.props.loop,
-			animationData: this.props.animation,
-			rendererSettings: {
-				preserveAspectRatio: 'xMidYMid slice'
-			}
-			
-		};
-
 		return(
-			<div ref={this.ref}>
-				<Lottie options = { defaultOptions } 
-						height = { this.props.height }
-						width = { this.props.width }
-						isStopped = {this.state.isStopped}
-						isPaused = {this.state.isPaused}		
-
+			<div ref={this.ref} className={this.props.className}>
+				<Lottie 
+						play = {this.state.play}
+						autoPlay= {false}
+						animationData= {this.props.animation}
+						loop={this.props.loop}
 				/>
 			</div>
 

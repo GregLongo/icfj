@@ -14,13 +14,13 @@ export default function TriggeredTextBlock(props){
 					scrollTrigger:{
 						trigger:ref.current,
 						start: "top center",
-						toggleActions:"play complete reverse reverse"
+						end: "top top",						
 						}
 					}
 				)
 		})
 		return(
-			<div ref={ref} >
+			<div ref={ref} className={props.className}>
 				{props.children}
 			</div>
 		)

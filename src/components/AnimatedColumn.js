@@ -30,10 +30,12 @@ const Inner = styled.div`
 
 const CounterSmol = styled(TriggeredCounter)`
 	padding-top: 25%;
-	font-size: 40px;
+	font-size: 3em;
 `
 
 const Labels = styled.div`
+	font-family: interstate condensed;
+	color: white;
 	margin: auto;
 	position: absolute;
 	z-index: 999;
@@ -45,7 +47,7 @@ const Labels = styled.div`
 	font-weight: 600;
 `
 const Title= styled.div`
-
+	font-size: 1.5em;
 `
 
 class AnimatedColumn extends Component{
@@ -60,19 +62,20 @@ class AnimatedColumn extends Component{
 		scrollTrigger:{
 				trigger:this.ref.current,
 				start: "top center",
-				toggleActions:"play complete reverse reverse"
+				toggleActions:"play complete restart reverse"
 			}
 		})
 	}
 	render(){
+	const color = this.props.color;
 	const Content =styled.div`
 		width: 400px;
 		height: 400px;
 		margin-top: -24px;
 		background-image: url(${this.props.image});
 		background-size: contain; 
-		background-blend-mode: overlay;
-		background-color: ${this.props.color};
+		background-blend-mode: soft-light;
+		background-color: ${props=> props.theme.colors[color]};
 		animation: ${loop} 20s linear infinite;
 	`
 

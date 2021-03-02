@@ -6,19 +6,22 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 gsap.registerPlugin(ScrollTrigger)
 
+
+export default function TriggeredHeadline(props){
+
 const HeadlineContainer = styled.div`
 	display: flex;
 	flex-direction: column;
+	font-family: ubuntu;
 	font-weight: bold;
-	font-size: 4em;
+	font-size: 5em;
 	text-transform: uppercase;
-	text-align: right;
-	padding-right: 96px;
-	padding-top: 24px;
+	text-align: ${props.right ? 'right' : 'left'};
 	line-height: 1;
 `
 
 const HeadlineWhite = styled.div`
+	display: block;
 	color: white;
 	z-index: 1;
 `
@@ -26,37 +29,33 @@ const HeadlineBlack = styled.div`
 	color: black;
 	z-index: 2;
 	margin-top: -8px;
-	opacity: 0;
 `
 
 
 
-export default function TriggeredHeadline(props){
 		
-		const boop = useRef(null);
+		const ref = useRef(null);
 
 		useEffect(()=>{
-			gsap.to(boop.current,{
-					opacity: 1,
-					y: '-35%',
+			gsap.from(ref.current,{
+					opacity: 0,
 					// duration: 2,
 					scrollTrigger:{
-						trigger:boop.current,
+						trigger:ref.current,
 						start: "top 75%",
 						toggleActions:"play complete reverse reverse",
-						scrub: true
 						}
 					}
 				)
 		})
 		return(
-			<HeadlineContainer >
-				<HeadlineWhite  >
+			<HeadlineContainer ref={ref}>
+				<HeadlineBlack  >
 					{props.heading}
-				</HeadlineWhite>
-				<HeadlineBlack ref={boop} >
-					{props.subheading }
 				</HeadlineBlack>
+				<HeadlineWhite  >
+					{props.subheading }
+				</HeadlineWhite>
 			</HeadlineContainer>
 		)
 }
