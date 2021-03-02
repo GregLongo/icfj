@@ -27,9 +27,10 @@ class TriggeredCounter extends Component{
 			},
 			scrollTrigger:{
 				trigger:this.ref.current,
-				start: "top center",
-				toggleActions:"play complete reverse reverse",
-				markers:true,
+				start: "bottom bottom",
+				duration: 1,
+				toggleActions:"play none reverse reset",
+				markers:false,
 			},
 		})
 	}

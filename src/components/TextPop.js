@@ -24,20 +24,24 @@ class TextPop extends Component{
 		ScrollTrigger.create({
 			trigger: this.ref.current,
 			start: 'top center',			
-			duration: .5,
+			end: 'top top',
 			onEnter: this.popUp,
 			onLeave: this.fallDown
 		})
 	  }
 
 	render(){
+
+		const color = this.props.color;
+
 		const  popAnim = keyframes`
 			50%  {transform: scale(1.2) translate(0px, -2px);
-			text-shadow: 4px 10px 20px rgba(255,255,255,1)};
+			text-shadow: 4px 10px 20px ${props => props.theme.colors[color]}
+			};
 		`
 		const  popFlare = keyframes`
 			50%  {transform: scale(1.7) translate(0px, -10px) ;
-			text-shadow: 0px 0px 20px rgba(255,255,255,1);
+			text-shadow: 0px 0px 20px ${props => props.theme.colors[color]};
 			}
 			80% {
 				opacity: 0;
@@ -47,9 +51,9 @@ class TextPop extends Component{
 			}
 		`
 
-		const Pop = styled.div`
+		const Pop = styled.span`
 			display: inline-block;
-			color: white;
+			color: ${props => props.theme.colors[color]};
      		animation: ${this.state.pop ? popAnim : ''} 1.2s ease ;
      		&:before{
      			content: '${this.props.children}';
@@ -63,5 +67,9 @@ class TextPop extends Component{
 	}
 }
 
+
+TextPop.defaultProps = {
+	color: 'white'
+}
 
 export default TextPop

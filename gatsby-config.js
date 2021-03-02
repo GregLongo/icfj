@@ -10,15 +10,16 @@ module.exports = {
   /* Your site config here */
   plugins: [{
   	 resolve: 'gatsby-plugin-emotion'
-  	},
-  	{
-  	 resolve:'gatsby-plugin-typography',
-  	 options:{
-  		pathToConfigModule:'src/utils/typography'
   	 },
+     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/images/`,
+        name: 'images'
+      }
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-plugin-react-svg',
       options: {
         path: `${__dirname}/src/images/`,
         name: 'images'
@@ -26,5 +27,6 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-fontawesome-css`    
   ],
 }

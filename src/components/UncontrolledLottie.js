@@ -6,16 +6,13 @@ class UncontrolledLottie extends Component {
 
 
   render(){
-
-
-
     return(
       <div>
         <Lottie 
-        speed={.4}
-      play={true}
-      loop={true}
-      animationData={this.props.animation}
+        speed={.3}
+        play={true}
+        loop={true}
+        animationData={this.props.animation}
         />
       </div>
     )

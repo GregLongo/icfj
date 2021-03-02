@@ -1,8 +1,0 @@
-<svg>
-		<defs>
-			<filter id ='shake0'>
-				<feTurbulence id="turbulence" baseFrequency=".01" numOctaves="1" seed="0" />
-				<feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="10" />
-			</filter>
-		</defs>
-	</svg>

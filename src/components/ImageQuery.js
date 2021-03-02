@@ -33,6 +33,7 @@ const ImageQuery = (props) => (
       
       return (
         <Img
+          className={props.className}
           alt={props.alt}
           fluid={image.node.childImageSharp.fluid}
         />
