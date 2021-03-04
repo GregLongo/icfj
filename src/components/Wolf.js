@@ -2,15 +2,30 @@ import React from 'react'
 import styled from '@emotion/styled'
 import ImageQuery from "../components/ImageQuery.js"
 import Icon from "../images/quote.svg"
+import facepaint from 'facepaint'
+
+
+export default function Wolf(props){
+
+const mq = facepaint(
+		props.bp.map(bp => `@media (min-width:${bp})`)
+	);
+
+const tablet = mq[1];
 
 const Card = styled.div`
 	width: 100%;
-	height: 340px;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	background: white;
 	overflow: hidden;
-	background: ${props=>props.theme.colors.sanMarino}
+	background: ${props=>props.theme.colors.sanMarino};
+	padding-bottom: 2rem;
+	@media(min-width${tablet}){
+		flex-direction: row;
+		height: 340px;		
+		padding-bottom: unset;
+	}
 `
 
 const Name = styled.div`
@@ -25,29 +40,30 @@ const Title = styled.div`
 	margin: 1rem 0 0 3rem;
 `
 const Bio = styled.div`
-	font-size: 2em;
 	font-family: interstate condensed;
 	margin: 1rem 0 0 2rem;
 	padding-right: 2rem;
+	${mq({
+		fontSize: ['1em','1.2em','2em']	
+	})}
 `
 const Headshot = styled.div`
 	height: 100%;
-	width: 40%;
 	overflow: hidden;
 	clip-path:polygon(0% 0%, 100% 0%, 65% 100%, 0% 100%);
-
+	${mq({
+		width: ['100%','100%', '60%']		
+	})}
 `
 const Info = styled.div`
 	color: white;
-	margin-top: 4rem
+	${mq({marginTop:['0','0','4em'] })}
 `
 const QuoteIcon = styled(Icon)`
 		position: absolute;
 		z-index: 1;
 	`
 
-
-export default function Wolf(props){
 	return(<Card>
 			<Headshot><ImageQuery filename={props.image} /></Headshot>
 			<Info>

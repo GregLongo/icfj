@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import styled from "@emotion/styled"
 import { gsap } from "gsap" 
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import {keyframes } from '@emotion/react'
+import {keyframes, css } from '@emotion/react'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -32,16 +32,21 @@ class TextPop extends Component{
 
 	render(){
 
-		const color = this.props.color
-
+		const color = this.props.color;
+		const cola = (props) =>css`
+				color: ${props.theme.colors[color]}
+		` 
+		const colaPop = (props) =>css`
+				color: text-shadow: 4px 10px 20px ${props.theme.colors[color]}
+		` 
 		const  popAnim = keyframes`
 			50%  {transform: scale(1.2) translate(0px, -2px);
-			text-shadow: 4px 10px 20px ${color}}
+			${colaPop}}
 			};
 		`
 		const  popFlare = keyframes`
 			50%  {transform: scale(1.7) translate(0px, -10px) ;
-			text-shadow: 4px 10px 20px ${color};
+			${colaPop};
 			}
 			80% {
 				opacity: 0;
@@ -53,7 +58,7 @@ class TextPop extends Component{
 
 		const Pop = styled.span`
 			display: inline-block;
-			color: ${color};
+			${cola};
      		animation: ${this.state.pop ? popAnim : ''} 1.2s ease ;
      		&:before{
      			content: '${this.props.children}';
@@ -66,6 +71,7 @@ class TextPop extends Component{
 	return <Pop ref={this.ref}>{this.props.children}</Pop>
 	}
 }
+
 
 TextPop.defaultProps = {
 	color: 'white'

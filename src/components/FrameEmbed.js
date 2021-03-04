@@ -6,12 +6,22 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
 
 export default function FrameEmbed(props){
+		
+		const mobile = props.bp[1];
 
 		const FrameContainer =styled.div`
 
 		`
 		const Frame =styled.div`
-
+			position: relative;
+			height:0
+			iframe{
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  width: 100%;
+			  height: 100%;	
+			}
 		`
 		const Caption =styled.div`
 			width: 100%;
@@ -20,8 +30,11 @@ export default function FrameEmbed(props){
 			display: inline;
 			color: white;
 			font-family: Interstate Condensed;
-			font-size: 1.5em;
 			margin: 1em;
+			font-size: 1em;
+			@media(min-width: ${mobile}){
+				font-size: 1.5em;
+			}
 		`
 		const buttonColor = props.buttonColor;
 		const Button = styled.button`
