@@ -3,36 +3,68 @@ import styled from '@emotion/styled'
 import {css} from '@emotion/react'
 import TriggeredCounter from "../components/TriggeredCounter.js"
 import Highlighter from "../components/Highlighter.js"
+import facepaint from 'facepaint'
+
+export default function CountBox(props){
+
+
+const mq = facepaint(
+		props.bp.map(bp => `@media (min-width:${bp})`)
+		);
 
 const CounterOne = styled(TriggeredCounter)`
-
-	font-size: 8em;
+	${mq({
+		fontSize: ['2em','3em','5em', '8em']
+	})}
 `
 const CounterTwo = styled(TriggeredCounter)`
-	color: ${props=>props.theme.colors.sanMarino}}
-	font-size: 8em;
+	${mq({
+		fontSize: ['2em','3em','5em', '8em']
+	})}
+	color: ${props=>props.theme.colors.sanMarino}
 `
 const CounterThree = styled(TriggeredCounter)`
+	${mq({
+		fontSize: ['4em','8em','11em', '15em'],
+		transform: ['translatex(4px)','translatex(8px)', 'translatex(32px)']
+	})}
 	color: transparent;
  	-webkit-text-stroke: 4px black;
-	font-size: 15em;
-	transform: translatex(32px);
 `
 const CounterFour = styled(TriggeredCounter)`
-	color: ${props=>props.theme.colors.mineShaft}}
-
-	font-size: 10em;
+	${mq({
+		fontSize: ['4em','4em','8em', '10em']
+	})}
+	color: ${props=>props.theme.colors.mineShaft}
 `
 const CounterFive = styled(TriggeredCounter)`
-	color: ${props=>props.theme.colors.goldenGrass}}
-
-	font-size: 10em;
+	${mq({
+		fontSize: ['4em','4em','8em', '10em']
+	})}
+	color: ${props=>props.theme.colors.goldenGrass}
 `
+
+const PercentSign1 = styled.span`
+	${mq({
+		fontSize: ['4em','4em','8em', '10em']
+	})}
+	color: ${props=>props.theme.colors.mineShaft}		
+`
+const PercentSign2 = styled.span`
+	${mq({
+		fontSize: ['4em','4em','8em', '10em']
+	})}
+	color: ${props=>props.theme.colors.goldenGrass}		
+`
+
 const Square = styled.div`
 	width: 100%;
-	border: 16px solid black;
+	@media(min-width:${props.bp[2]}){
+		border: 16px solid black
+	};
 	display: flex;
 	flex-direction: column;
+	${mq({marginLeft:['-4%', '-2%','-1%','0']})};
 	&:after{
 		content:'';
 		height: 6px;
@@ -41,6 +73,7 @@ const Square = styled.div`
 		position: absolute;
 		margin-top: 23%;
 		z-index:999;
+		display: none;
 	}
 `
 const SquareInner = styled.div`
@@ -78,7 +111,9 @@ const SubSquare = styled.div`
 	}
 `
 const Label= styled.div`
-	font-size: 1.5em;
+	${mq({
+			fontSize: ['1em','1.1em','1.5em']
+		})}	
 	padding-bottom: 17%;
 	padding-left: 2rem;
 	padding-right: 2rem;
@@ -91,10 +126,8 @@ const Subheader = styled.div`
 `
 
 
-export default function CountBox(props){
-
 		return(
-			<Square>
+			<Square className={props.className}>
 			<Subheader> First Covid-19 Survey of It's Kind</Subheader>
 			<SquareInner>
 				<SubSquare css={css`padding-top: 20%`}>
@@ -103,7 +136,7 @@ export default function CountBox(props){
 				</SubSquare>
 				<SubSquare>
 					<CounterTwo val={145} />
-					<Label css={css`text-align:center`}><span css={css`font-size:2em`}>COUNTRIES</span> RESPRESENTED</Label>
+					<Label css={css`text-align:center`}><span css={mq({fontSize:['1em','1em','1.5em','2em']})}>COUNTRIES</span> RESPRESENTED</Label>
 				</SubSquare>
 				<SubSquare css={css`align-items: flex-end`}>
 					<CounterThree val={7} />
@@ -112,22 +145,16 @@ export default function CountBox(props){
 				<SubSquare>
 					<span css={css`display:flex; align-items: center;`}>
 						<CounterFour val={46} />
-						<span css={theme =>({
-								fontSize: '10em',
-								color:theme.colors.mineShaft})}>
-							%</span>
+						<PercentSign1>%</PercentSign1>
 					</span>
 					<Label>of respondents identified politicians and elected officials as top sources of disinformation</Label>
 				</SubSquare>
 				<SubSquare>
 					<span css={css`display:flex; align-items: center;`}>
 						<CounterFive val={30} />
-						<span css={theme =>({
-								fontSize: '10em',
-								color:theme.colors.goldenGrass})}>
-							%</span>
+						<PercentSign2>%</PercentSign2>
 					</span>
-					<Label>said their organizations did not supply field reporeters with protective equipment.</Label>
+					<Label>said their organizations did not supply field reporters with protective equipment.</Label>
 				</SubSquare>
 			</SquareInner>
 			<p css={css`color:white; font-style:italic;margin:3em`}><Highlighter color="mineShaft"> *Research in partnership with the Tow Center for Digital Journalism at Columbia University

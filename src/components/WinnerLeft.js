@@ -2,13 +2,24 @@ import React from 'react'
 import styled from '@emotion/styled'
 import ImageQuery from "../components/ImageQuery.js"
 
+
+
+export default function WinnerLeft(props){
+
+const tablet = props.bp[1];
+
 const Card = styled.div`
 	width: 100%;
-	height: 340px;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	background: white;
 	overflow: hidden;
+	padding-bottom: 2rem;
+	@media(min-width${tablet}){
+		flex-direction: row;
+		height: 340px;		
+		padding-bottom: unset;
+	}
 `
 
 const Award = styled.div`
@@ -42,7 +53,10 @@ const Bio = styled.div`
 `
 const Headshot = styled.div`
 	height: 100%;
-	width: 40%;
+	width: 100%;
+	@media(min-width${tablet}){
+		width: 40%;
+	}
 	overflow: hidden;
 	clip-path:polygon(0% 0%, 100% 0%, 65% 100%, 0% 100%);
 
@@ -51,8 +65,6 @@ const Info = styled.div`
 	
 `
 
-
-export default function WinnerLeft(props){
 	return(<Card>
 			<Headshot><ImageQuery filename={props.image} /></Headshot>
 			<Info>

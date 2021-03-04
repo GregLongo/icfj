@@ -2,7 +2,6 @@ import { React, useRef, useEffect} from "react"
 import styled from "@emotion/styled"
 import { gsap } from "gsap" 
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import facepaint from 'facepaint'
 
 
 gsap.registerPlugin(ScrollTrigger)
@@ -10,23 +9,28 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function TriggeredHeadline(props){
 
-const mq = facepaint(
-	props.bp.map(bp => `@media (min-width:${bp})`)
-);
-
 const HeadlineContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	font-family: ubuntu;
 	font-weight: bold;
+	font-size: 5em;
 	text-transform: uppercase;
 	text-align: ${props.right ? 'right' : 'left'};
 	line-height: 1;
-	${mq({
-		fontSize: ['2em','3em','3em', '5em']	
-	})}
 `
 
+const HeadlineWhite = styled.div`
+	display: block;
+	color: white;
+	z-index: 1;
+`
+const HeadlineBlack = styled.div`
+	color: black;
+	z-index: 2;
+	margin-top: -8px;
+`
+		
 		const ref = useRef(null);
 
 		useEffect(()=>{
@@ -43,7 +47,12 @@ const HeadlineContainer = styled.div`
 		})
 		return(
 			<HeadlineContainer ref={ref}>
-				{props.children}
+				<HeadlineBlack  >
+					{props.heading}
+				</HeadlineBlack>
+				<HeadlineWhite  >
+					{props.subheading }
+				</HeadlineWhite>
 			</HeadlineContainer>
 		)
 }

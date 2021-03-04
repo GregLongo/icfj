@@ -4,6 +4,7 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import TriggeredCounter from "../components/TriggeredCounter.js"
 import {keyframes } from '@emotion/react'
+import facepaint from 'facepaint'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -12,11 +13,6 @@ const loop = keyframes`
     to { background-position: -400px 0; }
 `
 
-const Column = styled.div`
-	position: relative;
-	width: 256px;
-	height: 256px;
-`
 const Inner = styled.div`
 	position: absolute;
 	clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
@@ -25,7 +21,6 @@ const Inner = styled.div`
 	height: 100%;
 	white-space: nowrap;
 	background-color: hotpink;
-
 `
 
 const CounterSmol = styled(TriggeredCounter)`
@@ -46,6 +41,7 @@ const Labels = styled.div`
 	height: 100%;
 	font-weight: 600;
 `
+
 const Title= styled.div`
 	font-size: 1.5em;
 `
@@ -67,6 +63,11 @@ class AnimatedColumn extends Component{
 		})
 	}
 	render(){
+
+	const mq = facepaint(
+		this.props.bp.map(bp => `@media (min-width:${bp})`)
+	);
+
 	const color = this.props.color;
 	const Content =styled.div`
 		width: 400px;
@@ -77,6 +78,14 @@ class AnimatedColumn extends Component{
 		background-blend-mode: soft-light;
 		background-color: ${props=> props.theme.colors[color]};
 		animation: ${loop} 20s linear infinite;
+	`
+
+	const Column = styled.div`
+		position: relative;
+		${mq({
+			width: ['120px','160px','256px'],
+			height: ['120px','160px','256px']
+		})}
 	`
 
 		return(

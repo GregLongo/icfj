@@ -2,7 +2,7 @@ import { React, useRef, useEffect } from "react"
 import styled from "@emotion/styled"
 import { gsap } from "gsap" 
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-
+import facepaint from 'facepaint'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -13,6 +13,9 @@ const PendantContainer = styled.div`
 `
 export default function TriggeredPendantRight(props){
 	const color = props.color;
+	const mq = facepaint(
+			props.bp.map(bp => `@media (min-width:${bp})`)
+		);
 	const Pendant = styled.div`
 	display: flex;
 	align-items: center;
@@ -23,8 +26,10 @@ export default function TriggeredPendantRight(props){
 	width: fit-content;
 	height: 80px;
 	position: relative;
-	font-size: 3em;
-	padding-left: 96px;
+	${mq({
+		fontSize: ['1.5em','1.5em', '3em', '3em'],
+		paddingLeft: ['1em','1em','3em']
+	})}
 	&:after{
 		content: '';
 		position: absolute;
@@ -43,7 +48,7 @@ export default function TriggeredPendantRight(props){
 		const ref = useRef(null);
 		useEffect(()=>{
 			gsap.from(ref.current,{
-					x: '115%',
+					x: '100%',
 					duration: .5,
 					scrollTrigger:{
 						trigger:ref.current,

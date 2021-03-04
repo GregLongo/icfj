@@ -3,19 +3,26 @@ import styled from "@emotion/styled"
 import Icon from "../images/quote.svg"
 import { gsap } from "gsap" 
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import facepaint from 'facepaint'
 
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Quote(props){
 
+	const mq = facepaint(
+			props.bp.map(bp => `@media (min-width:${bp})`)
+		);
+	
 	const Text = styled.div`
 		font-family: interstate;
-		font-size: 2.5em;
 		font-weight: bold;
 		padding-left: 4rem;
 		z-index: 2;
 		color: ${props.light ? 'white' : ''};
 		font-style: italic;
+		${mq({
+			fontSize: ['1em', '1.5em', '2em', '2.5em']		
+		})}
 	`
 	const QuoteContainer = styled.div`
 		height: fit-content;

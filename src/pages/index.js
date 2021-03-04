@@ -18,11 +18,11 @@ import TextPop from "../components/TextPop.js"
 import Highlighter from "../components/Highlighter.js"
 import Quote from "../components/Quote.js"
 import FrameEmbed from "../components/FrameEmbed.js"
-// import AnimatedColumn from "../components/AnimatedColumn.js"
+import AnimatedColumn from "../components/AnimatedColumn.js"
 // import TriggeredCounter from "../components/TriggeredCounter.js"
 import ImageQuery from "../components/ImageQuery.js"
 import LanguageTicker from "../components/LanguageTicker.js"
-// import CountBox from "../components/CountBox.js"
+import CountBox from "../components/CountBox.js"
 import WinnerLeft from "../components/WinnerLeft.js"
 import WinnerRight from "../components/WinnerRight.js"
 import Wolf from "../components/Wolf.js"
@@ -64,8 +64,12 @@ const Container = styled.div`
 	margin-left: auto;
 	margin-top: 15rem;
 	${mq({
-	 maxWidth: ['90%','90%','90%','1024px',]	
+	 maxWidth: ['90%','90%','90%','1024px'],
+	 marginTop: ['5rem','5rem','15rem']
 	})}
+	&:first-of-type {
+		margin-top: 0;
+	}
 `
 const Section = styled.div`
 	width: 100%;
@@ -100,19 +104,20 @@ export default function Home() {
 				wordSpacing: '999999px',
 				paddingTop: '1rem ',
 				paddingBottom: '1rem',
-				paddingRight: ['1rem', '1rem', '1rem', '4rem']
+				paddingRight: ['1rem', '1rem', '1rem', '4rem'],
+				paddingLeft: ['3.5rem', '3.5rem', '1rem', '1rem'],
 			})}>
 				ANNUAL REVIEW
 			</div>
 			<span css={mq({
-					paddingRight: '2rem',
+					paddingRight: '3rem',
 					whiteSpace: 'noWrap',
 					fontSize: ['1em', '2em','3em','4em']
 			})}> 
 				It Takes a Journalist 
 			</span> 
 		</PendantLeft>
-		<Container css={css`margin-top:3rem;margin-bottom:-1.1rem`}>
+		<Container css={css`margin-top:3rem;margin-bottom:-1.2rem`}>
 			<UncontrolledLottie animation={animationMasthead}/>
 		</Container>
 		<TriggeredBgColor color='white' />
@@ -124,37 +129,41 @@ export default function Home() {
 				flex-direction: column;
 				justify-content: center;
 				text-align: left;
+				margin-top: 0;
+				margin-bottom: 5rem;				
 				`}>
 				<TriggeredTextBlock>
-					<div css={css`
-						font-size:4em;
-						font-family:ubuntu;
-						line-height:2`
-					}>Mission</div>
-					<div css={css`
-						font-size: 2em;
-						font-family:
-						interstate condensed;
-						line-height: 1.5`
-					}>We empower an unparalleled global network of journalists to produce news  reports that lead to better governments, stronger economies, more vibrant  societies and healthier lives.
+					<div css={mq({
+						fontSize:['2em', '3em', '3em', '4em'],
+						fontFamily:'ubuntu',
+						linHeight:'2'})}
+					>Mission</div>
+					<div css={mq({
+						fontSize:['1em', '1.75em', '2em'],
+						fontFamily:'interstate condensed',
+						lineHeight: 1.5}
+					)}>We empower an unparalleled global network of journalists to produce news  reports that lead to better governments, stronger economies, more vibrant  societies and healthier lives.
 					</div>
 				</TriggeredTextBlock>
+				<TriggeredBgColor color='goldenGrass' />
 			</Container>
 		</Section>
 		<Section name="Joyce">
-			<TriggeredBgColor color='goldenGrass' />
 			<Container>
-				<TriggeredPendantRight color='curiousBlue'>
+				<TriggeredPendantRight bp={breakpoints} color='curiousBlue'>
 					A Letter From the President
 				</TriggeredPendantRight>
 				<div css={css`
 					display: grid;
 					grid-template-columns: 5% 95%;
 					margin-bottom: 2rem;
-					margin-top: 15rem;
+					margin-top: 5rem;
+					@media(min-width:${mobile}){
+						margin-top: 15rem;		
+					}
 					`}>
-					<PhotoSlant css={css`transform:translatex(-35%)`} src="Joyce.jpg" />
-					<ParagraphSlant>
+					<PhotoSlant bp={breakpoints} css={css`transform:translatex(-35%)`} src="Joyce.jpg" />
+					<ParagraphSlant bp={breakpoints}>
 						<p css={css`margin-top:-.5rem`}>
 						Over <TextPop>36 years</TextPop>, ICFJ has provided more than <TextPop>150,000 journalists</TextPop> from 180 countries with valuable programs and resources. But we’ve never had a <TextPop>year like 2020</TextPop>.
 						</p>
@@ -176,15 +185,18 @@ export default function Home() {
 			<TriggeredBgColor color='curiousBlue' />
 				<TriggeredLottie animation={animationCameras} loop={true} />
 				<Container>
-					<TriggeredPendantLeft color="boulder">Our Vast Network </TriggeredPendantLeft>
+					<TriggeredPendantLeft bp={breakpoints} color="boulder">Our Vast Network </TriggeredPendantLeft>
 					<div css={css`
 						display:grid;
-						grid-template-columns: 70% 30%;
+						grid-template-columns: 100%;	
 						grid-column-gap: 4rem;
-						margin-top: 4rem`
+						margin-top: 4rem;
+						@media(min-width:${tablet}){
+							grid-template-columns: 70% 30%;
+						}
+						`
 					}>
-					<TriggeredHeadline  heading="Journalists" 
-					subheading="Change The World" />
+					<TriggeredHeadline bp={breakpoints}>Journalists<span css={css`color:#fff`}> Change The World</span></TriggeredHeadline>
 					<TriggeredTextBlock css={css`
 						color: white;
 						font-family: interstate condensed;
@@ -195,20 +207,35 @@ export default function Home() {
 						The thousands of journalists in our global network produce news reports that lead to better governments, economies, societies and lives.
 					</TriggeredTextBlock>
 					</div>
-					<Quote css={css`
-						height: 20rem;
-						display:flex;
-						align-items: center;
-						width: fit-content;
-						margin-left:auto;
-						margin-right: auto;`}>
+					<Quote bp={breakpoints} css={mq({
+						height: ['20rem'],
+						display:'flex',
+						alignItems: 'center',
+						width: 'fit-content',
+						marginLeft:'auto',
+						marginRight: 'auto'})
+					}>
 						 "ICFJ has helped us improve the lives of the poorest of the poor by bringing them reliable, crowdsourced news for the first time." - Devansh Mehta, CGNET Swara
 					</Quote>
-					<FrameEmbed buttonColor='goldenGrass' css={css`margin-top:4rem`} caption="ICFJ is giving reporters the skills to cover the most pressing issues of the day." >
-						<div css={css`height:640px;width:100%;background:deeppink`} />
+					<FrameEmbed bp={breakpoints}  buttonColor='goldenGrass'
+						caption="ICFJ is giving reporters the skills to cover the most pressing issues of the day."
+						 css={css`
+						margin-top:4rem
+						width: 100%;
+						max-height: 600px;
+						overflow: hidden;
+						`}  >
+						<iframe title='vidtwo' width='100%' height='570px' src="https://www.youtube.com/embed/f1SBTk3CXhI" frameBorder="0" allowFullScreen></iframe>
 					</FrameEmbed>
-					<FrameEmbed buttonColor='goldenGrass' css={css`margin-top:4rem`} caption="ICFJ is giving reporters the skills to cover the most pressing issues of the day." >
-						<div css={css`height:640px;width:100%;background:lime`} />
+					<FrameEmbed bp={breakpoints}  height='570px' buttonColor='goldenGrass'
+						caption="ICFJ is giving reporters the skills to cover the most pressing issues of the day."
+						 css={css`
+						margin-top:4rem
+						width: 100%;
+						max-height: 600px;
+						overflow: hidden;
+						`}  >
+						<iframe title='vidthree' width='100%' height='570px' src="https://www.youtube.com/embed/f1SBTk3CXhI" frameBorder="0" allowFullScreen></iframe>
 					</FrameEmbed>
 				</Container>
 			<TriggeredBgColor color='curiousBlue' />
@@ -217,32 +244,84 @@ export default function Home() {
 				<TriggeredBgColor color='boulder' />
 				<TriggeredLottie animation={animationCameras} loop={true} />
 				<Container>
-					<TriggeredPendantRight color="fruitSalad">New Resources </TriggeredPendantRight>
+					<TriggeredPendantRight bp={breakpoints} color="fruitSalad">New Resources </TriggeredPendantRight>
 					<div css={css`
 						margin-top: 4rem`
 					}>
-					<TriggeredHeadline right heading="Serving Journalists" 
-					subheading="In A Crisis" />
+					<TriggeredHeadline bp={breakpoints} right><span css={css`color:#fff`}> Serving Journalists </span>In A Crisis</TriggeredHeadline>
 					<TriggeredTextBlock css={css`
 						color: white;
 						font-family: interstate condensed;
-						font-size: 1.7em;
+						font-size: 1.25em;
 						line-height: 2;
 						text-align: right;
-						`
-					}>ICFJ acted fast to help the journalists in our global network provide accurate,life-saving information on the COVID-19 pandemic. The program connectsjournalists with experts, information and each other in five languages,through weekly webinars, Facebook groups and resources published by our <Highlighter color="fruitSalad">International Journalists’ Network (IJNet).</Highlighter>
+						@media(min-width:${mobile}){
+							font-size: 1.7em;							
+						}
+						`}>ICFJ acted fast to help the journalists in our global network provide accurate,life-saving information on the COVID-19 pandemic. The program connects journalists with experts, information and each other in five languages,through weekly webinars, Facebook groups and resources published by our <Highlighter color="fruitSalad">International Journalists’ Network (IJNet).</Highlighter>
 					</TriggeredTextBlock>
 				</div>
-				<FrameEmbed buttonColor="fruitSalad" css={css`margin-top:4rem`} caption="ICFJ is giving reporters the skills to cover the most pressing issues of the day." >
-						<div css={css`height:640px;width:100%;background:deeppink`} />
+				<FrameEmbed bp={breakpoints}  height='570px' buttonColor='fruitSalad'
+						caption="ICFJ is giving reporters the skills to cover the most pressing issues of the day."
+						 css={css`
+						margin-top:4rem;
+						width: 100%;
+						max-height: 600px;
+						overflow: hidden;
+						`}  >
+					<iframe title='vidfour' width='100%' height='570px' src="https://www.youtube.com/embed/f1SBTk3CXhI" frameBorder="0" allowFullScreen></iframe>
 				</FrameEmbed>
-				<Quote css={css`
+				<div css={css`
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				grid-row-gap: 3rem;
+				margin-top: 15rem;
+				@media(min-width:${tablet}){
+					grid-template-columns: repeat(4, 1fr);					
+				}
+			`}>
+			<AnimatedColumn
+				bp={breakpoints}
+				image="https://media.istockphoto.com/vectors/seamless-pattern-with-donuts-vector-id606711392"
+				color="valencia"
+				title='Forum Members'
+				val='10200'
+				 />
+			<AnimatedColumn
+				bp={breakpoints}
+				image="https://media.istockphoto.com/vectors/seamless-pattern-with-donuts-vector-id606711392"
+				color="goldenGrass"
+				title='Countries'
+				val='100'
+				 />
+				 <AnimatedColumn
+				bp={breakpoints}
+				image="https://media.istockphoto.com/vectors/seamless-pattern-with-donuts-vector-id606711392"
+				color="curiousBlue"
+				title='Languages'
+				val='5'
+				 />
+				 <AnimatedColumn
+				bp={breakpoints}
+				image="https://media.istockphoto.com/vectors/seamless-pattern-with-donuts-vector-id606711392"
+				color="sanMarino"
+				title='Covid-19 Resources'
+				val='840+'
+				 />
+			</div>
+				<Quote bp={breakpoints} css={css`
 						display:flex;
 						align-items: center;
 						width: fit-content;
 						margin-left:auto;
 						margin-right: auto;
-						margin-bottom: 15em;`}>
+						margin-top: 10rem;
+						margin-bottom: 10rem;		
+						@media(min-width:${tablet}){
+						marginTop: 15rem;
+						marginBottom: 15rem							
+						}
+					`}>
 						“ICFJ gave me and my listeners a global perspective of how other countries were handling the pandemic. ” - Chidera Rosecamille Aneke, Darling FM
 				</Quote>
 				<div css={css`
@@ -251,14 +330,14 @@ export default function Home() {
 					grid-column-gap: 2rem;
 					grid-row-gap: 2rem;
 				`}>
-					<ImageQuery filename='Joyce.jpg' />
-					<ImageQuery filename='Joyce.jpg' />
-					<ImageQuery filename='Joyce.jpg' />
-					<ImageQuery filename='Joyce.jpg' />
-					<ImageQuery filename='Joyce.jpg' />
-					<ImageQuery filename='Joyce.jpg' />
+					<ImageQuery filename='Sid.jpg' />
+					<ImageQuery filename='redshoes.jpg' />
+					<ImageQuery filename='maskgirlcrop.png' />
+					<ImageQuery filename='docwhite.png' />
+					<ImageQuery filename='docblue.png' />
+					<ImageQuery filename='agnes.png' />
 				</div>
-				<div css={css`color:white;margin-top:15rem;margin-bottom:10rem`}>
+				<div css={css`color:white;margin-top:10rem;margin-bottom:10rem`}>
 					<Subheader>The Go-To Site for Journalists WorldWide</Subheader>
 					<p>Offering Expert Advice, Tools & Opportunities for Journalists</p>
 				</div>
@@ -273,22 +352,28 @@ export default function Home() {
 			<TriggeredBgColor color='fruitSalad' />
 			<TriggeredLottie animation={animationCameras} loop={true} />
 			<Container>
-				<TriggeredPendantLeft color="mineShaft">Investigative Networks</TriggeredPendantLeft>
+				<TriggeredPendantLeft bp={breakpoints} color="mineShaft">Investigative Networks</TriggeredPendantLeft>
 				<div css={css`
 					margin-top: 4rem`
 				}>
-				<TriggeredHeadline heading="Holding the Power to Account" 
-				subheading="when It Matters Most" />
+				<TriggeredHeadline bp={breakpoints}><span css={css`color:#fff`}> Holding the Powerful to Account</span> When It Matters Most </TriggeredHeadline>
 				</div>
 				<Subheader>Journalism with Impact </Subheader> 
 				<div css={css`
-					display: inline-grid;
+					display: grid;
 					grid-template-columns: 5% 95%;
-					margin-top: 10rem;
-					margin-bottom: -50vh;
+					margin-top: 5rem;					
+					@media(min-width:${tablet}){
+						margin-top: 10rem;
+						margin-bottom: 0;						
+					}
+					 margin-bottom: -25vh;
 				`}>
-					<PhotoSlant  css={css`transform:translatex(-35%)`}src="Fabiola.jpg" />
-					<ParagraphSlant css={css`padding-top:3.5rem`}>Peru-based <span css={theme=>({color:theme.colors.goldenGrass})}>ICFJ Knight Fellow Fabiola Torres</span> created a health news outlet that is uncovering corruption during COVID-19. They exposed inflated prices for face shields, environmental violations by corporations and wasted protective gear spending,prompting government action.
+					<PhotoSlant  bp={breakpoints} css={css`transform:translatex(-35%)`}src="Fabiola.jpg" />
+					<ParagraphSlant bp={breakpoints} css={css`
+						
+						`}>
+						Peru-based <span css={theme=>({color:theme.colors.goldenGrass})}>ICFJ Knight Fellow Fabiola Torres</span> created a health news outlet that is uncovering corruption during COVID-19. They exposed inflated prices for face shields, environmental violations by corporations and wasted protective gear spending,prompting government action.
 					</ParagraphSlant>
 				</div>
 				<ImageQuery filename='bigeye.jpg' />
@@ -299,14 +384,19 @@ export default function Home() {
 					}>
 						<Subheader>More from Journalists in the ICFJ Network</Subheader>
 						<div css={css`
-							font-family: interstate condensed;
-							font-size: 1.5em;
-							line-height: 2;`
+								color: white;
+								font-family: interstate condensed;
+								font-size: 1.25em;
+								line-height: 2;
+								@media(min-width:${mobile}){
+									font-size: 1.7em;							
+								}
+							`
 						}>
 							<p>
 								Stories by ICFJ partner, the Organized Crime and Corruption Reporting Project (OCCRP), based in Eastern Europe, have co tributed to more than <span css={theme=>({color:theme.colors.mineShaft})}>$7.3 billion in illicitly acquired funds </span>that have since been recovered.
 							</p>
-							<p>Journalists in the Latin-American Connectas network, which  ICFJ helped launch, have produced more than <TextPop color="goldenGrass">27/4 in-depth stories</TextPop> exposing is managementof billions of dollars in public funds.
+							<p>Journalists in the Latin-American Connectas network, which  ICFJ helped launch, have produced more than <TextPop color="#DDAF24">27/4 in-depth stories</TextPop> exposing is managementof billions of dollars in public funds.
 							</p>
 						</div>
 					</div>
@@ -319,91 +409,121 @@ export default function Home() {
 			<TriggeredBgColor color='mineShaft' />
 			<TriggeredLottie animation={animationCameras} loop={true} />
 			<Container>
-				<TriggeredPendantRight color="sanMarino">Investigative Networks</TriggeredPendantRight>
+				<TriggeredPendantRight bp={breakpoints} color="sanMarino">Investigative Networks</TriggeredPendantRight>
 				<div css={css`
 					margin-top: 4rem`
 				}>
-				<TriggeredHeadline right heading="Pioneering New Ways" 
-				subheading="To Get the Truth Out in a Pandemic" />
+				<TriggeredHeadline bp={breakpoints} right ><span css={css`color:#999`}>Pioneering New Ways To <span css={css`color:#fff`}> Get the Truth Out</span> in a Pandemic</span></TriggeredHeadline>
 				</div>
 				<div css={css`
 					display: grid;
-					grid-template-columns: 40% 60%;
 					margin-top: 15rem;
+					height: 560px;
+					grid-template-columns: 50% 50%;
+					@media(min-width${tablet}){
+						grid-template-columns: 40% 60%;						
+					}
 				`}>
 				<div>
-					<PhotoSlant  css={css`transform:translatex(-35%); z-index: 1`}src="Hannah.jpg" />
+					<PhotoSlant bp={breakpoints}  css={css`
+						z-index: 1;
+						transform:translatex(-15%);						
+						@media(min-width${tablet}){
+							transform:translatex(-35%);						
+						}
+					`}
+						src="Hannah.jpg" />
 					<TriggeredLottie
 					 animation={animationAfrica}
 					 loop={false}
 					 css={css`
-					 	transform: translate(20%, -40%);
+					 	transform: translate(20%, -50%);
 					 	z-index: -1;
-					 `} />					
+					`} />					
 				</div>
-				<TriggeredTextBlock css={css`
-						color: white;
-						font-family: interstate condensed;
-						font-size: 1.5em;
-						line-height: 2;
-						text-align: left;
-						padding-top: 4em;
-						`
-					}>
-						Journalists, fact checkers and social media influencers ––	including a government minister	and Nollywood star -- are teaming up to combat misinformation about health and other issues that matter	to people’s lives, a project led by <span css={theme=>({color:theme.colors.valencia})}>ICFJ Knight Fellow Hannah Ajakaiye.</span>
+				<TriggeredTextBlock css={mq({
+					zIndex: '2',
+					color: 'white',											
+					fontFamily: 'interstate condensed',
+					fontSize: ['1em', '1.2em', '1.5em'],
+					lineHeight: ['1','1.5','2'],
+					textAlign: 'left',
+					marginTop:['1em','2em','4em']})
+				}>Journalists, fact checkers and social media influencers ––	including a government minister	and Nollywood star -- are teaming up to combat misinformation about health and other issues that matter	to people’s lives, a project led by <span css={theme=>({color:theme.colors.valencia})}>ICFJ Knight Fellow Hannah Ajakaiye.</span>
 				</TriggeredTextBlock>
 				</div>
 				<div css={css`
 					display: grid;
-					grid-template-columns: 60% 40%;
 					margin-top: 5rem;
+					height: 560px;
+					grid-template-columns: 50% 50%;
+					@media(min-width${tablet}){
+						grid-template-columns: 40% 60%;						
+					}
 				`}>
 
-				<TriggeredTextBlock css={css`
-						color: white;
-						font-family: interstate condensed;
-						font-size: 1.5em;
-						line-height: 2;
-						text-align: right;
-						`
-					}>
+				<TriggeredTextBlock css={mq({
+					zIndex: '2',
+					color: 'white',											
+					fontFamily: 'interstate condensed',
+					fontSize: ['1em', '1.2em', '1.5em'],
+					lineHeight: ['1','1.5','2'],
+					textAlign: 'right',
+					paddingTop:['1em','2em','4em']})
+				}>
 						Women journalists and data analysts from five countries shed light on marginalized groups -- such as domestic workers and HIV/AIDS patients -- hardest hit by the pandemic, as part of the Africa Women’s Journalism Project, led by <span css={theme=>({color:theme.colors.goldenGrass})}>ICFJ Knight Fellow Catherine Gicheru.</span>
 				</TriggeredTextBlock>
 				<div>
-				<PhotoSlant  css={css`transform:translatex(35%); z-index: 1`}src="Catherine.jpg" />
+				<PhotoSlant right bp={breakpoints} css={css`
+						z-index: 1
+						transform:translatex(15%);						
+						@media(min-width${tablet}){
+							transform:translatex(35%);						
+						}
+					 `}
+					 src="Catherine.jpg" />
 					<TriggeredLottie
 					 animation={animationAfrica}
 					 loop={false}
 					 css={css`
-					 	transform: translate(-20%, -40%);
+					 	transform: translate(-20%, -50%);
 					 	z-index: -1;
 					 `} />					
 				</div>
 				</div>
-								<div css={css`
+				<div css={css`
 					display: grid;
-					grid-template-columns: 40% 60%;
 					margin-top: 5rem;
+					grid-template-columns: 50% 50%;
+					@media(min-width${tablet}){
+						grid-template-columns: 40% 60%;						
+					}
 				`}>
 				<div>
-					<PhotoSlant  css={css`transform:translatex(-35%); z-index: 1`}src="Sergio.jpg" />
+					<PhotoSlant bp={breakpoints} css={css`
+						z-index: 1;
+						transform:translatex(-15%);						
+						@media(min-width${tablet}){
+							transform:translatex(-35%);						
+						}`}
+						src="Sergio.jpg" />
 					<TriggeredLottie
 					 animation={animationAfrica}
 					 loop={false}
 					 css={css`
-					 	transform: translate(20%, -40%);
+					 	transform: translate(20%, -50%);
 					 	z-index: -1;
 					 `} />					
 				</div>
-				<TriggeredTextBlock css={css`
-						color: white;
-						font-family: interstate condensed;
-						font-size: 1.5em;
-						line-height: 2;
-						text-align: left;
-						padding-top: 2em;
-						`
-					}>
+				<TriggeredTextBlock css={mq({
+					zIndex: '2',
+					color: 'white',											
+					fontFamily: 'interstate condensed',
+					fontSize: ['1em', '1.2em', '1.5em'],
+					lineHeight: ['1','1.5','2'],
+					textAlign: 'left',
+					paddingTop:['1em','2em','4em']})
+				}>
 						Journalists can more quickly find expert sources of scientific information thanks to Science Pulse, a free tool created by a <span css={theme=>({color:theme.colors.sanMarino})}>ICFJ Knight Fellow ergio Spagnuolo </span>that features the latest updates from more than 1,300 verified scientists and scientific organizations tweeting in English, Portuguese and Spanish.
 				</TriggeredTextBlock>
 				</div>
@@ -415,19 +535,20 @@ export default function Home() {
 			<TriggeredBgColor color='sanMarino' />
 			<TriggeredLottie animation={animationCameras} loop={true} />
 			<Container>
-				<TriggeredPendantLeft color="valencia">Sustainability</TriggeredPendantLeft>
+				<TriggeredPendantLeft bp={breakpoints} color="valencia">Sustainability</TriggeredPendantLeft>
 				<div css={css`
 					margin-top: 4rem`
 				}>
-				<TriggeredHeadline  heading="Helping Independent" 
-				subheading="News Thrive" />
+				<TriggeredHeadline bp={breakpoints}><span css={css`color:#999`}>Helping</span> <span css={css`color:#fff`}>Independent News Thrive</span></TriggeredHeadline>
 				</div>
 				<TriggeredTextBlock css={css`
 						color: white;
 						font-family: interstate condensed;
-						font-size: 2em;
+						font-size: 1.25em;
 						line-height: 2;
-						padding-top: 2em;
+						@media(min-width:${mobile}){
+							font-size: 1.7em;							
+						}
 						`
 					}>Even in a year as devastating as COVID-19, we helped newsrooms in 32 countries strengthen their bottom lines.
 				</TriggeredTextBlock>
@@ -473,7 +594,8 @@ export default function Home() {
 						New revenue generated in just six months by 10 Latin American participating in Velocidad, an accelerator program with ICFJ and SembraMedia, supported by Luminate Group. They did it primarily through paid content, advertising and other client services -- and it’s just the beginning.
 					</div>
 				</div>
-			<Quote css={css`
+			<Quote bp={breakpoints} css={css`
+				margin-top: 5rem;
 						height: 20rem;
 						display:flex;
 						align-items: center;
@@ -488,28 +610,34 @@ export default function Home() {
 			<TriggeredBgColor color='valencia' />
 			<TriggeredLottie animation={animationCameras} loop={true} />
 			<Container>
-				<TriggeredPendantRight color="goldenGrass">Thought Leadership</TriggeredPendantRight>
+				<TriggeredPendantRight bp={breakpoints} color="goldenGrass">Thought Leadership</TriggeredPendantRight>
 				<div css={css`
 					margin-top: 4rem`
 				}>
-				<TriggeredHeadline right heading="Shaping the Future" 
-				subheading="Of Journalism" />
+				<TriggeredHeadline bp={breakpoints} right ><span css={css`color:#fff`}>Shaping the Future</span> Of Journalism </TriggeredHeadline>
 				</div>
 				<TriggeredTextBlock css={css`
+					margin-top: 3rem;
+					margin-bottom: 3rem;
 					color: white;
 					font-family: interstate condensed;
-					font-size: 1.7em;
+					font-size: 1.25em;
 					line-height: 2;
-					margin-top: 3rem
+					@media(min-width:${mobile}){
+						font-size: 1.7em;							
+					}
 					`
 				}>During a tumultous year, ICFJ identified the impact of the pandemic on journalism worldwide as well as the escalating problem of online violence against women journalists.
 				</TriggeredTextBlock>
+				<CountBox bp={breakpoints} css={css`transform:scale(1)`}/>
 				<div css={theme=>({
 					width: '100%',
 					height: '780px',
-					border: '16px solid',
+					'@media(min-width:1024px)': {
+						border: '16px solid',
+						marginTop: '10rem'
+					},
 					borderColor: theme.colors.goldenGrass,
-					marginTop: '10rem',
 					display: 'flex',
 					flexDirection: 'column',
 					position: 'relative'
@@ -522,36 +650,39 @@ export default function Home() {
 					 justify-content: center;
 					 padding: 2rem;
 					 color: white;
-					 `}><Subheader>Most Comprehensive, Geographically Diverse Survey on Online Violence against Women Journalists</Subheader>
+					 `}><Subheader css={css`font-size:1.65em;`}>The most Comprehensive, Geographically Diverse Survey on Online Violence against Women Journalists</Subheader>
 					</div>
 					<div css={css`
 						background: rgba(212, 73, 52, .6);
-						width: 212px;
 						position: absolute;
 						bottom: 0;
 						right: 0;
 						z-index: 999;
-						padding: 2rem 1rem 3rem 1rem;
 						font-family: interstate condensed;
-						font-size: 1.5em;
 						color: white;
+						${mq({
+							padding: ['1rem 1rem 1rem 1rem','1rem 1rem 1rem 1rem','2rem 1rem 3rem 1rem'],
+							fontSize: ['1em','1.2em','1.5em'],
+							width: ['160px','180px','212px']
+						})}
 					`}>
-						Political actors were the second most common sources of abuse <TextPop color="goldenGrass">(37%)</TextPop> after “anonymous or unknown attackers” <TextPop color="goldenGrass">(57%)</TextPop>.
+						Political actors were the second most common sources of abuse <TextPop color="#DDAF24">(37%)</TextPop> after “anonymous or unknown attackers” <TextPop color="#DDAF24">(57%)</TextPop>.
 					</div>
 					<div css={css`
 						background: rgba(221, 175, 36, .6);
-						width: 212px;
 						position: absolute;
-						top: 280px;
-						right: 280px;
 						z-index: 999;
-						padding: 2rem 1rem 3rem 1rem;
 						font-family: interstate condensed;
-						font-size: 1.5em;
-					`}>
+						${mq({
+							padding: ['1rem 1rem 1rem 1rem','1rem 1rem 1rem 1rem','2rem 1rem 3rem 1rem'],
+							fontSize: ['1em','1.2em','1.5em'],
+							width: ['160px','180px','212px'],
+							right: ['80px','80px','280px'],
+							top: ['380px','380px','280px']
+						})}					`}>
 						<span css={theme=>({color:theme.colors.valencia})}>One in five </span>women respondents said they had been attacked or abused offline in incidents seeded online.
 					</div>
-					<ImageQuery css={css`height: 510px`} filename='Anna.jpeg' />
+					<ImageQuery css={mq({height: ['200px','400px','510px']})} filename='Anna.jpeg' />
 				</div>
 				<p css={css`color:white; font-style:italic;margin:3em`}><Highlighter color="mineShaft"> *Research in partnership with the Tow Center for Digital Journalism at Columbia University
 			</Highlighter>
@@ -563,12 +694,11 @@ export default function Home() {
 			<TriggeredBgColor color='white' />
 			<TriggeredLottie animation={animationCameras} loop={true} />
 			<Container>
-				<TriggeredPendantLeft color="sanMarino">Honorees</TriggeredPendantLeft>
+				<TriggeredPendantLeft bp={breakpoints} color="sanMarino">Honorees</TriggeredPendantLeft>
 				<div css={css`
 					margin-top: 4rem`
 				}>
-				<TriggeredHeadline right heading="Standing With" 
-				subheading="Intrepid Journalists" />
+				<TriggeredHeadline bp={breakpoints} right >Standing With <span css={css`color:#999`}>Intrepid Journalists</span> </TriggeredHeadline>
 					<TriggeredTextBlock css={css`
 						font-family: interstate condensed;
 						font-size: 1.7em;
@@ -585,12 +715,14 @@ export default function Home() {
 						`
 				}/>
 				<Wolf
+					bp={breakpoints}
 					image= "Wolf.png"
 					name="Wolf Blitzer"
 					title= "Lead Political Anchor, CNN"
-					bio="I am a news guy lots of news lots and lots of it"
+					bio="ICFJ is doing more than any organization I know to support great journalism worldwide."
 				/>
 				<WinnerRight
+					bp={breakpoints}
 					image= "Fareed.png"
 					award="Founders Award"
 					name="Fareed Z"
@@ -598,6 +730,7 @@ export default function Home() {
 					bio="I am a news guy lots of news lots and lots of it"
 				/>
 				<WinnerLeft 
+					bp={breakpoints}
 					image= "Fareed.png"
 					award="Founders Award"
 					name="Fareed Z"
@@ -605,6 +738,7 @@ export default function Home() {
 					bio="I am a news guy lots of news lots and lots of it"
 				/>
 				<WinnerRight
+					bp={breakpoints}
 					image= "Fareed.png"
 					award="Founders Award"
 					name="Fareed Z"
@@ -612,13 +746,22 @@ export default function Home() {
 					bio="I am a news guy lots of news lots and lots of it"
 				/>
 				<WinnerLeft 
+					bp={breakpoints}
 					image= "Fareed.png"
 					award="Founders Award"
 					name="Fareed Z"
 					title="host,cnn"
 					bio="I am a news guy lots of news lots and lots of it"
 				/>
-				<div css={css`margin-top: 10rem;height:640px;width:100%;background:navy`} />
+				<FrameEmbed bp={breakpoints} buttonColor='goldenGrass'
+						caption="ICFJ is giving reporters the skills to cover the most pressing issues of the day."
+						 css={css`
+						margin-top:4rem
+						width: 100%;
+						height: 
+						`}  >
+						<iframe title='vidone' width='100%' height='570px' src="https://www.youtube.com/embed/f1SBTk3CXhI" frameBorder="0" allowFullScreen></iframe>
+					</FrameEmbed>
 			</Container>
 				<TriggeredBgColor color='white' />
 		</Section>
@@ -626,22 +769,26 @@ export default function Home() {
 			<TriggeredBgColor color='curiousBlue' />
 			<TriggeredLottie animation={animationCameras} loop={true} />
 			<Container>
-				<TriggeredPendantRight color="boulder">Financials</TriggeredPendantRight>	
+				<TriggeredPendantRight bp={breakpoints} color="boulder">Financials</TriggeredPendantRight>	
 				<Subheader css={css`color:white;margin-top: 10rem;`}>2020 Revenue: $19.9 million</Subheader>
 				<Subheader css={css`color:white`}>2020 Expense Breakdown:</Subheader>
 				<TriggeredLottie 
 					css={css`
 					width: 80%;
+					@media(min-width:${tablet}){
+						width: 60%;						
+					}
 					margin-right:auto;
 					margin-left:auto;
-					margin-top: 10rem;`}
+					margin-top: 5rem;`
+				}
 					animation={animationPie} loop={false}
 				 />
 				<ImageQuery filename="fourstar.png" css={css`
 					margin-top: 10rem;
 					margin-bottom: 10rem;
 				`} />
-				 <Subheader css={css`color:white`}>ICFJ’s four-star track record with Charity Navigator places us among the top 2 percent of nonprofits evaluated.</Subheader>
+				 <Subheader css={mq({color:'white',fontSize:['1em','2em','3em']})}>ICFJ’s four-star track record with Charity Navigator places us among the top 2 percent of nonprofits evaluated.</Subheader>
 				<div css={css`
 					display: flex;
 					justify-content: center;
@@ -652,7 +799,7 @@ export default function Home() {
 					margin-bottom: 10rem;
 				`}/>
 				</div>
-				 <Subheader css={css`color:white`}>ICFJ also has a platinum-level rating from GuideStar, the highest ranking given.</Subheader>
+				 <Subheader css={mq({color:'white',fontSize:['1em','2em','3em']})}>ICFJ also has a platinum-level rating from GuideStar, the highest ranking given.</Subheader>
 			</Container>
 				<TriggeredBgColor color='curiousBlue' />
 		</Section>
@@ -660,7 +807,7 @@ export default function Home() {
 			<TriggeredBgColor color='fruitSalad' />
 			<TriggeredLottie animation={animationCameras} loop={true} />
 			<Container>
-				<TriggeredPendantLeft color="goldenGrass">Board Members</TriggeredPendantLeft>
+				<TriggeredPendantLeft bp={breakpoints} color="goldenGrass">Board Members</TriggeredPendantLeft>
 				<div css={css`
 					display:grid;
 					grid-template-columns: repeat(2, 1fr);
@@ -680,14 +827,17 @@ export default function Home() {
 								}/>		
 					</div>
 				</div>
-				<TriggeredPendantLeft color="goldenGrass">Donors</TriggeredPendantLeft>
+				<TriggeredPendantLeft bp={breakpoints} color="goldenGrass">Donors</TriggeredPendantLeft>
 				<div css={css`
 					display:grid;
-					grid-template-columns: repeat(2, 1fr);
+					grid-template-columns: repeat(1, 1fr);
 					margin-top: 5rem;
 					color: white;
 					font-family: interstate condensed;
 					font-size: 2em;
+					@media(min-width:${tablet}){
+						grid-template-columns: repeat(2, 1fr);						
+					}
 				`}>
 					<ul css={css`
 							list-style: none;

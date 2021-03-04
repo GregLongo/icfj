@@ -10,10 +10,10 @@ export default function TriggeredTextBlock(props){
 		useEffect(()=>{
 			gsap.from(ref.current,{
 					opacity: 0,
-					duration: 1.5,
+					duration: 1,
 					scrollTrigger:{
 						trigger:ref.current,
-						start: "top center",
+						start: "center center",
 						end: "top top",						
 						}
 					}
