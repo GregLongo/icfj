@@ -19,13 +19,14 @@ import Highlighter from "../components/Highlighter.js"
 import Quote from "../components/Quote.js"
 import FrameEmbed from "../components/FrameEmbed.js"
 import AnimatedColumn from "../components/AnimatedColumn.js"
-// import TriggeredCounter from "../components/TriggeredCounter.js"
+import TriggeredCounter from "../components/TriggeredCounter.js"
 import ImageQuery from "../components/ImageQuery.js"
 import LanguageTicker from "../components/LanguageTicker.js"
 import CountBox from "../components/CountBox.js"
 import WinnerLeft from "../components/WinnerLeft.js"
 import WinnerRight from "../components/WinnerRight.js"
 import Wolf from "../components/Wolf.js"
+import ReadMore from "../components/ReadMore.js"
 
 //Animation Players
 import UncontrolledLottie from "../components/UncontrolledLottie.js"
@@ -34,7 +35,7 @@ import TriggeredLottie from "../components/TriggeredLottie.js"
 
 //Animations
 import animationMasthead from "../lotties/testchicken7.json"
-import animationCameras from "../lotties/cameras.json"
+import animationCameras from "../lotties/cameraswhite.json"
 import animationAfrica from "../lotties/africa.json"
 import animationPie from "../lotties/piechart.json"
 
@@ -105,7 +106,7 @@ export default function Home() {
 				paddingTop: '1rem ',
 				paddingBottom: '1rem',
 				paddingRight: ['1rem', '1rem', '1rem', '4rem'],
-				paddingLeft: ['3.5rem', '3.5rem', '1rem', '1rem'],
+				paddingLeft: '0',
 			})}>
 				ANNUAL REVIEW
 			</div>
@@ -117,7 +118,7 @@ export default function Home() {
 				It Takes a Journalist 
 			</span> 
 		</PendantLeft>
-		<Container css={css`margin-top:3rem;margin-bottom:-1.2rem`}>
+		<Container css={mq({marginTop:['2rem','2rem','3rem'],marginBottom:'-1.2rem',maxWidth:['100%','100%','100%','1024px']})}>
 			<UncontrolledLottie animation={animationMasthead}/>
 		</Container>
 		<TriggeredBgColor color='white' />
@@ -130,7 +131,10 @@ export default function Home() {
 				justify-content: center;
 				text-align: left;
 				margin-top: 0;
-				margin-bottom: 5rem;				
+				margin-bottom: 5rem;			
+				@media(min-width:${tablet}){
+					margin-bottom: 15rem;		
+				}	
 				`}>
 				<TriggeredTextBlock>
 					<div css={mq({
@@ -158,7 +162,7 @@ export default function Home() {
 					grid-template-columns: 5% 95%;
 					margin-bottom: 2rem;
 					margin-top: 5rem;
-					@media(min-width:${mobile}){
+					@media(min-width:${tablet}){
 						margin-top: 15rem;		
 					}
 					`}>
@@ -173,9 +177,11 @@ export default function Home() {
 						<p>
 						We at ICFJ are doing our best to help journalists better cover the story of the century. At the onset of COVID-19, we galvanized quickly to help them gain access to top epidemiologists and health practitioners, to the world’s best trainers in digital journalism techniques, to disinformation and media sustainability experts. As you’ll see below, tens of thousands of journalists are benefiting from that effort.
 						</p>
+						<ReadMore>
 						<p>
 							I'm a Placeholder for the Accordian
 						</p>
+						</ReadMore>
 					</ParagraphSlant>
 				</div>
 			</Container>
@@ -183,7 +189,7 @@ export default function Home() {
 		</Section>
 		<Section name="Change">
 			<TriggeredBgColor color='curiousBlue' />
-				<TriggeredLottie animation={animationCameras} loop={true} />
+				<TriggeredLottie css={css`opacity:0.5`} animation={animationCameras} loop={true} />
 				<Container>
 					<TriggeredPendantLeft bp={breakpoints} color="boulder">Our Vast Network </TriggeredPendantLeft>
 					<div css={css`
@@ -242,7 +248,7 @@ export default function Home() {
 		</Section>
 		<Section name="Resources">
 				<TriggeredBgColor color='boulder' />
-				<TriggeredLottie animation={animationCameras} loop={true} />
+				<TriggeredLottie css={css`opacity:0.5`} animation={animationCameras} loop={true} />
 				<Container>
 					<TriggeredPendantRight bp={breakpoints} color="fruitSalad">New Resources </TriggeredPendantRight>
 					<div css={css`
@@ -346,11 +352,45 @@ export default function Home() {
 				</div>
 			</Container>
 		<LanguageTicker css={css`margin-top:10rem;margin-bottom:10rem`}>Arabic Chinese English French Persian Portuguese Russian Spanish Arabic Chinese English French Persian Portuguese Russian Spanish Arabic Chinese English French Persian Portuguese Russian Spanish </LanguageTicker>
+				<Container css={css`
+					display:grid; 
+					font-family: interstate condensed;
+					grid-template-columns: 40% 60%;
+					grid-column-gap: 2rem;
+					@media(min-width:${tablet}){
+						grid-template-columns: 2fr 20% 20% 40%;
+					}
+					div{
+						transform: scale(.7);						
+						text-align:center;
+					}
+					span{
+						color: white;
+						font-size: 2em;
+					}
+					`}>
+					<div>
+						<TriggeredCounter css={theme=>({color:theme.colors.white})} val={8} />
+						<span>Languages</span>
+					</div>
+					<div>
+						<TriggeredCounter css={theme=>({color:theme.colors.goldenGrass})} val={99} />
+						<span>Countries</span>
+					</div>
+					<div>
+						<TriggeredCounter css={theme=>({color:theme.colors.curiousBlue})} val={99} />
+						<span>Resources</span>
+					</div>
+					<div>
+						<TriggeredCounter css={theme=>({color:theme.colors.fruitSalad})}val={182000} />
+						<span>Average Monthly Visitors</span>
+					</div>
+				</Container>
 				<TriggeredBgColor color='boulder' />
 		</Section>
 		<Section>
 			<TriggeredBgColor color='fruitSalad' />
-			<TriggeredLottie animation={animationCameras} loop={true} />
+			<TriggeredLottie css={css`opacity:0.5`} animation={animationCameras} loop={true} />
 			<Container>
 				<TriggeredPendantLeft bp={breakpoints} color="mineShaft">Investigative Networks</TriggeredPendantLeft>
 				<div css={css`
@@ -362,12 +402,12 @@ export default function Home() {
 				<div css={css`
 					display: grid;
 					grid-template-columns: 5% 95%;
-					margin-top: 5rem;					
+					margin-top: 5rem;
+					margin-bottom:0;					
 					@media(min-width:${tablet}){
 						margin-top: 10rem;
-						margin-bottom: 0;						
+					 	margin-bottom: -25vh;
 					}
-					 margin-bottom: -25vh;
 				`}>
 					<PhotoSlant  bp={breakpoints} css={css`transform:translatex(-35%)`}src="Fabiola.jpg" />
 					<ParagraphSlant bp={breakpoints} css={css`
@@ -407,7 +447,7 @@ export default function Home() {
 		</Section>
 		<Section name="Networks">
 			<TriggeredBgColor color='mineShaft' />
-			<TriggeredLottie animation={animationCameras} loop={true} />
+			<TriggeredLottie css={css`opacity:0.5`} animation={animationCameras} loop={true} />
 			<Container>
 				<TriggeredPendantRight bp={breakpoints} color="sanMarino">Investigative Networks</TriggeredPendantRight>
 				<div css={css`
@@ -528,12 +568,11 @@ export default function Home() {
 				</TriggeredTextBlock>
 				</div>
 			</Container>
-
 			<TriggeredBgColor color='mineShaft' />
 		</Section>
 		<Section name="Sustainability">
 			<TriggeredBgColor color='sanMarino' />
-			<TriggeredLottie animation={animationCameras} loop={true} />
+			<TriggeredLottie css={css`opacity:0.5`} animation={animationCameras} loop={true} />
 			<Container>
 				<TriggeredPendantLeft bp={breakpoints} color="valencia">Sustainability</TriggeredPendantLeft>
 				<div css={css`
@@ -608,7 +647,7 @@ export default function Home() {
 		</Section>
 		<Section name="Leadership">
 			<TriggeredBgColor color='valencia' />
-			<TriggeredLottie animation={animationCameras} loop={true} />
+			<TriggeredLottie css={css`opacity:0.5`} animation={animationCameras} loop={true} />
 			<Container>
 				<TriggeredPendantRight bp={breakpoints} color="goldenGrass">Thought Leadership</TriggeredPendantRight>
 				<div css={css`
@@ -692,7 +731,7 @@ export default function Home() {
 		</Section>
 		<Section name="Honorees">
 			<TriggeredBgColor color='white' />
-			<TriggeredLottie animation={animationCameras} loop={true} />
+			<TriggeredLottie css={css`opacity:0.5`} animation={animationCameras} loop={true} />
 			<Container>
 				<TriggeredPendantLeft bp={breakpoints} color="sanMarino">Honorees</TriggeredPendantLeft>
 				<div css={css`
@@ -767,7 +806,7 @@ export default function Home() {
 		</Section>
 		<Section name="Financials">
 			<TriggeredBgColor color='curiousBlue' />
-			<TriggeredLottie animation={animationCameras} loop={true} />
+			<TriggeredLottie css={css`opacity:0.5`} animation={animationCameras} loop={true} />
 			<Container>
 				<TriggeredPendantRight bp={breakpoints} color="boulder">Financials</TriggeredPendantRight>	
 				<Subheader css={css`color:white;margin-top: 10rem;`}>2020 Revenue: $19.9 million</Subheader>
@@ -805,7 +844,7 @@ export default function Home() {
 		</Section>
 		<Section name="BoardMembers">
 			<TriggeredBgColor color='fruitSalad' />
-			<TriggeredLottie animation={animationCameras} loop={true} />
+			<TriggeredLottie css={css`opacity:0.5`}animation={animationCameras} loop={true} />
 			<Container>
 				<TriggeredPendantLeft bp={breakpoints} color="goldenGrass">Board Members</TriggeredPendantLeft>
 				<div css={css`

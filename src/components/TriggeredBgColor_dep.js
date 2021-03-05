@@ -12,8 +12,7 @@ export default function TriggeredBgColor(props){
 		const color = theme.colors[col];
 		ScrollTrigger.create({
 		trigger: ref.current,
-		start:'top center',
-		scrub: true,
+		start:'top bottom',
 		onEnter: () => gsap.to(document.body, {backgroundColor:color, duration: 1}),  
 		onEnterBack: () => gsap.to(document.body, {backgroundColor:color, duration: 1}),  
 		// markers:true

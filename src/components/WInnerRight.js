@@ -13,7 +13,7 @@ const Card = styled.div`
 	background: white;
 	overflow: hidden;
 	padding-bottom: 2rem;
-	@media(min-width${tablet}){
+	@media(min-width:${tablet}){
 		flex-direction: row;
 		height: 340px;		
 		padding-bottom: unset;
@@ -56,7 +56,7 @@ const Bio = styled.div`
 const Headshot = styled.div`
 	height: 100%;
 	width: 100%;
-	@media(min-width${tablet}){
+	@media(min-width:${tablet}){
 		width: 40%;
 	}
 	overflow: hidden;

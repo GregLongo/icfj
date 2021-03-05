@@ -19,7 +19,7 @@ class TriggeredCounter extends Component{
 	    	  value: this.state.value
 	   	};
 		gsap.to(target,{
-			duration: 1,
+			duration: 2,
 			value:this.props.val,
 			roundProps: "value",
 			onUpdate: () =>{
@@ -27,9 +27,9 @@ class TriggeredCounter extends Component{
 			},
 			scrollTrigger:{
 				trigger:this.ref.current,
-				start: "bottom bottom",
-				duration: 1,
-				toggleActions:"play none reverse reset",
+				start: "bottom center",
+				end: "bottom, top",
+				toggleActions:"play none none reverse",
 				markers:false,
 			},
 		})

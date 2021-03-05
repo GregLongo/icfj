@@ -52,7 +52,7 @@ export default function FrameEmbed(props){
 					scrollTrigger:{
 						trigger:ref.current,
 						start: "top center",
-						toggleActions:"play complete reverse reverse",
+						toggleActions:"play complete none reverse",
 						}
 					}
 				)
