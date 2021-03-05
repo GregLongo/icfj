@@ -23,10 +23,11 @@ class TextPop extends Component{
 	 componentDidMount(){
 		ScrollTrigger.create({
 			trigger: this.ref.current,
-			start: 'top center',			
+			start: 'center center',			
 			end: 'top top',
 			onEnter: this.popUp,
-			onLeave: this.fallDown
+			onLeave: this.fallDown,
+			toggleActions: 'play complete reverse reset'
 		})
 	  }
 

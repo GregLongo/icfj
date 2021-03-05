@@ -32,11 +32,11 @@ const HeadlineContainer = styled.div`
 		useEffect(()=>{
 			gsap.from(ref.current,{
 					opacity: 0,
-					// duration: 2,
+					duration: 2,
 					scrollTrigger:{
 						trigger:ref.current,
-						start: "top 75%",
-						toggleActions:"play complete reverse reverse",
+						start: "top center",
+						toggleActions:"play complete reverse reset",
 						}
 					}
 				)

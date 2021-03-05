@@ -11,7 +11,7 @@ const mq = facepaint(
 		props.bp.map(bp => `@media (min-width:${bp})`)
 	);
 
-const tablet = mq[1];
+const tablet = props.bp[1];
 
 const Card = styled.div`
 	width: 100%;
@@ -21,7 +21,7 @@ const Card = styled.div`
 	overflow: hidden;
 	background: ${props=>props.theme.colors.sanMarino};
 	padding-bottom: 2rem;
-	@media(min-width${tablet}){
+	@media(min-width:${tablet}){
 		flex-direction: row;
 		height: 340px;		
 		padding-bottom: unset;

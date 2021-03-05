@@ -43,9 +43,9 @@ export default function Quote(props){
 					y: '4rem',
 					scrollTrigger:{
 						trigger:ref.current,
-						start: "top center",
+						start: "top 75%",
 						end: "top top",
-						toggleActions:"play complete reverse reverse",
+						toggleActions:"play complete reverse reset",
 						}
 					}
 				)

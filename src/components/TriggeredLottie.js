@@ -29,9 +29,10 @@ gsap.registerPlugin(ScrollTrigger)
 
 		ScrollTrigger.create({
 			trigger: this.ref.current,
-			start: 'bottom center',
+			start: 'center center',
 			onEnter: this.triggerAnim,
-			onLeaveBack: this.stopAnim
+			onLeaveBack: this.stopAnim,
+			toggleActions:'play complete reverse reset'
 		})
 
   }

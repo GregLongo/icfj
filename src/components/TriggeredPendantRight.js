@@ -34,8 +34,8 @@ export default function TriggeredPendantRight(props){
 		content: '';
 		position: absolute;
 		top: 0;
-		right: -100%;
-		width: 200%;
+		right: -160%;
+		width: 260%;
 		height: 100%;
 		background: ${(props) => props.theme.colors[color]};
 		transform-origin: 100% 0;
@@ -48,13 +48,13 @@ export default function TriggeredPendantRight(props){
 		const ref = useRef(null);
 		useEffect(()=>{
 			gsap.from(ref.current,{
-					x: '100%',
+					x: '260%',
 					duration: .5,
 					scrollTrigger:{
 						trigger:ref.current,
-						start: "bottom bottom",
+						start: "top center",
 						end: "top top",
-						toggleActions:"play complete reverse reverse"
+						toggleActions:"play complete reverse reset"
 						}
 					}
 				)

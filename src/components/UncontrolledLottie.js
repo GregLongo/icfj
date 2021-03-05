@@ -7,7 +7,7 @@ class UncontrolledLottie extends Component {
 
   render(){
     return(
-      <div>
+      <div className={this.props.className}>
         <Lottie 
         speed={.3}
         play={true}

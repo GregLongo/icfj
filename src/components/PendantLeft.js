@@ -28,8 +28,8 @@ export default function PendantLeft(props){
 		background: ${props => props.theme.colors[color]};
 		position: relative;
 		${mq({
-			paddingLeft: ['0', '0', '0', '20%'],
-			maxWidth: ['', '90vw', 'auto']
+			paddingLeft: ['2rem','3.2rem','calc((100vw - 1024px) / 2)'],
+			maxWidth: ['', '80vw', 'auto']
 		})}
 		&:after{
 			content: '';
