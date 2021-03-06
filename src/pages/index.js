@@ -35,8 +35,13 @@ import TriggeredLottie from "../components/TriggeredLottie.js"
 
 //Animations
 import animationMasthead from "../lotties/testchicken7.json"
-import animationCameras from "../lotties/cameraswhite.json"
+import animationCameras from "../lotties/cameras.json"
+import animationPenPaper from "../lotties/penpaper.json"
+import animationAudio from "../lotties/audio.json"
+import animationTweet from "../lotties/tweet.json"
 import animationAfrica from "../lotties/africa.json"
+import animationAfrica2 from "../lotties/africa2.json"
+import animationSouthAmerica from "../lotties/southamerica.json"
 import animationPie from "../lotties/piechart.json"
 
 //svg
@@ -248,7 +253,7 @@ export default function Home() {
 		</Section>
 		<Section name="Resources">
 				<TriggeredBgColor color='boulder' />
-				<TriggeredLottie css={css`opacity:0.5`} animation={animationCameras} loop={true} />
+				<TriggeredLottie css={css`opacity:0.5`} animation={animationPenPaper} loop={true} />
 				<Container>
 					<TriggeredPendantRight bp={breakpoints} color="fruitSalad">New Resources </TriggeredPendantRight>
 					<div css={css`
@@ -390,7 +395,7 @@ export default function Home() {
 		</Section>
 		<Section>
 			<TriggeredBgColor color='fruitSalad' />
-			<TriggeredLottie css={css`opacity:0.5`} animation={animationCameras} loop={true} />
+			<TriggeredLottie css={css`opacity:0.5`} animation={animationAudio} loop={true} />
 			<Container>
 				<TriggeredPendantLeft bp={breakpoints} color="mineShaft">Investigative Networks</TriggeredPendantLeft>
 				<div css={css`
@@ -523,7 +528,7 @@ export default function Home() {
 					 `}
 					 src="Catherine.jpg" />
 					<TriggeredLottie
-					 animation={animationAfrica}
+					 animation={animationAfrica2}
 					 loop={false}
 					 css={css`
 					 	transform: translate(-20%, -50%);
@@ -548,7 +553,7 @@ export default function Home() {
 						}`}
 						src="Sergio.jpg" />
 					<TriggeredLottie
-					 animation={animationAfrica}
+					 animation={animationSouthAmerica}
 					 loop={false}
 					 css={css`
 					 	transform: translate(20%, -50%);
@@ -572,7 +577,7 @@ export default function Home() {
 		</Section>
 		<Section name="Sustainability">
 			<TriggeredBgColor color='sanMarino' />
-			<TriggeredLottie css={css`opacity:0.5`} animation={animationCameras} loop={true} />
+			<TriggeredLottie css={css`opacity:0.5`} animation={animationTweet} loop={true} />
 			<Container>
 				<TriggeredPendantLeft bp={breakpoints} color="valencia">Sustainability</TriggeredPendantLeft>
 				<div css={css`
