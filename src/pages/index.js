@@ -64,7 +64,7 @@ const mq = facepaint(
 	breakpoints.map(bp => `@media (min-width:${bp})`)
 )
 
-//Layout Styles 
+//Layout Styles
 const Container = styled.div`
 	margin-right: auto;
 	margin-left: auto;
@@ -83,6 +83,11 @@ const Section = styled.div`
 const Subheader = styled.div`
 	font-family: ubuntu;
 	font-size: 3em;
+`
+const SmallSubheader = styled.div`
+	font-family: ubuntu;
+	font-size: 1.5em;
+	font-style: bold;
 `
 
 export default function Home() {
@@ -119,9 +124,9 @@ export default function Home() {
 					paddingRight: '3rem',
 					whiteSpace: 'noWrap',
 					fontSize: ['1em', '2em','3em','4em']
-			})}> 
-				It Takes a Journalist 
-			</span> 
+			})}>
+				It Takes a Journalist
+			</span>
 		</PendantLeft>
 		<Container css={mq({marginTop:['2rem','2rem','3rem'],marginBottom:'-1.2rem',maxWidth:['100%','100%','100%','1024px']})}>
 			<UncontrolledLottie animation={animationMasthead}/>
@@ -136,10 +141,10 @@ export default function Home() {
 				justify-content: center;
 				text-align: left;
 				margin-top: 0;
-				margin-bottom: 5rem;			
+				margin-bottom: 5rem;
 				@media(min-width:${tablet}){
-					margin-bottom: 15rem;		
-				}	
+					margin-bottom: 15rem;
+				}
 				`}>
 				<TriggeredTextBlock>
 					<div css={mq({
@@ -151,7 +156,7 @@ export default function Home() {
 						fontSize:['1em', '1.75em', '2em'],
 						fontFamily:'interstate condensed',
 						lineHeight: 1.5}
-					)}>We empower an unparalleled global network of journalists to produce news  reports that lead to better governments, stronger economies, more vibrant  societies and healthier lives.
+					)}>We empower an unparalleled global network of journalists to produce news reports that lead to better governments, stronger economies, more vibrant societies and healthier lives.
 					</div>
 				</TriggeredTextBlock>
 				<TriggeredBgColor color='goldenGrass' />
@@ -168,16 +173,16 @@ export default function Home() {
 					margin-bottom: 2rem;
 					margin-top: 5rem;
 					@media(min-width:${tablet}){
-						margin-top: 15rem;		
+						margin-top: 15rem;
 					}
 					`}>
 					<PhotoSlant bp={breakpoints} css={css`transform:translatex(-35%)`} src="Joyce.jpg" />
 					<ParagraphSlant bp={breakpoints}>
 						<p css={css`margin-top:-.5rem`}>
-						Over <TextPop>36 years</TextPop>, ICFJ has provided more than <TextPop>150,000 journalists</TextPop> from 180 countries with valuable programs and resources. But we’ve never had a <TextPop>year like 2020</TextPop>.
+						Over 36 years, ICFJ has provided more than <TextPop>150,000 journalists</TextPop> from <TextPop>180 countries</TextPop> with <TextPop>valuable programs and resources</TextPop>. But we’ve never had a year like 2020.
 						</p>
-						<p>						
-						The pandemic that raged across the globe would have been much worse if journalists had not fulfilled their vital role of providing audiences with accurate, lifesaving news, and doing it while combating the spread of false information. 
+						<p>
+						The pandemic that raged across the globe would have been much worse if journalists had not fulfilled their vital role of providing audiences with accurate, lifesaving news, and doing it while combating the spread of false information.
 						</p>
 						<p>
 						We at ICFJ are doing our best to help journalists better cover the story of the century. At the onset of COVID-19, we galvanized quickly to help them gain access to top epidemiologists and health practitioners, to the world’s best trainers in digital journalism techniques, to disinformation and media sustainability experts. As you’ll see below, tens of thousands of journalists are benefiting from that effort.
@@ -199,7 +204,7 @@ export default function Home() {
 					<TriggeredPendantLeft bp={breakpoints} color="boulder">Our Vast Network </TriggeredPendantLeft>
 					<div css={css`
 						display:grid;
-						grid-template-columns: 100%;	
+						grid-template-columns: 100%;
 						grid-column-gap: 4rem;
 						margin-top: 4rem;
 						@media(min-width:${tablet}){
@@ -215,21 +220,11 @@ export default function Home() {
 						line-height: 2;
 						`
 					}>
-						The thousands of journalists in our global network produce news reports that lead to better governments, economies, societies and lives.
+						Tens of thousands of journalists in our global network produce news reports that lead to better governments, economies, societies and lives.
 					</TriggeredTextBlock>
 					</div>
-					<Quote bp={breakpoints} css={mq({
-						height: ['20rem'],
-						display:'flex',
-						alignItems: 'center',
-						width: 'fit-content',
-						marginLeft:'auto',
-						marginRight: 'auto'})
-					}>
-						 "ICFJ has helped us improve the lives of the poorest of the poor by bringing them reliable, crowdsourced news for the first time." - Devansh Mehta, CGNET Swara
-					</Quote>
 					<FrameEmbed bp={breakpoints}  buttonColor='goldenGrass'
-						caption="ICFJ is giving reporters the skills to cover the most pressing issues of the day."
+						caption="Learn how ICFJ is giving reporters the skills to cover today's most pressing issues."
 						 css={css`
 						margin-top:4rem
 						width: 100%;
@@ -239,7 +234,7 @@ export default function Home() {
 						<iframe title='vidtwo' width='100%' height='570px' src="https://www.youtube.com/embed/f1SBTk3CXhI" frameBorder="0" allowFullScreen></iframe>
 					</FrameEmbed>
 					<FrameEmbed bp={breakpoints}  height='570px' buttonColor='goldenGrass'
-						caption="ICFJ is giving reporters the skills to cover the most pressing issues of the day."
+						caption="Click on this photo to meet members of our inspiring network."
 						 css={css`
 						margin-top:4rem
 						width: 100%;
@@ -248,6 +243,16 @@ export default function Home() {
 						`}  >
 						<iframe title='vidthree' width='100%' height='570px' src="https://www.youtube.com/embed/f1SBTk3CXhI" frameBorder="0" allowFullScreen></iframe>
 					</FrameEmbed>
+					<Quote bp={breakpoints} css={mq({
+						height: ['20rem'],
+						display:'flex',
+						alignItems: 'center',
+						width: 'fit-content',
+						marginLeft:'auto',
+						marginRight: 'auto'})
+					}>
+						“With ICFJ’s support, we are improving the lives of the poorest of the poor by bringing them reliable, crowdsourced news for the first time." - Devansh Mehta, CGNet Swara, India
+					</Quote>
 				</Container>
 			<TriggeredBgColor color='curiousBlue' />
 		</Section>
@@ -259,7 +264,7 @@ export default function Home() {
 					<div css={css`
 						margin-top: 4rem`
 					}>
-					<TriggeredHeadline bp={breakpoints} right><span css={css`color:#fff`}> Serving Journalists </span>In A Crisis</TriggeredHeadline>
+					<TriggeredHeadline bp={breakpoints} right><span css={css`color:#fff`}> Serving Journalists </span>During A Crisis</TriggeredHeadline>
 					<TriggeredTextBlock css={css`
 						color: white;
 						font-family: interstate condensed;
@@ -267,20 +272,20 @@ export default function Home() {
 						line-height: 2;
 						text-align: right;
 						@media(min-width:${mobile}){
-							font-size: 1.7em;							
+							font-size: 1.7em;
 						}
-						`}>ICFJ acted fast to help the journalists in our global network provide accurate,life-saving information on the COVID-19 pandemic. The program connects journalists with experts, information and each other in five languages,through weekly webinars, Facebook groups and resources published by our <Highlighter color="fruitSalad">International Journalists’ Network (IJNet).</Highlighter>
+						`}>ICFJ acted fast to help the journalists in our global network provide vital information on the COVID-19 pandemic. The program connects journalists with experts, information and each other in five languages,through weekly webinars, Facebook groups and resources published by our <Highlighter color="fruitSalad">International Journalists’ Network (IJNet).</Highlighter>
 					</TriggeredTextBlock>
 				</div>
 				<FrameEmbed bp={breakpoints}  height='570px' buttonColor='fruitSalad'
-						caption="ICFJ is giving reporters the skills to cover the most pressing issues of the day."
+						caption="Learn more about our Global Health Crisis Reporting Forum, the most far-reaching COVID-19 journalism initiative."
 						 css={css`
 						margin-top:4rem;
 						width: 100%;
 						max-height: 600px;
 						overflow: hidden;
 						`}  >
-					<iframe title='vidfour' width='100%' height='570px' src="https://www.youtube.com/embed/f1SBTk3CXhI" frameBorder="0" allowFullScreen></iframe>
+					<iframe title='vidfour' width='100%' height='570px' src="https://www.youtube.com/embed/UoshtxBZhGs" frameBorder="0" allowFullScreen></iframe>
 				</FrameEmbed>
 				<div css={css`
 				display: grid;
@@ -288,7 +293,7 @@ export default function Home() {
 				grid-row-gap: 3rem;
 				margin-top: 15rem;
 				@media(min-width:${tablet}){
-					grid-template-columns: repeat(4, 1fr);					
+					grid-template-columns: repeat(4, 1fr);
 				}
 			`}>
 			<AnimatedColumn
@@ -327,10 +332,10 @@ export default function Home() {
 						margin-left:auto;
 						margin-right: auto;
 						margin-top: 10rem;
-						margin-bottom: 10rem;		
+						margin-bottom: 10rem;
 						@media(min-width:${tablet}){
 						marginTop: 15rem;
-						marginBottom: 15rem							
+						marginBottom: 15rem
 						}
 					`}>
 						“ICFJ gave me and my listeners a global perspective of how other countries were handling the pandemic. ” - Chidera Rosecamille Aneke, Darling FM
@@ -349,8 +354,8 @@ export default function Home() {
 					<ImageQuery filename='agnes.png' />
 				</div>
 				<div css={css`color:white;margin-top:10rem;margin-bottom:10rem`}>
-					<Subheader>The Go-To Site for Journalists WorldWide</Subheader>
-					<p>Offering Expert Advice, Tools & Opportunities for Journalists</p>
+					<Subheader>The World's Most Comprehensive Site for Journalists</Subheader>
+					<p>Offering expert advice, tools and opportunities for the news media</p>
 				</div>
 				<div css={css`width:60%; margin-right:auto;margin-left:auto`} >
 					<ImageQuery filename='ijnet.png' />
@@ -358,7 +363,7 @@ export default function Home() {
 			</Container>
 		<LanguageTicker css={css`margin-top:10rem;margin-bottom:10rem`}>Arabic Chinese English French Persian Portuguese Russian Spanish Arabic Chinese English French Persian Portuguese Russian Spanish Arabic Chinese English French Persian Portuguese Russian Spanish </LanguageTicker>
 				<Container css={css`
-					display:grid; 
+					display:grid;
 					font-family: interstate condensed;
 					grid-template-columns: 40% 60%;
 					grid-column-gap: 2rem;
@@ -366,7 +371,7 @@ export default function Home() {
 						grid-template-columns: 2fr 20% 20% 40%;
 					}
 					div{
-						transform: scale(.7);						
+						transform: scale(.7);
 						text-align:center;
 					}
 					span{
@@ -379,11 +384,7 @@ export default function Home() {
 						<span>Languages</span>
 					</div>
 					<div>
-						<TriggeredCounter css={theme=>({color:theme.colors.goldenGrass})} val={99} />
-						<span>Countries</span>
-					</div>
-					<div>
-						<TriggeredCounter css={theme=>({color:theme.colors.curiousBlue})} val={99} />
+						<TriggeredCounter css={theme=>({color:theme.colors.curiousBlue})} val={1725} />
 						<span>Resources</span>
 					</div>
 					<div>
@@ -403,12 +404,12 @@ export default function Home() {
 				}>
 				<TriggeredHeadline bp={breakpoints}><span css={css`color:#fff`}> Holding the Powerful to Account</span> When It Matters Most </TriggeredHeadline>
 				</div>
-				<Subheader>Journalism with Impact </Subheader> 
+				<Subheader>Journalism with Impact </Subheader>
 				<div css={css`
 					display: grid;
 					grid-template-columns: 5% 95%;
 					margin-top: 5rem;
-					margin-bottom:0;					
+					margin-bottom:0;
 					@media(min-width:${tablet}){
 						margin-top: 10rem;
 					 	margin-bottom: -25vh;
@@ -416,9 +417,9 @@ export default function Home() {
 				`}>
 					<PhotoSlant  bp={breakpoints} css={css`transform:translatex(-35%)`}src="Fabiola.jpg" />
 					<ParagraphSlant bp={breakpoints} css={css`
-						
+
 						`}>
-						Peru-based <span css={theme=>({color:theme.colors.goldenGrass})}>ICFJ Knight Fellow Fabiola Torres</span> created a health news outlet that is uncovering corruption during COVID-19. They exposed inflated prices for face shields, environmental violations by corporations and wasted protective gear spending,prompting government action.
+						Peru-based <span css={theme=>({color:theme.colors.goldenGrass})}>ICFJ Knight Fellow Fabiola Torres</span> created Salud con Lupa, a health news outlet that is uncovering corruption during COVID-19. They exposed inflated prices for face shields, environmental violations by corporations and wasted protective gear spending,prompting government action.
 					</ParagraphSlant>
 				</div>
 				<ImageQuery filename='bigeye.jpg' />
@@ -427,25 +428,35 @@ export default function Home() {
 						color: white;
 						`
 					}>
-						<Subheader>More from Journalists in the ICFJ Network</Subheader>
+						<Subheader>Journalists in Our Network Are Uncovering Corruption</Subheader>
 						<div css={css`
 								color: white;
 								font-family: interstate condensed;
 								font-size: 1.25em;
 								line-height: 2;
 								@media(min-width:${mobile}){
-									font-size: 1.7em;							
+									font-size: 1.7em;
 								}
 							`
 						}>
 							<p>
 								Stories by ICFJ partner, the Organized Crime and Corruption Reporting Project (OCCRP), based in Eastern Europe, have co tributed to more than <span css={theme=>({color:theme.colors.mineShaft})}>$7.3 billion in illicitly acquired funds </span>that have since been recovered.
 							</p>
-							<p>Journalists in the Latin-American Connectas network, which  ICFJ helped launch, have produced more than <TextPop color="#DDAF24">27/4 in-depth stories</TextPop> exposing is managementof billions of dollars in public funds.
+							<p>ICFJ helped launch the Latin-American Connectas, which has produced more than <TextPop color="#DDAF24">274 in-depth stories</TextPop> exposing mismanagement of billions of dollars in public funds.
 							</p>
 						</div>
 					</div>
 				</div>
+				<Quote bp={breakpoints} css={mq({
+					height: ['20rem'],
+					display:'flex',
+					alignItems: 'center',
+					width: 'fit-content',
+					marginLeft:'auto',
+					marginRight: 'auto'})
+				}>
+				“We exposed corruption and human rights abuses working in a cross-border network supported by ICFJ.” -- Lisseth Boon, Connectas, Venezuela
+				</Quote>
 
 			</Container>
 			<TriggeredBgColor color='fruitSalad' />
@@ -458,7 +469,7 @@ export default function Home() {
 				<div css={css`
 					margin-top: 4rem`
 				}>
-				<TriggeredHeadline bp={breakpoints} right ><span css={css`color:#999`}>Pioneering New Ways To <span css={css`color:#fff`}> Get the Truth Out</span> in a Pandemic</span></TriggeredHeadline>
+				<TriggeredHeadline bp={breakpoints} right ><span css={css`color:#999`}>Pioneering Ways To <span css={css`color:#fff`}> Get the Truth Out</span> in a Pandemic</span></TriggeredHeadline>
 				</div>
 				<div css={css`
 					display: grid;
@@ -466,15 +477,15 @@ export default function Home() {
 					height: 560px;
 					grid-template-columns: 50% 50%;
 					@media(min-width${tablet}){
-						grid-template-columns: 40% 60%;						
+						grid-template-columns: 40% 60%;
 					}
 				`}>
 				<div>
 					<PhotoSlant bp={breakpoints}  css={css`
 						z-index: 1;
-						transform:translatex(-15%);						
+						transform:translatex(-15%);
 						@media(min-width${tablet}){
-							transform:translatex(-35%);						
+							transform:translatex(-35%);
 						}
 					`}
 						src="Hannah.jpg" />
@@ -484,17 +495,17 @@ export default function Home() {
 					 css={css`
 					 	transform: translate(20%, -50%);
 					 	z-index: -1;
-					`} />					
+					`} />
 				</div>
 				<TriggeredTextBlock css={mq({
 					zIndex: '2',
-					color: 'white',											
+					color: 'white',
 					fontFamily: 'interstate condensed',
 					fontSize: ['1em', '1.2em', '1.5em'],
 					lineHeight: ['1','1.5','2'],
 					textAlign: 'left',
 					marginTop:['1em','2em','4em']})
-				}>Journalists, fact checkers and social media influencers ––	including a government minister	and Nollywood star -- are teaming up to combat misinformation about health and other issues that matter	to people’s lives, a project led by <span css={theme=>({color:theme.colors.valencia})}>ICFJ Knight Fellow Hannah Ajakaiye.</span>
+				}>In Nigeria, journalists, fact checkers and social media influencers ––	including a government minister	and a Nollywood star -- are teaming up to combat misinformation about health and other issues that matter	to people’s lives, a project led by <span css={theme=>({color:theme.colors.valencia})}>ICFJ Knight Fellow Hannah Ajakaiye.</span>
 				</TriggeredTextBlock>
 				</div>
 				<div css={css`
@@ -503,27 +514,27 @@ export default function Home() {
 					height: 560px;
 					grid-template-columns: 50% 50%;
 					@media(min-width${tablet}){
-						grid-template-columns: 40% 60%;						
+						grid-template-columns: 40% 60%;
 					}
 				`}>
 
 				<TriggeredTextBlock css={mq({
 					zIndex: '2',
-					color: 'white',											
+					color: 'white',
 					fontFamily: 'interstate condensed',
 					fontSize: ['1em', '1.2em', '1.5em'],
 					lineHeight: ['1','1.5','2'],
 					textAlign: 'right',
 					paddingTop:['1em','2em','4em']})
 				}>
-						Women journalists and data analysts from five countries shed light on marginalized groups -- such as domestic workers and HIV/AIDS patients -- hardest hit by the pandemic, as part of the Africa Women’s Journalism Project, led by <span css={theme=>({color:theme.colors.goldenGrass})}>ICFJ Knight Fellow Catherine Gicheru.</span>
+						Women journalists and data analysts from five countries shed light on marginalized groups -- such as domestic workers and HIV/AIDS patients -- hardest hit by the pandemic, as part of the <a href="https://urldefense.com/v3/__https:/theawjp.org/__;!!Ie25XFjv7UPO!4QFkJUrcVekppLkvEruzM2TiStyjctG8zz8IV7SGT2ah_DeDeH2DmSK44qtt$">Africa Women’s Journalism Project</a>, led by Brazil-based <span css={theme=>({color:theme.colors.goldenGrass})}>ICFJ Knight Fellow Catherine Gicheru.</span>
 				</TriggeredTextBlock>
 				<div>
 				<PhotoSlant right bp={breakpoints} css={css`
 						z-index: 1
-						transform:translatex(15%);						
+						transform:translatex(15%);
 						@media(min-width${tablet}){
-							transform:translatex(35%);						
+							transform:translatex(35%);
 						}
 					 `}
 					 src="Catherine.jpg" />
@@ -533,7 +544,7 @@ export default function Home() {
 					 css={css`
 					 	transform: translate(-20%, -50%);
 					 	z-index: -1;
-					 `} />					
+					 `} />
 				</div>
 				</div>
 				<div css={css`
@@ -541,15 +552,15 @@ export default function Home() {
 					margin-top: 5rem;
 					grid-template-columns: 50% 50%;
 					@media(min-width${tablet}){
-						grid-template-columns: 40% 60%;						
+						grid-template-columns: 40% 60%;
 					}
 				`}>
 				<div>
 					<PhotoSlant bp={breakpoints} css={css`
 						z-index: 1;
-						transform:translatex(-15%);						
+						transform:translatex(-15%);
 						@media(min-width${tablet}){
-							transform:translatex(-35%);						
+							transform:translatex(-35%);
 						}`}
 						src="Sergio.jpg" />
 					<TriggeredLottie
@@ -558,18 +569,18 @@ export default function Home() {
 					 css={css`
 					 	transform: translate(20%, -50%);
 					 	z-index: -1;
-					 `} />					
+					 `} />
 				</div>
 				<TriggeredTextBlock css={mq({
 					zIndex: '2',
-					color: 'white',											
+					color: 'white',
 					fontFamily: 'interstate condensed',
 					fontSize: ['1em', '1.2em', '1.5em'],
 					lineHeight: ['1','1.5','2'],
 					textAlign: 'left',
 					paddingTop:['1em','2em','4em']})
 				}>
-						Journalists can more quickly find expert sources of scientific information thanks to Science Pulse, a free tool created by a <span css={theme=>({color:theme.colors.sanMarino})}>ICFJ Knight Fellow ergio Spagnuolo </span>that features the latest updates from more than 1,300 verified scientists and scientific organizations tweeting in English, Portuguese and Spanish.
+						Journalists can more quickly find expert sources of scientific information thanks to <a href="https://urldefense.com/v3/__https:/sciencepulse.org/about__;!!Ie25XFjv7UPO!4QFkJUrcVekppLkvEruzM2TiStyjctG8zz8IV7SGT2ah_DeDeH2DmfhbEiCV$">Science Pulse</a>, a free tool created by a <span css={theme=>({color:theme.colors.sanMarino})}>ICFJ Knight Fellow ergio Spagnuolo </span>that features the latest updates from more than 1,600 verified scientists and scientific organizations tweeting in English, Portuguese and Spanish.
 				</TriggeredTextBlock>
 				</div>
 			</Container>
@@ -591,10 +602,10 @@ export default function Home() {
 						font-size: 1.25em;
 						line-height: 2;
 						@media(min-width:${mobile}){
-							font-size: 1.7em;							
+							font-size: 1.7em;
 						}
 						`
-					}>Even in a year as devastating as COVID-19, we helped newsrooms in 32 countries strengthen their bottom lines.
+					}>Even in the devastating time of COVID-19, we helped newsrooms in 32 countries strengthen their bottom lines.
 				</TriggeredTextBlock>
 				<div css={css`margin-top:5rem`}>
 					<ImageQuery css={css`height: 510px`} filename='conference.jpeg' />
@@ -607,7 +618,7 @@ export default function Home() {
 							padding-left: 2rem;
 							padding-right: 2rem;`
 						}>
-						Media entrepreneurs in the Middle East and North Africa who have taken their media startups to the next level through our <Highlighter color="goldenGrass">IJNet Mentoring Center</Highlighter>, supported by the National Endowment for Democracy over the past six years.
+						Media entrepreneurs in the Middle East and North Africa have improved the business prospects of their startups through our <a href="https://ijnet.org/en/story/meet-our-ijnet-arabic-2020-mentoring-center-participants"><Highlighter color="goldenGrass">IJNet Mentoring Center</Highlighter></a>, supported by the National Endowment for Democracy over the past six years.
 					</div>
 				</div>
 				<div css={css`margin-top:5rem`}>
@@ -621,7 +632,7 @@ export default function Home() {
 							padding-left: 2rem;
 							padding-right: 2rem;`
 						}>
-						Registered users that local newsrooms in Brazil added while participating in the <Highlighter color="curiousBlue">Local News Accelerator</Highlighter> with ICFJ and the Facebook Journalism Project. It is one of several initiatives across the world between ICFJ and FJP helping newsrooms solve business challenges.
+						Local newsrooms in Brazil increase their readers while participating in the <Highlighter color="curiousBlue"><a href="https://www.facebook.com/journalismproject/programs/accelerator/brazilian-publishers-thriving">Local News Accelerator</a></Highlighter> with ICFJ and the Facebook Journalism Project. It is one of many initiatives across the world between ICFJ and FJP helping newsrooms solve business challenges.
 					</div>
 				</div>
 				<div css={css`margin-top:5rem`}>
@@ -635,7 +646,7 @@ export default function Home() {
 							padding-left: 2rem;
 							padding-right: 2rem;`
 						}>
-						New revenue generated in just six months by 10 Latin American participating in Velocidad, an accelerator program with ICFJ and SembraMedia, supported by Luminate Group. They did it primarily through paid content, advertising and other client services -- and it’s just the beginning.
+						Despite the pandemic, ten Latin American digital news startups significantly increased their revenue in just six months, as part of Velocidad. They did it primarily through paid content, advertising and other client services -- and <a href="https://www.icfj.org/news/velocidad-helps-news-startups-grow-membership-and-revenue-program-enters-second-phase">it's just the beginning</a>. This accelerator program with ICFJ and SembraMedia is supported by Luminate Group.
 					</div>
 				</div>
 			<Quote bp={breakpoints} css={css`
@@ -645,7 +656,7 @@ export default function Home() {
 						align-items: center;
 						width: fit-content;
 						margin-left:auto;
-						margin-right: auto;`} light > “With IJNet's help, I empowered more women and made my news outlet stronger financially.” - Sheikha Aldosary, Saudi Women's Stories
+						margin-right: auto;`} light > “With the help of IJNet mentors, I empowered more women and made my news outlet stronger financially.” - Sheikha Aldosary, Saudi Women's Stories, Saudi Arabia
 			</Quote>
 			</Container>
 			<TriggeredBgColor color='sanMarino' />
@@ -668,10 +679,10 @@ export default function Home() {
 					font-size: 1.25em;
 					line-height: 2;
 					@media(min-width:${mobile}){
-						font-size: 1.7em;							
+						font-size: 1.7em;
 					}
 					`
-				}>During a tumultous year, ICFJ identified the impact of the pandemic on journalism worldwide as well as the escalating problem of online violence against women journalists.
+				}>During a tumultous year, ICFJ and its partners identified the <a href="https://www.icfj.org/news/new-global-survey-raises-red-flags-journalism-covid-19-era">impact of the pandemic on journalism</a> as well as the escalating problem of <a href="https://www.icfj.org/news/icfj-unesco-study-online-violence-fueled-disinformation-and-political-attacks-deeply-harms">online violence against women journalists</a>.
 				</TriggeredTextBlock>
 				<CountBox bp={breakpoints} css={css`transform:scale(1)`}/>
 				<div css={theme=>({
@@ -686,7 +697,7 @@ export default function Home() {
 					flexDirection: 'column',
 					position: 'relative'
 					})
-				}>	
+				}>
 					<div css={css`
 					 flex-grow: 1;
 					 display: flex;
@@ -694,8 +705,12 @@ export default function Home() {
 					 justify-content: center;
 					 padding: 2rem;
 					 color: white;
-					 `}><Subheader css={css`font-size:1.65em;`}>The most Comprehensive, Geographically Diverse Survey on Online Violence against Women Journalists</Subheader>
-					</div>
+					 `}><Subheader css={css`font-size:1.65em;`}>Most Comprehensive Survey on Online Violence against Women Journalists*</Subheader>
+						</div>
+
+						<div><SmallSubheader>A UNESCO-ICFJ partnership</SmallSubheader>
+						 </div>
+
 					<div css={css`
 						background: rgba(212, 73, 52, .6);
 						position: absolute;
@@ -710,7 +725,7 @@ export default function Home() {
 							width: ['160px','180px','212px']
 						})}
 					`}>
-						Political actors were the second most common sources of abuse <TextPop color="#DDAF24">(37%)</TextPop> after “anonymous or unknown attackers” <TextPop color="#DDAF24">(57%)</TextPop>.
+						<TextPop color="#DDAF24">More than one third </TextPop> of respondents said political actors were a common source of abuse.
 					</div>
 					<div css={css`
 						background: rgba(221, 175, 36, .6);
@@ -724,11 +739,11 @@ export default function Home() {
 							right: ['80px','80px','280px'],
 							top: ['380px','380px','280px']
 						})}					`}>
-						<span css={theme=>({color:theme.colors.valencia})}>One in five </span>women respondents said they had been attacked or abused offline in incidents seeded online.
+						<span css={theme=>({color:theme.colors.valencia})}>One in five </span>women said they suffered attacks or abuss offline in the physical world stemming from online harassment.
 					</div>
 					<ImageQuery css={mq({height: ['200px','400px','510px']})} filename='Anna.jpeg' />
 				</div>
-				<p css={css`color:white; font-style:italic;margin:3em`}><Highlighter color="mineShaft"> *Research in partnership with the Tow Center for Digital Journalism at Columbia University
+				<p css={css`color:white; font-style:italic;margin:3em`}><Highlighter color="mineShaft"> *Findings based on 714 responses from women journalists across 113 countries.
 			</Highlighter>
 			</p>
 			</Container>
@@ -750,7 +765,7 @@ export default function Home() {
 						text-align: right;
 						margin-top: 5rem;
 						`
-					}>At a time when attacks on journalists are spiking globally, ICFJ’s annual Tribute to Jounalists brings heightened visibility to winners, whose outstanding reporting has had tremendous impact.
+					}>At a time when attacks on journalists are spiking globally, <a href="https://www.icfj.org/calendar/icfj-tribute-journalists-2020">ICFJ’s annual awards</a> brings heightened visibility to winners, whose outstanding reporting has had tremendous impact.
 				</TriggeredTextBlock>
 				</div>
 				<ImageQuery filename="TributeLogo.png" css={css`
@@ -758,69 +773,71 @@ export default function Home() {
 						margin-bottom: 5rem;
 						`
 				}/>
+				<FrameEmbed bp={breakpoints} buttonColor='goldenGrass'
+						caption="Watch the Speeches"
+						 css={css`
+						margin-top:4rem
+						width: 100%;
+						height:
+						`}  >
+						<iframe title='vidone' width='100%' height='570px' src="https://www.youtube.com/watch?v=jIialLILHq8" frameBorder="0" allowFullScreen></iframe>
+					</FrameEmbed>
 				<Wolf
 					bp={breakpoints}
 					image= "Wolf.png"
-					name="Wolf Blitzer"
-					title= "Lead Political Anchor, CNN"
+					award="Master of Ceremonies"
+					name="Wolf Blitzer, CNN"
+					title= ""
 					bio="ICFJ is doing more than any organization I know to support great journalism worldwide."
 				/>
 				<WinnerRight
 					bp={breakpoints}
 					image= "Fareed.png"
-					award="Founders Award"
-					name="Fareed Z"
-					title= "host,cnn"
-					bio="I am a news guy lots of news lots and lots of it"
+					award="ICFJ Founders Award for Excellence in Journalism"
+					name="Fareed Zakaria, CNN"
+					title= ""
+					bio="Zakaria's expert analysis helps us understand complex global issues."
 				/>
-				<WinnerLeft 
+				<WinnerLeft
 					bp={breakpoints}
-					image= "Fareed.png"
-					award="Founders Award"
-					name="Fareed Z"
+					image= "Roman.png"
+					award="ICFJ Knight Trailblazer Award"
+					name="Roman Anin"
 					title="host,cnn"
-					bio="I am a news guy lots of news lots and lots of it"
+					bio="Anin’s collaborative news site is exposing corruption under Vladimir Putin."
 				/>
 				<WinnerRight
 					bp={breakpoints}
-					image= "Fareed.png"
-					award="Founders Award"
-					name="Fareed Z"
-					title= "host,cnn"
-					bio="I am a news guy lots of news lots and lots of it"
+					image= "Lina.png"
+					award="ICFJ Knight International Journalism Award"
+					name="Lina Attalah"
+					title= "Mada Masr, Egypt"
+					bio="Attalah leads a fearless team of reporters at one of the last independent news outlets in her country."
 				/>
-				<WinnerLeft 
+				<WinnerLeft
 					bp={breakpoints}
-					image= "Fareed.png"
-					award="Founders Award"
-					name="Fareed Z"
-					title="host,cnn"
-					bio="I am a news guy lots of news lots and lots of it"
+					image= "Maria.png"
+					award="2018 ICFJ Knight Award Winner"
+					name="Maria Ressa"
+					title="Rappler, Philippines"
+					bio="Despite relentless persecution, Ressa and her team shine a light on injustices."
 				/>
-				<FrameEmbed bp={breakpoints} buttonColor='goldenGrass'
-						caption="ICFJ is giving reporters the skills to cover the most pressing issues of the day."
-						 css={css`
-						margin-top:4rem
-						width: 100%;
-						height: 
-						`}  >
-						<iframe title='vidone' width='100%' height='570px' src="https://www.youtube.com/embed/f1SBTk3CXhI" frameBorder="0" allowFullScreen></iframe>
-					</FrameEmbed>
-			</Container>
+				</Container>
 				<TriggeredBgColor color='white' />
 		</Section>
 		<Section name="Financials">
 			<TriggeredBgColor color='curiousBlue' />
 			<TriggeredLottie css={css`opacity:0.5`} animation={animationCameras} loop={true} />
 			<Container>
-				<TriggeredPendantRight bp={breakpoints} color="boulder">Financials</TriggeredPendantRight>	
-				<Subheader css={css`color:white;margin-top: 10rem;`}>2020 Revenue: $19.9 million</Subheader>
+				<TriggeredPendantRight bp={breakpoints} color="boulder">Financials</TriggeredPendantRight>
+				<SmallSubheader css={css`color:white`}>We are careful stewards of our donors’ funds.</SmallSubheader>
+				<Subheader css={css`color:white;margin-top: 10rem;`}>Total Reveue for 2020: $19.9 million</Subheader>
 				<Subheader css={css`color:white`}>2020 Expense Breakdown:</Subheader>
-				<TriggeredLottie 
+				<TriggeredLottie
 					css={css`
 					width: 80%;
 					@media(min-width:${tablet}){
-						width: 60%;						
+						width: 60%;
 					}
 					margin-right:auto;
 					margin-left:auto;
@@ -862,13 +879,13 @@ export default function Home() {
 						<Subheader>Board of Directors</Subheader>
 							<div css={css`
 								height: 10rem`
-								}/>		
+								}/>
 					</div>
 					<div>
 						<Subheader>Advisory Board</Subheader>
 							<div css={css`
 								height: 10rem`
-								}/>		
+								}/>
 					</div>
 				</div>
 				<TriggeredPendantLeft bp={breakpoints} color="goldenGrass">Donors</TriggeredPendantLeft>
@@ -880,7 +897,7 @@ export default function Home() {
 					font-family: interstate condensed;
 					font-size: 2em;
 					@media(min-width:${tablet}){
-						grid-template-columns: repeat(2, 1fr);						
+						grid-template-columns: repeat(2, 1fr);
 					}
 				`}>
 					<ul css={css`

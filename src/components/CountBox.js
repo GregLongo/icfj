@@ -48,13 +48,13 @@ const PercentSign1 = styled.span`
 	${mq({
 		fontSize: ['4em','4em','8em', '10em']
 	})}
-	color: ${props=>props.theme.colors.mineShaft}		
+	color: ${props=>props.theme.colors.mineShaft}
 `
 const PercentSign2 = styled.span`
 	${mq({
 		fontSize: ['4em','4em','8em', '10em']
 	})}
-	color: ${props=>props.theme.colors.goldenGrass}		
+	color: ${props=>props.theme.colors.goldenGrass}
 `
 
 const Square = styled.div`
@@ -113,7 +113,7 @@ const SubSquare = styled.div`
 const Label= styled.div`
 	${mq({
 			fontSize: ['1em','1.1em','1.5em']
-		})}	
+		})}
 	padding-bottom: 17%;
 	padding-left: 2rem;
 	padding-right: 2rem;
@@ -129,6 +129,7 @@ const Subheader = styled.div`
 		return(
 			<Square className={props.className}>
 			<Subheader> First Covid-19 Survey of It's Kind</Subheader>
+			<Subheader> A partnership with the Tow Center for Digital Journalism at Columbia University</Subheader>
 			<SquareInner>
 				<SubSquare css={css`padding-top: 20%`}>
 					<CounterOne val={2073} />
@@ -140,14 +141,14 @@ const Subheader = styled.div`
 				</SubSquare>
 				<SubSquare css={css`align-items: flex-end`}>
 					<CounterThree val={7} />
-					<Label 	>SURVEY LANGUAGES</Label>
+					<Label 	>LANGUAGES</Label>
 				</SubSquare>
 				<SubSquare>
 					<span css={css`display:flex; align-items: center;`}>
 						<CounterFour val={46} />
 						<PercentSign1>%</PercentSign1>
 					</span>
-					<Label>of respondents identified politicians and elected officials as top sources of disinformation</Label>
+					<Label>identified politicians and elected officials as top sources of disinformation</Label>
 				</SubSquare>
 				<SubSquare>
 					<span css={css`display:flex; align-items: center;`}>
@@ -157,10 +158,10 @@ const Subheader = styled.div`
 					<Label>said their organizations did not supply field reporters with protective equipment.</Label>
 				</SubSquare>
 			</SquareInner>
-			<p css={css`color:white; font-style:italic;margin:3em`}><Highlighter color="mineShaft"> *Research in partnership with the Tow Center for Digital Journalism at Columbia University
+		/*	<p css={css`color:white; font-style:italic;margin:3em`}><Highlighter color="mineShaft"> *Research in partnership with the Tow Center for Digital Journalism at Columbia University*/
 			</Highlighter>
 			</p>
 			</Square>
 		)
-	
+
 }
