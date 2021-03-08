@@ -52,7 +52,7 @@ export default function TriggeredPendantRight(props){
 					duration: .5,
 					scrollTrigger:{
 						trigger:ref.current,
-						start: "top 75%",
+						start: "top 65%",
 						end: "top top",
 						toggleActions:"play complete reverse reset"
 						}

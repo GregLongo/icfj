@@ -88,10 +88,16 @@ class AnimatedColumn extends Component{
 		})}
 	`
 
+	const Sign = styled.span`
+		position:absolute;
+		font-size: 3em;
+		transform: translate(50px, 65px)
+	`
+
 		return(
 			<Column>
 				<Labels>
-					<CounterSmol val={this.props.val} />
+					<CounterSmol val={this.props.val} /><Sign>{this.props.sign}</Sign>
 					<Title>{this.props.title}</Title>
 				</Labels>
 				<Inner ref={this.ref}>

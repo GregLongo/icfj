@@ -37,7 +37,7 @@ const HeadlineContainer = styled.div`
 						trigger:ref.current,
 						start: 'top center',
 						end: 'top top',
-						toggleActions:"play complete none reverse",
+						toggleActions:"play complete reverse reverse",
 						}
 					}
 				)

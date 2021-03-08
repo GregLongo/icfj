@@ -158,7 +158,7 @@ const Subheader = styled.div`
 					<Label>said their organizations did not supply field reporters with protective equipment.</Label>
 				</SubSquare>
 			</SquareInner>
-		/*	<p css={css`color:white; font-style:italic;margin:3em`}><Highlighter color="mineShaft"> *Research in partnership with the Tow Center for Digital Journalism at Columbia University*/
+			<p css={css`color:white; font-style:italic;margin:3em`}><Highlighter color="mineShaft"> *Research in partnership with the Tow Center for Digital Journalism at Columbia University
 			</Highlighter>
 			</p>
 			</Square>
