@@ -46,7 +46,7 @@ import animationPie from "../lotties/piechart.json"
 
 //svg
 import Platinum from "../images/platinum.svg"
-
+import Signature from "../images/jsignature.svg"
 //Themes
 import theme from "../themes/theme.js"
 
@@ -68,10 +68,9 @@ const mq = facepaint(
 const Container = styled.div`
 	margin-right: auto;
 	margin-left: auto;
-	margin-top: 15rem;
 	${mq({
 	 maxWidth: ['90%','90%','90%','1024px'],
-	 marginTop: ['5rem','5rem','15rem']
+	 marginTop: ['5rem','5rem','10rem']
 	})}
 	&:first-of-type {
 		margin-top: 0;
@@ -188,9 +187,10 @@ export default function Home() {
 						We at ICFJ are doing our best to help journalists better cover the story of the century. At the onset of COVID-19, we galvanized quickly to help them gain access to top epidemiologists and health practitioners, to the world’s best trainers in digital journalism techniques, to disinformation and media sustainability experts. As you’ll see below, tens of thousands of journalists are benefiting from that effort.
 						</p>
 						<ReadMore>
-						<p>
-							I'm a Placeholder for the Accordian
-						</p>
+							<p>
+								I'm a Placeholder for the Accordian
+							</p>
+							<Signature />
 						</ReadMore>
 					</ParagraphSlant>
 				</div>
@@ -226,7 +226,6 @@ export default function Home() {
 					<FrameEmbed bp={breakpoints}  buttonColor='goldenGrass'
 						caption="Learn how ICFJ is giving reporters the skills to cover today's most pressing issues."
 						 css={css`
-						margin-top:4rem
 						width: 100%;
 						max-height: 600px;
 						overflow: hidden;
@@ -236,12 +235,13 @@ export default function Home() {
 					<FrameEmbed bp={breakpoints}  height='570px' buttonColor='goldenGrass'
 						caption="Click on this photo to meet members of our inspiring network."
 						 css={css`
-						margin-top:4rem
+						margin-top:10rem;
+						margin-bottom:10rem;
 						width: 100%;
-						max-height: 600px;
+						max-height: 765px;
 						overflow: hidden;
 						`}  >
-						<iframe title='vidthree' width='100%' height='570px' src="https://www.youtube.com/embed/f1SBTk3CXhI" frameBorder="0" allowFullScreen></iframe>
+						<iframe title="mosaic" width='100%' height='765px' src="https://icfjmosaic.com" frameBorder="0" margin="0" padding="0" scrolling="no" allowFullScreen="" ></iframe>
 					</FrameEmbed>
 					<Quote bp={breakpoints} css={mq({
 						height: ['20rem'],
@@ -355,15 +355,16 @@ export default function Home() {
 				</div>
 				<div css={css`color:white;margin-top:10rem;margin-bottom:10rem`}>
 					<Subheader>The World's Most Comprehensive Site for Journalists</Subheader>
-					<p>Offering expert advice, tools and opportunities for the news media</p>
+					<p css={css`font-family: interstate condensed; font-size: 1.75em`}>Offering expert advice, tools and opportunities for the news media</p>
 				</div>
 				<div css={css`width:60%; margin-right:auto;margin-left:auto`} >
 					<ImageQuery filename='ijnet.png' />
 				</div>
 			</Container>
-		<LanguageTicker css={css`margin-top:10rem;margin-bottom:10rem`}>Arabic Chinese English French Persian Portuguese Russian Spanish Arabic Chinese English French Persian Portuguese Russian Spanish Arabic Chinese English French Persian Portuguese Russian Spanish </LanguageTicker>
+		<LanguageTicker css={css`margin-top:15rem;margin-bottom:10rem`}>Arabic Chinese English French Persian Portuguese Russian Spanish Arabic Chinese English French Persian Portuguese Russian Spanish Arabic Chinese English French Persian Portuguese Russian Spanish </LanguageTicker>
 				<Container css={css`
-					display:grid;
+					margin-bottom:15rem;
+					display:grid; 
 					font-family: interstate condensed;
 					grid-template-columns: 40% 60%;
 					grid-column-gap: 2rem;
@@ -371,7 +372,6 @@ export default function Home() {
 						grid-template-columns: 2fr 20% 20% 40%;
 					}
 					div{
-						transform: scale(.7);
 						text-align:center;
 					}
 					span{
@@ -417,7 +417,9 @@ export default function Home() {
 				`}>
 					<PhotoSlant  bp={breakpoints} css={css`transform:translatex(-35%)`}src="Fabiola.jpg" />
 					<ParagraphSlant bp={breakpoints} css={css`
-
+							@media(min-width:${tablet}){
+								margin-top: 5rem;
+							}		
 						`}>
 						Peru-based <span css={theme=>({color:theme.colors.goldenGrass})}>ICFJ Knight Fellow Fabiola Torres</span> created Salud con Lupa, a health news outlet that is uncovering corruption during COVID-19. They exposed inflated prices for face shields, environmental violations by corporations and wasted protective gear spending,prompting government action.
 					</ParagraphSlant>

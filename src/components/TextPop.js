@@ -27,7 +27,6 @@ class TextPop extends Component{
 			end: 'top top',
 			onEnter: this.popUp,
 			onLeave: this.fallDown,
-			toggleActions: 'play complete reverse reset'
 		})
 	  }
 
