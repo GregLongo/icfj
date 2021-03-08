@@ -27,9 +27,9 @@ class TriggeredCounter extends Component{
 			},
 			scrollTrigger:{
 				trigger:this.ref.current,
-				start: "bottom center",
-				end: "bottom, top",
-				toggleActions:"play none none reverse",
+				start: "top center",
+				end: "top, top",
+				toggleActions:"play none none reset",
 				markers:false,
 			},
 		})

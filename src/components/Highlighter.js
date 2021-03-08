@@ -17,7 +17,7 @@ export default function Highlighter(props){
 	useEffect(()=>{
 		gsap.to(ref.current,{
 			backgroundSize: "100% 100%",
-			duration: .3,
+			duration: .6,
 			scrollTrigger:{
 				trigger:ref.current,
 				start: "top 75%",
