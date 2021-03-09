@@ -21,8 +21,8 @@ export default function Highlighter(props){
 			scrollTrigger:{
 				trigger:ref.current,
 				start: "top 75%",
-				toggleActions:"play complete reverse reset"		,
-				// markers:true		
+				toggleActions:"play complete reverse reset"	,
+				markers:false		
 			}
 		})
 	})

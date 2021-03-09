@@ -34,7 +34,7 @@ import TriggeredBgColor from "../components/TriggeredBgColor.js"
 import TriggeredLottie from "../components/TriggeredLottie.js"
 
 //Animations
-import animationMasthead from "../lotties/testchicken7.json"
+import animationMasthead from "../lotties/masthead.json"
 import animationCameras from "../lotties/cameras.json"
 import animationPenPaper from "../lotties/penpaper.json"
 import animationAudio from "../lotties/audio.json"
@@ -47,6 +47,14 @@ import animationPie from "../lotties/piechart.json"
 //svg
 import Platinum from "../images/platinum.svg"
 import Signature from "../images/jsignature.svg"
+
+//patterns
+
+import PatternTools from "../images/Pattern_Tools.png"
+import PatternCountries from "../images/Pattern_Countries.png"
+import PatternLanguages from "../images/Pattern_Languages.png"
+import PatternCovid from "../images/Pattern_Covid.png"
+import Languages from "../images/languages_ticker.png"
 //Themes
 import theme from "../themes/theme.js"
 
@@ -86,7 +94,7 @@ const Subheader = styled.div`
 const SmallSubheader = styled.div`
 	font-family: ubuntu;
 	font-size: 1.5em;
-	font-style: bold;
+	font-weight: 700;
 	margin: -1em 0em 2em 2em;
 `
 const Credits = styled.div`
@@ -97,19 +105,28 @@ const Credits = styled.div`
 
 const OrgPeople = styled.li`
 	font-family: ubuntu;
-	font-size: 1.25em;
-	color: gold;
+	font-size: 2.5em;
+	color: ${props => props.theme.colors.goldenGrass};
 	margin-top: 2rem;
 `
+
 const OrgPeopleDesc = styled.li`
-	font-family: ubuntu;
-	font-size: 1em;
+	font-family: interstate condensed;
+	font-size: 2em;
 	color: white;
 `
 
 const Link = styled.a`
 	color: white;
 `
+
+//add scroll to internal anchor links
+
+// if (typeof window !== "undefined") {
+//   // eslint-disable-next-line global-require
+//   require("smooth-scroll")('a[href*="#"]')
+// }
+
 
 export default function Home() {
 	return (
@@ -153,7 +170,7 @@ export default function Home() {
 			<UncontrolledLottie animation={animationMasthead}/>
 		</Container>
 		<TriggeredBgColor color='white' />
-		<Section name="Mission" css={theme => ({background: theme.colors.mineShaft})}>
+		<Section id="Mission" name="Mission" css={theme => ({background: theme.colors.mineShaft})}>
 			<Container css={css`
 				color: white;
 				height: 40rem;
@@ -183,7 +200,7 @@ export default function Home() {
 				<TriggeredBgColor color='goldenGrass' />
 			</Container>
 		</Section>
-		<Section name="Joyce">
+		<Section id="Joyce" name="Joyce">
 			<Container>
 				<TriggeredPendantRight bp={breakpoints} color='curiousBlue'>
 					A Letter From the President
@@ -193,11 +210,11 @@ export default function Home() {
 					grid-template-columns: 5% 95%;
 					margin-top: 5rem;
 					@media(min-width:${tablet}){
-						margin-top: 15rem;
+						margin-top: 10rem;
 					}
 					`}>
 					<PhotoSlant bp={breakpoints} css={css`transform:translatex(-35%)`} src="Joyce.jpg" />
-					<ParagraphSlant bp={breakpoints}>
+					<ParagraphSlant bp={breakpoints} css={css`margin-bottom: -15rem`}>
 						<p css={css`margin-top:-.5rem`}>
 						Over 36 years, ICFJ has provided more than <TextPop>150,000 journalists</TextPop> from <TextPop>180 countries</TextPop> with <TextPop>valuable programs and resources</TextPop>. But we’ve never had a year like 2020.
 						</p>
@@ -209,7 +226,13 @@ export default function Home() {
 						</p>
 						<ReadMore>
 							<p>
-								I'm a Placeholder for the Accordian
+							In other ICFJ programs, investigative journalists in our networks are collaborating to uncover corruption by those seeking to get rich from the pandemic. Pioneers in media innovation are creating new data and social media tools to help journalists tell the stories of COVID-19 better. And sustainability experts are helping news outlets improve the bottom line in a time when economic and political forces threaten to shut down independent voices.
+							</p>
+							<p>
+							Our motto is It Takes a Journalist. Whether the story is a global pandemic, racial injustice, climate change or government malfeasance, it takes a journalist to bring the public factual information that can mean the difference between life and death. And whatever the story, ICFJ will be there to support and empower the journalists who are helping make our world a better place.
+							</p>
+							<p>
+							Joyce Barnathan, President
 							</p>
 							<Signature />
 						</ReadMore>
@@ -218,7 +241,7 @@ export default function Home() {
 			</Container>
 			<TriggeredBgColor color='goldenGrass' />
 		</Section>
-		<Section name="Change">
+		<Section id="Change" name="Change">
 			<TriggeredBgColor color='curiousBlue' />
 				<TriggeredLottie css={css`opacity:0.5`} animation={animationPenPaper} loop={true} />
 				<Container>
@@ -262,7 +285,7 @@ export default function Home() {
 						max-height: 765px;
 						overflow: hidden;
 						`}  >
-						<iframe title="mosaic" width='100%' height='765px' src="https://icfjmosaic.com" frameBorder="0" margin="0" padding="0" scrolling="no" allowFullScreen="" ></iframe>
+						<div id=“mosaics”></div><script src=“https://cdn.picturemosaics.com/client/iframe/js/pageEmbed.VID2.js”></script><script>var pmFrame = new Pmframe({element: “mosaics”, page: ‘https://icfjmosaic.com’, minWidth: ‘300’, pmBrand: 1});pmFrame.init();</script>
 					</FrameEmbed>
 					<Quote bp={breakpoints} css={mq({
 						height: ['40rem'],
@@ -277,7 +300,7 @@ export default function Home() {
 				</Container>
 			<TriggeredBgColor color='curiousBlue' />
 		</Section>
-		<Section name="Resources">
+		<Section id="Resources" name="Resources">
 				<TriggeredBgColor color='boulder' />
 				<TriggeredLottie css={css`opacity:0.5`} animation={animationAudio} loop={true} />
 				<Container>
@@ -319,28 +342,28 @@ export default function Home() {
 			`}>
 			<AnimatedColumn
 				bp={breakpoints}
-				image="Patterns/Pattern_Tools.png"
+				image={PatternTools}
 				color="valencia"
 				title='Forum Members'
 				val='10200'
 				 />
 			<AnimatedColumn
 				bp={breakpoints}
-				image="Patterns/Pattern_Countries.png"
+				image={PatternCountries}
 				color="goldenGrass"
 				title='Countries'
 				val='100'
 				 />
 				 <AnimatedColumn
 				bp={breakpoints}
-				image="Patterns/Pattern_Languages.png"
+				image={PatternLanguages}
 				color="curiousBlue"
 				title='Languages'
 				val='5'
 				 />
 				 <AnimatedColumn
 				bp={breakpoints}
-				image="Patterns/Pattern_Covid.png"
+				image={PatternCovid}
 				color="sanMarino"
 				title='Covid-19 Resources'
 				val='840'
@@ -384,7 +407,7 @@ export default function Home() {
 					<ImageQuery filename='ijnet.png' />
 				</div>
 			</Container>
-		<LanguageTicker css={css`margin-top:15rem;margin-bottom:15rem`}>Arabic Chinese English French Persian Portuguese Russian Spanish Arabic Chinese English French Persian Portuguese Russian Spanish Arabic Chinese English French Persian Portuguese Russian Spanish </LanguageTicker>
+		<LanguageTicker css={css`margin-top:15rem;margin-bottom:15rem`}><img alt='' src={Languages} /></LanguageTicker>
 				<Container css={css`
 					margin-bottom:15rem;
 					display:grid;
@@ -417,7 +440,7 @@ export default function Home() {
 				</Container>
 				<TriggeredBgColor color='boulder' />
 		</Section>
-		<Section>
+		<Section id="Networks" name="Networks">
 			<TriggeredBgColor color='fruitSalad' />
 			<TriggeredLottie css={css`opacity:0.5`} animation={animationCameras} loop={true} />
 			<Container>
@@ -486,7 +509,7 @@ export default function Home() {
 			</Container>
 			<TriggeredBgColor color='fruitSalad' />
 		</Section>
-		<Section name="Networks">
+		<Section id="Innovation" name="Innovation">
 			<TriggeredBgColor color='mineShaft' />
 			<TriggeredLottie css={css`opacity:0.5`} animation={animationTweet} loop={true} />
 			<Container>
@@ -611,7 +634,7 @@ export default function Home() {
 			</Container>
 			<TriggeredBgColor color='mineShaft' />
 		</Section>
-		<Section name="Sustainability">
+		<Section id="Sustainability" name="Sustainability">
 			<TriggeredBgColor color='sanMarino' />
 			<TriggeredLottie css={css`opacity:0.5`} animation={animationPenPaper} loop={true} />
 			<Container>
@@ -638,7 +661,7 @@ export default function Home() {
 					<div css={css`
 							color: white;
 							font-family: interstate condensed;
-							font-size: 1.2em;
+							font-size: 1.5em;
 							line-height: 2;
 							padding-top: 1em;
 							padding-left: 2rem;
@@ -653,7 +676,7 @@ export default function Home() {
 					<div css={css`
 							color: white;
 							font-family: interstate condensed;
-							font-size: 1.2em;
+							font-size: 1.5em;
 							line-height: 2;
 							padding-top: 1em;
 							padding-left: 2rem;
@@ -668,7 +691,7 @@ export default function Home() {
 					<div css={css`
 							color: white;
 							font-family: interstate condensed;
-							font-size: 1.2em;
+							font-size: 1.5em;
 							line-height: 2;
 							padding-top: 1em;
 							padding-left: 2rem;
@@ -689,7 +712,7 @@ export default function Home() {
 			</Container>
 			<TriggeredBgColor color='sanMarino' />
 		</Section>
-		<Section name="Leadership">
+		<Section id="Leadership" name="Leadership">
 			<TriggeredBgColor color='valencia' />
 			<TriggeredLottie css={css`opacity:0.5`} animation={animationAudio} loop={true} />
 			<Container>
@@ -775,7 +798,7 @@ export default function Home() {
 			</Container>
 			<TriggeredBgColor color='valencia' />
 		</Section>
-		<Section name="Honorees">
+		<Section id="Honorees" name="Honorees">
 			<TriggeredBgColor color='white' />
 			<TriggeredLottie css={css`opacity:0.5`} animation={animationCameras} loop={true} />
 			<Container>
@@ -791,7 +814,7 @@ export default function Home() {
 						text-align: right;
 						margin-top: 5rem;
 						`
-					}>At a time when attacks on journalists are spiking globally, <Link href="https://www.icfj.org/calendar/icfj-tribute-journalists-2020">ICFJ’s annual awards</Link> brings heightened visibility to winners, whose outstanding reporting has had tremendous impact.
+					}>At a time when attacks on journalists are spiking globally, <Link css={css`color: black;`} href="https://www.icfj.org/calendar/icfj-tribute-journalists-2020">ICFJ’s annual awards</Link> brings heightened visibility to winners, whose outstanding reporting has had tremendous impact.
 				</TriggeredTextBlock>
 				</div>
 				<ImageQuery filename="TributeLogo.png" css={css`
@@ -799,14 +822,15 @@ export default function Home() {
 						margin-bottom: 5rem;
 						`
 				}/>
-				<FrameEmbed bp={breakpoints} buttonColor='goldenGrass'
+				<FrameEmbed  bp={breakpoints} buttonColor='goldenGrass'
 						caption="Watch the Speeches"
 						 css={css`
-						margin-top:4rem
+						margin-top:4rem;
 						width: 100%;
-						height:
+						background:black !important;
 						`}  >
-						<iframe title='vidone' width='100%' height='570px' src="https://www.youtube.com/watch?v=jIialLILHq8" frameBorder="0" allowFullScreen></iframe>
+						<iframe title='vidone' width='100%' height='570px' src="https://www.youtube.com/embed/jIialLILHq8" frameBorder="0" allowFullScreen></iframe>
+
 					</FrameEmbed>
 				<Wolf
 					bp={breakpoints}
@@ -852,7 +876,7 @@ export default function Home() {
 				<div css={css`margin-bottom:20rem`} />
 				<TriggeredBgColor color='white' />
 		</Section>
-		<Section name="Financials">
+		<Section id="Financials" name="Financials">
 			<TriggeredBgColor color='curiousBlue' />
 			<TriggeredLottie css={css`opacity:0.5`} animation={animationTweet} loop={true} />
 			<Container>
@@ -890,43 +914,31 @@ export default function Home() {
 				 <Subheader css={mq({color:'white',fontSize:['1em','2em','3em']})}>ICFJ also has a platinum-level rating from GuideStar, the highest ranking given.</Subheader>
 			</Container>
 		</Section>
-		<Section name="BoardMembers">
+		<Section id="Board" name="BoardMembers">
 			<TriggeredBgColor color='fruitSalad' />
-			//	<TriggeredLottie css={css`opacity:0.5`}animation={animationCameras} loop={true} />
+			<TriggeredLottie css={css`opacity:0.5`}animation={animationCameras} loop={true} />
 			<Container>
 				<TriggeredPendantLeft bp={breakpoints} color="goldenGrass">Board Members</TriggeredPendantLeft>
 				<div css={css`
 					display:grid;
-					grid-template-columns: repeat(2, 1fr);
-					margin-top: 5rem;
-					color: white;
-				`}>
-					<div>
-						<Subheader>Officers</Subheader>
-							<div css={css`
-								height: 10rem`
-								}/>
-					</div>
-					<div>
-						<Subheader>Board of Directors</Subheader>
-							<div css={css`
-								height: 10rem`
-								}/>
-					</div>
-				</div>
-				<div css={css`
-					display:grid;
 					grid-template-columns: repeat(1, 1fr);
-					margin-top: 5rem;
+					margin-top: 10rem;
 					color: white;
 					font-family: interstate condensed;
-					font-size: 2em;
 					@media(min-width:${tablet}){
 						grid-template-columns: repeat(2, 1fr);
 					}
 				`}>
+				<div>
+					<Subheader css={css`
+						font-size:3.25em;
+						margin-bottom: 5rem;
+						`}>
+						Officers
+					</Subheader>
 					<ul css={css`
 							list-style: none;
+							padding-left: 0;
 						`}>
 						<OrgPeople>MICHAEL GOLDEN</OrgPeople>
 						<OrgPeopleDesc>Chairman, ICFJ</OrgPeopleDesc>
@@ -962,9 +974,18 @@ export default function Home() {
 
 						<OrgPeople>JOYCE BARNATHAN</OrgPeople>
 						<OrgPeopleDesc>President, ICFJ</OrgPeopleDesc>
-			</ul>
+					</ul>
+					</div>
+					<div>
+					<Subheader css={css`
+						font-size:3.25em;
+						margin-bottom: 5rem;
+						`}>
+						Board of Directors
+					</Subheader>
 					<ul css={css`
 							list-style: none;
+							padding-left: 0;
 						`}>
 						<OrgPeople>MARK BAILEN</OrgPeople>
 						<OrgPeopleDesc>Partner, BakerHostetler LLP</OrgPeopleDesc>
@@ -1021,46 +1042,35 @@ export default function Home() {
 						<OrgPeopleDesc>Principal, Envoy Strategy Group</OrgPeopleDesc>
 						</ul>
 				</div>
+				</div>
 				</Container>
 				</Section>
 
 				<Section name="AdvisoryBoard">
-				 /* this section does not display */
 					<TriggeredBgColor color='fruitSalad' />
 					<Container>
 						<TriggeredPendantLeft bp={breakpoints} color="goldenGrass">Advisory Board</TriggeredPendantLeft>
 						<div css={css`
 							display:grid;
-							grid-template-columns: repeat(2, 1fr);
-							margin-top: 5rem;
-							color: white;
-						`}>
-							<div>
-								<Subheader>Officers</Subheader>
-									<div css={css`
-										height: 10rem`
-										}/>
-							</div>
-							<div>
-								<Subheader>Board of Directors</Subheader>
-									<div css={css`
-										height: 10rem`
-										}/>
-							</div>
-						</div>
-						<div css={css`
-							display:grid;
 							grid-template-columns: repeat(1, 1fr);
-							margin-top: 5rem;
+							margin-bottom: 15rem;
 							color: white;
 							font-family: interstate condensed;
-							font-size: 2em;
 							@media(min-width:${tablet}){
 								grid-template-columns: repeat(2, 1fr);
 							}
 						`}>
+						<div>
+						<Subheader css={css`
+								font-size:3.25em;
+								margin-bottom: 5rem;
+								margin-top: 10rem;
+							`}>
+								Officers
+						</Subheader>
 							<ul css={css`
 									list-style: none;
+									padding-left: 0;
 								`}>
 								<OrgPeople>FRANK BENNACK</OrgPeople>
 								<OrgPeopleDesc>Executive Vice Chairman, Hearst</OrgPeopleDesc>
@@ -1119,10 +1129,12 @@ export default function Home() {
 								<OrgPeople>MARGARET WINSHIP</OrgPeople>
 								<OrgPeopleDesc>ICFJ Founders Family</OrgPeopleDesc>
 								</ul>
+						</div>
 					</div>
 		</Container>
 		</Section>
-
+		<Section id="Donors" name="Donors" >
+		<Container>
 		<TriggeredPendantLeft bp={breakpoints} color="goldenGrass">Donors</TriggeredPendantLeft>
 				<div css={css`
 					display:grid;
@@ -1160,7 +1172,6 @@ export default function Home() {
 						<li>The Ewing Family</li>
 						<li>Anonymous</li>
 						<li>Anonymous 2</li>
-
 						<li css={theme=>({
 							fontSize:'48px',
 							color:theme.colors.goldenGrass,
@@ -1169,7 +1180,6 @@ export default function Home() {
 						Benefactors</li>
 						<li>Michael and Anne Golden</li>
 						<li>John Maxwell Hamilton</li>
-
 						<li css={theme=>({
 							fontSize:'48px',
 							color:theme.colors.goldenGrass,
@@ -1309,7 +1319,7 @@ export default function Home() {
 			fontFamily: 'ubuntu',
 			fontSize: '2.5em'
 		})} > ICFJ.org </div>
-		/*</ThemeProvider>  I commmented this line out b/c of messing up nesting somewhere */
+		</ThemeProvider>
 		</div>
 	)
 }

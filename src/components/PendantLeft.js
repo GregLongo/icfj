@@ -8,6 +8,7 @@ import facepaint from 'facepaint'
 gsap.registerPlugin(ScrollTrigger)
 
 const PendantContainer = styled.div`
+	z-index: 1;
 	display: flex;
 	justify-content: flex-start;
 	overflow-x: hidden;

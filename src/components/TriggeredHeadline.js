@@ -38,6 +38,7 @@ const HeadlineContainer = styled.div`
 						start: 'top center',
 						end: 'top top',
 						toggleActions:"play complete reverse reverse",
+						markers: false
 						}
 					}
 				)
