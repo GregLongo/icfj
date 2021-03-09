@@ -89,6 +89,24 @@ const SmallSubheader = styled.div`
 	font-style: bold;
 	margin: -1em 0em 2em 2em;
 `
+const Credits = styled.div`
+	font-family: ubuntu;
+	font-size: 1em;
+	color: white;
+	`
+
+const OrgPeople = styled.li`
+	font-family: ubuntu;
+	font-size: 1.25em;
+	color: gold;
+	margin-top: 2rem;
+`
+const OrgPeopleDesc = styled.li`
+	font-family: ubuntu;
+	font-size: 1em;
+	color: white;
+`
+
 const Link = styled.a`
 	color: white;
 `
@@ -202,7 +220,7 @@ export default function Home() {
 		</Section>
 		<Section name="Change">
 			<TriggeredBgColor color='curiousBlue' />
-				<TriggeredLottie css={css`opacity:0.5`} animation={animationCameras} loop={true} />
+				<TriggeredLottie css={css`opacity:0.5`} animation={animationPenPaper} loop={true} />
 				<Container>
 					<TriggeredPendantLeft bp={breakpoints} color="boulder">Our Vast Network </TriggeredPendantLeft>
 					<div css={css`
@@ -261,7 +279,7 @@ export default function Home() {
 		</Section>
 		<Section name="Resources">
 				<TriggeredBgColor color='boulder' />
-				<TriggeredLottie css={css`opacity:0.5`} animation={animationPenPaper} loop={true} />
+				<TriggeredLottie css={css`opacity:0.5`} animation={animationAudio} loop={true} />
 				<Container>
 					<TriggeredPendantRight bp={breakpoints} color="fruitSalad">New Resources </TriggeredPendantRight>
 					<div css={css`
@@ -301,28 +319,28 @@ export default function Home() {
 			`}>
 			<AnimatedColumn
 				bp={breakpoints}
-				image="https://media.istockphoto.com/vectors/seamless-pattern-with-donuts-vector-id606711392"
+				image="Patterns/Pattern_Tools.png"
 				color="valencia"
 				title='Forum Members'
 				val='10200'
 				 />
 			<AnimatedColumn
 				bp={breakpoints}
-				image="https://media.istockphoto.com/vectors/seamless-pattern-with-donuts-vector-id606711392"
+				image="Patterns/Pattern_Countries.png"
 				color="goldenGrass"
 				title='Countries'
 				val='100'
 				 />
 				 <AnimatedColumn
 				bp={breakpoints}
-				image="https://media.istockphoto.com/vectors/seamless-pattern-with-donuts-vector-id606711392"
+				image="Patterns/Pattern_Languages.png"
 				color="curiousBlue"
 				title='Languages'
 				val='5'
 				 />
 				 <AnimatedColumn
 				bp={breakpoints}
-				image="https://media.istockphoto.com/vectors/seamless-pattern-with-donuts-vector-id606711392"
+				image="Patterns/Pattern_Covid.png"
 				color="sanMarino"
 				title='Covid-19 Resources'
 				val='840'
@@ -357,7 +375,8 @@ export default function Home() {
 					<ImageQuery filename='docblue.png' />
 					<ImageQuery filename='agnes.png' />
 				</div>
-				<div css={css`color:white;margin-top:15rem;margin-bottom:15rem`}>
+				<Credits> Credits (clockwise): Siddharth Bokolia (top left), John Gitonga (top right), Lucina Paternesi Meloni (middle left), Amit Chakraborty (middle right), Carolyn Sung (bottom left), Agnes Penda (bottom right)</Credits>
+			<div css={css`color:white;margin-top:15rem;margin-bottom:15rem`}>
 					<Subheader>The World's Most Comprehensive Site for Journalists</Subheader>
 					<p css={css`font-family: interstate condensed; font-size: 1.75em`}>Offering expert advice, tools and opportunities for the news media</p>
 				</div>
@@ -368,7 +387,7 @@ export default function Home() {
 		<LanguageTicker css={css`margin-top:15rem;margin-bottom:15rem`}>Arabic Chinese English French Persian Portuguese Russian Spanish Arabic Chinese English French Persian Portuguese Russian Spanish Arabic Chinese English French Persian Portuguese Russian Spanish </LanguageTicker>
 				<Container css={css`
 					margin-bottom:15rem;
-					display:grid; 
+					display:grid;
 					font-family: interstate condensed;
 					grid-template-columns: 40% 60%;
 					grid-column-gap: 2rem;
@@ -400,7 +419,7 @@ export default function Home() {
 		</Section>
 		<Section>
 			<TriggeredBgColor color='fruitSalad' />
-			<TriggeredLottie css={css`opacity:0.5`} animation={animationAudio} loop={true} />
+			<TriggeredLottie css={css`opacity:0.5`} animation={animationCameras} loop={true} />
 			<Container>
 				<TriggeredPendantLeft bp={breakpoints} color="mineShaft">Investigative Networks</TriggeredPendantLeft>
 				<div css={css`
@@ -423,7 +442,7 @@ export default function Home() {
 					<ParagraphSlant bp={breakpoints} css={css`
 							@media(min-width:${tablet}){
 								margin-top: 5rem;
-							}		
+							}
 						`}>
 						Peru-based <span css={theme=>({color:theme.colors.goldenGrass})}>ICFJ Knight Fellow Fabiola Torres</span> created Salud con Lupa, a health news outlet that is uncovering corruption during COVID-19. They exposed inflated prices for face shields, environmental violations by corporations and wasted protective gear spending,prompting government action.
 					</ParagraphSlant>
@@ -469,9 +488,9 @@ export default function Home() {
 		</Section>
 		<Section name="Networks">
 			<TriggeredBgColor color='mineShaft' />
-			<TriggeredLottie css={css`opacity:0.5`} animation={animationCameras} loop={true} />
+			<TriggeredLottie css={css`opacity:0.5`} animation={animationTweet} loop={true} />
 			<Container>
-				<TriggeredPendantRight bp={breakpoints} color="sanMarino">Investigative Networks</TriggeredPendantRight>
+				<TriggeredPendantRight bp={breakpoints} color="sanMarino">Innovation</TriggeredPendantRight>
 				<div css={css`
 					margin-top: 4rem`
 				}>
@@ -594,7 +613,7 @@ export default function Home() {
 		</Section>
 		<Section name="Sustainability">
 			<TriggeredBgColor color='sanMarino' />
-			<TriggeredLottie css={css`opacity:0.5`} animation={animationTweet} loop={true} />
+			<TriggeredLottie css={css`opacity:0.5`} animation={animationPenPaper} loop={true} />
 			<Container>
 				<TriggeredPendantLeft bp={breakpoints} color="valencia">Sustainability</TriggeredPendantLeft>
 				<div css={css`
@@ -615,6 +634,7 @@ export default function Home() {
 				</TriggeredTextBlock>
 				<div css={css`margin-top:5rem`}>
 					<ImageQuery css={css`height: 510px`} filename='conference.jpeg' />
+					<Credits>Credit: Ibrahim Thunian/Saudi Women Stories</Credits>
 					<div css={css`
 							color: white;
 							font-family: interstate condensed;
@@ -624,11 +644,12 @@ export default function Home() {
 							padding-left: 2rem;
 							padding-right: 2rem;`
 						}>
-						Media entrepreneurs in the Middle East and North Africa have improved the business prospects of their startups through our <Link href="https://ijnet.org/en/story/meet-our-ijnet-arabic-2020-mentoring-center-participants"><Highlighter color="goldenGrass">IJNet Mentoring Center</Highlighter></Link>, supported by the National Endowment for Democracy over the past six years.
+							Media entrepreneurs in the Middle East and North Africa have improved the business prospects of their startups through our <Link href="https://ijnet.org/en/story/meet-our-ijnet-arabic-2020-mentoring-center-participants"><Highlighter color="goldenGrass">IJNet Mentoring Center</Highlighter></Link>, supported by the National Endowment for Democracy over the past six years.
 					</div>
 				</div>
 				<div css={css`margin-top:5rem`}>
 					<ImageQuery css={css`height: 510px`} filename='bigeye.jpg' />
+					<Credits>Credit: Rocío Urtecho</Credits>
 					<div css={css`
 							color: white;
 							font-family: interstate condensed;
@@ -638,11 +659,12 @@ export default function Home() {
 							padding-left: 2rem;
 							padding-right: 2rem;`
 						}>
-						Local newsrooms in Brazil increase their readers while participating in the <Highlighter color="curiousBlue"><Link href="https://www.facebook.com/journalismproject/programs/accelerator/brazilian-publishers-thriving">Local News Accelerator</Link></Highlighter> with ICFJ and the Facebook Journalism Project. It is one of many initiatives across the world between ICFJ and FJP helping newsrooms solve business challenges.
+							Local newsrooms in Brazil increase their readers while participating in the <Highlighter color="curiousBlue"><Link href="https://www.facebook.com/journalismproject/programs/accelerator/brazilian-publishers-thriving">Local News Accelerator</Link></Highlighter> with ICFJ and the Facebook Journalism Project. It is one of many initiatives across the world between ICFJ and FJP helping newsrooms solve business challenges.
 					</div>
 				</div>
 				<div css={css`margin-top:5rem`}>
 					<ImageQuery css={css`height: 510px`} filename='Pitazo.jpeg' />
+					<Credits>Credit: Ruth Lara Castillo/El Pitazo</Credits>
 					<div css={css`
 							color: white;
 							font-family: interstate condensed;
@@ -669,7 +691,7 @@ export default function Home() {
 		</Section>
 		<Section name="Leadership">
 			<TriggeredBgColor color='valencia' />
-			<TriggeredLottie css={css`opacity:0.5`} animation={animationCameras} loop={true} />
+			<TriggeredLottie css={css`opacity:0.5`} animation={animationAudio} loop={true} />
 			<Container>
 				<TriggeredPendantRight bp={breakpoints} color="goldenGrass">Thought Leadership</TriggeredPendantRight>
 				<div css={css`
@@ -746,6 +768,7 @@ export default function Home() {
 					</div>
 					<ImageQuery css={mq({height: ['200px','400px','510px']})} filename='Anna.jpeg' />
 				</div>
+				<Credits>Credit: Anna Cunningham</Credits>
 				<p css={css`color:white; font-style:italic;margin:3em`}><Highlighter color="mineShaft"> *Findings based on 714 responses from women journalists across 113 countries.
 			</Highlighter>
 			</p>
@@ -831,7 +854,7 @@ export default function Home() {
 		</Section>
 		<Section name="Financials">
 			<TriggeredBgColor color='curiousBlue' />
-			<TriggeredLottie css={css`opacity:0.5`} animation={animationCameras} loop={true} />
+			<TriggeredLottie css={css`opacity:0.5`} animation={animationTweet} loop={true} />
 			<Container>
 				<TriggeredPendantRight bp={breakpoints} color="boulder">Financials</TriggeredPendantRight>
 				<SmallSubheader css={css`color:white`}>We are careful stewards of our donors’ funds.</SmallSubheader>
@@ -866,11 +889,10 @@ export default function Home() {
 				</div>
 				 <Subheader css={mq({color:'white',fontSize:['1em','2em','3em']})}>ICFJ also has a platinum-level rating from GuideStar, the highest ranking given.</Subheader>
 			</Container>
-				<TriggeredBgColor color='curiousBlue' />
 		</Section>
 		<Section name="BoardMembers">
 			<TriggeredBgColor color='fruitSalad' />
-			<TriggeredLottie css={css`opacity:0.5`}animation={animationCameras} loop={true} />
+			//	<TriggeredLottie css={css`opacity:0.5`}animation={animationCameras} loop={true} />
 			<Container>
 				<TriggeredPendantLeft bp={breakpoints} color="goldenGrass">Board Members</TriggeredPendantLeft>
 				<div css={css`
@@ -880,19 +902,228 @@ export default function Home() {
 					color: white;
 				`}>
 					<div>
-						<Subheader>Board of Directors</Subheader>
+						<Subheader>Officers</Subheader>
 							<div css={css`
 								height: 10rem`
 								}/>
 					</div>
 					<div>
-						<Subheader>Advisory Board</Subheader>
+						<Subheader>Board of Directors</Subheader>
 							<div css={css`
 								height: 10rem`
 								}/>
 					</div>
 				</div>
-				<TriggeredPendantLeft bp={breakpoints} color="goldenGrass">Donors</TriggeredPendantLeft>
+				<div css={css`
+					display:grid;
+					grid-template-columns: repeat(1, 1fr);
+					margin-top: 5rem;
+					color: white;
+					font-family: interstate condensed;
+					font-size: 2em;
+					@media(min-width:${tablet}){
+						grid-template-columns: repeat(2, 1fr);
+					}
+				`}>
+					<ul css={css`
+							list-style: none;
+						`}>
+						<OrgPeople>MICHAEL GOLDEN</OrgPeople>
+						<OrgPeopleDesc>Chairman, ICFJ</OrgPeopleDesc>
+						<OrgPeopleDesc>Former Vice Chairman, The New York Times Company</OrgPeopleDesc>
+
+						<OrgPeople>JAMES F. HOGE JR.</OrgPeople>
+						<OrgPeopleDesc>Vice Chair, ICFJ</OrgPeopleDesc>
+						<OrgPeopleDesc>Senior Advisor, Teneo Intelligence</OrgPeopleDesc>
+
+						<OrgPeople>PAMELA HOWARD</OrgPeople>
+						<OrgPeopleDesc>Vice Chair, ICFJ</OrgPeopleDesc>
+						<OrgPeopleDesc>Trustee, Scripps Howard Foundation</OrgPeopleDesc>
+
+						<OrgPeople>MATTHEW WINKLER</OrgPeople>
+						<OrgPeopleDesc>Vice Chair, ICFJ</OrgPeopleDesc>
+						<OrgPeopleDesc>Editor-in-Chief Emeritus, Bloomberg News</OrgPeopleDesc>
+
+						<OrgPeople>JOHN MAXWELL HAMILTON</OrgPeople>
+						<OrgPeopleDesc>Treasurer, ICFJ</OrgPeopleDesc>
+						<OrgPeopleDesc>Professor of Journalism and Founding Dean, Manship School of Mass Communication, Louisiana State University</OrgPeopleDesc>
+
+						<OrgPeople>JASON WRIGHT</OrgPeople>
+						<OrgPeopleDesc>Development Chair, ICFJ</OrgPeopleDesc>
+						<OrgPeopleDesc>Principal, Geer Mountain Holdings LLC</OrgPeopleDesc>
+
+						<OrgPeople>MARCY MCGINNIS</OrgPeople>
+						<OrgPeopleDesc>Nominating Chair, ICFJ</OrgPeopleDesc>
+						<OrgPeopleDesc>Journalist</OrgPeopleDesc>
+
+						<OrgPeople>WENDELL REILLY</OrgPeople>
+						<OrgPeopleDesc>Chair, Audit Committee, ICFJ</OrgPeopleDesc>
+						<OrgPeopleDesc>Chairman, Berman Capital Advisors</OrgPeopleDesc>
+
+						<OrgPeople>JOYCE BARNATHAN</OrgPeople>
+						<OrgPeopleDesc>President, ICFJ</OrgPeopleDesc>
+			</ul>
+					<ul css={css`
+							list-style: none;
+						`}>
+						<OrgPeople>MARK BAILEN</OrgPeople>
+						<OrgPeopleDesc>Partner, BakerHostetler LLP</OrgPeopleDesc>
+
+						<OrgPeople>CARRIE BUDOFF BROWN</OrgPeople>
+						<OrgPeopleDesc>Editor, Politico</OrgPeopleDesc>
+
+						<OrgPeople>DAVID CALLAWAY</OrgPeople>
+						<OrgPeopleDesc>Founder, Editor, Callaway Climate Insights</OrgPeopleDesc>
+
+						<OrgPeople>AHMED CHARAI</OrgPeople>
+						<OrgPeopleDesc>Chairman and CEO, Global Media Holding</OrgPeopleDesc>
+
+						<OrgPeople>DAVID ELLIOT COHEN</OrgPeople>
+						<OrgPeopleDesc>Author and Publisher</OrgPeopleDesc>
+
+						<OrgPeople>JOHN DANISZEWSKI</OrgPeople>
+						<OrgPeopleDesc>Vice President and Editor at Large for Standards, Associated Press</OrgPeopleDesc>
+
+						<OrgPeople>RICHARD GINGRAS</OrgPeople>
+						<OrgPeopleDesc>Vice President, News, Google</OrgPeopleDesc>
+
+						<OrgPeople>MICHAEL GREENSPON</OrgPeople>
+						<OrgPeopleDesc>Global Head, Licensing and Print Innovation, The New York Times</OrgPeopleDesc>
+
+						<OrgPeople>JOHN HEILEMANN</OrgPeople>
+						<OrgPeopleDesc>Co-host, creator, and executive producer of Showtime's The Circus; National Affairs Analyst, MSNBC and NBC News; Co-founder and Editor-in-Chief, The Recount</OrgPeopleDesc>
+
+						<OrgPeople>ALEX S. JONES</OrgPeople>
+						<OrgPeopleDesc>Journalist, former director of the Shorenstein Center on Media, Politics and Public Policy at Harvard's John F. Kennedy School of Government</OrgPeopleDesc>
+
+						<OrgPeople>ANNE KORNBLUT</OrgPeople>
+						<OrgPeopleDesc>Global Head of Curation, Facebook</OrgPeopleDesc>
+
+						<OrgPeople>ISAAC LEE</OrgPeople>
+						<OrgPeopleDesc>Founder, Exile Content</OrgPeopleDesc>
+
+						<OrgPeople>JOANNE LEEDOM-ACKERMAN</OrgPeople>
+						<OrgPeopleDesc>Novelist and Journalist</OrgPeopleDesc>
+
+						<OrgPeople>MARCI MCCUE</OrgPeople>
+						<OrgPeopleDesc>Founding Team Member and Head of Marketing, Flipboard</OrgPeopleDesc>
+
+						<OrgPeople>RODMAN MOORHEAD</OrgPeople>
+						<OrgPeopleDesc>Former General Partner and Managing Director, Warburg Pincus & Co.</OrgPeopleDesc>
+
+						<OrgPeople>ROB REHG</OrgPeople>
+						<OrgPeopleDesc>Vice Chair, Global Client Strategy, Edelman</OrgPeopleDesc>
+
+						<OrgPeople>MARY ANN STERNBERG</OrgPeople>
+						<OrgPeopleDesc>Freelance Writer and Author</OrgPeopleDesc>
+
+						<OrgPeople>JOHN TOWRISS</OrgPeople>
+						<OrgPeopleDesc>Principal, Envoy Strategy Group</OrgPeopleDesc>
+						</ul>
+				</div>
+				</Container>
+				</Section>
+
+				<Section name="AdvisoryBoard">
+				 /* this section does not display */
+					<TriggeredBgColor color='fruitSalad' />
+					<Container>
+						<TriggeredPendantLeft bp={breakpoints} color="goldenGrass">Advisory Board</TriggeredPendantLeft>
+						<div css={css`
+							display:grid;
+							grid-template-columns: repeat(2, 1fr);
+							margin-top: 5rem;
+							color: white;
+						`}>
+							<div>
+								<Subheader>Officers</Subheader>
+									<div css={css`
+										height: 10rem`
+										}/>
+							</div>
+							<div>
+								<Subheader>Board of Directors</Subheader>
+									<div css={css`
+										height: 10rem`
+										}/>
+							</div>
+						</div>
+						<div css={css`
+							display:grid;
+							grid-template-columns: repeat(1, 1fr);
+							margin-top: 5rem;
+							color: white;
+							font-family: interstate condensed;
+							font-size: 2em;
+							@media(min-width:${tablet}){
+								grid-template-columns: repeat(2, 1fr);
+							}
+						`}>
+							<ul css={css`
+									list-style: none;
+								`}>
+								<OrgPeople>FRANK BENNACK</OrgPeople>
+								<OrgPeopleDesc>Executive Vice Chairman, Hearst</OrgPeopleDesc>
+
+								<OrgPeople>LAURETTA BRUNO</OrgPeople>
+								<OrgPeopleDesc>President, Gramercy Partners LLC</OrgPeopleDesc>
+
+								<OrgPeople>ANDY BURNESS</OrgPeople>
+								<OrgPeopleDesc>President, Burness Communications</OrgPeopleDesc>
+
+								<OrgPeople>PAUL COHEN</OrgPeople>
+								<OrgPeopleDesc>Partner, Senior Vice President, Ketchum</OrgPeopleDesc>
+
+								<OrgPeople>FRANK COMES</OrgPeople>
+								<OrgPeopleDesc>Editor, McKinsey Quarterly, McKinsey & Co. Inc.</OrgPeopleDesc>
+
+								<OrgPeople>PETER COPELAND</OrgPeople>
+								<OrgPeopleDesc>Writer, Editor and Media Consultant</OrgPeopleDesc>
+
+								<OrgPeople>THOMAS EWING</OrgPeople>
+								<OrgPeopleDesc>Principal, Ewing Controls</OrgPeopleDesc>
+
+								<OrgPeople>CRAIG FORMAN</OrgPeople>
+								<OrgPeopleDesc>President and Chief Executive Officer, McClatchy</OrgPeopleDesc>
+
+								<OrgPeople>SUSAN FRIEDMAN</OrgPeople>
+								<OrgPeopleDesc>Former NBC News Producer; Former Knight Fellow</OrgPeopleDesc>
+
+								<OrgPeople>BOBBY GHOSH</OrgPeople>
+								<OrgPeopleDesc>Columnist, Bloomberg News</OrgPeopleDesc>
+
+								<OrgPeople>PETER OSNOS</OrgPeople>
+								<OrgPeopleDesc>Founder and Editor-at-Large, PublicAffairs</OrgPeopleDesc>
+
+								<OrgPeople>CAROL PASMORE</OrgPeople>
+								<OrgPeopleDesc>Vice President, Cognizant Technology Solutions</OrgPeopleDesc>
+
+								<OrgPeople>GARY PRUITT</OrgPeople>
+								<OrgPeopleDesc>President and CEO, Associated Press</OrgPeopleDesc>
+
+								<OrgPeople>JAMES ROUSMANIERE</OrgPeople>
+								<OrgPeopleDesc>Former Editor and President, Keene Sentinel</OrgPeopleDesc>
+
+								<OrgPeople>JANE SASSEEN</OrgPeople>
+								<OrgPeopleDesc>Executive Director, McGraw Center for Business Journalism, CUNY Graduate School of Journalism</OrgPeopleDesc>
+
+								<OrgPeople>SUSAN TALALAY</OrgPeople>
+								<OrgPeopleDesc>Former Director, Knight International Journalism Fellowships</OrgPeopleDesc>
+
+								<OrgPeople>EDUARDO ULIBARRI</OrgPeople>
+								<OrgPeopleDesc>Permanent Representative of Costa Rica to the United Nations</OrgPeopleDesc>
+
+								<OrgPeople>AMY WEBB</OrgPeople>
+								<OrgPeopleDesc>CEO, Webbmedia Group</OrgPeopleDesc>
+
+								<OrgPeople>MARGARET WINSHIP</OrgPeople>
+								<OrgPeopleDesc>ICFJ Founders Family</OrgPeopleDesc>
+								</ul>
+					</div>
+		</Container>
+		</Section>
+
+		<TriggeredPendantLeft bp={breakpoints} color="goldenGrass">Donors</TriggeredPendantLeft>
 				<div css={css`
 					display:grid;
 					grid-template-columns: repeat(1, 1fr);
@@ -1078,7 +1309,7 @@ export default function Home() {
 			fontFamily: 'ubuntu',
 			fontSize: '2.5em'
 		})} > ICFJ.org </div>
-		</ThemeProvider>
+		/*</ThemeProvider>  I commmented this line out b/c of messing up nesting somewhere */
 		</div>
 	)
 }
