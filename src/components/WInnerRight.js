@@ -10,7 +10,6 @@ const Card = styled.div`
 	width: 100%;
 	display: flex;
 	flex-direction: column-reverse;
-	background: white;
 	overflow: hidden;
 	padding-bottom: 2rem;
 	@media(min-width:${tablet}){
@@ -65,7 +64,9 @@ const Headshot = styled.div`
 const Info = styled.div`
 	
 `
-
+const Image = styled(ImageQuery)`
+	height: 100%
+`
 
 	return(<Card>
 			<Info>
@@ -74,7 +75,7 @@ const Info = styled.div`
 				<Title>{props.title}</Title>
 				<Bio>{props.bio}</Bio>
 			</Info>
-			<Headshot><ImageQuery filename={props.image} /></Headshot>
+			<Headshot><Image filename={props.image} /></Headshot>
 
 		</Card>)
 }

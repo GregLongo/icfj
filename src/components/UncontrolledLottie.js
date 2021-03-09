@@ -9,7 +9,7 @@ class UncontrolledLottie extends Component {
     return(
       <div className={this.props.className}>
         <Lottie 
-        speed={.3}
+        speed={.7}
         play={true}
         loop={true}
         animationData={this.props.animation}

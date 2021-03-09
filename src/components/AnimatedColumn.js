@@ -58,7 +58,8 @@ class AnimatedColumn extends Component{
 		scrollTrigger:{
 				trigger:this.ref.current,
 				start: "top center",
-				toggleActions:"play complete none reverse"
+				toggleActions:"play complete none reverse",
+				markers: false
 			}
 		})
 	}

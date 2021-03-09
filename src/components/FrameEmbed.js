@@ -2,6 +2,12 @@ import {React, useRef, useEffect } from "react"
 import styled from "@emotion/styled"
 import { gsap } from "gsap" 
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faAngleDown,
+} from '@fortawesome/free-solid-svg-icons'
+
+
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -38,11 +44,12 @@ export default function FrameEmbed(props){
 		`
 		const buttonColor = props.buttonColor;
 		const Button = styled.button`
-			height: 64px;
-			width: 64px;
+			height: 48px;
+			width: 48px;
 			display: inline;
 			background: ${props=>props.theme.colors[buttonColor]};
 			border: none;
+			color: white;
 		`
 		const ref = useRef();
 
@@ -61,7 +68,12 @@ export default function FrameEmbed(props){
 
 	return(
 		<FrameContainer ref={ref} className={props.className}>
-			<Caption><Button /><Text>{props.caption}</Text></Caption>
+			<Caption>
+				<Button>
+				<FontAwesomeIcon icon={faAngleDown} size="1x" />
+			</Button>
+				<Text>{props.caption}</Text>
+			</Caption>
 			<Frame>
 				{props.children}
 			</Frame>

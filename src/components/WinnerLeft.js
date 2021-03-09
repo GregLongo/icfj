@@ -12,7 +12,6 @@ const Card = styled.div`
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	background: white;
 	overflow: hidden;
 	padding-bottom: 2rem;
 	@media(min-width:${tablet}){
@@ -61,12 +60,15 @@ const Headshot = styled.div`
 	clip-path:polygon(0% 0%, 100% 0%, 65% 100%, 0% 100%);
 
 `
+const Image = styled(ImageQuery)`
+	height: 100%
+`
 const Info = styled.div`
 	
 `
 
 	return(<Card>
-			<Headshot><ImageQuery filename={props.image} /></Headshot>
+			<Headshot><Image filename={props.image} /></Headshot>
 			<Info>
 				<Award>{props.award}</Award>
 				<Name>{props.name}</Name>

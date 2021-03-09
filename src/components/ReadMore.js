@@ -7,33 +7,44 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 
-const Button = styled.button`
-  background: tomato;
-  color: white;
-  float:right;
-  border: none;
-  width: 80px;
-  outline: none;
-    &:hover{
-      background: transparent;
-      outline: 6px solid tomato;
-      cursor: pointer;
-      color: tomato;
-    }
-    &:active{
-      background: tomato
-    }
-`
+
 function ReadMore(props) {
   const [readMore,setReadMore]=useState(false);
   const extraContent= props.children
-  const linkName=readMore?<FontAwesomeIcon icon={faAngleUp} size="1x" />
-                          :<FontAwesomeIcon icon={faAngleDown} size="1x" />
+  const linkName=readMore? <span>Read Less    <FontAwesomeIcon icon={faAngleUp} size="1x" /></span>
+                          :<span>Read More    <FontAwesomeIcon icon={faAngleDown} size="1x" /></span>
+    const Button = styled.button`
+    position: relative;
+      background: tomato;
+      color: white;
+      float:right;
+      border: none;
+      position: relative;
+      transform: translateY(${readMore ? '400px' : ''});
+      transition: transform 3s;
+      display: flex;
+      flex-direction: row;
+      outline: none;
+        &:hover{
+          background: transparent;
+          outline: 6px solid tomato;
+          cursor: pointer;
+          color: tomato;
+        }
+        &:active{
+          background: tomato
+        }
+    `
+
+    const Container = styled.div`
+      margin-bottom: 15rem;  
+    `
+
   return (
-    <div className={props.className}>
-      <Button onClick={()=>{setReadMore(!readMore)}}><h2>{linkName}</h2></Button>
+    <Container className={props.className}>
+      <Button onClick={()=>{setReadMore(!readMore)}}><h2> {linkName}</h2></Button>
       {readMore && extraContent}
-    </div>
+    </Container>
   );
 }
 
