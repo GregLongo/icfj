@@ -1,8 +1,7 @@
 import React, { Component } from "react"
-import styled from "@emotion/styled"
 import { gsap } from "gsap" 
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import {keyframes } from '@emotion/react'
+import {keyframes, css} from '@emotion/react'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -16,22 +15,22 @@ class TextPop extends Component{
 		this.ref = React.createRef();
 	}
 
-
-	popUp = () => {this.setState({pop:true})}
-	fallDown = () => {this.setState({pop:false})}
-
+	createTriggers(){
+			ScrollTrigger.create({
+			trigger: this.ref.current,		
+			start: "top, center",
+			end: 0,
+			onEnter: () => {this.setState({pop:true})},
+			onLeave: () => {this.setState({pop:false})},
+			markers: true
+		})	
+	}
 	 componentDidMount(){
-		ScrollTrigger.create({
-			trigger: this.ref.current,
-			start: 'top center',			
-			onEnter: this.popUp,
-			onLeave: this.fallDown,
-			markers: false
-		})
+		this.createTriggers();
 	  }
 
 	render(){
-
+		ScrollTrigger.refresh()
 		const color = this.props.color
 
 		const  popAnim = keyframes`
@@ -51,7 +50,7 @@ class TextPop extends Component{
 			}
 		`
 
-		const Pop = styled.span`
+		const pop = css`
 			display: inline-block;
 			color: ${color};
      		animation: ${this.state.pop ? popAnim : ''} 1.2s ease ;
@@ -63,7 +62,7 @@ class TextPop extends Component{
      		}
 			`
 
-	return <Pop ref={this.ref}>{this.props.children}</Pop>
+	return <span css={css`${pop}`} ref={this.ref}>{this.props.children}</span>
 	}
 }
 
