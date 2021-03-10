@@ -272,7 +272,7 @@ export default function Home() {
 						 css={css`
 						margin-top:15rem;
 						width: 100%;
-						max-height: 600px;
+						height: 600px;
 						overflow: hidden;
 						`}  >
 						<iframe title='vidtwo' width='100%' height='570px' src="https://www.youtube.com/embed/f1SBTk3CXhI" frameBorder="0" allowFullScreen></iframe>
@@ -282,7 +282,7 @@ export default function Home() {
 						 css={css`
 						margin-top:15rem;
 						width: 100%;
-						max-height: 765px;
+						height: 765px;
 						overflow: hidden;
 						`}  >
 						<iframe title="mosaic" width='100%' height='765px' src="https://icfjmosaic.com" frameBorder="0" margin="0" padding="0" scrolling="no" allowFullScreen="" ></iframe>
@@ -467,7 +467,7 @@ export default function Home() {
 								margin-top: 5rem;
 							}
 						`}>
-						Peru-based <span css={theme=>({color:theme.colors.goldenGrass})}>ICFJ Knight Fellow Fabiola Torres</span> created Salud con Lupa, a health news outlet that is uncovering corruption during COVID-19. They exposed inflated prices for face shields, environmental violations by corporations and wasted protective gear spending,prompting government action.
+						Peru-based <TextPop color="#DDAF24">ICFJ Knight Fellow Fabiola Torres</TextPop> created Salud con Lupa, a health news outlet that is uncovering corruption during COVID-19. They exposed inflated prices for face shields, environmental violations by corporations and wasted protective gear spending,prompting government action.
 					</ParagraphSlant>
 				</div>
 				<ImageQuery filename='bigeye.jpg' />
