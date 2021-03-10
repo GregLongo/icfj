@@ -20,7 +20,8 @@ export default function Highlighter(props){
 			duration: .6,
 			scrollTrigger:{
 				trigger:ref.current,
-				start: "top 75%",
+				start: 'top center',
+				end: 0,
 				toggleActions:"play complete reverse reset"	,
 				markers:false		
 			}

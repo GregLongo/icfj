@@ -285,7 +285,7 @@ export default function Home() {
 						max-height: 765px;
 						overflow: hidden;
 						`}  >
-						<div id=“mosaics”></div><script src=“https://cdn.picturemosaics.com/client/iframe/js/pageEmbed.VID2.js”></script><script>var pmFrame = new Pmframe({element: “mosaics”, page: ‘https://icfjmosaic.com’, minWidth: ‘300’, pmBrand: 1});pmFrame.init();</script>
+						<iframe title="mosaic" width='100%' height='765px' src="https://icfjmosaic.com" frameBorder="0" margin="0" padding="0" scrolling="no" allowFullScreen="" ></iframe>
 					</FrameEmbed>
 					<Quote bp={breakpoints} css={mq({
 						height: ['40rem'],
