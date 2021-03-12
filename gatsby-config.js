@@ -8,7 +8,7 @@ const path = require(`path`)
 
 module.exports = {
   /* Your site config here */
-  // pathPrefix: `/icfj`,
+  pathPrefix: `/icfj`,
   plugins: [{
   	 resolve: 'gatsby-plugin-emotion'
   	 },
@@ -24,6 +24,14 @@ module.exports = {
       options: {
         path: `${__dirname}/src/images/`,
         name: 'images'
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+          typekit: {
+            id: 'jlv7xwm'
+          }
       }
     },
     `gatsby-plugin-sharp`,

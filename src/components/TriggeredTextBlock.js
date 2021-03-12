@@ -10,11 +10,10 @@ export default function TriggeredTextBlock(props){
 		useEffect(()=>{
 			gsap.from(ref.current,{
 					opacity: 0,
-					duration: 1,
+					duration: .7,
 					scrollTrigger:{
 						trigger:ref.current,
-						start: 'top center',
-						end: 0,
+						start: 'top 75%',
 						toggleActions:"play complete reverse reset",
 						markers: false
 						}

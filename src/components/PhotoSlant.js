@@ -9,7 +9,7 @@ export default function PhotoSlant(props){
 	const Photo = styled.div`
 		height: 300px;
 		width:  300px;
-		clip-path:${props.right ? 'polygon(35% 0%, 100% 0%, 65% 100%, 0% 100%)': 
+		clip-path:${props.right ? 'polygon(35% 0%, 100% 0%, 100% 100%, 0% 100%)': 
 									'polygon(0 0%, 100% 0%, 65% 100%, 0% 100%)' 
 								};
 		@media(min-width: ${tablet}){

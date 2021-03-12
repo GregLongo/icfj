@@ -20,11 +20,11 @@ export default function ParagraphSlant(props){
 		  	float: left !important;
 		 	shape-outside: polygon(100% 0%, 15% 100%, 0% 100%);
 			width: 220px;
-		 	height: 70vh;
+		 	height: 90vh;
 		 	@media(min-width: ${tablet}){
 			 	shape-outside: polygon(100% 0%, 25% 100%, 0% 100%);
 				width: 400px;
-		 		height: 120vh;	 		
+		 		height: 90vh;	 		
 		 	}
 		}
 		`

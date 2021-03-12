@@ -34,7 +34,7 @@ import TriggeredBgColor from "../components/TriggeredBgColor.js"
 import TriggeredLottie from "../components/TriggeredLottie.js"
 
 //Animations
-import animationMasthead from "../lotties/masthead.json"
+import animationMasthead from "../lotties/mastheadnu.json"
 import animationCameras from "../lotties/cameras.json"
 import animationPenPaper from "../lotties/penpaper.json"
 import animationAudio from "../lotties/audio.json"
@@ -45,8 +45,8 @@ import animationSouthAmerica from "../lotties/southamerica.json"
 import animationPie from "../lotties/piechart.json"
 
 //svg
-import Platinum from "../images/platinum.svg"
-import Signature from "../images/jsignature.svg"
+import Platinum from "../svg/platinum.svg"
+import Signature from "../svg/jsignature.svg"
 
 //patterns
 
@@ -214,7 +214,11 @@ export default function Home() {
 					}
 					`}>
 					<PhotoSlant bp={breakpoints} css={css`transform:translatex(-35%)`} src="Joyce.jpg" />
-					<ParagraphSlant bp={breakpoints} css={css`margin-bottom: -15rem`}>
+					<ParagraphSlant bp={breakpoints} css={css`
+						margin-bottom: 5rem;			
+						@media(min-width:${tablet}){
+							margin-bottom: -15rem}`
+						}>
 						<p css={css`margin-top:-.5rem`}>
 						Over 36 years, ICFJ has provided more than <TextPop>150,000 journalists</TextPop> from <TextPop>180 countries</TextPop> with <TextPop>valuable programs and resources</TextPop>. But we’ve never had a year like 2020.
 						</p>
@@ -224,7 +228,10 @@ export default function Home() {
 						<p>
 						We at ICFJ are doing our best to help journalists better cover the story of the century. At the onset of COVID-19, we galvanized quickly to help them gain access to top epidemiologists and health practitioners, to the world’s best trainers in digital journalism techniques, to disinformation and media sustainability experts. As you’ll see below, tens of thousands of journalists are benefiting from that effort.
 						</p>
-						<ReadMore>
+						</ParagraphSlant>
+
+				</div>
+						<ReadMore bp={breakpoints}>
 							<p>
 							In other ICFJ programs, investigative journalists in our networks are collaborating to uncover corruption by those seeking to get rich from the pandemic. Pioneers in media innovation are creating new data and social media tools to help journalists tell the stories of COVID-19 better. And sustainability experts are helping news outlets improve the bottom line in a time when economic and political forces threaten to shut down independent voices.
 							</p>
@@ -236,8 +243,6 @@ export default function Home() {
 							</p>
 							<Signature />
 						</ReadMore>
-					</ParagraphSlant>
-				</div>
 			</Container>
 			<TriggeredBgColor color='goldenGrass' />
 		</Section>
@@ -288,7 +293,7 @@ export default function Home() {
 						<iframe title="mosaic" width='100%' height='765px' src="https://icfjmosaic.com" frameBorder="0" margin="0" padding="0" scrolling="no" allowFullScreen="" ></iframe>
 					</FrameEmbed>
 					<Quote bp={breakpoints} css={mq({
-						height: ['40rem'],
+						height: ['20rem','25rem','25rem','40rem'],
 						display:'flex',
 						alignItems: 'center',
 						width: 'fit-content',
@@ -315,6 +320,7 @@ export default function Home() {
 						font-size: 1.25em;
 						line-height: 2;
 						text-align: right;
+						margin-top: 2rem;
 						@media(min-width:${mobile}){
 							font-size: 1.7em;
 						}
@@ -327,7 +333,6 @@ export default function Home() {
 						margin-top:15rem;
 						width: 100%;
 						max-height: 600px;
-						overflow: hidden;
 						`}  >
 					<iframe title='vidfour' width='100%' height='570px' src="https://www.youtube.com/embed/UoshtxBZhGs" frameBorder="0" allowFullScreen></iframe>
 				</FrameEmbed>
@@ -407,7 +412,6 @@ export default function Home() {
 					<ImageQuery filename='ijnet.png' />
 				</div>
 			</Container>
-		<LanguageTicker css={css`margin-top:15rem;margin-bottom:15rem`}><img alt='' src={Languages} /></LanguageTicker>
 				<Container css={css`
 					margin-bottom:15rem;
 					display:grid;
@@ -426,18 +430,20 @@ export default function Home() {
 					}
 					`}>
 					<div>
-						<TriggeredCounter css={theme=>({color:theme.colors.white})} val={8} />
+						<TriggeredCounter css={theme=>({color:theme.colors.white})} val={"8"} />
 						<span>Languages</span>
 					</div>
 					<div>
-						<TriggeredCounter css={theme=>({color:theme.colors.curiousBlue})} val={1725} />
+						<TriggeredCounter css={theme=>({color:theme.colors.curiousBlue})} val={"1725"} />
 						<span>Resources</span>
 					</div>
 					<div>
-						<TriggeredCounter css={theme=>({color:theme.colors.fruitSalad})}val={182000} />
+						<TriggeredCounter css={theme=>({color:theme.colors.fruitSalad})}val={"182000"} />
 						<span>Average Monthly Visitors</span>
 					</div>
+
 				</Container>
+				<LanguageTicker css={css`margin-top:15rem;margin-bottom:15rem`}><img alt='' src={Languages} /></LanguageTicker>
 				<TriggeredBgColor color='boulder' />
 		</Section>
 		<Section id="Networks" name="Networks">
@@ -454,11 +460,10 @@ export default function Home() {
 				<div css={css`
 					display: grid;
 					grid-template-columns: 5% 95%;
-					margin-top: 5rem;
+					margin-top: 10rem;
 					margin-bottom:0;
-					@media(min-width:${tablet}){
-						margin-top: 10rem;
-					 	margin-bottom: -25vh;
+					@media(min-width:${tablet})
+						margin-top: -25rem;
 					}
 				`}>
 					<PhotoSlant  bp={breakpoints} css={css`transform:translatex(-35%)`}src="Fabiola.jpg" />
@@ -496,7 +501,7 @@ export default function Home() {
 					</div>
 				</div>
 				<Quote bp={breakpoints} css={mq({
-					height: ['40rem'],
+					height: ['20rem','25rem','25rem','40rem'],
 					display:'flex',
 					alignItems: 'center',
 					width: 'fit-content',
@@ -580,10 +585,7 @@ export default function Home() {
 				<div>
 				<PhotoSlant right bp={breakpoints} css={css`
 						z-index: 1
-						transform:translatex(15%);
-						@media(min-width${tablet}){
-							transform:translatex(35%);
-						}
+
 					 `}
 					 src="Catherine.jpg" />
 					<TriggeredLottie
@@ -628,7 +630,7 @@ export default function Home() {
 					textAlign: 'left',
 					paddingTop:['1em','2em','4em']})
 				}>
-						Journalists can more quickly find expert sources of scientific information thanks to <Link href="https://urldefense.com/v3/__https:/sciencepulse.org/about__;!!Ie25XFjv7UPO!4QFkJUrcVekppLkvEruzM2TiStyjctG8zz8IV7SGT2ah_DeDeH2DmfhbEiCV$">Science Pulse</Link>, a free tool created by a <span css={theme=>({color:theme.colors.sanMarino})}>ICFJ Knight Fellow ergio Spagnuolo </span>that features the latest updates from more than 1,600 verified scientists and scientific organizations tweeting in English, Portuguese and Spanish.
+						Journalists can more quickly find expert sources of scientific information thanks to <Link href="https://urldefense.com/v3/__https:/sciencepulse.org/about__;!!Ie25XFjv7UPO!4QFkJUrcVekppLkvEruzM2TiStyjctG8zz8IV7SGT2ah_DeDeH2DmfhbEiCV$">Science Pulse</Link>, a free tool created by a <span css={theme=>({color:theme.colors.sanMarino})}>ICFJ Knight Fellow Sergio Spagnuolo </span>that features the latest updates from more than 1,600 verified scientists and scientific organizations tweeting in English, Portuguese and Spanish.
 				</TriggeredTextBlock>
 				</div>
 			</Container>
@@ -649,6 +651,7 @@ export default function Home() {
 						font-family: interstate condensed;
 						font-size: 1.25em;
 						line-height: 2;
+						margin-top: 2rem;
 						@media(min-width:${mobile}){
 							font-size: 1.7em;
 						}
@@ -828,6 +831,7 @@ export default function Home() {
 						margin-top:4rem;
 						width: 100%;
 						background:black !important;
+						padding-bottom:-20px;
 						`}  >
 						<iframe title='vidone' width='100%' height='570px' src="https://www.youtube.com/embed/jIialLILHq8" frameBorder="0" allowFullScreen></iframe>
 
@@ -882,8 +886,8 @@ export default function Home() {
 			<Container>
 				<TriggeredPendantRight bp={breakpoints} color="boulder">Financials</TriggeredPendantRight>
 				<SmallSubheader css={css`color:white`}>We are careful stewards of our donors’ funds.</SmallSubheader>
-				<Subheader css={css`color:white;margin-top: 10rem;`}>Total Reveue for 2020: $19.9 million</Subheader>
-				<Subheader css={css`color:white`}>2020 Expense Breakdown:</Subheader>
+				<Subheader css={css`color:white;margin-top: 10rem;`}>Total Reveue for 2019: $19.9 million</Subheader>
+				<Subheader css={css`color:white`}>2019 Expense Breakdown:</Subheader>
 				<TriggeredLottie
 					css={css`
 					width: 80%;
@@ -900,7 +904,11 @@ export default function Home() {
 					margin-top: 10rem;
 					margin-bottom: 10rem;
 				`} />
+				<div css={{textAlign:'center'}} >
+				<Subheader css={mq({color:'white', fontWeight:'bold', fontSize:['2em','3em','5em']})}>95.36<sup>%</sup></Subheader>
+				<Subheader css={mq({color:'white', fontWeight:'bold', fontSize:['1.2em','2.2em','3.2em']})}>Charity Navigator Ranking</Subheader>
 				 <Subheader css={mq({color:'white',fontSize:['1em','2em','3em']})}>ICFJ’s four-star track record with Charity Navigator places us among the top 2 percent of nonprofits evaluated.</Subheader>
+				</div>
 				<div css={css`
 					display: flex;
 					justify-content: center;
@@ -911,7 +919,11 @@ export default function Home() {
 					margin-bottom: 10rem;
 				`}/>
 				</div>
-				 <Subheader css={mq({color:'white',fontSize:['1em','2em','3em']})}>ICFJ also has a platinum-level rating from GuideStar, the highest ranking given.</Subheader>
+				<div css={{textAlign:'center'}} >
+				<Subheader css={mq({color:'white', fontWeight:'bold', fontSize:['2em','3em','5em']})}>Platinum</Subheader>
+				<Subheader css={mq({color:'white', fontWeight:'bold', fontSize:['1.2em','2.2em','3.2em']})}>Guidestar Rating</Subheader>
+				<Subheader css={mq({color:'white',fontSize:['1em','2em','3em']})}>ICFJ also has a platinum-level rating from GuideStar, the highest ranking given.</Subheader>
+				</div>
 			</Container>
 		</Section>
 		<Section id="Board" name="BoardMembers">

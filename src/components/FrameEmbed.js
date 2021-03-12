@@ -16,7 +16,7 @@ export default function FrameEmbed(props){
 		const mobile = props.bp[1];
 
 		const FrameContainer =styled.div`
-
+			overflow: visible;
 		`
 		const Frame =styled.div`
 			position: relative;
@@ -31,12 +31,14 @@ export default function FrameEmbed(props){
 		`
 		const Caption =styled.div`
 			width: 100%;
+			white-space: nowrap;
 		`
 		const Text =styled.div`
 			display: inline;
 			color: white;
 			font-family: Interstate Condensed;
 			margin: 1em;
+			margin-right: 0;
 			font-size: 1em;
 			@media(min-width: ${mobile}){
 				font-size: 1.5em;

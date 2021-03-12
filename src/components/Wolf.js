@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import ImageQuery from "../components/ImageQuery.js"
-import Icon from "../images/quote.svg"
+import Icon from "../svg/quote.svg"
 import facepaint from 'facepaint'
 
 

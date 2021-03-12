@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
-import Logo from "../images/logo-md.svg"
+import Logo from "../svg/logo-md.svg"
 import MenuSlant from "../components/MenuSlant.js"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
