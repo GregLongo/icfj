@@ -13,9 +13,8 @@ class TriggeredCounter extends Component{
 		}
 		this.ref = React.createRef();
 	}
-	componentDidMount(){
-
-		const target = {
+	countNumbers(){
+				const target = {
 	    	  value: this.state.value
 	   	};
 		gsap.to(target,{
@@ -26,16 +25,18 @@ class TriggeredCounter extends Component{
 				this.setState({value:target.value.toLocaleString()})
 			},
 			scrollTrigger:{
-				trigger:this.ref.current,
 				start: "top center",
-				end: "top, top",
-				toggleActions:"play none none reset",
-				markers:false,
+				trigger:this.ref.current,
+				toggleActions:"play complete reset reset",
+				markers:true,
 			},
 		})
 	}
+	componentDidMount(){
+		this.countNumbers()
+	}
+
 	render(){
-		
 		const Counter = styled.div`
 		font-size: 160px;
 		`

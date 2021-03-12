@@ -1,6 +1,6 @@
 import {React, useRef, useEffect } from "react"
 import styled from "@emotion/styled"
-import Icon from "../images/quote.svg"
+import Icon from "../svg/quote.svg"
 import { gsap } from "gsap" 
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import facepaint from 'facepaint'
@@ -15,11 +15,9 @@ export default function Quote(props){
 	
 	const Text = styled.div`
 		font-family: interstate;
-		font-weight: bold;
 		padding-left: 4rem;
 		z-index: 2;
 		color: ${props.light ? 'white' : ''};
-		font-style: italic;
 		${mq({
 			fontSize: ['1em', '1.5em', '2em', '2.5em']		
 		})}
@@ -43,7 +41,7 @@ export default function Quote(props){
 					y: '4rem',
 					scrollTrigger:{
 						trigger:ref.current,
-						start: "top center",
+						start: "top 75%",
 						end: "top top",
 						toggleActions:"play complete reverse reset",
 						markers: false

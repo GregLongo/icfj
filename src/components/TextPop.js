@@ -18,11 +18,11 @@ class TextPop extends Component{
 	createTriggers(){
 			ScrollTrigger.create({
 			trigger: this.ref.current,		
-			start: "top, center",
+			start: "top 75%",
 			end: 0,
 			onEnter: () => {this.setState({pop:true})},
 			onLeave: () => {this.setState({pop:false})},
-			markers: true
+			markers: false
 		})	
 	}
 	 componentDidMount(){
@@ -30,7 +30,6 @@ class TextPop extends Component{
 	  }
 
 	render(){
-		ScrollTrigger.refresh()
 		const color = this.props.color
 
 		const  popAnim = keyframes`

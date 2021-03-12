@@ -26,11 +26,11 @@ const Award = styled.div`
 	color: white;
 	font-family: interstate condensed;
 	font-size: 1.5em;
-	padding-left: 6rem;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 	margin-left: -5rem;
 	margin-right: -1rem;
+	text-align: center;
 `
 
 const Name = styled.div`

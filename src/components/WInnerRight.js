@@ -28,7 +28,7 @@ const Award = styled.div`
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 	width: 120%;
-	text-align: right;
+	text-align: center;
 `
 
 const Name = styled.div`
