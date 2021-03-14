@@ -1309,7 +1309,7 @@ export default function Home() {
 			fontFamily: 'ubuntu',
 			fontSize: '2.5em'
 		})} > ICFJ.org </div>
-		/*</ThemeProvider>  I commmented this line out b/c of messing up nesting somewhere */
+		</ThemeProvider>
 		</div>
 	)
 }
