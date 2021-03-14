@@ -29,7 +29,7 @@ const HeaderContainer = styled.div`
 `
 const LogoMd = styled(Logo)`
   justify-self: center;
-  width: 160px;
+  width: 150px;
   @media(min-width: ${mobile}){
     width: 300px;
   }
@@ -46,8 +46,9 @@ const Social = styled.div`
 `
 
 const SocialText = styled.a`
-  font-size: 1.2em;
+  font-size: 1em;
   text-decoration: none;
+  float: right;
   @media(min-width: ${mobile}){
       font-size: 1.5em;   
   }

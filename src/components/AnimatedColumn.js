@@ -16,17 +16,14 @@ const loop = keyframes`
 const Inner = styled.div`
 	position: absolute;
 	clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-	clip:rect(0px,256px,256px,0px);
+	clip:rect(0px,100%,100%,0px);
 	width: 100%;
 	height: 100%;
 	white-space: nowrap;
 	background-color: hotpink;
 `
 
-const CounterSmol = styled(TriggeredCounter)`
-	padding-top: 25%;
-	font-size: 3em;
-`
+
 
 const Labels = styled.div`
 	font-family: interstate condensed;
@@ -42,9 +39,7 @@ const Labels = styled.div`
 	font-weight: 600;
 `
 
-const Title= styled.div`
-	font-size: 1.5em;
-`
+
 
 class AnimatedColumn extends Component{
 	constructor(props){
@@ -53,12 +48,12 @@ class AnimatedColumn extends Component{
 	}
 	componentDidMount(){
 		gsap.from(this.ref.current,{
-		clip:"rect(256px,256px,256px,0px)",
+		clip:"rect(100%,100%,100%,0px)",
 		duration: 1,
 		scrollTrigger:{
 				trigger:this.ref.current,
-				start: "top center",
-				toggleActions:"play complete none reverse",
+				// start: "top center",
+				// toggleActions:"play complete none reverse",
 				markers: false
 			}
 		})
@@ -71,28 +66,41 @@ class AnimatedColumn extends Component{
 
 	const color = this.props.color;
 	const Content =styled.div`
-		width: 400px;
-		height: 400px;
 		margin-top: -24px;
 		background-image: url(${this.props.image});
 		background-size: contain; 
 		background-blend-mode: soft-light;
 		background-color: ${props=> props.theme.colors[color]};
 		animation: ${loop} 20s linear infinite;
+		${mq({
+			width: ['300px','400px','600px','800px'],
+			height: ['300px','400px','600px','800px']
+		})}
 	`
 
 	const Column = styled.div`
 		position: relative;
 		${mq({
-			width: ['120px','160px','256px'],
-			height: ['120px','160px','256px']
+			width: ['160px','160px','320px','480px'],
+			height: ['160px','160px','320px','480px']
 		})}
+	`
+
+	const CounterSmol = styled(TriggeredCounter)`
+		padding-top: 25%;
+		${mq({fontSize: ['2em','3em','3em','5em']})};
+	`
+
+	const Title= styled.div`
+		${mq({fontSize: ['1em','1.5em','1.5em','3em']})};
 	`
 
 	const Sign = styled.span`
 		position:absolute;
-		font-size: 3em;
-		transform: translate(50px, 65px)
+		${mq({
+			fontSize: ['3em','3em','3em','5em'],
+			transform: ['translate(50px, 65px)','translate(50px, 65px)','translate(50px, 85px)','translate(90px, 120px)']
+		})};
 	`
 
 		return(

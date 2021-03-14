@@ -26,7 +26,7 @@ const CounterTwo = styled(TriggeredCounter)`
 const CounterThree = styled(TriggeredCounter)`
 	${mq({
 		fontSize: ['4em','8em','11em', '15em'],
-		transform: ['translatex(4px)','translatex(8px)', 'translatex(32px)']
+		transform: ['translatex(4px)','translatex(8px)', 'translatex(32px)'],
 	})}
 	color: transparent;
  	-webkit-text-stroke: 4px black;
@@ -106,8 +106,11 @@ const SubSquare = styled.div`
 	}
 	&:nth-of-type(5n-2){
 		display:flex;
-		flex-direction: row;
 		border-color: transparent transparent white transparent;
+		${mq({
+			alignItems: ['center' , 'center', 'flex-end'],
+			flexDirection:['column','column','row',]
+		})};
 	}
 `
 const Label= styled.div`
@@ -120,8 +123,9 @@ const Label= styled.div`
 `
 const Subheader = styled.div`
 	font-family: ubuntu;
-	font-size: 3em;
-	color: white;
+	${mq({
+			fontSize: ['1.5em','2em','3em']
+		})}	color: white;
 	margin: 1em;
 `
 

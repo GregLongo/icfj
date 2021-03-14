@@ -19,7 +19,7 @@ export default function Quote(props){
 		z-index: 2;
 		color: ${props.light ? 'white' : ''};
 		${mq({
-			fontSize: ['1em', '1.5em', '2em', '2.5em']		
+			fontSize: ['1.5em', '1.5em', '2em', '2.5em']		
 		})}
 	`
 	const QuoteContainer = styled.div`

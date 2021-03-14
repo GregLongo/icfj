@@ -23,7 +23,7 @@ const HeadlineContainer = styled.div`
 	text-align: ${props.right ? 'right' : 'left'};
 	line-height: 1;
 	${mq({
-		fontSize: ['2em','3em','3em', '5em']	
+		fontSize: ['2.5em','3em','3em', '5em']	
 	})}
 `
 

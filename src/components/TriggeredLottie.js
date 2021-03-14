@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import Lottie from "react-lottie"
 import { gsap } from "gsap" 
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import {css} from "@emotion/react"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -51,7 +52,7 @@ gsap.registerPlugin(ScrollTrigger)
 		};
 
 		return(
-			<div ref={this.ref} className={this.props.className}>
+			<div css={css`@media(max-width:480px){transform: scale(1.5)}`} ref={this.ref} className={this.props.className}>
 				<Lottie options = { defaultOptions } 
 						isStopped = {this.state.isStopped}
 				/>

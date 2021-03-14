@@ -20,7 +20,7 @@ export default function ParagraphSlant(props){
 		  	float: left !important;
 		 	shape-outside: polygon(100% 0%, 15% 100%, 0% 100%);
 			width: 220px;
-		 	height: 90vh;
+		 	height: 100vh;
 		 	@media(min-width: ${tablet}){
 			 	shape-outside: polygon(100% 0%, 25% 100%, 0% 100%);
 				width: 400px;

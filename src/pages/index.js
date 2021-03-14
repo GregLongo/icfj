@@ -29,12 +29,12 @@ import Wolf from "../components/Wolf.js"
 import ReadMore from "../components/ReadMore.js"
 
 //Animation Players
-import UncontrolledLottie from "../components/UncontrolledLottie.js"
+// import UncontrolledLottie from "../components/UncontrolledLottie.js"
 import TriggeredBgColor from "../components/TriggeredBgColor.js"
 import TriggeredLottie from "../components/TriggeredLottie.js"
 
 //Animations
-import animationMasthead from "../lotties/mastheadnu.json"
+// import animationMasthead from "../lotties/mastheadnu.json"
 import animationCameras from "../lotties/cameras.json"
 import animationPenPaper from "../lotties/penpaper.json"
 import animationAudio from "../lotties/audio.json"
@@ -43,6 +43,7 @@ import animationAfrica from "../lotties/africa.json"
 import animationAfrica2 from "../lotties/africa2.json"
 import animationSouthAmerica from "../lotties/southamerica.json"
 import animationPie from "../lotties/piechart.json"
+import animationTribute from "../lotties/tribute.json"
 
 //svg
 import Platinum from "../svg/platinum.svg"
@@ -55,12 +56,14 @@ import PatternCountries from "../images/Pattern_Countries.png"
 import PatternLanguages from "../images/Pattern_Languages.png"
 import PatternCovid from "../images/Pattern_Covid.png"
 import Languages from "../images/languages_ticker.png"
+import Masthead from "../images/masthead.gif"
+
 //Themes
 import theme from "../themes/theme.js"
 
 // Constants, Queries
 
-const smol = '200px',
+const smol = '400px',
 	  mobile = '480px',
 	  tablet = '1024px',
 	  desktop ='1200px',
@@ -89,7 +92,10 @@ const Section = styled.div`
 `
 const Subheader = styled.div`
 	font-family: ubuntu;
-	font-size: 3em;
+	font-size: 2.5em;
+	@media(min-width:${mobile}){
+		font-size: 3em;
+	}
 `
 const SmallSubheader = styled.div`
 	font-family: ubuntu;
@@ -105,15 +111,21 @@ const Credits = styled.div`
 
 const OrgPeople = styled.li`
 	font-family: ubuntu;
-	font-size: 2.5em;
+	font-size: 2em;
 	color: ${props => props.theme.colors.goldenGrass};
 	margin-top: 2rem;
+	@media(min-width:${mobile}){
+		font-size: 2.5em;
+	}
 `
 
 const OrgPeopleDesc = styled.li`
 	font-family: interstate condensed;
-	font-size: 2em;
+	font-size: 1.7em;
 	color: white;
+	@media(min-width:${mobile}){
+		font-size: 2em;
+	}
 `
 
 const Link = styled.a`
@@ -161,26 +173,34 @@ export default function Home() {
 			<span css={mq({
 					paddingRight: '3rem',
 					whiteSpace: 'noWrap',
-					fontSize: ['1em', '2em','3em','4em']
+					fontSize: ['1.5em', '2em','3em','4em']
 			})}>
 				It Takes a Journalist
 			</span>
 		</PendantLeft>
-		<Container css={mq({marginTop:['2rem','2rem','3rem'],marginBottom:'-1.2rem',maxWidth:['100%','100%','100%','1024px']})}>
-			<UncontrolledLottie animation={animationMasthead}/>
+		<Container css={mq({
+			marginTop:['2rem','2rem','3rem'],
+			marginBottom:'-1.2rem',
+			maxWidth:['100%','100%','100%','1024px']})
+		}>
+			<img css={css`width:100%;`}alt="masthead" src={Masthead} />
 		</Container>
 		<TriggeredBgColor color='white' />
 		<Section id="Mission" name="Mission" css={theme => ({background: theme.colors.mineShaft})}>
 			<Container css={css`
 				color: white;
-				height: 40rem;
+				height: 20rem;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
 				text-align: left;
 				margin-top: 0;
 				margin-bottom: 5rem;
+				@media(min-width:${smol}){
+					height: 30rem;
+				}
 				@media(min-width:${tablet}){
+					height: 40rem;
 					margin-bottom: 15rem;
 				}
 				`}>
@@ -191,7 +211,7 @@ export default function Home() {
 						linHeight:'2'})}
 					>Mission</div>
 					<div css={mq({
-						fontSize:['1em', '1.75em', '2em'],
+						fontSize:['1.2em', '1.5em', '2em'],
 						fontFamily:'interstate condensed',
 						lineHeight: 1.5}
 					)}>We empower an unparalleled global network of journalists to produce news reports that lead to better governments, stronger economies, more vibrant societies and healthier lives.
@@ -200,9 +220,9 @@ export default function Home() {
 				<TriggeredBgColor color='goldenGrass' />
 			</Container>
 		</Section>
-		<Section id="Joyce" name="Joyce">
-			<Container>
-				<TriggeredPendantRight bp={breakpoints} color='curiousBlue'>
+		<Section   name="Joyce">
+			<Container id="Joyce">
+				<TriggeredPendantRight css={css`@media(max-width:${mobile}){font-size:.6em}`} bp={breakpoints} color='curiousBlue'>
 					A Letter From the President
 				</TriggeredPendantRight>
 				<div css={css`
@@ -220,7 +240,9 @@ export default function Home() {
 							margin-bottom: -15rem}`
 						}>
 						<p css={css`margin-top:-.5rem`}>
-						Over 36 years, ICFJ has provided more than <TextPop>150,000 journalists</TextPop> from <TextPop>180 countries</TextPop> with <TextPop>valuable programs and resources</TextPop>. But we’ve never had a year like 2020.
+						Over 36 years, ICFJ has provided more than <TextPop>150,000 journalists</TextPop> from <TextPop>180 countries</TextPop> with <TextPop css={mq({
+							display:['block','block','inline-block']
+						})}>valuable programs and resources</TextPop>. But we’ve never had a year like 2020.
 						</p>
 						<p>
 						The pandemic that raged across the globe would have been much worse if journalists had not fulfilled their vital role of providing audiences with accurate, lifesaving news, and doing it while combating the spread of false information.
@@ -230,7 +252,7 @@ export default function Home() {
 						</p>
 						</ParagraphSlant>
 
-				</div>
+					</div>
 						<ReadMore bp={breakpoints}>
 							<p>
 							In other ICFJ programs, investigative journalists in our networks are collaborating to uncover corruption by those seeking to get rich from the pandemic. Pioneers in media innovation are creating new data and social media tools to help journalists tell the stories of COVID-19 better. And sustainability experts are helping news outlets improve the bottom line in a time when economic and political forces threaten to shut down independent voices.
@@ -246,10 +268,10 @@ export default function Home() {
 			</Container>
 			<TriggeredBgColor color='goldenGrass' />
 		</Section>
-		<Section id="Change" name="Change">
+		<Section  name="Change">
 			<TriggeredBgColor color='curiousBlue' />
 				<TriggeredLottie css={css`opacity:0.5`} animation={animationPenPaper} loop={true} />
-				<Container>
+				<Container id="Change">
 					<TriggeredPendantLeft bp={breakpoints} color="boulder">Our Vast Network </TriggeredPendantLeft>
 					<div css={css`
 						display:grid;
@@ -275,28 +297,37 @@ export default function Home() {
 					<FrameEmbed bp={breakpoints}  buttonColor='goldenGrass'
 						caption="Learn how ICFJ is giving reporters the skills to cover today's most pressing issues."
 						 css={css`
-						margin-top:15rem;
+						margin-top:10rem;
 						width: 100%;
 						height: 600px;
 						overflow: hidden;
+						@media(min-width:${tablet}){
+							margin-top:15rem;
+						}	
 						`}  >
 						<iframe title='vidtwo' width='100%' height='570px' src="https://www.youtube.com/embed/f1SBTk3CXhI" frameBorder="0" allowFullScreen></iframe>
 					</FrameEmbed>
 					<FrameEmbed bp={breakpoints}  height='570px' buttonColor='goldenGrass'
 						caption="Click on this photo to meet members of our inspiring network."
 						 css={css`
-						margin-top:15rem;
 						width: 100%;
 						height: 765px;
 						overflow: hidden;
+						margin-top:10rem;
+						margin-bottom:-15rem;
+						@media(min-width:${tablet}){
+							margin-top:15rem;
+							margin-bottom:0;
+						}	
 						`}  >
 						<iframe title="mosaic" width='100%' height='765px' src="https://icfjmosaic.com" frameBorder="0" margin="0" padding="0" scrolling="no" allowFullScreen="" ></iframe>
 					</FrameEmbed>
 					<Quote bp={breakpoints} css={mq({
-						height: ['20rem','25rem','25rem','40rem'],
+						height: ['25rem','20rem','35rem','40rem'],
 						display:'flex',
 						alignItems: 'center',
 						width: 'fit-content',
+						// marginTop: '15rem',
 						marginLeft:'auto',
 						marginRight: 'auto'})
 					}>
@@ -305,10 +336,10 @@ export default function Home() {
 				</Container>
 			<TriggeredBgColor color='curiousBlue' />
 		</Section>
-		<Section id="Resources" name="Resources">
+		<Section name="Resources">
 				<TriggeredBgColor color='boulder' />
 				<TriggeredLottie css={css`opacity:0.5`} animation={animationAudio} loop={true} />
-				<Container>
+				<Container id="Resources">
 					<TriggeredPendantRight bp={breakpoints} color="fruitSalad">New Resources </TriggeredPendantRight>
 					<div css={css`
 						margin-top: 4rem`
@@ -330,9 +361,12 @@ export default function Home() {
 				<FrameEmbed bp={breakpoints}  height='570px' buttonColor='fruitSalad'
 						caption="Learn more about our Global Health Crisis Reporting Forum, the most far-reaching COVID-19 journalism initiative."
 						 css={css`
-						margin-top:15rem;
+						margin-top:10rem;
 						width: 100%;
 						max-height: 600px;
+						@media(min-width:${mobile}){
+						margin-top:15rem;
+						}						
 						`}  >
 					<iframe title='vidfour' width='100%' height='570px' src="https://www.youtube.com/embed/UoshtxBZhGs" frameBorder="0" allowFullScreen></iframe>
 				</FrameEmbed>
@@ -340,9 +374,10 @@ export default function Home() {
 				display: grid;
 				grid-template-columns: repeat(2, 1fr);
 				grid-row-gap: 3rem;
-				margin-top: 15rem;
+				margin-top: 12rem;
 				@media(min-width:${tablet}){
-					grid-template-columns: repeat(4, 1fr);
+					margin-top: 15rem;
+					grid-template-columns: repeat(2, 1fr);
 				}
 			`}>
 			<AnimatedColumn
@@ -404,66 +439,88 @@ export default function Home() {
 					<ImageQuery filename='agnes.png' />
 				</div>
 				<Credits> Credits (clockwise): Siddharth Bokolia (top left), John Gitonga (top right), Lucina Paternesi Meloni (middle left), Amit Chakraborty (middle right), Carolyn Sung (bottom left), Agnes Penda (bottom right)</Credits>
-			<div css={css`color:white;margin-top:15rem;margin-bottom:15rem`}>
+			<div css={css`
+					color:white;
+					margin-top:10rem;
+					margin-bottom:10rem;				
+					@media(min-width: ${tablet}){
+						margin-top:15rem;
+						margin-bottom:15rem	;				
+					}
+				`}>
 					<Subheader>The World's Most Comprehensive Site for Journalists</Subheader>
 					<p css={css`font-family: interstate condensed; font-size: 1.75em`}>Offering expert advice, tools and opportunities for the news media</p>
 				</div>
-				<div css={css`width:60%; margin-right:auto;margin-left:auto`} >
+				<div css={css`width:60%;
+						margin-right:auto;
+						margin-left:auto;
+						margin-top:10rem;
+						@media(min-width:${tablet}){
+							margin-top:15rem;							
+						}
+					`}>
 					<ImageQuery filename='ijnet.png' />
 				</div>
 			</Container>
 				<Container css={css`
-					margin-bottom:15rem;
+					margin-top:10rem;
 					display:grid;
 					font-family: interstate condensed;
-					grid-template-columns: 40% 60%;
-					grid-column-gap: 2rem;
+					grid-template-columns: 100%;
 					@media(min-width:${tablet}){
-						grid-template-columns: 3fr 30% 30% 30%;
+						margin-top:15rem;
+						grid-template-columns: 20% 40% 40%;
 					}
 					div{
 						text-align:center;
+						justify-content: center;
+						display: flex;
+						flex-direction: column;
 					}
 					span{
 						color: white;
 						font-size: 2em;
 					}
 					`}>
-					<div>
+					<div css={css`@media(min-width:${tablet}){border: 10px solid black;padding: 2rem;}`}>
 						<TriggeredCounter css={theme=>({color:theme.colors.white})} val={"8"} />
 						<span>Languages</span>
 					</div>
-					<div>
-						<TriggeredCounter css={theme=>({color:theme.colors.curiousBlue})} val={"1725"} />
+					<div css={css`@media(min-width:${tablet}){border: 10px solid black;padding: 2rem;}`}>
+						<TriggeredCounter css={theme=>({color:theme.colors.curiousBlue, fontSize:'8em'})} val={"1725"} />
 						<span>Resources</span>
 					</div>
-					<div>
-						<TriggeredCounter css={theme=>({color:theme.colors.fruitSalad})}val={"182000"} />
+					<div css={css`@media(min-width:${tablet}){border: 10px solid black;padding: 2rem;}`}>
+						<TriggeredCounter css={theme=>({color:theme.colors.fruitSalad, fontSize:'6em'})}val={"182000"} />
 						<span>Average Monthly Visitors</span>
 					</div>
 
 				</Container>
-				<LanguageTicker css={css`margin-top:15rem;margin-bottom:15rem`}><img alt='' src={Languages} /></LanguageTicker>
+				<LanguageTicker css={css`margin-top:10rem; margin-bottom:10rem`}><img css={css`width:120vw;`} alt="languages" src={Languages}/></LanguageTicker>
 				<TriggeredBgColor color='boulder' />
 		</Section>
-		<Section id="Networks" name="Networks">
+		<Section name="Networks">
 			<TriggeredBgColor color='fruitSalad' />
 			<TriggeredLottie css={css`opacity:0.5`} animation={animationCameras} loop={true} />
-			<Container>
+			<Container id="Networks">
 				<TriggeredPendantLeft bp={breakpoints} color="mineShaft">Investigative Networks</TriggeredPendantLeft>
 				<div css={css`
-					margin-top: 4rem`
+					margin-top: 4rem;
+					margin-bottom: 2rem`
 				}>
 				<TriggeredHeadline bp={breakpoints}><span css={css`color:#fff`}> Holding the Powerful to Account</span> When It Matters Most </TriggeredHeadline>
 				</div>
-				<Subheader>Journalism with Impact </Subheader>
+				<TriggeredTextBlock>
+					<Subheader>Journalism with Impact </Subheader>
+				</TriggeredTextBlock>
 				<div css={css`
 					display: grid;
 					grid-template-columns: 5% 95%;
 					margin-top: 10rem;
-					margin-bottom:0;
-					@media(min-width:${tablet})
-						margin-top: -25rem;
+					margin-bottom: -20rem;
+					@media(min-width:${tablet}){
+						margin-top: 10rem;
+					 	margin-bottom: -20rem;
 					}
 				`}>
 					<PhotoSlant  bp={breakpoints} css={css`transform:translatex(-35%)`}src="Fabiola.jpg" />
@@ -472,7 +529,7 @@ export default function Home() {
 								margin-top: 5rem;
 							}
 						`}>
-						Peru-based <TextPop color="#DDAF24">ICFJ Knight Fellow Fabiola Torres</TextPop> created Salud con Lupa, a health news outlet that is uncovering corruption during COVID-19. They exposed inflated prices for face shields, environmental violations by corporations and wasted protective gear spending,prompting government action.
+						Peru-based <TextPop color="#DDAF24" css={mq({display:['block','block','inline-block']})}>ICFJ Knight Fellow Fabiola Torres</TextPop> created Salud con Lupa, a health news outlet that is uncovering corruption during COVID-19. They exposed inflated prices for face shields, environmental violations by corporations and wasted protective gear spending,prompting government action.
 					</ParagraphSlant>
 				</div>
 				<ImageQuery filename='bigeye.jpg' />
@@ -493,7 +550,7 @@ export default function Home() {
 							`
 						}>
 							<p>
-								Stories by ICFJ partner, the Organized Crime and Corruption Reporting Project (OCCRP), based in Eastern Europe, have co tributed to more than <span css={theme=>({color:theme.colors.mineShaft})}>$7.3 billion in illicitly acquired funds </span>that have since been recovered.
+								Stories by ICFJ partner, the Organized Crime and Corruption Reporting Project (OCCRP), based in Eastern Europe, have co tributed to more than <TextPop color="#313131">$7.3 billion in illicitly acquired funds </TextPop>that have since been recovered.
 							</p>
 							<p>ICFJ helped launch the Latin-American Connectas, which has produced more than <TextPop color="#DDAF24">274 in-depth stories</TextPop> exposing mismanagement of billions of dollars in public funds.
 							</p>
@@ -501,7 +558,7 @@ export default function Home() {
 					</div>
 				</div>
 				<Quote bp={breakpoints} css={mq({
-					height: ['20rem','25rem','25rem','40rem'],
+					height: ['20rem','25rem','25rem','30rem'],
 					display:'flex',
 					alignItems: 'center',
 					width: 'fit-content',
@@ -514,10 +571,10 @@ export default function Home() {
 			</Container>
 			<TriggeredBgColor color='fruitSalad' />
 		</Section>
-		<Section id="Innovation" name="Innovation">
+		<Section  name="Innovation">
 			<TriggeredBgColor color='mineShaft' />
 			<TriggeredLottie css={css`opacity:0.5`} animation={animationTweet} loop={true} />
-			<Container>
+			<Container id="Innovation">
 				<TriggeredPendantRight bp={breakpoints} color="sanMarino">Innovation</TriggeredPendantRight>
 				<div css={css`
 					margin-top: 4rem`
@@ -558,7 +615,7 @@ export default function Home() {
 					lineHeight: ['1','1.5','2'],
 					textAlign: 'left',
 					marginTop:['1em','2em','4em']})
-				}>In Nigeria, journalists, fact checkers and social media influencers ––	including a government minister	and a Nollywood star -- are teaming up to combat misinformation about health and other issues that matter	to people’s lives, a project led by <span css={theme=>({color:theme.colors.valencia})}>ICFJ Knight Fellow Hannah Ajakaiye.</span>
+				}>In Nigeria, journalists, fact checkers and social media influencers ––	including a government minister	and a Nollywood star -- are teaming up to combat misinformation about health and other issues that matter	to people’s lives, a project led by <TextPop color="#D44934">ICFJ Knight Fellow Hannah Ajakaiye.</TextPop>
 				</TriggeredTextBlock>
 				</div>
 				<div css={css`
@@ -580,7 +637,7 @@ export default function Home() {
 					textAlign: 'right',
 					paddingTop:['1em','2em','4em']})
 				}>
-						Women journalists and data analysts from five countries shed light on marginalized groups -- such as domestic workers and HIV/AIDS patients -- hardest hit by the pandemic, as part of the <Link href="https://urldefense.com/v3/__https:/theawjp.org/__;!!Ie25XFjv7UPO!4QFkJUrcVekppLkvEruzM2TiStyjctG8zz8IV7SGT2ah_DeDeH2DmSK44qtt$">Africa Women’s Journalism Project</Link>, led by Brazil-based <span css={theme=>({color:theme.colors.goldenGrass})}>ICFJ Knight Fellow Catherine Gicheru.</span>
+						Women journalists and data analysts from five countries shed light on marginalized groups -- such as domestic workers and HIV/AIDS patients -- hardest hit by the pandemic, as part of the <Link href="https://urldefense.com/v3/__https:/theawjp.org/__;!!Ie25XFjv7UPO!4QFkJUrcVekppLkvEruzM2TiStyjctG8zz8IV7SGT2ah_DeDeH2DmSK44qtt$">Africa Women’s Journalism Project</Link>, led by Brazil-based <TextPop color="#DDAF24">ICFJ Knight Fellow Catherine Gicheru.</TextPop>
 				</TriggeredTextBlock>
 				<div>
 				<PhotoSlant right bp={breakpoints} css={css`
@@ -600,9 +657,11 @@ export default function Home() {
 				<div css={css`
 					display: grid;
 					margin-top: 5rem;
+					margin-bottom: 15rem;
 					grid-template-columns: 50% 50%;
 					@media(min-width${tablet}){
 						grid-template-columns: 40% 60%;
+						margin-bottom: 0;
 					}
 				`}>
 				<div>
@@ -630,16 +689,16 @@ export default function Home() {
 					textAlign: 'left',
 					paddingTop:['1em','2em','4em']})
 				}>
-						Journalists can more quickly find expert sources of scientific information thanks to <Link href="https://urldefense.com/v3/__https:/sciencepulse.org/about__;!!Ie25XFjv7UPO!4QFkJUrcVekppLkvEruzM2TiStyjctG8zz8IV7SGT2ah_DeDeH2DmfhbEiCV$">Science Pulse</Link>, a free tool created by a <span css={theme=>({color:theme.colors.sanMarino})}>ICFJ Knight Fellow Sergio Spagnuolo </span>that features the latest updates from more than 1,600 verified scientists and scientific organizations tweeting in English, Portuguese and Spanish.
+						Journalists can more quickly find expert sources of scientific information thanks to <Link href="https://urldefense.com/v3/__https:/sciencepulse.org/about__;!!Ie25XFjv7UPO!4QFkJUrcVekppLkvEruzM2TiStyjctG8zz8IV7SGT2ah_DeDeH2DmfhbEiCV$">Science Pulse</Link>, a free tool created by a <TextPop color="#47609F">ICFJ Knight Fellow Sergio Spagnuolo </TextPop>that features the latest updates from more than 1,600 verified scientists and scientific organizations tweeting in English, Portuguese and Spanish.
 				</TriggeredTextBlock>
 				</div>
 			</Container>
 			<TriggeredBgColor color='mineShaft' />
 		</Section>
-		<Section id="Sustainability" name="Sustainability">
+		<Section name="Sustainability">
 			<TriggeredBgColor color='sanMarino' />
 			<TriggeredLottie css={css`opacity:0.5`} animation={animationPenPaper} loop={true} />
-			<Container>
+			<Container id="Sustainability">
 				<TriggeredPendantLeft bp={breakpoints} color="valencia">Sustainability</TriggeredPendantLeft>
 				<div css={css`
 					margin-top: 4rem`
@@ -664,11 +723,14 @@ export default function Home() {
 					<div css={css`
 							color: white;
 							font-family: interstate condensed;
-							font-size: 1.5em;
 							line-height: 2;
 							padding-top: 1em;
 							padding-left: 2rem;
-							padding-right: 2rem;`
+							padding-right: 2rem;
+							font-size: 1.25em;
+							@media(min-width:${mobile}){
+								font-size: 1.5em;
+							}`
 						}>
 							Media entrepreneurs in the Middle East and North Africa have improved the business prospects of their startups through our <Link href="https://ijnet.org/en/story/meet-our-ijnet-arabic-2020-mentoring-center-participants"><Highlighter color="goldenGrass">IJNet Mentoring Center</Highlighter></Link>, supported by the National Endowment for Democracy over the past six years.
 					</div>
@@ -679,11 +741,15 @@ export default function Home() {
 					<div css={css`
 							color: white;
 							font-family: interstate condensed;
-							font-size: 1.5em;
 							line-height: 2;
 							padding-top: 1em;
 							padding-left: 2rem;
-							padding-right: 2rem;`
+							padding-right: 2rem;
+							font-size: 1.25em;
+							@media(min-width:${mobile}){
+								font-size: 1.5em;
+							}
+							`
 						}>
 							Local newsrooms in Brazil increase their readers while participating in the <Highlighter color="curiousBlue"><Link href="https://www.facebook.com/journalismproject/programs/accelerator/brazilian-publishers-thriving">Local News Accelerator</Link></Highlighter> with ICFJ and the Facebook Journalism Project. It is one of many initiatives across the world between ICFJ and FJP helping newsrooms solve business challenges.
 					</div>
@@ -694,11 +760,15 @@ export default function Home() {
 					<div css={css`
 							color: white;
 							font-family: interstate condensed;
-							font-size: 1.5em;
 							line-height: 2;
 							padding-top: 1em;
 							padding-left: 2rem;
-							padding-right: 2rem;`
+							padding-right: 2rem;
+							font-size: 1.25em;
+							@media(min-width:${mobile}){
+								font-size: 1.5em;
+							}
+							`
 						}>
 						Despite the pandemic, ten Latin American digital news startups significantly increased their revenue in just six months, as part of Velocidad. They did it primarily through paid content, advertising and other client services -- and <Link href="https://www.icfj.org/news/velocidad-helps-news-startups-grow-membership-and-revenue-program-enters-second-phase">it's just the beginning</Link>. This accelerator program with ICFJ and SembraMedia is supported by Luminate Group.
 					</div>
@@ -715,10 +785,10 @@ export default function Home() {
 			</Container>
 			<TriggeredBgColor color='sanMarino' />
 		</Section>
-		<Section id="Leadership" name="Leadership">
+		<Section name="Leadership">
 			<TriggeredBgColor color='valencia' />
 			<TriggeredLottie css={css`opacity:0.5`} animation={animationAudio} loop={true} />
-			<Container>
+			<Container id="Leadership">
 				<TriggeredPendantRight bp={breakpoints} color="goldenGrass">Thought Leadership</TriggeredPendantRight>
 				<div css={css`
 					margin-top: 4rem`
@@ -741,10 +811,10 @@ export default function Home() {
 				<CountBox bp={breakpoints} css={css`transform:scale(1)`}/>
 				<div css={theme=>({
 					width: '100%',
-					height: '780px',
 					'@media(min-width:1024px)': {
 						border: '16px solid',
-						marginTop: '10rem'
+						marginTop: '10rem',
+						height: '780px',
 					},
 					borderColor: theme.colors.goldenGrass,
 					display: 'flex',
@@ -786,11 +856,11 @@ export default function Home() {
 						${mq({
 							padding: ['1rem 1rem 1rem 1rem','1rem 1rem 1rem 1rem','2rem 1rem 3rem 1rem'],
 							fontSize: ['1em','1.2em','1.5em'],
-							width: ['160px','180px','212px'],
-							right: ['80px','80px','280px'],
-							top: ['380px','380px','280px']
+							width: ['200px','180px','212px'],
+							right: ['60px','80px','280px'],
+							top: ['260px','380px','280px']
 						})}					`}>
-						<span css={theme=>({color:theme.colors.valencia})}>One in five </span>women said they suffered attacks or abuss offline in the physical world stemming from online harassment.
+						<TextPop color="#D44934">One in five</TextPop> women said they suffered attacks or abuse offline in the physical world stemming from online harassment.
 					</div>
 					<ImageQuery css={mq({height: ['200px','400px','510px']})} filename='Anna.jpeg' />
 				</div>
@@ -801,26 +871,35 @@ export default function Home() {
 			</Container>
 			<TriggeredBgColor color='valencia' />
 		</Section>
-		<Section id="Honorees" name="Honorees">
+		<Section  name="Honorees">
 			<TriggeredBgColor color='white' />
 			<TriggeredLottie css={css`opacity:0.5`} animation={animationCameras} loop={true} />
-			<Container>
-				<TriggeredPendantLeft bp={breakpoints} color="sanMarino">Honorees</TriggeredPendantLeft>
+			<Container id="Honorees" css={mq({maxWidth:['100%', '100%', '90%', '1024px']})}>
+				<TriggeredPendantLeft bp={breakpoints} color="sanMarino"> Honorees</TriggeredPendantLeft>
 				<div css={css`
-					margin-top: 4rem`
-				}>
+					margin-top: 4rem;
+					padding-left: 2rem;
+					padding-right: 2rem;
+					@media(min-width:${tablet}){
+						padding-left: 0;
+						padding-right: 0;
+					}					
+				`}>
 				<TriggeredHeadline bp={breakpoints} right >Standing With <span css={css`color:#999`}>Intrepid Journalists</span> </TriggeredHeadline>
 					<TriggeredTextBlock css={css`
 						font-family: interstate condensed;
-						font-size: 1.7em;
+						font-size: 1.2em;
 						line-height: 2;
 						text-align: right;
 						margin-top: 5rem;
+						@media(min-width:${tablet}){
+							font-size: 1.7em;						
+						}
 						`
 					}>At a time when attacks on journalists are spiking globally, <Link css={css`color: black;`} href="https://www.icfj.org/calendar/icfj-tribute-journalists-2020">ICFJ’s annual awards</Link> brings heightened visibility to winners, whose outstanding reporting has had tremendous impact.
 				</TriggeredTextBlock>
 				</div>
-				<ImageQuery filename="TributeLogo.png" css={css`
+				<TriggeredLottie animation={animationTribute} loop={false} css={css`
 						margin-top: 5rem;
 						margin-bottom: 5rem;
 						`
@@ -877,20 +956,27 @@ export default function Home() {
 					bio="Despite relentless persecution, Ressa and her team shine a light on injustices."
 				/>
 				</Container>
-				<div css={css`margin-bottom:20rem`} />
+				<div css={css`@media(min-width:${tablet}){margin-bottom:20rem}`} />
 				<TriggeredBgColor color='white' />
 		</Section>
-		<Section id="Financials" name="Financials">
+		<Section  name="Financials">
 			<TriggeredBgColor color='curiousBlue' />
 			<TriggeredLottie css={css`opacity:0.5`} animation={animationTweet} loop={true} />
-			<Container>
+			<Container id="Financials">
 				<TriggeredPendantRight bp={breakpoints} color="boulder">Financials</TriggeredPendantRight>
-				<SmallSubheader css={css`color:white`}>We are careful stewards of our donors’ funds.</SmallSubheader>
-				<Subheader css={css`color:white;margin-top: 10rem;`}>Total Reveue for 2019: $19.9 million</Subheader>
+				<SmallSubheader css={css`
+					color:white;
+					margin: 3em 0 0 0;
+					@media(min-width:${tablet}){margin: initial};
+					`}>We are careful stewards of our donors’ funds.</SmallSubheader>
+				<Subheader css={css`
+					color:white;
+					margin-top: 10rem;`
+				}>Total Reveue for 2019: $19.9 million</Subheader>
 				<Subheader css={css`color:white`}>2019 Expense Breakdown:</Subheader>
 				<TriggeredLottie
 					css={css`
-					width: 80%;
+					width: 100%;
 					@media(min-width:${tablet}){
 						width: 60%;
 					}
@@ -905,9 +991,9 @@ export default function Home() {
 					margin-bottom: 10rem;
 				`} />
 				<div css={{textAlign:'center'}} >
-				<Subheader css={mq({color:'white', fontWeight:'bold', fontSize:['2em','3em','5em']})}>95.36<sup>%</sup></Subheader>
-				<Subheader css={mq({color:'white', fontWeight:'bold', fontSize:['1.2em','2.2em','3.2em']})}>Charity Navigator Ranking</Subheader>
-				 <Subheader css={mq({color:'white',fontSize:['1em','2em','3em']})}>ICFJ’s four-star track record with Charity Navigator places us among the top 2 percent of nonprofits evaluated.</Subheader>
+				<Subheader css={mq({color:'white', fontWeight:'bold', fontSize:['3em','3em','5em']})}>95.36<sup>%</sup></Subheader>
+				<Subheader css={mq({color:'white', fontWeight:'bold', fontSize:['2em','2.2em','3.2em']})}>Charity Navigator Ranking</Subheader>
+				 <Subheader css={mq({color:'white',fontSize:['2em','2em','3em']})}>ICFJ’s four-star track record with Charity Navigator places us among the top 2 percent of nonprofits evaluated.</Subheader>
 				</div>
 				<div css={css`
 					display: flex;
@@ -920,25 +1006,26 @@ export default function Home() {
 				`}/>
 				</div>
 				<div css={{textAlign:'center'}} >
-				<Subheader css={mq({color:'white', fontWeight:'bold', fontSize:['2em','3em','5em']})}>Platinum</Subheader>
-				<Subheader css={mq({color:'white', fontWeight:'bold', fontSize:['1.2em','2.2em','3.2em']})}>Guidestar Rating</Subheader>
-				<Subheader css={mq({color:'white',fontSize:['1em','2em','3em']})}>ICFJ also has a platinum-level rating from GuideStar, the highest ranking given.</Subheader>
+				<Subheader css={mq({color:'white', fontWeight:'bold', fontSize:['3em','3em','5em']})}>Platinum</Subheader>
+				<Subheader css={mq({color:'white', fontWeight:'bold', fontSize:['2em','2.2em','3.2em']})}>Guidestar Rating</Subheader>
+				<Subheader css={mq({color:'white',fontSize:['2em','2em','3em']})}>ICFJ also has a platinum-level rating from GuideStar, the highest ranking given.</Subheader>
 				</div>
 			</Container>
 		</Section>
-		<Section id="Board" name="BoardMembers">
+		<Section name="BoardMembers">
 			<TriggeredBgColor color='fruitSalad' />
 			<TriggeredLottie css={css`opacity:0.5`}animation={animationCameras} loop={true} />
-			<Container>
+			<Container id="Board">
 				<TriggeredPendantLeft bp={breakpoints} color="goldenGrass">Board Members</TriggeredPendantLeft>
 				<div css={css`
+					margin-top: 5rem;
 					display:grid;
 					grid-template-columns: repeat(1, 1fr);
-					margin-top: 10rem;
 					color: white;
 					font-family: interstate condensed;
 					@media(min-width:${tablet}){
 						grid-template-columns: repeat(2, 1fr);
+						margin-top: 10rem;
 					}
 				`}>
 				<div>
@@ -992,6 +1079,7 @@ export default function Home() {
 					<Subheader css={css`
 						font-size:3.25em;
 						margin-bottom: 5rem;
+						margin-top: 5rem;
 						`}>
 						Board of Directors
 					</Subheader>
@@ -1076,7 +1164,10 @@ export default function Home() {
 						<Subheader css={css`
 								font-size:3.25em;
 								margin-bottom: 5rem;
-								margin-top: 10rem;
+								margin-top: 5rem;
+								@media(min-width:${tablet}){
+									margin-top: 10rem;
+								}
 							`}>
 								Officers
 						</Subheader>
@@ -1145,8 +1236,8 @@ export default function Home() {
 					</div>
 		</Container>
 		</Section>
-		<Section id="Donors" name="Donors" >
-		<Container>
+		<Section  name="Donors" >
+		<Container id="Donors">
 		<TriggeredPendantLeft bp={breakpoints} color="goldenGrass">Donors</TriggeredPendantLeft>
 				<div css={css`
 					display:grid;
@@ -1154,80 +1245,49 @@ export default function Home() {
 					margin-top: 5rem;
 					color: white;
 					font-family: interstate condensed;
-					font-size: 2em;
 					@media(min-width:${tablet}){
 						grid-template-columns: repeat(2, 1fr);
 					}
 				`}>
 					<ul css={css`
 							list-style: none;
+							padding-left: 0;
 						`}>
-						<li css={theme=>({
-							fontSize:'48px',
-							color:theme.colors.goldenGrass,
-							fontFamily: 'ubuntu',
-							})}>
-							Chairman’s Circle
-						</li>
-						<li>Ahmed Charai</li>
-						<li>Pamela Howard</li>
-						<li>Rodman and Alice Moorhead</li>
-						<li>The Reilly Family</li>
-
-						<li css={theme=>({
-							fontSize:'48px',
-							color:theme.colors.goldenGrass,
-							fontFamily: 'ubuntu',
-							marginTop: '5rem',
-							})}>
-							President’s Circle</li>
-						<li>The Ewing Family</li>
-						<li>Anonymous</li>
-						<li>Anonymous 2</li>
-						<li css={theme=>({
-							fontSize:'48px',
-							color:theme.colors.goldenGrass,
-							fontFamily: 'ubuntu',
-							marginTop: '5rem'})}>
-						Benefactors</li>
-						<li>Michael and Anne Golden</li>
-						<li>John Maxwell Hamilton</li>
-						<li css={theme=>({
-							fontSize:'48px',
-							color:theme.colors.goldenGrass,
-							fontFamily: 'ubuntu',
-							marginTop: '5rem',
-							})}>
-							Leaders</li>
-						<li>Elizabeth Ballantine and Paul Leavitt</li>
-						<li>Joyce Barnathan and Steven Strasser</li>
-						<li>Lauretta J. Bruno</li>
-						<li>David Callaway</li>
-						<li>Vint Cerf</li>
-						<li>Patricia Dunnington</li>
-						<li>John Harris</li>
-						<li>James F. Hoge Jr. and Kathleen Lacey</li>
-						<li>Martina Hund-Mejean and Bruno Mejean</li>
-						<li>Alex S. Jones</li>
-						<li>Marci and Mike McCue</li>
-						<li>Rob and Maureen Rehg</li>
-						<li>John Towriss, Envoy Strategy Group</li>
-						<li>Alexandra Wrage</li>
-						<li>Jason H. Wright</li>
-
-						<li css={theme=>({
-							fontSize:'48px',
-							color:theme.colors.goldenGrass,
-							fontFamily: 'ubuntu',
-							marginTop: '5rem',
-							})}>
-							Champions</li>
-						<li>David Elliot Cohen and Laureen Seeger</li>
-						<li>Richard Gingras</li>
-						<li>Marcy McGinnis</li>
-						<li>Nicholas Tzitzon</li>
-						<li>Matthew and Lisa Winkler</li>
-						<li>Anonymous</li>
+						<OrgPeople>Chairman’s Circle</OrgPeople>
+						<OrgPeopleDesc>Ahmed Charai</OrgPeopleDesc>
+						<OrgPeopleDesc>Pamela Howard</OrgPeopleDesc>
+						<OrgPeopleDesc>Rodman and Alice Moorhead</OrgPeopleDesc>
+						<OrgPeopleDesc>The Reilly Family</OrgPeopleDesc>
+						<OrgPeople>President’s Circle</OrgPeople>
+						<OrgPeopleDesc>The Ewing Family</OrgPeopleDesc>
+						<OrgPeopleDesc>Anonymous</OrgPeopleDesc>
+						<OrgPeopleDesc>Anonymous 2</OrgPeopleDesc>
+						<OrgPeople>Benefactors</OrgPeople>
+						<OrgPeopleDesc>Michael and Anne Golden</OrgPeopleDesc>
+						<OrgPeopleDesc>John Maxwell Hamilton</OrgPeopleDesc>
+						<OrgPeople>Leaders</OrgPeople>
+						<OrgPeopleDesc>Elizabeth Ballantine and Paul Leavitt</OrgPeopleDesc>
+						<OrgPeopleDesc>Joyce Barnathan and Steven Strasser</OrgPeopleDesc>
+						<OrgPeopleDesc>Lauretta J. Bruno</OrgPeopleDesc>
+						<OrgPeopleDesc>David Callaway</OrgPeopleDesc>
+						<OrgPeopleDesc>Vint Cerf</OrgPeopleDesc>
+						<OrgPeopleDesc>Patricia Dunnington</OrgPeopleDesc>
+						<OrgPeopleDesc>John Harris</OrgPeopleDesc>
+						<OrgPeopleDesc>James F. Hoge Jr. and Kathleen Lacey</OrgPeopleDesc>
+						<OrgPeopleDesc>Martina Hund-Mejean and Bruno Mejean</OrgPeopleDesc>
+						<OrgPeopleDesc>Alex S. Jones</OrgPeopleDesc>
+						<OrgPeopleDesc>Marci and Mike McCue</OrgPeopleDesc>
+						<OrgPeopleDesc>Rob and Maureen Rehg</OrgPeopleDesc>
+						<OrgPeopleDesc>John Towriss, Envoy Strategy Group</OrgPeopleDesc>
+						<OrgPeopleDesc>Alexandra Wrage</OrgPeopleDesc>
+						<OrgPeopleDesc>Jason H. Wright</OrgPeopleDesc>
+						<OrgPeople>Champions</OrgPeople>
+						<OrgPeopleDesc>David Elliot Cohen and Laureen Seeger</OrgPeopleDesc>
+						<OrgPeopleDesc>Richard Gingras</OrgPeopleDesc>
+						<OrgPeopleDesc>Marcy McGinnis</OrgPeopleDesc>
+						<OrgPeopleDesc>Nicholas Tzitzon</OrgPeopleDesc>
+						<OrgPeopleDesc>Matthew and Lisa Winkler</OrgPeopleDesc>
+						<OrgPeopleDesc>Anonymous</OrgPeopleDesc>
 
 						<p><i>* For contributions made in 2019. Donations
 						below $5,000 are acknowledged elsewhere
@@ -1236,90 +1296,65 @@ export default function Home() {
 					</ul>
 					<ul css={css`
 							list-style: none;
+							padding-left: 0;
 						`}>
-						<li css={theme=>({
-							fontSize:'48px',
-							color:theme.colors.goldenGrass,
-							fontFamily: 'ubuntu',
-							})}>
-							Foundations</li>
-						<li>John S. and James L. Knight Foundation</li>
-						<li>Bill & Melinda Gates Foundation</li>
-						<li>Luminate</li>
-						<li>Arnold Ventures</li>
-						<li>Bloomberg Philanthropies</li>
-						<li>National Endowment for Democracy</li>
-						<li>The Brooks and Joan Fortune Family Foundation, Inc.</li>
-						<li>Scripps Howard Foundation</li>
-						<li>The Ambrose Monell Foundation</li>
-						<li>Samuel I. Newhouse Foundation, Inc.</li>
-						<li>Gannett Foundation</li>
-
-						<li css={theme=>({
-							fontSize:'48px',
-							color:theme.colors.goldenGrass,
-							fontFamily: 'ubuntu',
-							marginTop: '5rem',
-							})}>
-							Corporations</li>
-						<li>Facebook Journalism Project</li>
-						<li>Dow Jones/News Corp</li>
-						<li>Microsoft</li>
-						<li>Google News Initiative</li>
-						<li>Al Jazeera Media Network</li>
-						<li>Apple News</li>
-						<li>Edelman</li>
-						<li>National Geographic</li>
-						<li>BakerHostetler</li>
-						<li>Univision</li>
-						<li>Associated Press</li>
-						<li>APCO Worldwide</li>
-						<li>CBS News</li>
-						<li>CNN</li>
-						<li>Discovery</li>
-						<li>Fox</li>
-						<li>GRF CPAs & Advisors</li>
-						<li>Mannheim LLC</li>
-						<li>McKinsey & Company</li>
-						<li>POLITICO</li>
-						<li>The New York Times Company</li>
-						<li>The Washington Post</li>
-						<li>TRACE International</li>
-						<li>Ernst & Young</li>
-						<li>Cision</li>
-						<li>Cresa</li>
-						<li>UBS</li>
-						<li>Anonymous</li>
-
-						<li css={theme=>({
-							fontSize:'48px',
-							color:theme.colors.goldenGrass,
-							fontFamily: 'ubuntu',
-							marginTop: '5rem',
-							})}>
-							Government Agencies</li>
-						<li>U.S. Department of State</li>
-						<li>United States Agency for International Development</li>
-
-						<li css={theme=>({
-							fontSize:'48px',
-							color:theme.colors.goldenGrass,
-							fontFamily: 'ubuntu',
-							marginTop: '5rem',
-							})}>
-							Organizations</li>
-						<li>World Health Organization</li>
-						<li>Radio Free Asia</li>
-						<li>Freedom House</li>
-						<li>Northwestern University in Qatar</li>
-						<li>Stanford University</li>
-						<li>Arthur F. Burns Fellowship Program Inc</li>
+						<OrgPeople>Foundations</OrgPeople>
+						<OrgPeopleDesc>John S. and James L. Knight Foundation</OrgPeopleDesc>
+						<OrgPeopleDesc>Bill & Melinda Gates Foundation</OrgPeopleDesc>
+						<OrgPeopleDesc>Luminate</OrgPeopleDesc>
+						<OrgPeopleDesc>Arnold Ventures</OrgPeopleDesc>
+						<OrgPeopleDesc>Bloomberg Philanthropies</OrgPeopleDesc>
+						<OrgPeopleDesc>National Endowment for Democracy</OrgPeopleDesc>
+						<OrgPeopleDesc>The Brooks and Joan Fortune Family Foundation, Inc.</OrgPeopleDesc>
+						<OrgPeopleDesc>Scripps Howard Foundation</OrgPeopleDesc>
+						<OrgPeopleDesc>The Ambrose Monell Foundation</OrgPeopleDesc>
+						<OrgPeopleDesc>Samuel I. Newhouse Foundation, Inc.</OrgPeopleDesc>
+						<OrgPeopleDesc>Gannett Foundation</OrgPeopleDesc>
+						<OrgPeople>Corporations</OrgPeople>
+						<OrgPeopleDesc>Facebook Journalism Project</OrgPeopleDesc>
+						<OrgPeopleDesc>Dow Jones/News Corp</OrgPeopleDesc>
+						<OrgPeopleDesc>Microsoft</OrgPeopleDesc>
+						<OrgPeopleDesc>Google News Initiative</OrgPeopleDesc>
+						<OrgPeopleDesc>Al Jazeera Media Network</OrgPeopleDesc>
+						<OrgPeopleDesc>Apple News</OrgPeopleDesc>
+						<OrgPeopleDesc>Edelman</OrgPeopleDesc>
+						<OrgPeopleDesc>National Geographic</OrgPeopleDesc>
+						<OrgPeopleDesc>BakerHostetler</OrgPeopleDesc>
+						<OrgPeopleDesc>Univision</OrgPeopleDesc>
+						<OrgPeopleDesc>Associated Press</OrgPeopleDesc>
+						<OrgPeopleDesc>APCO Worldwide</OrgPeopleDesc>
+						<OrgPeopleDesc>CBS News</OrgPeopleDesc>
+						<OrgPeopleDesc>CNN</OrgPeopleDesc>
+						<OrgPeopleDesc>Discovery</OrgPeopleDesc>
+						<OrgPeopleDesc>Fox</OrgPeopleDesc>
+						<OrgPeopleDesc>GRF CPAs & Advisors</OrgPeopleDesc>
+						<OrgPeopleDesc>Mannheim LLC</OrgPeopleDesc>
+						<OrgPeopleDesc>McKinsey & Company</OrgPeopleDesc>
+						<OrgPeopleDesc>POLITICO</OrgPeopleDesc>
+						<OrgPeopleDesc>The New York Times Company</OrgPeopleDesc>
+						<OrgPeopleDesc>The Washington Post</OrgPeopleDesc>
+						<OrgPeopleDesc>TRACE International</OrgPeopleDesc>
+						<OrgPeopleDesc>Ernst & Young</OrgPeopleDesc>
+						<OrgPeopleDesc>Cision</OrgPeopleDesc>
+						<OrgPeopleDesc>Cresa</OrgPeopleDesc>
+						<OrgPeopleDesc>UBS</OrgPeopleDesc>
+						<OrgPeopleDesc>Anonymous</OrgPeopleDesc>
+						<OrgPeople>Government Agencies</OrgPeople>
+						<OrgPeopleDesc>U.S. Department of State</OrgPeopleDesc>
+						<OrgPeopleDesc>United States Agency for International Development</OrgPeopleDesc>
+						<OrgPeople>Organizations</OrgPeople>
+						<OrgPeopleDesc>World Health Organization</OrgPeopleDesc>
+						<OrgPeopleDesc>Radio Free Asia</OrgPeopleDesc>
+						<OrgPeopleDesc>Freedom House</OrgPeopleDesc>
+						<OrgPeopleDesc>Northwestern University in Qatar</OrgPeopleDesc>
+						<OrgPeopleDesc>Stanford University</OrgPeopleDesc>
+						<OrgPeopleDesc>Arthur F. Burns Fellowship Program Inc</OrgPeopleDesc>
 					</ul>
 				</div>
 			</Container>
 		</Section>
 		<div css={css`
-			height: 30rem`
+			height: 15rem`
 			}/>
 		<div css={theme=>({
 			background: theme.colors.mineShaft,

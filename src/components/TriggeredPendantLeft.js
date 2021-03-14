@@ -28,8 +28,8 @@ export default function TriggeredPendantRight(props){
 	height: 80px;
 	position: relative;
 	${mq({
-		fontSize: ['1.5em','1.8em', '3em', '3em'],
-		paddingRight: ['1em','1em','3em']
+		fontSize: ['2em','2em', '3em', '3em'],
+		paddingRight: ['.5em','1em','3em']
 	})}
 	&:after{
 		content: '';
@@ -52,7 +52,7 @@ export default function TriggeredPendantRight(props){
 					duration: .5,
 					scrollTrigger:{
 						trigger:ref.current,
-						start: "top 65%",
+						start: "top bottom",
 						end: "top top",
 						toggleActions:"play complete reverse reset",
 						markers: false
@@ -61,7 +61,7 @@ export default function TriggeredPendantRight(props){
 				)
 		})
 		return(
-			<PendantContainer>
+			<PendantContainer className={props.className}>
 				<Pendant ref={ref} >
 					{props.children}
 				</Pendant>

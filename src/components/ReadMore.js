@@ -41,8 +41,9 @@ function ReadMore(props) {
               font-size: 1.1em;
               color: black;
               @media(min-width: ${mobile}){
-                font-size: 1.7em;     
-              }    `
+                font-size: 1.7em;  
+                margin-top: 5rem;     
+              } `
 
   return (
     <Container className={props.className}>
