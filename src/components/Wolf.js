@@ -29,10 +29,13 @@ const Card = styled.div`
 `
 
 const Name = styled.div`
-	font-size: 3em;
 	color: white;
 	font-family: Ubuntu;
 	margin: 1rem 0 0 3rem;
+	font-size: 2em;
+	@media(min-width:${tablet}){
+		font-size: 3em;		
+	}
 `
 const Title = styled.div`
 	font-size: 1.5em;

@@ -7,12 +7,16 @@ const Menu = styled.div`
 	top: 0;
 	z-index: 2;
 	position: fixed;
-	transform: ${ props => props.isOpen ? 'translate(-50%) skew(-15deg)' : 'translate(-120%)' };
 	transition: transform .3s ease;
 	height: 100vh;
 	width: 600px;
 	padding: 32px 32px 32px 220px;
 	background:#ddaf24;
+	transform: ${ props => props.isOpen ? 'translate(-50%)' : 'translate(-120%)' };
+	@media(min-width:480px){
+		transform: ${ props => props.isOpen ? 'translate(-50%) skew(-15deg)' : 'translate(-120%)' };
+	}
+
 `
 const Toggle = styled.div`
 	cursor: pointer;
