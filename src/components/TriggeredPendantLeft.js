@@ -52,14 +52,15 @@ export default function TriggeredPendantRight(props){
 					duration: .5,
 					scrollTrigger:{
 						trigger:ref.current,
-						start: "top bottom",
-						end: "top top",
-						toggleActions:"play complete reverse reset",
-						markers: false
+						start: 'top center',
+						end:'bottom top',
+						toggleActions:'play complete reverse reset',
+						markers: true
 						}
 					}
 				)
-		})
+			ScrollTrigger.refresh(true);
+		},[])
 		return(
 			<PendantContainer className={props.className}>
 				<Pendant ref={ref} >

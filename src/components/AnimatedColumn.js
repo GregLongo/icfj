@@ -16,7 +16,6 @@ const loop = keyframes`
 const Inner = styled.div`
 	position: absolute;
 	clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-	clip:rect(0px,100%,100%,0px);
 	width: 100%;
 	height: 100%;
 	white-space: nowrap;
@@ -48,12 +47,13 @@ class AnimatedColumn extends Component{
 	}
 	componentDidMount(){
 		gsap.from(this.ref.current,{
-		clip:"rect(100%,100%,100%,0px)",
+		clipPath: "polygon(0% 100%, 75% 100%, 75% 100%, 0% 100%)",
 		duration: 1,
 		scrollTrigger:{
 				trigger:this.ref.current,
-				// start: "top center",
-				// toggleActions:"play complete none reverse",
+						start: 'top center',
+						end:'bottom top',
+						toggleActions:'play complete reverse reset',
 				markers: false
 			}
 		})

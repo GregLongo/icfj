@@ -19,8 +19,9 @@ class TextPop extends Component{
 			ScrollTrigger.refresh();
 			ScrollTrigger.create({
 			trigger: this.ref.current,		
-			start: "top center",
-			end: 0,
+			start: 'top center',
+			end:'bottom top',
+			toggleActions:'play complete reverse reset',
 			onEnter: () => {this.setState({pop:true})},
 			onLeave: () => {this.setState({pop:false})},
 			markers: false
