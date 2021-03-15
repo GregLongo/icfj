@@ -328,7 +328,11 @@ export default function Home() {
                   providing audiences with accurate, lifesaving news, and doing
                   it while combating the spread of false information.
                 </p>
-                <p>
+                <p
+                  css={css`
+                    margin-bottom: 0;
+                  `}
+                >
                   We at ICFJ are doing our best to help journalists better cover
                   the story of the century. At the onset of COVID-19, we
                   galvanized quickly to help them gain access to top
@@ -340,7 +344,7 @@ export default function Home() {
               </ParagraphSlant>
             </div>
             <ReadMore bp={breakpoints}>
-              <p>
+              <p id="first-line" className="yellow">
                 In other ICFJ programs, investigative journalists in our
                 networks are collaborating to uncover corruption by those
                 seeking to get rich from the pandemic. Pioneers in media

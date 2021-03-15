@@ -14,10 +14,35 @@ export default function TriggeredBgColor(props) {
       trigger: ref.current,
       start: "top center",
       end: 1,
-      onEnter: () =>
-        gsap.to(document.body, { backgroundColor: color, duration: 1 }),
-      onEnterBack: () =>
-        gsap.to(document.body, { backgroundColor: color, duration: 0.5 }),
+      onEnter: () => {
+        if (col === "goldenGrass") {
+          document.getElementById("first-line").classList.add("yellow")
+          document.getElementById("first-line").classList.remove("blue")
+        } else if (col === "curiousBlue") {
+          document.getElementById("first-line").classList.remove("yellow")
+          document.getElementById("first-line").classList.add("blue")
+        } else {
+          document.getElementById("first-line").classList.add("yellow")
+          document.getElementById("first-line").classList.remove("blue")
+        }
+        return gsap.to(document.body, {
+          backgroundColor: color,
+          duration: 1,
+        })
+      },
+      onEnterBack: () => {
+        if (col === "goldenGrass") {
+          document.getElementById("first-line").classList.add("yellow")
+          document.getElementById("first-line").classList.remove("blue")
+        } else if (col === "curiousBlue") {
+          document.getElementById("first-line").classList.remove("yellow")
+          document.getElementById("first-line").classList.add("blue")
+        } else {
+          document.getElementById("first-line").classList.add("yellow")
+          document.getElementById("first-line").classList.remove("blue")
+        }
+        return gsap.to(document.body, { backgroundColor: color, duration: 0.5 })
+      },
       markers: false,
     })
   })
