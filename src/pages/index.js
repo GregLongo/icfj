@@ -344,7 +344,7 @@ export default function Home() {
               </ParagraphSlant>
             </div>
             <ReadMore bp={breakpoints}>
-              <p id="first-line" className="yellow">
+              <p>
                 In other ICFJ programs, investigative journalists in our
                 networks are collaborating to uncover corruption by those
                 seeking to get rich from the pandemic. Pioneers in media

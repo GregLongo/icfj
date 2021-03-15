@@ -55,47 +55,10 @@ function ReadMore(props) {
       margin-top: -110px;
       font-size: 1.7em;
     }
-    &.close {
-      > p, > svg {
-        display: none;
-      }
-      p {
-        &:first-of-type {
-          display: block;
-          width: 100%;
-          clear: both;
-          display: inline-block;
-          overflow: hidden;
-          white-space: nowrap;
-          position: relative;        
-          &:before {
-            content: '';
-            width: 100%;
-            height: 100%;    
-            position: absolute;
-            left: 0;
-            top: 0;
-            background: linear-gradient(transparent 5px, #ddaf25);
-            opacity: 0;
-          }
-          &.yellow {
-            &:before {
-              background: linear-gradient(transparent 5px, #ddaf25);
-              opacity: 1;
-            }
-          }
-          &.blue {            
-            &:before {
-              background: linear-gradient(transparent 5px, #2f9ee7);
-              opacity: 1;
-            }
-          }
-      }
-    }
   `
 
   return (
-    <Container className={`${props.className} ${readMore ? "open" : "close"}`}>
+    <Container className={props.className}>
       <Button
         onClick={() => {
           setReadMore(!readMore)
@@ -103,7 +66,7 @@ function ReadMore(props) {
       >
         <h2> {linkName}</h2>
       </Button>
-      {extraContent}
+      {readMore && extraContent}
     </Container>
   )
 }
