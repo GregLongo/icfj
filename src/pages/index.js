@@ -1,9 +1,14 @@
 /** @jsx jsx */
 
+import { useEffect } from "react"
+
 //Libraries
 import { Global, css, jsx, ThemeProvider} from "@emotion/react"
 import styled from "@emotion/styled"
 import facepaint from 'facepaint'
+import { gsap } from "gsap" 
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
 
 //UI
 import Header from "../components/Header.js"
@@ -139,8 +144,17 @@ const Link = styled.a`
 //   require("smooth-scroll")('a[href*="#"]')
 // }
 
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
+
+	useEffect(() => {
+	  const timer = setTimeout(() => {
+	    ScrollTrigger.refresh(true);
+	  }, 1000);
+	  return () => clearTimeout(timer);
+	}, []);
+
 	return (
 		<div>
 		<ThemeProvider theme={theme}>
@@ -203,12 +217,17 @@ export default function Home() {
 					height: 40rem;
 					margin-bottom: 15rem;
 				}
+
 				`}>
-				<TriggeredTextBlock>
+				<TriggeredTextBlock css={css`				
+					@media(max-width:${tablet}){
+					opacity: 1 important!
+				}`}>
 					<div css={mq({
 						fontSize:['2em', '3em', '3em', '4em'],
 						fontFamily:'ubuntu',
-						linHeight:'2'})}
+						linHeight:'2',
+						opacity: '1'})}
 					>Mission</div>
 					<div css={mq({
 						fontSize:['1.2em', '1.5em', '2em'],
@@ -320,7 +339,7 @@ export default function Home() {
 							margin-bottom:0;
 						}	
 						`}  >
-						<iframe title="mosaic" width='100%' height='765px' src="https://icfjmosaic.com" frameBorder="0" margin="0" padding="0" scrolling="no" allowFullScreen="" ></iframe>
+					<iframe title="mosaic" width='100%' height='765px' src="https://icfjmosaic.com" frameBorder="0" margin="0" padding="0" scrolling="no" allowFullScreen="" ></iframe>
 					</FrameEmbed>
 					<Quote bp={breakpoints} css={mq({
 						height: ['25rem','20rem','35rem','40rem'],
@@ -496,7 +515,7 @@ export default function Home() {
 					</div>
 
 				</Container>
-				<LanguageTicker css={css`margin-top:10rem; margin-bottom:10rem`}><img css={css`width:120vw;`} alt="languages" src={Languages}/></LanguageTicker>
+				<LanguageTicker css={css`margin-top:10rem; margin-bottom:5rem`}><img css={css`width:120vw;`} alt="languages" src={Languages}/></LanguageTicker>
 				<TriggeredBgColor color='boulder' />
 		</Section>
 		<Section name="Networks">
@@ -976,7 +995,7 @@ export default function Home() {
 				<Subheader css={css`color:white`}>2019 Expense Breakdown:</Subheader>
 				<TriggeredLottie
 					css={css`
-					width: 100%;
+					width: 60%;
 					@media(min-width:${tablet}){
 						width: 60%;
 					}

@@ -25,9 +25,10 @@ class TriggeredCounter extends Component{
 				this.setState({value:target.value.toLocaleString()})
 			},
 			scrollTrigger:{
-				start: "top center",
 				trigger:this.ref.current,
-				toggleActions:"play complete reverse reset",
+				start: 'top center',
+				end:'bottom top',
+				toggleActions:'play complete reverse reset',
 				markers:false,
 			},
 		})
