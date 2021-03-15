@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
-import ImageQuery from "../components/ImageQuery.js"
+import ImageQuery from "./ImageQuery.js"
 
 export default function WinnerRight(props) {
   const tablet = props.bp[1]
