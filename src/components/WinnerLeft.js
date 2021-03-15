@@ -11,6 +11,7 @@ export default function WinnerLeft(props) {
     flex-direction: column;
     overflow: hidden;
     padding-bottom: 2rem;
+    margin-top: 4rem;
     @media (min-width: ${tablet}) {
       flex-direction: row;
       height: 340px;
