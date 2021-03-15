@@ -35,9 +35,9 @@ const HeadlineContainer = styled.div`
 					duration: 2,
 					scrollTrigger:{
 						trigger:ref.current,
-						start: 'top center',
+				start: 'top center',
 						end:'bottom top',
-						toggleActions:'play complete reverse reset',
+						toggleActions:'play complete none reverse',
 						markers: false
 						}
 					}

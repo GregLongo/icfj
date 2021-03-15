@@ -62,7 +62,7 @@ export default function FrameEmbed(props){
 						trigger:ref.current,
 						start: 'top center',
 						end:'bottom top',
-						toggleActions:'play complete reverse reset',
+						toggleActions:'play complete none reverse',
 						}
 					}
 				)

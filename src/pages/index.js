@@ -61,7 +61,7 @@ import PatternCountries from "../images/Pattern_Countries.png"
 import PatternLanguages from "../images/Pattern_Languages.png"
 import PatternCovid from "../images/Pattern_Covid.png"
 import Languages from "../images/languages_ticker.png"
-import Masthead from "../images/masthead.gif"
+import Masthead from "../gif/masthead.gif"
 
 //Themes
 import theme from "../themes/theme.js"
@@ -86,7 +86,7 @@ const Container = styled.div`
 	margin-left: auto;
 	${mq({
 	 maxWidth: ['90%','90%','90%','1024px'],
-	 marginTop: ['5rem','5rem','10rem']
+	 marginTop: ['10rem','10rem','10rem']
 	})}
 	&:first-of-type {
 		margin-top: 0;
@@ -221,7 +221,7 @@ export default function Home() {
 				`}>
 				<TriggeredTextBlock css={css`				
 					@media(max-width:${tablet}){
-					opacity: 1 important!
+					opacity: 1 !important
 				}`}>
 					<div css={mq({
 						fontSize:['2em', '3em', '3em', '4em'],
@@ -339,8 +339,8 @@ export default function Home() {
 							margin-bottom:0;
 						}	
 						`}  >
-					<iframe title="mosaic" width='100%' height='765px' src="https://icfjmosaic.com" frameBorder="0" margin="0" padding="0" scrolling="no" allowFullScreen="" ></iframe>
-					</FrameEmbed>
+					{/*<iframe title="mosaic" width='100%' height='765px' src="https://icfjmosaic.com" frameBorder="0" margin="0" padding="0" scrolling="no" allowFullScreen="" ></iframe>
+					*/}</FrameEmbed>
 					<Quote bp={breakpoints} css={mq({
 						height: ['25rem','20rem','35rem','40rem'],
 						display:'flex',
@@ -536,7 +536,7 @@ export default function Home() {
 					display: grid;
 					grid-template-columns: 5% 95%;
 					margin-top: 10rem;
-					margin-bottom: -20rem;
+					margin-bottom: -8rem;
 					@media(min-width:${tablet}){
 						margin-top: 10rem;
 					 	margin-bottom: -20rem;
@@ -921,6 +921,7 @@ export default function Home() {
 				<TriggeredLottie animation={animationTribute} loop={false} css={css`
 						margin-top: 5rem;
 						margin-bottom: 5rem;
+						transform: scale(1)!important
 						`
 				}/>
 				<FrameEmbed  bp={breakpoints} buttonColor='goldenGrass'

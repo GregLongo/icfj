@@ -14,10 +14,10 @@ export default function TriggeredTextBlock(props){
 					duration: 1,
 					scrollTrigger:{
 						trigger:ref.current,
-						start: 'top center',
+						start: 'top 55%',
 						end:'bottom top',
-						toggleActions:'play complete reverse reset',
-						markers: false
+						toggleActions:'play complete none reverse',
+						markers: true
 						}
 					}
 				)

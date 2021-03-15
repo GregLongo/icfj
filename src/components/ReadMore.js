@@ -36,13 +36,14 @@ function ReadMore(props) {
     `
 
     const Container = styled.div`
-              margin-bottom: 15rem;  
               font-family: interstate condensed;
               font-size: 1.1em;
               color: black;
+              margin-bottom: 10rem;   
               @media(min-width: ${mobile}){
                 font-size: 1.7em;  
-                margin-top: 5rem;     
+                margin-top: 5rem;   
+                margin-bottom: 15rem;    
               } `
 
   return (

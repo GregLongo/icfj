@@ -21,7 +21,7 @@ class TextPop extends Component{
 			trigger: this.ref.current,		
 			start: 'top center',
 			end:'bottom top',
-			toggleActions:'play complete reverse reset',
+				toggleActions:'play complete none reverse',
 			onEnter: () => {this.setState({pop:true})},
 			onLeave: () => {this.setState({pop:false})},
 			markers: false
