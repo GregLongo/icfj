@@ -19,13 +19,14 @@ function ReadMore(props) {
   const Button = styled.button`
     position: relative;
     background: tomato;
-    float: right;
+    margin-left: auto;
     color: white;
     border: none;
     position: relative;
     display: flex;
     flex-direction: row;
     outline: none;
+    padding: 0 20px;
     &:hover {
       background: transparent;
       outline: 6px solid tomato;

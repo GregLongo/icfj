@@ -35,9 +35,17 @@ export default function Header(props) {
     font-family: ubuntu;
     display: grid;
     grid-column-gap: 1rem;
-    align-items: start;
+    align-items: center;
     justify-content: end;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(3, auto);
+    margin-left: 20px;
+    @media (min-width: ${mobile}) {
+      grid-template-columns: repeat(4, auto);
+      margin-left: 0;
+    }
+    svg {
+      font-size: 18px;
+    }
   `
 
   const SocialText = styled.a`
@@ -45,11 +53,11 @@ export default function Header(props) {
     text-decoration: none;
     float: right;
     @media (min-width: ${mobile}) {
-      font-size: 1.5em;
+      font-size: 1.4em;
     }
     &:nth-of-type(1) {
       color: #149ee7;
-      grid-column-start: span 4;
+      grid-column-start: span 3;
       @media (min-width: ${desktop}) {
         grid-column-start: span 1;
       }

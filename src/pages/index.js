@@ -1599,10 +1599,11 @@ export default function Home() {
             <SmallSubheader
               css={css`
                 color: white;
-                margin: 3em 0 0 0;
                 @media (min-width: ${tablet}) {
                   margin: initial;
-                } ;
+                }
+                text-align: right;
+                margin-top: 4rem !important;
               `}
             >
               We are careful stewards of our donors’ funds.
@@ -1611,6 +1612,7 @@ export default function Home() {
               css={css`
                 color: white;
                 margin-top: 10rem;
+                text-align: right;
               `}
             >
               Total Reveue for 2019: $19.9 million
@@ -1618,6 +1620,7 @@ export default function Home() {
             <Subheader
               css={css`
                 color: white;
+                text-align: right;
               `}
             >
               2019 Expense Breakdown:
@@ -1709,6 +1712,14 @@ export default function Home() {
               </Subheader>
             </div>
           </Container>
+          <TriggeredBgColor color="curiousBlue" />
+          <div
+            css={css`
+              @media (min-width: ${tablet}) {
+                margin-bottom: 20rem;
+              }
+            `}
+          />
         </Section>
         <Section name="BoardMembers">
           <TriggeredBgColor color="fruitSalad" />

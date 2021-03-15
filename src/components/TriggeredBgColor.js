@@ -17,7 +17,7 @@ export default function TriggeredBgColor(props) {
       onEnter: () =>
         gsap.to(document.body, { backgroundColor: color, duration: 1 }),
       onEnterBack: () =>
-        gsap.to(document.body, { backgroundColor: color, duration: 1 }),
+        gsap.to(document.body, { backgroundColor: color, duration: 0.5 }),
       markers: false,
     })
   })
