@@ -13,9 +13,11 @@
 
 1.  **Develop and Run BrowserSync.**
     Run:
+
     ```shell
     gatsby develop
     ```
+
     Visit Browser at:
     `http://localhost:8000`
 

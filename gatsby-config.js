@@ -5,37 +5,37 @@
  */
 const path = require(`path`)
 
-
 module.exports = {
   /* Your site config here */
   pathPrefix: `/icfj`,
-  plugins: [{
-  	 resolve: 'gatsby-plugin-emotion'
-  	 },
-     {
+  plugins: [
+    {
+      resolve: "gatsby-plugin-emotion",
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/images/`,
-        name: 'images'
-      }
+        name: "images",
+      },
     },
     {
-      resolve: 'gatsby-plugin-react-svg',
+      resolve: "gatsby-plugin-react-svg",
       options: {
         path: `${__dirname}/src/images/`,
-        name: 'images'
-      }
+        name: "images",
+      },
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
-          typekit: {
-            id: 'jlv7xwm'
-          }
-      }
+        typekit: {
+          id: "jlv7xwm",
+        },
+      },
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-fontawesome-css`    
+    `gatsby-plugin-fontawesome-css`,
   ],
 }
