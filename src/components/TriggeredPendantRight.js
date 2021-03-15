@@ -53,7 +53,7 @@ export default function TriggeredPendantRight(props){
 						trigger:ref.current,
 						start: 'top center',
 						end:'bottom top',
-						toggleActions:'play complete reverse reset',
+				toggleActions:'play complete none reverse',
 						markers: true
 						}
 					}

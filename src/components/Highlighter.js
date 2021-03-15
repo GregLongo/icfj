@@ -22,7 +22,7 @@ export default function Highlighter(props){
 				trigger:ref.current,
 				start: 'top center',
 				end: 0,
-				toggleActions:"play complete reverse reset"	,
+				toggleActions:'play complete none reverse',
 				markers:false		
 			}
 		})

@@ -14,7 +14,7 @@ export default function Quote(props){
 		);
 	
 	const Text = styled.div`
-		font-family: interstate;
+		font-family: interstate condensed;
 		padding-left: 4rem;
 		z-index: 2;
 		color: ${props.light ? 'white' : ''};
@@ -43,7 +43,7 @@ export default function Quote(props){
 						trigger:ref.current,
 						start: 'top center',
 						end:'bottom top',
-						toggleActions:'play complete reverse reset',
+				toggleActions:'play complete none reverse',
 						markers: false
 						}
 					}

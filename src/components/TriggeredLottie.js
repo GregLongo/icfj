@@ -30,11 +30,11 @@ gsap.registerPlugin(ScrollTrigger)
 
 		ScrollTrigger.create({
 			trigger: this.ref.current,
-			start: 'top center',
+				start: 'top 40%',
 			end: 'bottom top',
 			onEnter: this.triggerAnim,
 			onLeaveBack: this.stopAnim,
-			toggleActions:'play complete reverse reset',
+			toggleActions:'play complete none reverse',
 			markers: false
 		})
 
