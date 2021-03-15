@@ -1,23 +1,20 @@
 import React from "react"
-import { StaticQuery , graphql } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 const PhotoTest = ({ data }) => (
-
   <div>
-      <StaticQuery 
+    <StaticQuery
       query={graphql`
-        query{
-          deer: file(relativePath:{eq:"deer.jpg"}){
+        query {
+          deer: file(relativePath: { eq: "deer.jpg" }) {
             ...tallImage
-          },
-          bus: file(relativePath:{eq:"bus.jpg"}){
+          }
+          bus: file(relativePath: { eq: "bus.jpg" }) {
             ...tallImage
           }
         }
-      
-
-    `}
+      `}
     />
     <Img fixed={data.deer.childImageSharp.fixed} />
   </div>
@@ -25,14 +22,12 @@ const PhotoTest = ({ data }) => (
 
 export const tallImage = graphql`
   fragment tallImage on File {
-      childImageSharp {
-        fixed(width: 300, height: 600) {
-          ...GatsbyImageSharpFixed
-        }
+    childImageSharp {
+      fixed(width: 300, height: 600) {
+        ...GatsbyImageSharpFixed
       }
+    }
   }
 `
-
-
 
 export default PhotoTest
