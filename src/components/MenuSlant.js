@@ -1,7 +1,6 @@
 import { React, Component } from "react"
 import styled from "@emotion/styled"
 import Hamburger from "hamburger-react"
-import { Link } from "gatsby"
 
 const Menu = styled.div`
   top: 0;
@@ -23,9 +22,12 @@ const Toggle = styled.div`
   cursor: pointer;
   outline: none;
   z-index: 1000;
-  position: fixed;
-  top: 60px;
-  left: 100px;
+  position: relative;
+  &.open {
+    position: fixed;
+    top: 60px;
+    left: 100px;
+  }
 `
 const List = styled.ul`
   list-style: none;
@@ -142,12 +144,11 @@ class MenuSlant extends Component {
     this.setState({
       open: !this.state.open,
     })
-    console.log(this.state.open)
   }
   render() {
     return (
       <div>
-        <Toggle>
+        <Toggle className={`${this.state.open ? "open" : ""}`}>
           <Hamburger
             color={this.state.open ? "white" : "#757575"}
             size={80}
