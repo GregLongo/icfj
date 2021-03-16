@@ -45,6 +45,7 @@ import animationAudio from "../lotties/audio.json"
 import animationTweet from "../lotties/tweet.json"
 import animationAfrica from "../lotties/africa.json"
 import animationAfrica2 from "../lotties/africa2.json"
+import animationBrazil from "../lotties/brazil.json"
 import animationSouthAmerica from "../lotties/southamerica.json"
 import animationPie from "../lotties/piechart.json"
 import animationTribute from "../lotties/tribute.json"
@@ -109,6 +110,7 @@ const Credits = styled.div`
   font-family: ubuntu;
   font-size: 1em;
   color: white;
+	opacity: .4;
 `
 
 const OrgPeople = styled.li`
@@ -277,7 +279,7 @@ export default function Home() {
               bp={breakpoints}
               color="curiousBlue"
             >
-              A Letter From the President
+              Letter from Joyce
             </TriggeredPendantRight>
             <div
               css={css`
@@ -369,7 +371,7 @@ export default function Home() {
           <TriggeredBgColor color="curiousBlue" />
           <TriggeredLottie
             css={css`
-              opacity: 0.5;
+              opacity: 0.7;
             `}
             animation={animationPenPaper}
             loop={true}
@@ -470,7 +472,7 @@ export default function Home() {
             >
               “With ICFJ’s support, we are improving the lives of the poorest of
               the poor by bringing them reliable, crowdsourced news for the
-              first time." - Devansh Mehta, CGNet Swara, India
+              first time."<br></br> - Devansh Mehta, CGNet Swara, India
             </Quote>
           </Container>
           <TriggeredBgColor color="curiousBlue" />
@@ -479,7 +481,7 @@ export default function Home() {
           <TriggeredBgColor color="boulder" />
           <TriggeredLottie
             css={css`
-              opacity: 0.5;
+              opacity: 0.7;
             `}
             animation={animationAudio}
             loop={true}
@@ -521,7 +523,7 @@ export default function Home() {
                 provide vital information on the COVID-19 pandemic. The program
                 connects journalists with experts, information and each other in
                 five languages,through weekly webinars, Facebook groups and
-                resources published by our{" "}
+                resources published by our{" "}<br></br>
                 <Highlighter color="fruitSalad">
                   International Journalists’ Network (IJNet).
                 </Highlighter>
@@ -579,7 +581,7 @@ export default function Home() {
               <AnimatedColumn
                 bp={breakpoints}
                 image={PatternLanguages}
-                color="curiousBlue"
+                color="fruitSalad"
                 title="Languages"
                 val="5"
               />
@@ -609,7 +611,7 @@ export default function Home() {
               `}
             >
               “ICFJ gave me and my listeners a global perspective of how other
-              countries were handling the pandemic. ” - Chidera Rosecamille
+              countries were handling the pandemic. ”<br></br> - Chidera Rosecamille
               Aneke, Darling FM
             </Quote>
             <div
@@ -638,16 +640,24 @@ export default function Home() {
               css={css`
                 color: white;
                 margin-top: 10rem;
-                margin-bottom: 10rem;
+                margin-bottom: 5rem;
                 @media (min-width: ${tablet}) {
                   margin-top: 15rem;
-                  margin-bottom: 15rem;
+                  margin-bottom: 8rem;
                 }
               `}
             >
               <Subheader>
-                The World's Most Comprehensive Site for Journalists
-              </Subheader>
+							<span
+								css={css`
+									color: #149EE7;
+									font-weight: 800;
+								`}
+							>
+								{" "}
+								The World's Most Comprehensive Site for Journalists{" "}
+							</span>
+							</Subheader>
               <p
                 css={css`
                   font-family: interstate condensed;
@@ -663,9 +673,9 @@ export default function Home() {
                 width: 60%;
                 margin-right: auto;
                 margin-left: auto;
-                margin-top: 10rem;
+                margin-top: 5rem;
                 @media (min-width: ${tablet}) {
-                  margin-top: 15rem;
+                  margin-top: 8rem;
                 }
               `}
             >
@@ -674,12 +684,12 @@ export default function Home() {
           </Container>
           <Container
             css={css`
-              margin-top: 10rem;
+              margin-top: 5rem;
               display: grid;
               font-family: interstate condensed;
               grid-template-columns: 100%;
               @media (min-width: ${tablet}) {
-                margin-top: 15rem;
+                margin-top: 8rem;
                 grid-template-columns: 20% 40% 40%;
               }
               div {
@@ -697,13 +707,13 @@ export default function Home() {
             <div
               css={css`
                 @media (min-width: ${tablet}) {
-                  border: 10px solid black;
+                  border: 20px solid #149EE7;
                   padding: 2rem;
                 }
               `}
             >
               <TriggeredCounter
-                css={theme => ({ color: theme.colors.white })}
+                css={theme => ({ color: theme.colors.black })}
                 val={"8"}
               />
               <span>Languages</span>
@@ -711,7 +721,7 @@ export default function Home() {
             <div
               css={css`
                 @media (min-width: ${tablet}) {
-                  border: 10px solid black;
+                  border: 20px solid black;
                   padding: 2rem;
                 }
               `}
@@ -728,14 +738,14 @@ export default function Home() {
             <div
               css={css`
                 @media (min-width: ${tablet}) {
-                  border: 10px solid black;
+                  border: 20px solid #149EE7;
                   padding: 2rem;
                 }
               `}
             >
               <TriggeredCounter
                 css={theme => ({
-                  color: theme.colors.fruitSalad,
+                  color: theme.colors.black,
                   fontSize: "6em",
                 })}
                 val={"182000"}
@@ -763,7 +773,7 @@ export default function Home() {
           <TriggeredBgColor color="fruitSalad" />
           <TriggeredLottie
             css={css`
-              opacity: 0.5;
+              opacity: 0.7;
             `}
             animation={animationCameras}
             loop={true}
@@ -791,7 +801,12 @@ export default function Home() {
               </TriggeredHeadline>
             </div>
             <TriggeredTextBlock>
-              <Subheader>Journalism with Impact </Subheader>
+              <Subheader><div
+	              css={css`
+									color: #fff;
+									`}
+									>
+	          Journalism with Impact</div> </Subheader>
             </TriggeredTextBlock>
             <div
               css={css`
@@ -834,7 +849,8 @@ export default function Home() {
               </ParagraphSlant>
             </div>
             <ImageQuery filename="bigeye.jpg" />
-            <div
+						<Credits>Credit: Rocío Urtecho</Credits>
+						<div
               css={css`
                 margin-top: 5rem;
                 color: white;
@@ -863,8 +879,8 @@ export default function Home() {
                     Stories by ICFJ partner, the Organized Crime and Corruption
                     Reporting Project (OCCRP), based in Eastern Europe, have co
                     tributed to more than{" "}
-                    <TextPop color="#313131">
-                      $7.3 billion in illicitly acquired funds{" "}
+                    <TextPop color="#DDAF24">
+                      $7.3 billion in illicitly acquired funds &nbsp;{" "}
                     </TextPop>
                     that have since been recovered.
                   </p>
@@ -890,7 +906,7 @@ export default function Home() {
               })}
             >
               “We exposed corruption and human rights abuses working in a
-              cross-border network supported by ICFJ.” -- Lisseth Boon,
+              cross-border network supported by ICFJ.”<br></br> - Lisseth Boon,
               Connectas, Venezuela
             </Quote>
           </Container>
@@ -900,7 +916,7 @@ export default function Home() {
           <TriggeredBgColor color="mineShaft" />
           <TriggeredLottie
             css={css`
-              opacity: 0.5;
+              opacity: 0.7;
             `}
             animation={animationTweet}
             loop={true}
@@ -972,8 +988,8 @@ export default function Home() {
                   fontFamily: "interstate condensed",
                   fontSize: ["1em", "1.2em", "1.5em"],
                   lineHeight: ["1", "1.5", "2"],
-                  textAlign: "left",
-                  marginTop: ["1em", "2em", "4em"],
+                  textAlign: "right",
+          				marginTop: ["1em", "2em", "4em"],
                 })}
               >
                 In Nigeria, journalists, fact checkers and social media
@@ -1003,14 +1019,14 @@ export default function Home() {
                   fontFamily: "interstate condensed",
                   fontSize: ["1em", "1.2em", "1.5em"],
                   lineHeight: ["1", "1.5", "2"],
-                  textAlign: "right",
+                  textAlign: "left",
                   paddingTop: ["1em", "2em", "4em"],
                 })}
               >
                 Women journalists and data analysts from five countries shed
                 light on marginalized groups -- such as domestic workers and
                 HIV/AIDS patients -- hardest hit by the pandemic, as part of the{" "}
-                <Link href="https://urldefense.com/v3/__https:/theawjp.org/__;!!Ie25XFjv7UPO!4QFkJUrcVekppLkvEruzM2TiStyjctG8zz8IV7SGT2ah_DeDeH2DmSK44qtt$">
+                <Link href="https://urldefense.com/v3/__https:/theawjp.org/__;!!Ie25XFjv7UPO!4QFkJUrcVekppLkvEruzM2TiStyjctG8zz8IV7SGT2ah_DeDeH2DmSK44qtt$" target="_blank">
                   Africa Women’s Journalism Project
                 </Link>
                 , led by Brazil-based{" "}
@@ -1062,7 +1078,7 @@ export default function Home() {
                   src="Sergio.jpg"
                 />
                 <TriggeredLottie
-                  animation={animationSouthAmerica}
+                  animation={animationBrazil}
                   loop={false}
                   css={css`
                     transform: translate(20%, -50%);
@@ -1077,18 +1093,18 @@ export default function Home() {
                   fontFamily: "interstate condensed",
                   fontSize: ["1em", "1.2em", "1.5em"],
                   lineHeight: ["1", "1.5", "2"],
-                  textAlign: "left",
+                  textAlign: "right",
                   paddingTop: ["1em", "2em", "4em"],
                 })}
               >
                 Journalists can more quickly find expert sources of scientific
                 information thanks to{" "}
-                <Link href="https://urldefense.com/v3/__https:/sciencepulse.org/about__;!!Ie25XFjv7UPO!4QFkJUrcVekppLkvEruzM2TiStyjctG8zz8IV7SGT2ah_DeDeH2DmfhbEiCV$">
+                <Link href="https://urldefense.com/v3/__https:/sciencepulse.org/about__;!!Ie25XFjv7UPO!4QFkJUrcVekppLkvEruzM2TiStyjctG8zz8IV7SGT2ah_DeDeH2DmfhbEiCV$" target="_blank">
                   Science Pulse
                 </Link>
                 , a free tool created by a{" "}
                 <TextPop color="#47609F">
-                  ICFJ Knight Fellow Sergio Spagnuolo{" "}
+                  ICFJ Knight Fellow Sergio Spagnuolo &nbsp;{" "}
                 </TextPop>
                 that features the latest updates from more than 1,600 verified
                 scientists and scientific organizations tweeting in English,
@@ -1102,7 +1118,7 @@ export default function Home() {
           <TriggeredBgColor color="sanMarino" />
           <TriggeredLottie
             css={css`
-              opacity: 0.5;
+              opacity: 0.7;
             `}
             animation={animationPenPaper}
             loop={true}
@@ -1176,7 +1192,7 @@ export default function Home() {
               >
                 Media entrepreneurs in the Middle East and North Africa have
                 improved the business prospects of their startups through our{" "}
-                <Link href="https://ijnet.org/en/story/meet-our-ijnet-arabic-2020-mentoring-center-participants">
+                <Link href="https://ijnet.org/en/story/meet-our-ijnet-arabic-2020-mentoring-center-participants" target="_blank">
                   <Highlighter color="goldenGrass">
                     IJNet Mentoring Center
                   </Highlighter>
@@ -1194,9 +1210,8 @@ export default function Home() {
                 css={css`
                   height: 510px;
                 `}
-                filename="bigeye.jpg"
+                filename="Facebook-Accelerator.jpg"
               />
-              <Credits>Credit: Rocío Urtecho</Credits>
               <div
                 css={css`
                   color: white;
@@ -1214,7 +1229,7 @@ export default function Home() {
                 Local newsrooms in Brazil increase their readers while
                 participating in the{" "}
                 <Highlighter color="curiousBlue">
-                  <Link href="https://www.facebook.com/journalismproject/programs/accelerator/brazilian-publishers-thriving">
+                  <Link href="https://www.facebook.com/journalismproject/programs/accelerator/brazilian-publishers-thriving" target="_blank">
                     Local News Accelerator
                   </Link>
                 </Highlighter>{" "}
@@ -1253,7 +1268,7 @@ export default function Home() {
                 significantly increased their revenue in just six months, as
                 part of Velocidad. They did it primarily through paid content,
                 advertising and other client services -- and{" "}
-                <Link href="https://www.icfj.org/news/velocidad-helps-news-startups-grow-membership-and-revenue-program-enters-second-phase">
+                <Link href="https://www.icfj.org/news/velocidad-helps-news-startups-grow-membership-and-revenue-program-enters-second-phase" target="_blank">
                   it's just the beginning
                 </Link>
                 . This accelerator program with ICFJ and SembraMedia is
@@ -1275,7 +1290,7 @@ export default function Home() {
             >
               {" "}
               “With the help of IJNet mentors, I empowered more women and made
-              my news outlet stronger financially.” - Sheikha Aldosary, Saudi
+              my news outlet stronger financially.”<br></br> - Sheikha Aldosary, Saudi
               Women's Stories, Saudi Arabia
             </Quote>
           </Container>
@@ -1285,7 +1300,7 @@ export default function Home() {
           <TriggeredBgColor color="valencia" />
           <TriggeredLottie
             css={css`
-              opacity: 0.5;
+              opacity: 0.7;
             `}
             animation={animationAudio}
             loop={true}
@@ -1324,11 +1339,11 @@ export default function Home() {
               `}
             >
               During a tumultous year, ICFJ and its partners identified the{" "}
-              <Link href="https://www.icfj.org/news/new-global-survey-raises-red-flags-journalism-covid-19-era">
+              <Link href="https://www.icfj.org/news/new-global-survey-raises-red-flags-journalism-covid-19-era" target="_blank">
                 impact of the pandemic on journalism
               </Link>{" "}
               as well as the escalating problem of{" "}
-              <Link href="https://www.icfj.org/news/icfj-unesco-study-online-violence-fueled-disinformation-and-political-attacks-deeply-harms">
+              <Link href="https://www.icfj.org/news/icfj-unesco-study-online-violence-fueled-disinformation-and-political-attacks-deeply-harms" target="_blank">
                 online violence against women journalists
               </Link>
               .
@@ -1429,7 +1444,7 @@ export default function Home() {
               css={css`
                 color: white;
                 font-style: italic;
-                margin: 3em;
+                margin: 1.5em;
               `}
             >
               <Highlighter color="mineShaft">
@@ -1445,7 +1460,7 @@ export default function Home() {
           <TriggeredBgColor color="white" />
           <TriggeredLottie
             css={css`
-              opacity: 0.5;
+              opacity: 0.7;
             `}
             animation={animationCameras}
             loop={true}
@@ -1496,7 +1511,7 @@ export default function Home() {
                   css={css`
                     color: black;
                   `}
-                  href="https://www.icfj.org/calendar/icfj-tribute-journalists-2020"
+                  href="https://www.icfj.org/calendar/icfj-tribute-journalists-2020" target="_blank"
                 >
                   ICFJ’s annual awards
                 </Link>{" "}
@@ -1587,7 +1602,7 @@ export default function Home() {
           <TriggeredBgColor color="curiousBlue" />
           <TriggeredLottie
             css={css`
-              opacity: 0.5;
+              opacity: 0.7;
             `}
             animation={animationTweet}
             loop={true}
@@ -1725,7 +1740,7 @@ export default function Home() {
           <TriggeredBgColor color="fruitSalad" />
           <TriggeredLottie
             css={css`
-              opacity: 0.5;
+              opacity: 0.7;
             `}
             animation={animationCameras}
             loop={true}
@@ -1776,9 +1791,7 @@ export default function Home() {
 
                   <OrgPeople>PAMELA HOWARD</OrgPeople>
                   <OrgPeopleDesc>Vice Chair, ICFJ</OrgPeopleDesc>
-                  <OrgPeopleDesc>
-                    Trustee, Scripps Howard Foundation
-                  </OrgPeopleDesc>
+                  <OrgPeopleDesc>Trustee, Scripps Howard Foundation</OrgPeopleDesc>
 
                   <OrgPeople>MATTHEW WINKLER</OrgPeople>
                   <OrgPeopleDesc>Vice Chair, ICFJ</OrgPeopleDesc>
@@ -1795,9 +1808,7 @@ export default function Home() {
 
                   <OrgPeople>JASON WRIGHT</OrgPeople>
                   <OrgPeopleDesc>Development Chair, ICFJ</OrgPeopleDesc>
-                  <OrgPeopleDesc>
-                    Principal, Geer Mountain Holdings LLC
-                  </OrgPeopleDesc>
+                  <OrgPeopleDesc>Principal, Geer Mountain Holdings LLC</OrgPeopleDesc>
 
                   <OrgPeople>MARCY MCGINNIS</OrgPeople>
                   <OrgPeopleDesc>Nominating Chair, ICFJ</OrgPeopleDesc>
@@ -1818,10 +1829,9 @@ export default function Home() {
                   css={css`
                     font-size: 3.25em;
                     margin-bottom: 5rem;
-                    margin-top: 5rem;
                   `}
                 >
-                  Board of Directors
+								Board of Directors
                 </Subheader>
                 <ul
                   css={css`
@@ -1831,31 +1841,43 @@ export default function Home() {
                 >
                   <OrgPeople>MARK BAILEN</OrgPeople>
                   <OrgPeopleDesc>Partner, BakerHostetler LLP</OrgPeopleDesc>
+									<OrgPeopleDesc> </OrgPeopleDesc>
+									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
+									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
 
-                  <OrgPeople>CARRIE BUDOFF BROWN</OrgPeople>
+									<OrgPeople>CARRIE BUDOFF BROWN</OrgPeople>
                   <OrgPeopleDesc>Editor, Politico</OrgPeopleDesc>
+									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
 
                   <OrgPeople>DAVID CALLAWAY</OrgPeople>
                   <OrgPeopleDesc>
                     Founder, Editor, Callaway Climate Insights
                   </OrgPeopleDesc>
+									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
 
                   <OrgPeople>AHMED CHARAI</OrgPeople>
                   <OrgPeopleDesc>
                     Chairman and CEO, Global Media Holding
                   </OrgPeopleDesc>
+									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
 
                   <OrgPeople>DAVID ELLIOT COHEN</OrgPeople>
                   <OrgPeopleDesc>Author and Publisher</OrgPeopleDesc>
+									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
+									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
+									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
+									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
 
                   <OrgPeople>JOHN DANISZEWSKI</OrgPeople>
                   <OrgPeopleDesc>
                     Vice President and Editor at Large for Standards, Associated
                     Press
                   </OrgPeopleDesc>
+									<OrgPeopleDesc> </OrgPeopleDesc>
 
                   <OrgPeople>RICHARD GINGRAS</OrgPeople>
                   <OrgPeopleDesc>Vice President, News, Google</OrgPeopleDesc>
+									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
 
                   <OrgPeople>MICHAEL GREENSPON</OrgPeople>
                   <OrgPeopleDesc>
