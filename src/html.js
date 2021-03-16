@@ -12,6 +12,7 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        <script src="https://cdn.picturemosaics.com/client/iframe/js/pageEmbed.VID2.js"></script>
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
@@ -42,6 +43,7 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
+        <script>window.Pmframe = Pmframe;</script>
       </body>
     </html>
   )

@@ -146,6 +146,13 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
   useEffect(() => {
+    const pmFrame = new window.Pmframe({
+      element: "mosaics",
+      page: "https://icfjmosaic.com",
+      minWidth: "300",
+      pmBrand: 1,
+    })
+    pmFrame.init()
     const timer = setTimeout(() => {
       ScrollTrigger.refresh(true)
     }, 1000)
@@ -408,7 +415,7 @@ export default function Home() {
                   font-family: interstate-condensed;
                   font-size: 1.5em;
                   line-height: 2;
-                  font-weight:500;
+                  font-weight: 500;
                 `}
               >
                 Tens of thousands of journalists in our global network produce
@@ -456,8 +463,7 @@ export default function Home() {
                 }
               `}
             >
-              {/*<iframe title="mosaic" width='100%' height='765px' src="https://icfjmosaic.com" frameBorder="0" margin="0" padding="0" scrolling="no" allowFullScreen="" ></iframe>
-               */}
+              <div id="mosaics"></div>
             </FrameEmbed>
             <Quote
               bp={breakpoints}
@@ -515,7 +521,7 @@ export default function Home() {
                   line-height: 2;
                   text-align: right;
                   margin-top: 2rem;
-                  font-weight:500;
+                  font-weight: 500;
                   @media (min-width: ${mobile}) {
                     font-size: 1.7em;
                   }
@@ -656,7 +662,7 @@ export default function Home() {
                 css={css`
                   font-family: interstate-condensed;
                   font-size: 1.75em;
-                  fontWeight: "500",
+                  fontweight: "500";
                 `}
               >
                 Offering expert advice, tools and opportunities for the news
@@ -1175,7 +1181,7 @@ export default function Home() {
                 css={css`
                   color: white;
                   font-family: interstate-condensed;
-                  font-weight:500;
+                  font-weight: 500;
                   line-height: 2;
                   padding-top: 1em;
                   padding-left: 2rem;
@@ -1218,7 +1224,7 @@ export default function Home() {
                   padding-left: 2rem;
                   padding-right: 2rem;
                   font-size: 1.25em;
-                  font-weight:500;
+                  font-weight: 500;
                   @media (min-width: ${mobile}) {
                     font-size: 1.5em;
                   }
@@ -1257,7 +1263,7 @@ export default function Home() {
                   padding-left: 2rem;
                   padding-right: 2rem;
                   font-size: 1.25em;
-                  font-weight:500;
+                  font-weight: 500;
                   @media (min-width: ${mobile}) {
                     font-size: 1.5em;
                   }
@@ -1332,7 +1338,7 @@ export default function Home() {
                 font-family: interstate-condensed;
                 font-size: 1.25em;
                 line-height: 2;
-                font-weight:500;
+                font-weight: 500;
                 @media (min-width: ${mobile}) {
                   font-size: 1.7em;
                 }
@@ -1397,7 +1403,7 @@ export default function Home() {
                   z-index: 999;
                   font-family: interstate-condensed;
                   color: white;
-                  font-weight:500;
+                  font-weight: 500;
                   ${mq({
                     padding: [
                       "1rem 1rem 1rem 1rem",
@@ -1418,7 +1424,7 @@ export default function Home() {
                   position: absolute;
                   z-index: 999;
                   font-family: interstate-condensed;
-                  font-weight:500;
+                  font-weight: 500;
                   ${mq({
                     padding: [
                       "1rem 1rem 1rem 1rem",
@@ -1500,7 +1506,7 @@ export default function Home() {
                 css={css`
                   font-family: interstate-condensed;
                   font-size: 1.2em;
-                  font-weight:500;
+                  font-weight: 500;
                   line-height: 2;
                   text-align: right;
                   margin-top: 5rem;
@@ -1759,7 +1765,7 @@ export default function Home() {
                 grid-template-columns: repeat(1, 1fr);
                 color: white;
                 font-family: interstate-condensed;
-                font-weight:500;
+                font-weight: 500;
                 @media (min-width: ${tablet}) {
                   grid-template-columns: repeat(2, 1fr);
                   margin-top: 10rem;
@@ -1947,7 +1953,7 @@ export default function Home() {
                 margin-bottom: 15rem;
                 color: white;
                 font-family: interstate-condensed;
-                font-weight:500;
+                font-weight: 500;
                 @media (min-width: ${tablet}) {
                   grid-template-columns: repeat(2, 1fr);
                 }
@@ -2074,7 +2080,7 @@ export default function Home() {
                 margin-top: 5rem;
                 color: white;
                 font-family: interstate-condensed;
-                font-weight:500;
+                font-weight: 500;
                 @media (min-width: ${tablet}) {
                   grid-template-columns: repeat(2, 1fr);
                 }
