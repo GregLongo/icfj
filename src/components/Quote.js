@@ -11,7 +11,8 @@ export default function Quote(props) {
   const mq = facepaint(props.bp.map(bp => `@media (min-width:${bp})`))
 
   const Text = styled.div`
-    font-family: interstate condensed;
+    font-family: interstate-condensed;
+    font-weight:500;
     padding-left: 4rem;
     z-index: 2;
     color: ${props.light ? "white" : ""};

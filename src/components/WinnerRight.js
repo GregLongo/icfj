@@ -22,7 +22,7 @@ export default function WinnerRight(props) {
   const Award = styled.div`
     background: ${props => props.theme.colors.curiousBlue};
     color: white;
-    font-family: interstate condensed;
+    font-family: interstate-condensed;
     font-size: 1em;
     padding-right: 8rem;
     padding-top: 1rem;
@@ -48,12 +48,12 @@ export default function WinnerRight(props) {
   `
   const Title = styled.div`
     font-size: 1.5em;
-    font-family: interstate condensed;
+    font-family: interstate-condensed;
     margin: 1rem 0 0 0;
     text-align: right;
   `
   const Bio = styled.div`
-    font-family: interstate condensed;
+    font-family: interstate-condensed;
     margin: 1rem 0 0 0;
     padding-left: 2rem;
     padding-right: 2rem;

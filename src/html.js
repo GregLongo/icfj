@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import LoaderSVG from "./gif/spinner.gif"
+import LoaderSVG from "./gif/Loader_Loop.gif"
 
 export default function HTML(props) {
   return (
@@ -22,7 +22,7 @@ export default function HTML(props) {
           id="___loader"
           style={{
             alignItems: "center",
-            backgroundColor: "#F2F2F2",
+            backgroundColor: "#ffffff",
             display: "flex",
             justifyContent: "center",
             position: "absolute",

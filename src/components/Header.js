@@ -57,7 +57,7 @@ export default function Header(props) {
     }
     &:nth-of-type(1) {
       color: #149ee7;
-      grid-column-start: span 3;
+      grid-column-start: span 4;
       @media (min-width: ${desktop}) {
         grid-column-start: span 1;
       }

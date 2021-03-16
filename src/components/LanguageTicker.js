@@ -6,7 +6,7 @@ export default function LanguageTicker(props) {
   const Ticker = styled.div`
     color: white;
     font-size: 1.7em;
-    font-family: interstate condensed;
+    font-family: interstate-condensed;
     white-space: nowrap;
     overflow-x: hidden;
     background: ${props => props.theme.colors.curiousBlue};

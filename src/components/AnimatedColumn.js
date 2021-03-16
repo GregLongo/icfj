@@ -23,7 +23,7 @@ const Inner = styled.div`
 `
 
 const Labels = styled.div`
-  font-family: interstate condensed;
+  font-family: interstate-condensed;
   color: white;
   margin: auto;
   position: absolute;
