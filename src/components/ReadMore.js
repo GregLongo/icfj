@@ -2,6 +2,13 @@ import React, { useState } from "react"
 import styled from "@emotion/styled"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger)
+
+
+
 
 function ReadMore(props) {
   const mobile = props.bp[1]
@@ -39,7 +46,8 @@ function ReadMore(props) {
   `
 
   const Container = styled.div`
-    font-family: interstate condensed;
+    font-family: interstate-condensed;
+    font-weight: 500;
     font-size: 1.1em;
     color: black;
     margin-bottom: 10rem;
@@ -54,6 +62,7 @@ function ReadMore(props) {
     <Container className={props.className}>
       <Button
         onClick={() => {
+          ScrollTrigger.refresh(true)
           setReadMore(!readMore)
         }}
       >

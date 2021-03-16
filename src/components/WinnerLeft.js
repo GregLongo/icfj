@@ -22,7 +22,7 @@ export default function WinnerLeft(props) {
   const Award = styled.div`
     background: ${props => props.theme.colors.sanMarino};
     color: white;
-    font-family: interstate condensed;
+    font-family: interstate-condensed;
     font-size: 1em;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -47,11 +47,11 @@ export default function WinnerLeft(props) {
   `
   const Title = styled.div`
     font-size: 1.5em;
-    font-family: interstate condensed;
+    font-family: interstate-condensed;
     margin: 1rem 0 0 3rem;
   `
   const Bio = styled.div`
-    font-family: interstate condensed;
+    font-family: interstate-condensed;
     margin: 1rem 0 0 2rem;
     padding-right: 2rem;
     font-size: 1.5em;

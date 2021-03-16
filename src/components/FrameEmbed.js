@@ -30,7 +30,7 @@ export default function FrameEmbed(props) {
   const Text = styled.div`
     display: inline;
     color: white;
-    font-family: Interstate Condensed;
+    font-family: interstate-condensed;
     margin: 1em;
     margin-right: 0;
     font-size: 1em;

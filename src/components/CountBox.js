@@ -82,7 +82,7 @@ export default function CountBox(props) {
   `
   const SubSquare = styled.div`
     grid-column: span 2;
-    font-family: interstate condensed;
+    font-family: interstate-condensed;
     color: white;
     z-index: 999;
     display: flex;

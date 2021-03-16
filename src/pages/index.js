@@ -122,8 +122,9 @@ const OrgPeople = styled.li`
 `
 
 const OrgPeopleDesc = styled.li`
-  font-family: interstate condensed;
+  font-family: interstate-condensed;
   font-size: 1.7em;
+  font-weight: 500;
   color: white;
   @media (min-width: ${mobile}) {
     font-size: 2em;
@@ -169,7 +170,7 @@ export default function Home() {
         <PendantLeft bp={breakpoints} color="mineShaft">
           <div
             css={mq({
-              fontFamily: "interstate condensed",
+              fontFamily: "interstate-condensed",
               fontSize: ["1em", "1.2em", "1.5em", "2.5em"],
               maxWidth: "130px",
               lineHeight: "1",
@@ -254,8 +255,9 @@ export default function Home() {
               <div
                 css={mq({
                   fontSize: ["1.2em", "1.5em", "2em"],
-                  fontFamily: "interstate condensed",
+                  fontFamily: "interstate-condensed",
                   lineHeight: 1.5,
+                  fontWeight: "500",
                 })}
               >
                 We empower an unparalleled global network of journalists to
@@ -277,7 +279,7 @@ export default function Home() {
               bp={breakpoints}
               color="curiousBlue"
             >
-              A Letter From the President
+              A Letter From Joyce
             </TriggeredPendantRight>
             <div
               css={css`
@@ -403,9 +405,10 @@ export default function Home() {
               <TriggeredTextBlock
                 css={css`
                   color: white;
-                  font-family: interstate condensed;
+                  font-family: interstate-condensed;
                   font-size: 1.5em;
                   line-height: 2;
+                  font-weight:500;
                 `}
               >
                 Tens of thousands of journalists in our global network produce
@@ -507,11 +510,12 @@ export default function Home() {
               <TriggeredTextBlock
                 css={css`
                   color: white;
-                  font-family: interstate condensed;
+                  font-family: interstate-condensed;
                   font-size: 1.25em;
                   line-height: 2;
                   text-align: right;
                   margin-top: 2rem;
+                  font-weight:500;
                   @media (min-width: ${mobile}) {
                     font-size: 1.7em;
                   }
@@ -650,8 +654,9 @@ export default function Home() {
               </Subheader>
               <p
                 css={css`
-                  font-family: interstate condensed;
+                  font-family: interstate-condensed;
                   font-size: 1.75em;
+                  fontWeight: "500",
                 `}
               >
                 Offering expert advice, tools and opportunities for the news
@@ -676,7 +681,8 @@ export default function Home() {
             css={css`
               margin-top: 10rem;
               display: grid;
-              font-family: interstate condensed;
+              font-family: interstate-condensed;
+              font-weight: 500;
               grid-template-columns: 100%;
               @media (min-width: ${tablet}) {
                 margin-top: 15rem;
@@ -851,7 +857,8 @@ export default function Home() {
                 <div
                   css={css`
                     color: white;
-                    font-family: interstate condensed;
+                    font-family: interstate-condensed;
+                    font-weight: 500;
                     font-size: 1.25em;
                     line-height: 2;
                     @media (min-width: ${mobile}) {
@@ -969,7 +976,8 @@ export default function Home() {
                 css={mq({
                   zIndex: "2",
                   color: "white",
-                  fontFamily: "interstate condensed",
+                  fontFamily: "interstate-condensed",
+                  fontWeight: "500",
                   fontSize: ["1em", "1.2em", "1.5em"],
                   lineHeight: ["1", "1.5", "2"],
                   textAlign: "left",
@@ -1000,7 +1008,8 @@ export default function Home() {
                 css={mq({
                   zIndex: "2",
                   color: "white",
-                  fontFamily: "interstate condensed",
+                  fontFamily: "interstate-condensed",
+                  fontWeight: "500",
                   fontSize: ["1em", "1.2em", "1.5em"],
                   lineHeight: ["1", "1.5", "2"],
                   textAlign: "right",
@@ -1074,8 +1083,9 @@ export default function Home() {
                 css={mq({
                   zIndex: "2",
                   color: "white",
-                  fontFamily: "interstate condensed",
+                  fontFamily: "interstate-condensed",
                   fontSize: ["1em", "1.2em", "1.5em"],
+                  fontWeight: "500",
                   lineHeight: ["1", "1.5", "2"],
                   textAlign: "left",
                   paddingTop: ["1em", "2em", "4em"],
@@ -1136,10 +1146,11 @@ export default function Home() {
             <TriggeredTextBlock
               css={css`
                 color: white;
-                font-family: interstate condensed;
+                font-family: interstate-condensed;
                 font-size: 1.25em;
                 line-height: 2;
                 margin-top: 2rem;
+                font-weight: 500;
                 @media (min-width: ${mobile}) {
                   font-size: 1.7em;
                 }
@@ -1163,7 +1174,8 @@ export default function Home() {
               <div
                 css={css`
                   color: white;
-                  font-family: interstate condensed;
+                  font-family: interstate-condensed;
+                  font-weight:500;
                   line-height: 2;
                   padding-top: 1em;
                   padding-left: 2rem;
@@ -1200,12 +1212,13 @@ export default function Home() {
               <div
                 css={css`
                   color: white;
-                  font-family: interstate condensed;
+                  font-family: interstate-condensed;
                   line-height: 2;
                   padding-top: 1em;
                   padding-left: 2rem;
                   padding-right: 2rem;
                   font-size: 1.25em;
+                  font-weight:500;
                   @media (min-width: ${mobile}) {
                     font-size: 1.5em;
                   }
@@ -1238,12 +1251,13 @@ export default function Home() {
               <div
                 css={css`
                   color: white;
-                  font-family: interstate condensed;
+                  font-family: interstate-condensed;
                   line-height: 2;
                   padding-top: 1em;
                   padding-left: 2rem;
                   padding-right: 2rem;
                   font-size: 1.25em;
+                  font-weight:500;
                   @media (min-width: ${mobile}) {
                     font-size: 1.5em;
                   }
@@ -1315,9 +1329,10 @@ export default function Home() {
                 margin-top: 3rem;
                 margin-bottom: 3rem;
                 color: white;
-                font-family: interstate condensed;
+                font-family: interstate-condensed;
                 font-size: 1.25em;
                 line-height: 2;
+                font-weight:500;
                 @media (min-width: ${mobile}) {
                   font-size: 1.7em;
                 }
@@ -1380,8 +1395,9 @@ export default function Home() {
                   bottom: 0;
                   right: 0;
                   z-index: 999;
-                  font-family: interstate condensed;
+                  font-family: interstate-condensed;
                   color: white;
+                  font-weight:500;
                   ${mq({
                     padding: [
                       "1rem 1rem 1rem 1rem",
@@ -1401,7 +1417,8 @@ export default function Home() {
                   background: rgba(221, 175, 36, 0.6);
                   position: absolute;
                   z-index: 999;
-                  font-family: interstate condensed;
+                  font-family: interstate-condensed;
+                  font-weight:500;
                   ${mq({
                     padding: [
                       "1rem 1rem 1rem 1rem",
@@ -1481,8 +1498,9 @@ export default function Home() {
               </TriggeredHeadline>
               <TriggeredTextBlock
                 css={css`
-                  font-family: interstate condensed;
+                  font-family: interstate-condensed;
                   font-size: 1.2em;
+                  font-weight:500;
                   line-height: 2;
                   text-align: right;
                   margin-top: 5rem;
@@ -1740,7 +1758,8 @@ export default function Home() {
                 display: grid;
                 grid-template-columns: repeat(1, 1fr);
                 color: white;
-                font-family: interstate condensed;
+                font-family: interstate-condensed;
+                font-weight:500;
                 @media (min-width: ${tablet}) {
                   grid-template-columns: repeat(2, 1fr);
                   margin-top: 10rem;
@@ -1927,7 +1946,8 @@ export default function Home() {
                 grid-template-columns: repeat(1, 1fr);
                 margin-bottom: 15rem;
                 color: white;
-                font-family: interstate condensed;
+                font-family: interstate-condensed;
+                font-weight:500;
                 @media (min-width: ${tablet}) {
                   grid-template-columns: repeat(2, 1fr);
                 }
@@ -2053,7 +2073,8 @@ export default function Home() {
                 grid-template-columns: repeat(1, 1fr);
                 margin-top: 5rem;
                 color: white;
-                font-family: interstate condensed;
+                font-family: interstate-condensed;
+                font-weight:500;
                 @media (min-width: ${tablet}) {
                   grid-template-columns: repeat(2, 1fr);
                 }
