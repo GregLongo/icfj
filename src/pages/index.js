@@ -338,17 +338,7 @@ export default function Home() {
                     margin-top: -0.5rem;
                   `}
                 >
-                  Over 36 years, ICFJ has provided more than{" "}
-                  <TextPop>150,000 journalists</TextPop> from{" "}
-                  <TextPop>180 countries</TextPop> with{" "}
-                  <TextPop
-                    css={mq({
-                      display: ["block", "block", "inline-block"],
-                    })}
-                  >
-                    valuable programs and resources
-                  </TextPop>
-                  . But we’ve never had a year like 2020.
+                  Over 36 years, ICFJ has provided more than <TextPop>150,000 journalists</TextPop> from <TextPop> 80 countries</TextPop> with <TextPop css={mq({display: ["block", "block", "block"],})}> valuable programs and resources</TextPop>. But we’ve never had a year like 2020.
                 </p>
                 <p>
                   The pandemic that raged across the globe would have been much
