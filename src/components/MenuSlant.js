@@ -23,7 +23,9 @@ const Toggle = styled.div`
   cursor: pointer;
   outline: none;
   z-index: 1000;
-  position: relative;
+  position: fixed;
+  top: 60px;
+  left: 100px;
 `
 const List = styled.ul`
   list-style: none;
@@ -121,6 +123,19 @@ class MenuSlant extends Component {
       open: false,
     }
     this.toggleMenu = this.toggleMenu.bind(this)
+    window.onscroll = e => {
+      var scrollTop =
+        window.pageYOffset !== undefined
+          ? window.pageYOffset
+          : (
+              document.documentElement ||
+              document.body.parentNode ||
+              document.body
+            ).scrollTop
+      if (this.state.open && scrollTop > 300) {
+        this.toggleMenu()
+      }
+    }
   }
 
   toggleMenu() {
