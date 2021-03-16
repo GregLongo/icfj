@@ -36,11 +36,11 @@ export default function Wolf(props) {
   `
   const Title = styled.div`
     font-size: 1.5em;
-    font-family: interstate condensed;
+    font-family: interstate-condensed;
     margin: 1rem 0 0 3rem;
   `
   const Bio = styled.div`
-    font-family: interstate condensed;
+    font-family: interstate-condensed;
     margin: 1rem 0 0 2rem;
     padding-right: 2rem;
     ${mq({
