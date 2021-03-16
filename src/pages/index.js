@@ -1232,7 +1232,7 @@ export default function Home() {
                 css={css`
                   height: 510px;
                 `}
-                filename="Facebook-Accelerator.jpg"
+                filename="FacebookAccelerator.jpg"
               />
               <div
                 css={css`
