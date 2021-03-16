@@ -7,7 +7,7 @@ const path = require(`path`)
 
 module.exports = {
   /* Your site config here */
-  pathPrefix: `/icfj-sandbox`,
+  pathPrefix: `/icfj`,
   plugins: [
     {
       resolve: "gatsby-plugin-emotion",
