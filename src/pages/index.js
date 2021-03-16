@@ -339,7 +339,11 @@ export default function Home() {
                   providing audiences with accurate, lifesaving news, and doing
                   it while combating the spread of false information.
                 </p>
-                <p>
+                <p
+                  css={css`
+                    margin-bottom: 0;
+                  `}
+                >
                   We at ICFJ are doing our best to help journalists better cover
                   the story of the century. At the onset of COVID-19, we
                   galvanized quickly to help them gain access to top

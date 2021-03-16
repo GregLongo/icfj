@@ -16,24 +16,25 @@ function ReadMore(props) {
   const extraContent = props.children
   const linkName = readMore ? (
     <span>
-      Read Less <FontAwesomeIcon icon={faAngleUp} size="1x" />
+      <FontAwesomeIcon icon={faAngleUp} size="1x" />
     </span>
   ) : (
     <span>
-      Read More <FontAwesomeIcon icon={faAngleDown} size="1x" />
+      <FontAwesomeIcon icon={faAngleDown} size="1x" />
     </span>
   )
   const Button = styled.button`
     position: relative;
     background: tomato;
-    margin-left: auto;
     color: white;
     border: none;
     position: relative;
     display: flex;
     flex-direction: row;
     outline: none;
+    margin-left: 20px;
     padding: 0 20px;
+    transform: skewX(-25deg) skewY(0deg);
     &:hover {
       background: transparent;
       outline: 6px solid tomato;
@@ -43,6 +44,13 @@ function ReadMore(props) {
     &:active {
       background: tomato;
     }
+    h2 {
+      margin: 5px 0;
+      transform: skewX(25deg) skewY(0deg);
+    }
+    @media (min-width: ${mobile}) {
+      margin-left: 210px;
+    }
   `
 
   const Container = styled.div`
@@ -50,11 +58,10 @@ function ReadMore(props) {
     font-weight: 500;
     font-size: 1.1em;
     color: black;
-    margin-bottom: 10rem;
+    margin-top: -189px;
     @media (min-width: ${mobile}) {
+      margin-top: -110px;
       font-size: 1.7em;
-      margin-top: 5rem;
-      margin-bottom: 15rem;
     }
   `
 
