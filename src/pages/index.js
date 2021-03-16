@@ -410,7 +410,7 @@ export default function Home() {
                   font-family: interstate-condensed;
                   font-size: 1.5em;
                   line-height: 2;
-                  font-weight:500;
+                  font-weight: 500;
                 `}
               >
                 Tens of thousands of journalists in our global network produce
@@ -473,7 +473,7 @@ export default function Home() {
                 marginRight: "auto",
               })}
             >
-              “With ICFJ’s support, we are improving the lives of the poorest of
+              With ICFJ’s support, we are improving the lives of the poorest of
               the poor by bringing them reliable, crowdsourced news for the
               first time."<br></br> - Devansh Mehta, CGNet Swara, India
             </Quote>
@@ -517,7 +517,7 @@ export default function Home() {
                   line-height: 2;
                   text-align: right;
                   margin-top: 2rem;
-                  font-weight:500;
+                  font-weight: 500;
                   @media (min-width: ${mobile}) {
                     font-size: 1.7em;
                   }
@@ -614,7 +614,7 @@ export default function Home() {
                 }
               `}
             >
-              “ICFJ gave me and my listeners a global perspective of how other
+              ICFJ gave me and my listeners a global perspective of how other
               countries were handling the pandemic. ”<br></br> - Chidera Rosecamille
               Aneke, Darling FM
             </Quote>
@@ -666,7 +666,7 @@ export default function Home() {
                 css={css`
                   font-family: interstate-condensed;
                   font-size: 1.75em;
-                  fontWeight: "500",
+                  fontweight: "500";
                 `}
               >
                 Offering expert advice, tools and opportunities for the news
@@ -912,7 +912,7 @@ export default function Home() {
                 marginRight: "auto",
               })}
             >
-              “We exposed corruption and human rights abuses working in a
+              We exposed corruption and human rights abuses working in a
               cross-border network supported by ICFJ.”<br></br> - Lisseth Boon,
               Connectas, Venezuela
             </Quote>
@@ -1191,7 +1191,7 @@ export default function Home() {
                 css={css`
                   color: white;
                   font-family: interstate-condensed;
-                  font-weight:500;
+                  font-weight: 500;
                   line-height: 2;
                   padding-top: 1em;
                   padding-left: 2rem;
@@ -1233,7 +1233,7 @@ export default function Home() {
                   padding-left: 2rem;
                   padding-right: 2rem;
                   font-size: 1.25em;
-                  font-weight:500;
+                  font-weight: 500;
                   @media (min-width: ${mobile}) {
                     font-size: 1.5em;
                   }
@@ -1272,7 +1272,7 @@ export default function Home() {
                   padding-left: 2rem;
                   padding-right: 2rem;
                   font-size: 1.25em;
-                  font-weight:500;
+                  font-weight: 500;
                   @media (min-width: ${mobile}) {
                     font-size: 1.5em;
                   }
@@ -1303,7 +1303,7 @@ export default function Home() {
               light
             >
               {" "}
-              “With the help of IJNet mentors, I empowered more women and made
+              With the help of IJNet mentors, I empowered more women and made
               my news outlet stronger financially.”<br></br> - Sheikha Aldosary, Saudi
               Women's Stories, Saudi Arabia
             </Quote>
@@ -1347,7 +1347,7 @@ export default function Home() {
                 font-family: interstate-condensed;
                 font-size: 1.25em;
                 line-height: 2;
-                font-weight:500;
+                font-weight: 500;
                 @media (min-width: ${mobile}) {
                   font-size: 1.7em;
                 }
@@ -1412,7 +1412,7 @@ export default function Home() {
                   z-index: 999;
                   font-family: interstate-condensed;
                   color: white;
-                  font-weight:500;
+                  font-weight: 500;
                   ${mq({
                     padding: [
                       "1rem 1rem 1rem 1rem",
@@ -1433,7 +1433,7 @@ export default function Home() {
                   position: absolute;
                   z-index: 999;
                   font-family: interstate-condensed;
-                  font-weight:500;
+                  font-weight: 500;
                   ${mq({
                     padding: [
                       "1rem 1rem 1rem 1rem",
@@ -1515,7 +1515,7 @@ export default function Home() {
                 css={css`
                   font-family: interstate-condensed;
                   font-size: 1.2em;
-                  font-weight:500;
+                  font-weight: 500;
                   line-height: 2;
                   text-align: right;
                   margin-top: 5rem;
@@ -1774,7 +1774,7 @@ export default function Home() {
                 grid-template-columns: repeat(1, 1fr);
                 color: white;
                 font-family: interstate-condensed;
-                font-weight:500;
+                font-weight: 500;
                 @media (min-width: ${tablet}) {
                   grid-template-columns: repeat(2, 1fr);
                   margin-top: 10rem;
@@ -1969,7 +1969,7 @@ export default function Home() {
                 margin-bottom: 15rem;
                 color: white;
                 font-family: interstate-condensed;
-                font-weight:500;
+                font-weight: 500;
                 @media (min-width: ${tablet}) {
                   grid-template-columns: repeat(2, 1fr);
                 }
@@ -2096,7 +2096,7 @@ export default function Home() {
                 margin-top: 5rem;
                 color: white;
                 font-family: interstate-condensed;
-                font-weight:500;
+                font-weight: 500;
                 @media (min-width: ${tablet}) {
                   grid-template-columns: repeat(2, 1fr);
                 }
