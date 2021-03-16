@@ -148,6 +148,13 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
   useEffect(() => {
+    const pmFrame = new window.Pmframe({
+      element: "mosaics",
+      page: "https://icfjmosaic.com",
+      minWidth: "300",
+      pmBrand: 1,
+    })
+    pmFrame.init()
     const timer = setTimeout(() => {
       ScrollTrigger.refresh(true)
     }, 1000)
@@ -458,8 +465,7 @@ export default function Home() {
                 }
               `}
             >
-              {/*<iframe title="mosaic" width='100%' height='765px' src="https://icfjmosaic.com" frameBorder="0" margin="0" padding="0" scrolling="no" allowFullScreen="" ></iframe>
-               */}
+              <div id="mosaics"></div>
             </FrameEmbed>
             <Quote
               bp={breakpoints}
