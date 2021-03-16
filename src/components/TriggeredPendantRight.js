@@ -53,7 +53,7 @@ export default function TriggeredPendantRight(props) {
         start: "top center",
         end: "bottom top",
         toggleActions: "play complete none reverse",
-        markers: true,
+        markers: false,
       },
     })
   })

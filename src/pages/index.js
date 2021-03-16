@@ -30,7 +30,7 @@ import CountBox from "../components/CountBox.js"
 import WinnerLeft from "../components/WinnerLeft.js"
 import WinnerRight from "../components/WinnerRight.js"
 import Wolf from "../components/Wolf.js"
-import ReadMore from "../components/ReadMore.js"
+// import ReadMore from "../components/ReadMore.js"
 
 //Animation Players
 // import UncontrolledLottie from "../components/UncontrolledLottie.js"
@@ -46,7 +46,7 @@ import animationTweet from "../lotties/tweet.json"
 import animationAfrica from "../lotties/africa.json"
 import animationAfrica2 from "../lotties/africa2.json"
 import animationBrazil from "../lotties/brazil.json"
-import animationSouthAmerica from "../lotties/southamerica.json"
+// import animationSouthAmerica from "../lotties/southamerica.json"
 import animationPie from "../lotties/piechart.json"
 import animationTribute from "../lotties/tribute.json"
 
@@ -136,6 +136,21 @@ const OrgPeopleDesc = styled.li`
 const Link = styled.a`
   color: white;
 `
+
+//read more as a block of text
+// const ReadMore = styled.div`
+//     text-align: justify;
+//     font-family: interstate-condensed;
+//     font-weight: 500;
+//     font-size: 1.1em;
+//     color: black;
+//     margin-bottom: 10rem;
+//     @media (min-width: ${mobile}) {
+//       font-size: 1.7em;
+//       margin-bottom: 15rem;
+//     }
+
+// `
 
 //add scroll to internal anchor links
 
@@ -314,7 +329,7 @@ export default function Home() {
                 css={css`
                   margin-bottom: 5rem;
                   @media (min-width: ${tablet}) {
-                    margin-bottom: -15rem;
+                    margin-bottom: 5rem;
                   }
                 `}
               >
@@ -323,17 +338,7 @@ export default function Home() {
                     margin-top: -0.5rem;
                   `}
                 >
-                  Over 36 years, ICFJ has provided more than{" "}
-                  <TextPop>150,000 journalists</TextPop> from{" "}
-                  <TextPop>180 countries</TextPop> with{" "}
-                  <TextPop
-                    css={mq({
-                      display: ["block", "block", "inline-block"],
-                    })}
-                  >
-                    valuable programs and resources
-                  </TextPop>
-                  . But we’ve never had a year like 2020.
+                  Over 36 years, ICFJ has provided more than <TextPop>150,000 journalists</TextPop> from <TextPop> 80 countries</TextPop> with <TextPop css={mq({display: ["block", "block", "block"],})}> valuable programs and resources</TextPop>. But we’ve never had a year like 2020.
                 </p>
                 <p>
                   The pandemic that raged across the globe would have been much
@@ -354,10 +359,7 @@ export default function Home() {
                   and media sustainability experts. As you’ll see below, tens of
                   thousands of journalists are benefiting from that effort.
                 </p>
-              </ParagraphSlant>
-            </div>
-            <ReadMore bp={breakpoints}>
-              <p>
+                <p>
                 In other ICFJ programs, investigative journalists in our
                 networks are collaborating to uncover corruption by those
                 seeking to get rich from the pandemic. Pioneers in media
@@ -378,7 +380,12 @@ export default function Home() {
               </p>
               <p>Joyce Barnathan, President</p>
               <Signature />
-            </ReadMore>
+
+
+              </ParagraphSlant>
+            </div>
+
+              
           </Container>
           <TriggeredBgColor color="goldenGrass" />
         </Section>
@@ -428,6 +435,7 @@ export default function Home() {
                   font-size: 1.5em;
                   line-height: 2;
                   font-weight: 500;
+                  transition-delay: 10ms;
                 `}
               >
                 Tens of thousands of journalists in our global network produce
@@ -672,21 +680,22 @@ export default function Home() {
               `}
             >
               <Subheader>
-                <span
-                  css={css`
-                    color: #149ee7;
-                    font-weight: 800;
-                  `}
-                >
-                  {" "}
-                  The World's Most Comprehensive Site for Journalists{" "}
-                </span>
-              </Subheader>
+
+							<span
+								css={theme =>({
+									color: theme.colors.curiousBlue,
+									fontWeight: "800"
+								})}
+							>
+								{" "}
+								The World's Most Comprehensive Site for Journalists{" "}
+							</span>
+							</Subheader>
               <p
                 css={css`
                   font-family: interstate-condensed;
                   font-size: 1.75em;
-                  fontweight: "500";
+                  font-weight: 500;
                 `}
               >
                 Offering expert advice, tools and opportunities for the news
@@ -849,7 +858,7 @@ export default function Home() {
                 margin-bottom: -8rem;
                 @media (min-width: ${tablet}) {
                   margin-top: 10rem;
-                  margin-bottom: -20rem;
+                  margin-bottom: -35rem;
                 }
               `}
             >
@@ -1014,7 +1023,7 @@ export default function Home() {
                   animation={animationAfrica}
                   loop={false}
                   css={css`
-                    transform: translate(20%, -50%);
+                    transform: translate(15%, -50%);
                     z-index: -1;
                   `}
                 />
@@ -1641,7 +1650,7 @@ export default function Home() {
             />
             <WinnerRight
               bp={breakpoints}
-              image="Fareed.png"
+              image="Fareed.jpg"
               award="ICFJ Founders Award for Excellence in Journalism"
               name="Fareed Zakaria, CNN"
               title=""
@@ -1874,48 +1883,36 @@ export default function Home() {
                   <OrgPeopleDesc>
                     Former Vice Chairman, The New York Times Company
                   </OrgPeopleDesc>
-
                   <OrgPeople>JAMES F. HOGE JR.</OrgPeople>
                   <OrgPeopleDesc>Vice Chair, ICFJ</OrgPeopleDesc>
                   <OrgPeopleDesc>
                     Senior Advisor, Teneo Intelligence
                   </OrgPeopleDesc>
-
                   <OrgPeople>PAMELA HOWARD</OrgPeople>
                   <OrgPeopleDesc>Vice Chair, ICFJ</OrgPeopleDesc>
-                  <OrgPeopleDesc>
-                    Trustee, Scripps Howard Foundation
-                  </OrgPeopleDesc>
-
+                  <OrgPeopleDesc>Trustee, Scripps Howard Foundation</OrgPeopleDesc>
                   <OrgPeople>MATTHEW WINKLER</OrgPeople>
                   <OrgPeopleDesc>Vice Chair, ICFJ</OrgPeopleDesc>
                   <OrgPeopleDesc>
                     Editor-in-Chief Emeritus, Bloomberg News
                   </OrgPeopleDesc>
-
                   <OrgPeople>JOHN MAXWELL HAMILTON</OrgPeople>
                   <OrgPeopleDesc>Treasurer, ICFJ</OrgPeopleDesc>
                   <OrgPeopleDesc>
                     Professor of Journalism and Founding Dean, Manship School of
                     Mass Communication, Louisiana State University
                   </OrgPeopleDesc>
-
                   <OrgPeople>JASON WRIGHT</OrgPeople>
                   <OrgPeopleDesc>Development Chair, ICFJ</OrgPeopleDesc>
-                  <OrgPeopleDesc>
-                    Principal, Geer Mountain Holdings LLC
-                  </OrgPeopleDesc>
-
+                  <OrgPeopleDesc>Principal, Geer Mountain Holdings LLC</OrgPeopleDesc>
                   <OrgPeople>MARCY MCGINNIS</OrgPeople>
                   <OrgPeopleDesc>Nominating Chair, ICFJ</OrgPeopleDesc>
                   <OrgPeopleDesc>Journalist</OrgPeopleDesc>
-
                   <OrgPeople>WENDELL REILLY</OrgPeople>
                   <OrgPeopleDesc>Chair, Audit Committee, ICFJ</OrgPeopleDesc>
                   <OrgPeopleDesc>
                     Chairman, Berman Capital Advisors
                   </OrgPeopleDesc>
-
                   <OrgPeople>JOYCE BARNATHAN</OrgPeople>
                   <OrgPeopleDesc>President, ICFJ</OrgPeopleDesc>
                 </ul>
@@ -1937,114 +1934,77 @@ export default function Home() {
                 >
                   <OrgPeople>MARK BAILEN</OrgPeople>
                   <OrgPeopleDesc>Partner, BakerHostetler LLP</OrgPeopleDesc>
-                  <OrgPeopleDesc> </OrgPeopleDesc>
-                  <OrgPeopleDesc>
-                    <br></br>{" "}
-                  </OrgPeopleDesc>
-                  <OrgPeopleDesc>
-                    <br></br>{" "}
-                  </OrgPeopleDesc>
-
-                  <OrgPeople>CARRIE BUDOFF BROWN</OrgPeople>
+									<OrgPeopleDesc> </OrgPeopleDesc>
+									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
+									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
+									<OrgPeople>CARRIE BUDOFF BROWN</OrgPeople>
                   <OrgPeopleDesc>Editor, Politico</OrgPeopleDesc>
-                  <OrgPeopleDesc>
-                    <br></br>{" "}
-                  </OrgPeopleDesc>
-
+									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
                   <OrgPeople>DAVID CALLAWAY</OrgPeople>
                   <OrgPeopleDesc>
                     Founder, Editor, Callaway Climate Insights
                   </OrgPeopleDesc>
-                  <OrgPeopleDesc>
-                    <br></br>{" "}
-                  </OrgPeopleDesc>
-
+									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
                   <OrgPeople>AHMED CHARAI</OrgPeople>
                   <OrgPeopleDesc>
                     Chairman and CEO, Global Media Holding
                   </OrgPeopleDesc>
-                  <OrgPeopleDesc>
-                    <br></br>{" "}
-                  </OrgPeopleDesc>
-
+									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
                   <OrgPeople>DAVID ELLIOT COHEN</OrgPeople>
                   <OrgPeopleDesc>Author and Publisher</OrgPeopleDesc>
-                  <OrgPeopleDesc>
-                    <br></br>{" "}
-                  </OrgPeopleDesc>
-                  <OrgPeopleDesc>
-                    <br></br>{" "}
-                  </OrgPeopleDesc>
-                  <OrgPeopleDesc>
-                    <br></br>{" "}
-                  </OrgPeopleDesc>
-                  <OrgPeopleDesc>
-                    <br></br>{" "}
-                  </OrgPeopleDesc>
-
+									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
+									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
+									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
+									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
                   <OrgPeople>JOHN DANISZEWSKI</OrgPeople>
                   <OrgPeopleDesc>
                     Vice President and Editor at Large for Standards, Associated
                     Press
                   </OrgPeopleDesc>
-                  <OrgPeopleDesc> </OrgPeopleDesc>
-
+									<OrgPeopleDesc> </OrgPeopleDesc>
                   <OrgPeople>RICHARD GINGRAS</OrgPeople>
                   <OrgPeopleDesc>Vice President, News, Google</OrgPeopleDesc>
-                  <OrgPeopleDesc>
-                    <br></br>{" "}
-                  </OrgPeopleDesc>
-
+									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
                   <OrgPeople>MICHAEL GREENSPON</OrgPeople>
                   <OrgPeopleDesc>
                     Global Head, Licensing and Print Innovation, The New York
                     Times
                   </OrgPeopleDesc>
-
                   <OrgPeople>JOHN HEILEMANN</OrgPeople>
                   <OrgPeopleDesc>
                     Co-host, creator, and executive producer of Showtime's The
                     Circus; National Affairs Analyst, MSNBC and NBC News;
                     Co-founder and Editor-in-Chief, The Recount
                   </OrgPeopleDesc>
-
                   <OrgPeople>ALEX S. JONES</OrgPeople>
                   <OrgPeopleDesc>
                     Journalist, former director of the Shorenstein Center on
                     Media, Politics and Public Policy at Harvard's John F.
                     Kennedy School of Government
                   </OrgPeopleDesc>
-
                   <OrgPeople>ANNE KORNBLUT</OrgPeople>
                   <OrgPeopleDesc>
                     Global Head of Curation, Facebook
                   </OrgPeopleDesc>
-
                   <OrgPeople>ISAAC LEE</OrgPeople>
                   <OrgPeopleDesc>Founder, Exile Content</OrgPeopleDesc>
-
                   <OrgPeople>JOANNE LEEDOM-ACKERMAN</OrgPeople>
                   <OrgPeopleDesc>Novelist and Journalist</OrgPeopleDesc>
-
                   <OrgPeople>MARCI MCCUE</OrgPeople>
                   <OrgPeopleDesc>
                     Founding Team Member and Head of Marketing, Flipboard
                   </OrgPeopleDesc>
-
                   <OrgPeople>RODMAN MOORHEAD</OrgPeople>
                   <OrgPeopleDesc>
                     Former General Partner and Managing Director, Warburg Pincus
                     & Co.
                   </OrgPeopleDesc>
-
                   <OrgPeople>ROB REHG</OrgPeople>
                   <OrgPeopleDesc>
                     Vice Chair, Global Client Strategy, Edelman
                   </OrgPeopleDesc>
-
                   <OrgPeople>MARY ANN STERNBERG</OrgPeople>
                   <OrgPeopleDesc>Freelance Writer and Author</OrgPeopleDesc>
-
                   <OrgPeople>JOHN TOWRISS</OrgPeople>
                   <OrgPeopleDesc>Principal, Envoy Strategy Group</OrgPeopleDesc>
                 </ul>
@@ -2333,6 +2293,31 @@ export default function Home() {
                 </OrgPeopleDesc>
               </ul>
             </div>
+            <TriggeredPendantLeft css={css`margin-top:10rem;margin-bottom:10rem`} bp={breakpoints} color="boulder">
+              Thank You
+            </TriggeredPendantLeft>
+            <Subheader css={css`color:white`}> All of us at ICFJ thank you for your support. </Subheader>
+            <FrameEmbed
+              bp={breakpoints}
+              buttonColor="fruitSalad"
+              css={css`
+                width: 100%;
+                height: 600px;
+                overflow: hidden;
+                opacity: 1 !important;
+              `}
+            >
+              <iframe
+                title="vidthree"
+                width="100%"
+                height="570px"
+                src="https://www.youtube.com/embed/Td6AYW3zyo8?"
+                frameBorder="0"
+                allowFullScreen
+                autoplay
+                loop
+                ></iframe>
+          </FrameEmbed>
           </Container>
         </Section>
         <div
