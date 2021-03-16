@@ -110,7 +110,7 @@ const Credits = styled.div`
   font-family: ubuntu;
   font-size: 1em;
   color: white;
-	opacity: .4;
+  opacity: 0.4;
 `
 
 const OrgPeople = styled.li`
@@ -258,6 +258,7 @@ export default function Home() {
                   linHeight: "2",
                   opacity: "1",
                 })}
+                id="Mission-To"
               >
                 Mission
               </div>
@@ -287,6 +288,7 @@ export default function Home() {
               `}
               bp={breakpoints}
               color="curiousBlue"
+              id="Joyce-To"
             >
               Letter from Joyce
             </TriggeredPendantRight>
@@ -390,7 +392,11 @@ export default function Home() {
             loop={true}
           />
           <Container id="Change">
-            <TriggeredPendantLeft bp={breakpoints} color="boulder">
+            <TriggeredPendantLeft
+              bp={breakpoints}
+              color="boulder"
+              id="Change-To"
+            >
               Our Vast Network{" "}
             </TriggeredPendantLeft>
             <div
@@ -500,7 +506,11 @@ export default function Home() {
             loop={true}
           />
           <Container id="Resources">
-            <TriggeredPendantRight bp={breakpoints} color="fruitSalad">
+            <TriggeredPendantRight
+              bp={breakpoints}
+              color="fruitSalad"
+              id="Resources-To"
+            >
               New Resources{" "}
             </TriggeredPendantRight>
             <div
@@ -537,7 +547,7 @@ export default function Home() {
                 provide vital information on the COVID-19 pandemic. The program
                 connects journalists with experts, information and each other in
                 five languages,through weekly webinars, Facebook groups and
-                resources published by our{" "}<br></br>
+                resources published by our <br></br>
                 <Highlighter color="fruitSalad">
                   International Journalists’ Network (IJNet).
                 </Highlighter>
@@ -625,8 +635,8 @@ export default function Home() {
               `}
             >
               ICFJ gave me and my listeners a global perspective of how other
-              countries were handling the pandemic. ”<br></br> - Chidera Rosecamille
-              Aneke, Darling FM
+              countries were handling the pandemic. ”<br></br> - Chidera
+              Rosecamille Aneke, Darling FM
             </Quote>
             <div
               css={css`
@@ -662,16 +672,16 @@ export default function Home() {
               `}
             >
               <Subheader>
-							<span
-								css={css`
-									color: #149EE7;
-									font-weight: 800;
-								`}
-							>
-								{" "}
-								The World's Most Comprehensive Site for Journalists{" "}
-							</span>
-							</Subheader>
+                <span
+                  css={css`
+                    color: #149ee7;
+                    font-weight: 800;
+                  `}
+                >
+                  {" "}
+                  The World's Most Comprehensive Site for Journalists{" "}
+                </span>
+              </Subheader>
               <p
                 css={css`
                   font-family: interstate-condensed;
@@ -723,7 +733,7 @@ export default function Home() {
             <div
               css={css`
                 @media (min-width: ${tablet}) {
-                  border: 20px solid #149EE7;
+                  border: 20px solid #149ee7;
                   padding: 2rem;
                 }
               `}
@@ -754,7 +764,7 @@ export default function Home() {
             <div
               css={css`
                 @media (min-width: ${tablet}) {
-                  border: 20px solid #149EE7;
+                  border: 20px solid #149ee7;
                   padding: 2rem;
                 }
               `}
@@ -795,7 +805,11 @@ export default function Home() {
             loop={true}
           />
           <Container id="Networks">
-            <TriggeredPendantLeft bp={breakpoints} color="mineShaft">
+            <TriggeredPendantLeft
+              bp={breakpoints}
+              color="mineShaft"
+              id="Networks-To"
+            >
               Investigative Networks
             </TriggeredPendantLeft>
             <div
@@ -817,12 +831,15 @@ export default function Home() {
               </TriggeredHeadline>
             </div>
             <TriggeredTextBlock>
-              <Subheader><div
-	              css={css`
-									color: #fff;
-									`}
-									>
-	          Journalism with Impact</div> </Subheader>
+              <Subheader>
+                <div
+                  css={css`
+                    color: #fff;
+                  `}
+                >
+                  Journalism with Impact
+                </div>{" "}
+              </Subheader>
             </TriggeredTextBlock>
             <div
               css={css`
@@ -865,8 +882,8 @@ export default function Home() {
               </ParagraphSlant>
             </div>
             <ImageQuery filename="bigeye.jpg" />
-						<Credits>Credit: Rocío Urtecho</Credits>
-						<div
+            <Credits>Credit: Rocío Urtecho</Credits>
+            <div
               css={css`
                 margin-top: 5rem;
                 color: white;
@@ -939,7 +956,11 @@ export default function Home() {
             loop={true}
           />
           <Container id="Innovation">
-            <TriggeredPendantRight bp={breakpoints} color="sanMarino">
+            <TriggeredPendantRight
+              bp={breakpoints}
+              color="sanMarino"
+              id="Innovation-To"
+            >
               Innovation
             </TriggeredPendantRight>
             <div
@@ -1007,7 +1028,7 @@ export default function Home() {
                   fontSize: ["1em", "1.2em", "1.5em"],
                   lineHeight: ["1", "1.5", "2"],
                   textAlign: "right",
-          				marginTop: ["1em", "2em", "4em"],
+                  marginTop: ["1em", "2em", "4em"],
                 })}
               >
                 In Nigeria, journalists, fact checkers and social media
@@ -1045,7 +1066,10 @@ export default function Home() {
                 Women journalists and data analysts from five countries shed
                 light on marginalized groups -- such as domestic workers and
                 HIV/AIDS patients -- hardest hit by the pandemic, as part of the{" "}
-                <Link href="https://urldefense.com/v3/__https:/theawjp.org/__;!!Ie25XFjv7UPO!4QFkJUrcVekppLkvEruzM2TiStyjctG8zz8IV7SGT2ah_DeDeH2DmSK44qtt$" target="_blank">
+                <Link
+                  href="https://urldefense.com/v3/__https:/theawjp.org/__;!!Ie25XFjv7UPO!4QFkJUrcVekppLkvEruzM2TiStyjctG8zz8IV7SGT2ah_DeDeH2DmSK44qtt$"
+                  target="_blank"
+                >
                   Africa Women’s Journalism Project
                 </Link>
                 , led by Brazil-based{" "}
@@ -1119,7 +1143,10 @@ export default function Home() {
               >
                 Journalists can more quickly find expert sources of scientific
                 information thanks to{" "}
-                <Link href="https://urldefense.com/v3/__https:/sciencepulse.org/about__;!!Ie25XFjv7UPO!4QFkJUrcVekppLkvEruzM2TiStyjctG8zz8IV7SGT2ah_DeDeH2DmfhbEiCV$" target="_blank">
+                <Link
+                  href="https://urldefense.com/v3/__https:/sciencepulse.org/about__;!!Ie25XFjv7UPO!4QFkJUrcVekppLkvEruzM2TiStyjctG8zz8IV7SGT2ah_DeDeH2DmfhbEiCV$"
+                  target="_blank"
+                >
                   Science Pulse
                 </Link>
                 , a free tool created by a{" "}
@@ -1144,7 +1171,11 @@ export default function Home() {
             loop={true}
           />
           <Container id="Sustainability">
-            <TriggeredPendantLeft bp={breakpoints} color="valencia">
+            <TriggeredPendantLeft
+              bp={breakpoints}
+              color="valencia"
+              id="Sustainability-To"
+            >
               Sustainability
             </TriggeredPendantLeft>
             <div
@@ -1214,7 +1245,10 @@ export default function Home() {
               >
                 Media entrepreneurs in the Middle East and North Africa have
                 improved the business prospects of their startups through our{" "}
-                <Link href="https://ijnet.org/en/story/meet-our-ijnet-arabic-2020-mentoring-center-participants" target="_blank">
+                <Link
+                  href="https://ijnet.org/en/story/meet-our-ijnet-arabic-2020-mentoring-center-participants"
+                  target="_blank"
+                >
                   <Highlighter color="goldenGrass">
                     IJNet Mentoring Center
                   </Highlighter>
@@ -1252,7 +1286,10 @@ export default function Home() {
                 Local newsrooms in Brazil increase their readers while
                 participating in the{" "}
                 <Highlighter color="curiousBlue">
-                  <Link href="https://www.facebook.com/journalismproject/programs/accelerator/brazilian-publishers-thriving" target="_blank">
+                  <Link
+                    href="https://www.facebook.com/journalismproject/programs/accelerator/brazilian-publishers-thriving"
+                    target="_blank"
+                  >
                     Local News Accelerator
                   </Link>
                 </Highlighter>{" "}
@@ -1292,7 +1329,10 @@ export default function Home() {
                 significantly increased their revenue in just six months, as
                 part of Velocidad. They did it primarily through paid content,
                 advertising and other client services -- and{" "}
-                <Link href="https://www.icfj.org/news/velocidad-helps-news-startups-grow-membership-and-revenue-program-enters-second-phase" target="_blank">
+                <Link
+                  href="https://www.icfj.org/news/velocidad-helps-news-startups-grow-membership-and-revenue-program-enters-second-phase"
+                  target="_blank"
+                >
                   it's just the beginning
                 </Link>
                 . This accelerator program with ICFJ and SembraMedia is
@@ -1313,9 +1353,9 @@ export default function Home() {
               light
             >
               {" "}
-              With the help of IJNet mentors, I empowered more women and made
-              my news outlet stronger financially.”<br></br> - Sheikha Aldosary, Saudi
-              Women's Stories, Saudi Arabia
+              With the help of IJNet mentors, I empowered more women and made my
+              news outlet stronger financially.”<br></br> - Sheikha Aldosary,
+              Saudi Women's Stories, Saudi Arabia
             </Quote>
           </Container>
           <TriggeredBgColor color="sanMarino" />
@@ -1330,7 +1370,11 @@ export default function Home() {
             loop={true}
           />
           <Container id="Leadership">
-            <TriggeredPendantRight bp={breakpoints} color="goldenGrass">
+            <TriggeredPendantRight
+              bp={breakpoints}
+              color="goldenGrass"
+              id="Leadership-To"
+            >
               Thought Leadership
             </TriggeredPendantRight>
             <div
@@ -1364,11 +1408,17 @@ export default function Home() {
               `}
             >
               During a tumultous year, ICFJ and its partners identified the{" "}
-              <Link href="https://www.icfj.org/news/new-global-survey-raises-red-flags-journalism-covid-19-era" target="_blank">
+              <Link
+                href="https://www.icfj.org/news/new-global-survey-raises-red-flags-journalism-covid-19-era"
+                target="_blank"
+              >
                 impact of the pandemic on journalism
               </Link>{" "}
               as well as the escalating problem of{" "}
-              <Link href="https://www.icfj.org/news/icfj-unesco-study-online-violence-fueled-disinformation-and-political-attacks-deeply-harms" target="_blank">
+              <Link
+                href="https://www.icfj.org/news/icfj-unesco-study-online-violence-fueled-disinformation-and-political-attacks-deeply-harms"
+                target="_blank"
+              >
                 online violence against women journalists
               </Link>
               .
@@ -1496,7 +1546,11 @@ export default function Home() {
             id="Honorees"
             css={mq({ maxWidth: ["100%", "100%", "90%", "1024px"] })}
           >
-            <TriggeredPendantLeft bp={breakpoints} color="sanMarino">
+            <TriggeredPendantLeft
+              bp={breakpoints}
+              color="sanMarino"
+              id="Honorees-To"
+            >
               {" "}
               Honorees
             </TriggeredPendantLeft>
@@ -1539,7 +1593,8 @@ export default function Home() {
                   css={css`
                     color: black;
                   `}
-                  href="https://www.icfj.org/calendar/icfj-tribute-journalists-2020" target="_blank"
+                  href="https://www.icfj.org/calendar/icfj-tribute-journalists-2020"
+                  target="_blank"
                 >
                   ICFJ’s annual awards
                 </Link>{" "}
@@ -1636,7 +1691,11 @@ export default function Home() {
             loop={true}
           />
           <Container id="Financials">
-            <TriggeredPendantRight bp={breakpoints} color="boulder">
+            <TriggeredPendantRight
+              bp={breakpoints}
+              color="boulder"
+              id="Financials-To"
+            >
               Financials
             </TriggeredPendantRight>
             <SmallSubheader
@@ -1774,7 +1833,11 @@ export default function Home() {
             loop={true}
           />
           <Container id="Board">
-            <TriggeredPendantLeft bp={breakpoints} color="goldenGrass">
+            <TriggeredPendantLeft
+              bp={breakpoints}
+              color="goldenGrass"
+              id="Board-To"
+            >
               Board Members
             </TriggeredPendantLeft>
             <div
@@ -1820,7 +1883,9 @@ export default function Home() {
 
                   <OrgPeople>PAMELA HOWARD</OrgPeople>
                   <OrgPeopleDesc>Vice Chair, ICFJ</OrgPeopleDesc>
-                  <OrgPeopleDesc>Trustee, Scripps Howard Foundation</OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    Trustee, Scripps Howard Foundation
+                  </OrgPeopleDesc>
 
                   <OrgPeople>MATTHEW WINKLER</OrgPeople>
                   <OrgPeopleDesc>Vice Chair, ICFJ</OrgPeopleDesc>
@@ -1837,7 +1902,9 @@ export default function Home() {
 
                   <OrgPeople>JASON WRIGHT</OrgPeople>
                   <OrgPeopleDesc>Development Chair, ICFJ</OrgPeopleDesc>
-                  <OrgPeopleDesc>Principal, Geer Mountain Holdings LLC</OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    Principal, Geer Mountain Holdings LLC
+                  </OrgPeopleDesc>
 
                   <OrgPeople>MARCY MCGINNIS</OrgPeople>
                   <OrgPeopleDesc>Nominating Chair, ICFJ</OrgPeopleDesc>
@@ -1860,7 +1927,7 @@ export default function Home() {
                     margin-bottom: 5rem;
                   `}
                 >
-								Board of Directors
+                  Board of Directors
                 </Subheader>
                 <ul
                   css={css`
@@ -1870,43 +1937,63 @@ export default function Home() {
                 >
                   <OrgPeople>MARK BAILEN</OrgPeople>
                   <OrgPeopleDesc>Partner, BakerHostetler LLP</OrgPeopleDesc>
-									<OrgPeopleDesc> </OrgPeopleDesc>
-									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
-									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
+                  <OrgPeopleDesc> </OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    <br></br>{" "}
+                  </OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    <br></br>{" "}
+                  </OrgPeopleDesc>
 
-									<OrgPeople>CARRIE BUDOFF BROWN</OrgPeople>
+                  <OrgPeople>CARRIE BUDOFF BROWN</OrgPeople>
                   <OrgPeopleDesc>Editor, Politico</OrgPeopleDesc>
-									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    <br></br>{" "}
+                  </OrgPeopleDesc>
 
                   <OrgPeople>DAVID CALLAWAY</OrgPeople>
                   <OrgPeopleDesc>
                     Founder, Editor, Callaway Climate Insights
                   </OrgPeopleDesc>
-									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    <br></br>{" "}
+                  </OrgPeopleDesc>
 
                   <OrgPeople>AHMED CHARAI</OrgPeople>
                   <OrgPeopleDesc>
                     Chairman and CEO, Global Media Holding
                   </OrgPeopleDesc>
-									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    <br></br>{" "}
+                  </OrgPeopleDesc>
 
                   <OrgPeople>DAVID ELLIOT COHEN</OrgPeople>
                   <OrgPeopleDesc>Author and Publisher</OrgPeopleDesc>
-									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
-									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
-									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
-									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    <br></br>{" "}
+                  </OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    <br></br>{" "}
+                  </OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    <br></br>{" "}
+                  </OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    <br></br>{" "}
+                  </OrgPeopleDesc>
 
                   <OrgPeople>JOHN DANISZEWSKI</OrgPeople>
                   <OrgPeopleDesc>
                     Vice President and Editor at Large for Standards, Associated
                     Press
                   </OrgPeopleDesc>
-									<OrgPeopleDesc> </OrgPeopleDesc>
+                  <OrgPeopleDesc> </OrgPeopleDesc>
 
                   <OrgPeople>RICHARD GINGRAS</OrgPeople>
                   <OrgPeopleDesc>Vice President, News, Google</OrgPeopleDesc>
-									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    <br></br>{" "}
+                  </OrgPeopleDesc>
 
                   <OrgPeople>MICHAEL GREENSPON</OrgPeople>
                   <OrgPeopleDesc>
@@ -2096,7 +2183,11 @@ export default function Home() {
         </Section>
         <Section name="Donors">
           <Container id="Donors">
-            <TriggeredPendantLeft bp={breakpoints} color="goldenGrass">
+            <TriggeredPendantLeft
+              bp={breakpoints}
+              color="goldenGrass"
+              id="Donors-To"
+            >
               Donors
             </TriggeredPendantLeft>
             <div

@@ -31,7 +31,7 @@ const List = styled.ul`
   list-style: none;
 `
 const ListItem = styled.li`
-  a {
+  span {
     list-style: none;
     text-decoration: none;
     color: white;
@@ -40,10 +40,16 @@ const ListItem = styled.li`
     line-height: 2;
     padding-left: 40%;
     white-space: nowrap;
+    cursor: pointer;
   }
 `
 class MenuContainer extends Component {
-  closeMenu = () => {
+  closeMenu = id => {
+    document.getElementById(id).scrollIntoView({
+      behavior: "auto",
+      block: "center",
+      inline: "center",
+    })
     this.props.onLinkClick()
   }
   render() {
@@ -51,64 +57,58 @@ class MenuContainer extends Component {
       <Menu isOpen={this.props.open}>
         <List>
           <ListItem>
-            <Link onClick={this.closeMenu} to="/#Mission">
-              Mission
-            </Link>
+            <span onClick={() => this.closeMenu("Mission-To")}>Mission</span>
           </ListItem>
           <ListItem>
-            <Link onClick={this.closeMenu} to="/#Joyce">
+            <span onClick={() => this.closeMenu("Joyce-To")}>
               A Letter from the President
-            </Link>
+            </span>
           </ListItem>
           <ListItem>
-            <Link onClick={this.closeMenu} to="/#Change">
+            <span onClick={() => this.closeMenu("Change-To")}>
               Our Vast Network
-            </Link>
+            </span>
           </ListItem>
           <ListItem>
-            <Link onClick={this.closeMenu} to="/#Resources">
+            <span onClick={() => this.closeMenu("Resources-To")}>
               New Resources
-            </Link>
+            </span>
           </ListItem>
           <ListItem>
-            <Link onClick={this.closeMenu} to="/#Networks">
+            <span onClick={() => this.closeMenu("Networks-To")}>
               Investigative Networks
-            </Link>
+            </span>
           </ListItem>
           <ListItem>
-            <Link onClick={this.closeMenu} to="/#Innovation">
+            <span onClick={() => this.closeMenu("Innovation-To")}>
               Innovation
-            </Link>
+            </span>
           </ListItem>
           <ListItem>
-            <Link onClick={this.closeMenu} to="/#Sustainability">
+            <span onClick={() => this.closeMenu("Sustainability-To")}>
               Sustainability
-            </Link>
+            </span>
           </ListItem>
           <ListItem>
-            <Link onClick={this.closeMenu} to="/#Leadership">
+            <span onClick={() => this.closeMenu("Leadership-To")}>
               Thought Leadership
-            </Link>
+            </span>
           </ListItem>
           <ListItem>
-            <Link onClick={this.closeMenu} to="/#Honorees">
-              Honorees
-            </Link>
+            <span onClick={() => this.closeMenu("Honorees-To")}>Honorees</span>
           </ListItem>
           <ListItem>
-            <Link onClick={this.closeMenu} to="/#Financials">
+            <span onClick={() => this.closeMenu("Financials-To")}>
               Financials
-            </Link>
+            </span>
           </ListItem>
           <ListItem>
-            <Link onClick={this.closeMenu} to="/#Board">
+            <span onClick={() => this.closeMenu("Board-To")}>
               Board Members
-            </Link>
+            </span>
           </ListItem>
           <ListItem>
-            <Link onClick={this.closeMenu} to="/#Donors">
-              Donors
-            </Link>
+            <span onClick={() => this.closeMenu("Donors-To")}>Donors</span>
           </ListItem>
         </List>
       </Menu>
