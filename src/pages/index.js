@@ -338,7 +338,14 @@ export default function Home() {
                     margin-top: -0.5rem;
                   `}
                 >
-                  Over 36 years, ICFJ has provided more than <TextPop>150,000 journalists</TextPop> from <TextPop> 80 countries</TextPop> with <TextPop css={mq({display: ["block", "block", "block"],})}> valuable programs and resources</TextPop>. But we’ve never had a year like 2020.
+                  Over 36 years, ICFJ has provided more than{" "}
+                  <TextPop>150,000 journalists</TextPop> from{" "}
+                  <TextPop> 80 countries</TextPop> with{" "}
+                  <TextPop css={mq({ display: ["block", "block", "block"] })}>
+                    {" "}
+                    valuable programs and resources
+                  </TextPop>
+                  . But we’ve never had a year like 2020.
                 </p>
                 <p>
                   The pandemic that raged across the globe would have been much
@@ -360,32 +367,28 @@ export default function Home() {
                   thousands of journalists are benefiting from that effort.
                 </p>
                 <p>
-                In other ICFJ programs, investigative journalists in our
-                networks are collaborating to uncover corruption by those
-                seeking to get rich from the pandemic. Pioneers in media
-                innovation are creating new data and social media tools to help
-                journalists tell the stories of COVID-19 better. And
-                sustainability experts are helping news outlets improve the
-                bottom line in a time when economic and political forces
-                threaten to shut down independent voices.
-              </p>
-              <p>
-                Our motto is It Takes a Journalist. Whether the story is a
-                global pandemic, racial injustice, climate change or government
-                malfeasance, it takes a journalist to bring the public factual
-                information that can mean the difference between life and death.
-                And whatever the story, ICFJ will be there to support and
-                empower the journalists who are helping make our world a better
-                place.
-              </p>
-              <p>Joyce Barnathan, President</p>
-              <Signature />
-
-
+                  In other ICFJ programs, investigative journalists in our
+                  networks are collaborating to uncover corruption by those
+                  seeking to get rich from the pandemic. Pioneers in media
+                  innovation are creating new data and social media tools to
+                  help journalists tell the stories of COVID-19 better. And
+                  sustainability experts are helping news outlets improve the
+                  bottom line in a time when economic and political forces
+                  threaten to shut down independent voices.
+                </p>
+                <p>
+                  Our motto is It Takes a Journalist. Whether the story is a
+                  global pandemic, racial injustice, climate change or
+                  government malfeasance, it takes a journalist to bring the
+                  public factual information that can mean the difference
+                  between life and death. And whatever the story, ICFJ will be
+                  there to support and empower the journalists who are helping
+                  make our world a better place.
+                </p>
+                <p>Joyce Barnathan, President</p>
+                <Signature />
               </ParagraphSlant>
             </div>
-
-              
           </Container>
           <TriggeredBgColor color="goldenGrass" />
         </Section>
@@ -680,17 +683,16 @@ export default function Home() {
               `}
             >
               <Subheader>
-
-							<span
-								css={theme =>({
-									color: theme.colors.curiousBlue,
-									fontWeight: "800"
-								})}
-							>
-								{" "}
-								The World's Most Comprehensive Site for Journalists{" "}
-							</span>
-							</Subheader>
+                <span
+                  css={theme => ({
+                    color: theme.colors.curiousBlue,
+                    fontWeight: "800",
+                  })}
+                >
+                  {" "}
+                  The World's Most Comprehensive Site for Journalists{" "}
+                </span>
+              </Subheader>
               <p
                 css={css`
                   font-family: interstate-condensed;
@@ -1890,7 +1892,9 @@ export default function Home() {
                   </OrgPeopleDesc>
                   <OrgPeople>PAMELA HOWARD</OrgPeople>
                   <OrgPeopleDesc>Vice Chair, ICFJ</OrgPeopleDesc>
-                  <OrgPeopleDesc>Trustee, Scripps Howard Foundation</OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    Trustee, Scripps Howard Foundation
+                  </OrgPeopleDesc>
                   <OrgPeople>MATTHEW WINKLER</OrgPeople>
                   <OrgPeopleDesc>Vice Chair, ICFJ</OrgPeopleDesc>
                   <OrgPeopleDesc>
@@ -1904,7 +1908,9 @@ export default function Home() {
                   </OrgPeopleDesc>
                   <OrgPeople>JASON WRIGHT</OrgPeople>
                   <OrgPeopleDesc>Development Chair, ICFJ</OrgPeopleDesc>
-                  <OrgPeopleDesc>Principal, Geer Mountain Holdings LLC</OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    Principal, Geer Mountain Holdings LLC
+                  </OrgPeopleDesc>
                   <OrgPeople>MARCY MCGINNIS</OrgPeople>
                   <OrgPeopleDesc>Nominating Chair, ICFJ</OrgPeopleDesc>
                   <OrgPeopleDesc>Journalist</OrgPeopleDesc>
@@ -1934,37 +1940,57 @@ export default function Home() {
                 >
                   <OrgPeople>MARK BAILEN</OrgPeople>
                   <OrgPeopleDesc>Partner, BakerHostetler LLP</OrgPeopleDesc>
-									<OrgPeopleDesc> </OrgPeopleDesc>
-									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
-									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
-									<OrgPeople>CARRIE BUDOFF BROWN</OrgPeople>
+                  <OrgPeopleDesc> </OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    <br></br>{" "}
+                  </OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    <br></br>{" "}
+                  </OrgPeopleDesc>
+                  <OrgPeople>CARRIE BUDOFF BROWN</OrgPeople>
                   <OrgPeopleDesc>Editor, Politico</OrgPeopleDesc>
-									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    <br></br>{" "}
+                  </OrgPeopleDesc>
                   <OrgPeople>DAVID CALLAWAY</OrgPeople>
                   <OrgPeopleDesc>
                     Founder, Editor, Callaway Climate Insights
                   </OrgPeopleDesc>
-									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    <br></br>{" "}
+                  </OrgPeopleDesc>
                   <OrgPeople>AHMED CHARAI</OrgPeople>
                   <OrgPeopleDesc>
                     Chairman and CEO, Global Media Holding
                   </OrgPeopleDesc>
-									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    <br></br>{" "}
+                  </OrgPeopleDesc>
                   <OrgPeople>DAVID ELLIOT COHEN</OrgPeople>
                   <OrgPeopleDesc>Author and Publisher</OrgPeopleDesc>
-									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
-									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
-									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
-									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    <br></br>{" "}
+                  </OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    <br></br>{" "}
+                  </OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    <br></br>{" "}
+                  </OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    <br></br>{" "}
+                  </OrgPeopleDesc>
                   <OrgPeople>JOHN DANISZEWSKI</OrgPeople>
                   <OrgPeopleDesc>
                     Vice President and Editor at Large for Standards, Associated
                     Press
                   </OrgPeopleDesc>
-									<OrgPeopleDesc> </OrgPeopleDesc>
+                  <OrgPeopleDesc> </OrgPeopleDesc>
                   <OrgPeople>RICHARD GINGRAS</OrgPeople>
                   <OrgPeopleDesc>Vice President, News, Google</OrgPeopleDesc>
-									<OrgPeopleDesc><br></br> </OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    <br></br>{" "}
+                  </OrgPeopleDesc>
                   <OrgPeople>MICHAEL GREENSPON</OrgPeople>
                   <OrgPeopleDesc>
                     Global Head, Licensing and Print Innovation, The New York
@@ -2293,10 +2319,24 @@ export default function Home() {
                 </OrgPeopleDesc>
               </ul>
             </div>
-            <TriggeredPendantLeft css={css`margin-top:10rem;margin-bottom:10rem`} bp={breakpoints} color="boulder">
+            <TriggeredPendantLeft
+              css={css`
+                margin-top: 10rem;
+                margin-bottom: 10rem;
+              `}
+              bp={breakpoints}
+              color="boulder"
+            >
               Thank You
             </TriggeredPendantLeft>
-            <Subheader css={css`color:white`}> All of us at ICFJ thank you for your support. </Subheader>
+            <Subheader
+              css={css`
+                color: white;
+              `}
+            >
+              {" "}
+              All of us at ICFJ thank you for your support.{" "}
+            </Subheader>
             <FrameEmbed
               bp={breakpoints}
               buttonColor="fruitSalad"
@@ -2314,10 +2354,10 @@ export default function Home() {
                 src="https://www.youtube.com/embed/Td6AYW3zyo8?"
                 frameBorder="0"
                 allowFullScreen
-                autoplay
+                autoPlay
                 loop
-                ></iframe>
-          </FrameEmbed>
+              ></iframe>
+            </FrameEmbed>
           </Container>
         </Section>
         <div

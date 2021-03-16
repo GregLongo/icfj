@@ -127,20 +127,22 @@ class MenuSlant extends Component {
     this.toggleMenu = this.toggleMenu.bind(this)
   }
 
-  componentDidMount(){
+  componentDidMount() {
+    if (typeof window !== "undefined") {
       window.onscroll = e => {
-      var scrollTop =
-        window.pageYOffset !== undefined
-          ? window.pageYOffset
-          : (
-              document.documentElement ||
-              document.body.parentNode ||
-              document.body
-            ).scrollTop
-      if (this.state.open && scrollTop > 300) {
-        this.toggleMenu()
+        var scrollTop =
+          window.pageYOffset !== undefined
+            ? window.pageYOffset
+            : (
+                document.documentElement ||
+                document.body.parentNode ||
+                document.body
+              ).scrollTop
+        if (this.state.open && scrollTop > 300) {
+          this.toggleMenu()
+        }
       }
-    }  
+    }
   }
   toggleMenu() {
     this.setState({
