@@ -13,6 +13,7 @@ const PendantContainer = styled.div`
 `
 export default function TriggeredPendantRight(props) {
   const color = props.color
+  const id = props.id
   const mq = facepaint(props.bp.map(bp => `@media (min-width:${bp})`))
   const Pendant = styled.div`
     display: flex;
@@ -58,7 +59,7 @@ export default function TriggeredPendantRight(props) {
     ScrollTrigger.refresh(true)
   }, [])
   return (
-    <PendantContainer className={props.className}>
+    <PendantContainer className={props.className} id={id}>
       <Pendant ref={ref}>{props.children}</Pendant>
     </PendantContainer>
   )
