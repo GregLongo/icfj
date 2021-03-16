@@ -7,17 +7,22 @@ import { faTwitter, faFacebookF } from "@fortawesome/free-brands-svg-icons"
 
 export default function Header(props) {
   const mobile = props.bp[1]
-  const desktop = props.bp[2]
+  const tablet = props.bp[2]
 
   const HeaderContainer = styled.div`
     max-width: 100%;
     display: grid;
     align-items: center;
     grid-template-columns: repeat(3, 1fr);
-    margin-left: 1rem;
+    margin-left: .5rem;
     margin-right: 1rem;
     height: 6rem;
     @media (min-width: ${mobile}) {
+      margin-left: 2rem;
+      margin-right: 2rem;
+      height: 10rem;
+    }
+    @media (min-width: ${tablet}) {
       margin-left: 4rem;
       margin-right: 4rem;
       height: 10rem;
@@ -26,6 +31,7 @@ export default function Header(props) {
   const LogoMd = styled(Logo)`
     justify-self: center;
     width: 150px;
+    margin-left: 1rem;
     @media (min-width: ${mobile}) {
       width: 300px;
     }
@@ -58,7 +64,7 @@ export default function Header(props) {
     &:nth-of-type(1) {
       color: #149ee7;
       grid-column-start: span 4;
-      @media (min-width: ${desktop}) {
+      @media (min-width: ${tablet}) {
         grid-column-start: span 1;
       }
     }

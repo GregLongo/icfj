@@ -30,7 +30,7 @@ import CountBox from "../components/CountBox.js"
 import WinnerLeft from "../components/WinnerLeft.js"
 import WinnerRight from "../components/WinnerRight.js"
 import Wolf from "../components/Wolf.js"
-import ReadMore from "../components/ReadMore.js"
+// import ReadMore from "../components/ReadMore.js"
 
 //Animation Players
 // import UncontrolledLottie from "../components/UncontrolledLottie.js"
@@ -136,6 +136,21 @@ const OrgPeopleDesc = styled.li`
 const Link = styled.a`
   color: white;
 `
+
+//read more as a block of text
+// const ReadMore = styled.div`
+//     text-align: justify;
+//     font-family: interstate-condensed;
+//     font-weight: 500;
+//     font-size: 1.1em;
+//     color: black;
+//     margin-bottom: 10rem;
+//     @media (min-width: ${mobile}) {
+//       font-size: 1.7em;
+//       margin-bottom: 15rem;
+//     }
+
+// `
 
 //add scroll to internal anchor links
 
@@ -314,7 +329,7 @@ export default function Home() {
                 css={css`
                   margin-bottom: 5rem;
                   @media (min-width: ${tablet}) {
-                    margin-bottom: -15rem;
+                    margin-bottom: 5rem;
                   }
                 `}
               >
@@ -354,10 +369,7 @@ export default function Home() {
                   and media sustainability experts. As you’ll see below, tens of
                   thousands of journalists are benefiting from that effort.
                 </p>
-              </ParagraphSlant>
-            </div>
-            <ReadMore bp={breakpoints}>
-              <p>
+                <p>
                 In other ICFJ programs, investigative journalists in our
                 networks are collaborating to uncover corruption by those
                 seeking to get rich from the pandemic. Pioneers in media
@@ -378,7 +390,12 @@ export default function Home() {
               </p>
               <p>Joyce Barnathan, President</p>
               <Signature />
-            </ReadMore>
+
+
+              </ParagraphSlant>
+            </div>
+
+              
           </Container>
           <TriggeredBgColor color="goldenGrass" />
         </Section>
@@ -849,7 +866,7 @@ export default function Home() {
                 margin-bottom: -8rem;
                 @media (min-width: ${tablet}) {
                   margin-top: 10rem;
-                  margin-bottom: -20rem;
+                  margin-bottom: -35rem;
                 }
               `}
             >
@@ -1014,7 +1031,7 @@ export default function Home() {
                   animation={animationAfrica}
                   loop={false}
                   css={css`
-                    transform: translate(20%, -50%);
+                    transform: translate(15%, -50%);
                     z-index: -1;
                   `}
                 />
@@ -1641,7 +1658,7 @@ export default function Home() {
             />
             <WinnerRight
               bp={breakpoints}
-              image="Fareed.png"
+              image="Fareed.jpg"
               award="ICFJ Founders Award for Excellence in Journalism"
               name="Fareed Zakaria, CNN"
               title=""
@@ -2333,6 +2350,31 @@ export default function Home() {
                 </OrgPeopleDesc>
               </ul>
             </div>
+            <TriggeredPendantLeft css={css`margin-top:10rem;margin-bottom:10rem`} bp={breakpoints} color="boulder">
+              Thank You
+            </TriggeredPendantLeft>
+            <Subheader css={css`color:white`}> All of us at ICFJ thank you for your support. </Subheader>
+            <FrameEmbed
+              bp={breakpoints}
+              buttonColor="fruitSalad"
+              css={css`
+                width: 100%;
+                height: 600px;
+                overflow: hidden;
+                opacity: 1 !important;
+              `}
+            >
+              <iframe
+                title="vidthree"
+                width="100%"
+                height="570px"
+                src="https://www.youtube.com/embed/Td6AYW3zyo8?"
+                frameBorder="0"
+                allowFullScreen
+                autoplay
+                loop
+                ></iframe>
+          </FrameEmbed>
           </Container>
         </Section>
         <div

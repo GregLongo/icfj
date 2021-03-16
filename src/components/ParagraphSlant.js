@@ -18,12 +18,17 @@ export default function ParagraphSlant(props) {
       content: "";
       float: left !important;
       shape-outside: polygon(100% 0%, 15% 100%, 0% 100%);
-      width: 220px;
-      height: 75vh;
+      width: 240px;
+      height: 102vh;
+      @media (min-width: ${mobile}) {
+        shape-outside: polygon(100% 0%, 25% 100%, 0% 100%);
+        width: 250px;
+        height:100vh;
+      }
       @media (min-width: ${tablet}) {
         shape-outside: polygon(100% 0%, 25% 100%, 0% 100%);
         width: 400px;
-        height: 90vh;
+        height:110vh;
       }
     }
   `
