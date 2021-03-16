@@ -445,6 +445,7 @@ export default function Home() {
                   font-size: 1.5em;
                   line-height: 2;
                   font-weight: 500;
+                  transition-delay: 10ms;
                 `}
               >
                 Tens of thousands of journalists in our global network produce
