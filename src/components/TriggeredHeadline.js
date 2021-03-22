@@ -16,9 +16,9 @@ export default function TriggeredHeadline(props) {
     font-weight: bold;
     text-transform: uppercase;
     text-align: ${props.right ? "right" : "left"};
-    line-height: 1;
+    line-height: .9;
     ${mq({
-      fontSize: ["2.5em", "3em", "3em", "5em"],
+      fontSize: ["2em", "2.5em", "2.5em", "4em"],
     })}
   `
 

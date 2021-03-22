@@ -49,7 +49,7 @@ import animationBrazil from "../lotties/brazil.json"
 import animationSouthAmerica from "../lotties/southamerica.json"
 import animationPie from "../lotties/piechart.json"
 import animationTribute from "../lotties/tribute.json"
-import animationMiddleEast from "../lotties/northafrica_middleeast.json"                         
+import animationMiddleEast from "../lotties/northafrica_middleeast.json"
 //svg
 import Platinum from "../svg/platinum.svg"
 import Signature from "../svg/jsignature.svg"
@@ -243,19 +243,19 @@ export default function Home() {
           <Container
             css={css`
               color: white;
-              height: 20rem;
+              height: 15rem;
               display: flex;
               flex-direction: column;
               justify-content: center;
               text-align: left;
               margin-top: 0;
-              margin-bottom: 5rem;
+              margin-bottom: 3rem;
               @media (min-width: ${smol}) {
-                height: 30rem;
+                height: 20rem;
               }
               @media (min-width: ${tablet}) {
-                height: 40rem;
-                margin-bottom: 15rem;
+                height: 30rem;
+                margin-bottom: 5rem;
               }
             `}
           >
@@ -305,15 +305,15 @@ export default function Home() {
               color="curiousBlue"
               id="Joyce-To"
             >
-              Letter from Joyce
+              Letter from the President
             </TriggeredPendantRight>
             <div
               css={css`
                 display: grid;
                 grid-template-columns: 5% 95%;
-                margin-top: 5rem;
+                margin-top: 3rem;
                 @media (min-width: ${tablet}) {
-                  margin-top: 10rem;
+                  margin-top: 5rem;
                 }
               `}
             >
@@ -341,11 +341,7 @@ export default function Home() {
                   Over 36 years, ICFJ has provided more than{" "}
                   <TextPop>150,000 journalists</TextPop> from{" "}
                   <TextPop> 80 countries</TextPop> with{" "}
-                  <TextPop css={mq({ display: ["block", "block", "block"] })}>
-                    {" "}
-                    valuable programs and resources
-                  </TextPop>
-                  . But we’ve never had a year like 2020.
+                  <TextPop>valuable programs and resources.</TextPop> But we’ve never had a year like 2020.
                 </p>
                 <p>
                   The pandemic that raged across the globe would have been much
@@ -413,10 +409,10 @@ export default function Home() {
               css={css`
                 display: grid;
                 grid-template-columns: 100%;
-                grid-column-gap: 4rem;
-                margin-top: 4rem;
+                grid-column-gap: 3rem;
+                margin-top: 2rem;
                 @media (min-width: ${tablet}) {
-                  grid-template-columns: 70% 30%;
+                  grid-template-columns: 60% 40%;
                 }
               `}
             >
@@ -428,15 +424,15 @@ export default function Home() {
                   `}
                 >
                   {" "}
-                  Change The World
+                  Change The <br></br>World
                 </span>
               </TriggeredHeadline>
               <TriggeredTextBlock
                 css={css`
                   color: white;
                   font-family: interstate-condensed;
-                  font-size: 1.5em;
-                  line-height: 2;
+                  font-size: 1.7em;
+                  line-height: 1.65;
                   font-weight: 500;
                   transition-delay: 10ms;
                 `}
@@ -449,13 +445,13 @@ export default function Home() {
             <FrameEmbed
               bp={breakpoints}
               buttonColor="goldenGrass"
-              caption="Learn how ICFJ is giving reporters the skills to cover today's most pressing issues."
+              caption="ICFJ is giving reporters the skills to cover today's most pressing issues."
               css={css`
-                margin-top: 10rem;
+                margin-top: 3rem;
                 width: 100%;
                 height: 600px;
                 @media (min-width: ${tablet}) {
-                  margin-top: 15rem;
+                  margin-top: 5rem;
                 }
               `}
             >
@@ -477,10 +473,10 @@ export default function Home() {
                 width: 100%;
                 height: 765px;
                 overflow: hidden;
-                margin-top: 10rem;
+                margin-top: 3rem;
                 margin-bottom: -15rem;
                 @media (min-width: ${tablet}) {
-                  margin-top: 15rem;
+                  margin-top: 5rem;
                   margin-bottom: 0;
                 }
               `}
@@ -499,9 +495,7 @@ export default function Home() {
                 marginRight: "auto",
               })}
             >
-              With ICFJ’s support, we are improving the lives of the poorest of
-              the poor by bringing them reliable, crowdsourced news for the
-              first time."<br></br> - Devansh Mehta, CGNet Swara, India
+              With ICFJ’s support, we are partnering with under-resourced communities to change lives with reliable, crowdsourced news."<br></br> - Devansh Mehta, CGNet Swara, India
             </Quote>
           </Container>
           <TriggeredBgColor color="curiousBlue" />
@@ -525,7 +519,7 @@ export default function Home() {
             </TriggeredPendantRight>
             <div
               css={css`
-                margin-top: 4rem;
+                margin-top: 3rem;
               `}
             >
               <TriggeredHeadline bp={breakpoints} right>
@@ -543,8 +537,8 @@ export default function Home() {
                 css={css`
                   color: white;
                   font-family: interstate-condensed;
-                  font-size: 1.25em;
-                  line-height: 2;
+                  font-size: 1.15em;
+                  line-height: 1.75;
                   text-align: right;
                   margin-top: 2rem;
                   font-weight: 500;
@@ -681,14 +675,23 @@ export default function Home() {
                 }
               `}
             >
-              <Subheader>
-                <span
-                  css={theme => ({
+            <div
+              css={css`
+                display: grid;
+                grid-template-columns: 100%;
+                grid-column-gap: 3rem;
+                margin-top: 2rem;
+                @media (min-width: ${tablet}) {
+                  grid-template-columns: 60% 40%;
+                }
+              `}
+            >
+              <div>
+               <Subheader>
+                <span css={theme => ({
                     color: theme.colors.curiousBlue,
                     fontWeight: "800",
                   })}
-                >
-                  {" "}
                   The World's Most Comprehensive Site for Journalists{" "}
                 </span>
               </Subheader>
@@ -702,10 +705,8 @@ export default function Home() {
                 Offering expert advice, tools and opportunities for the news
                 media
               </p>
-            </div>
-            <div
-              css={css`
-                width: 60%;
+              </div>
+            <div css={css`
                 margin-right: auto;
                 margin-left: auto;
                 margin-top: 5rem;
@@ -713,8 +714,8 @@ export default function Home() {
                   margin-top: 8rem;
                 }
               `}
-            >
               <ImageQuery filename="ijnet.png" />
+              </div>
             </div>
           </Container>
           <Container
@@ -1230,7 +1231,7 @@ export default function Home() {
               css={css`
                 margin-top: 5rem;
               `}
-            > 
+            >
             <div css={css`
                 position: relative;
               `}>
@@ -1242,8 +1243,8 @@ export default function Home() {
               />
                 <div css={css`
                   background: rgba(221, 175, 36, 0.6);
-                position: absolute;
-                  top:0;
+                  position: absolute;
+                  bottom: 50px;
                   padding: 16px 32px;
                   font-family: interstate-condensed;
                   font-size: 1.7em;
@@ -1251,21 +1252,21 @@ export default function Home() {
                   @media (min-width: ${mobile}) {
                     font-size: 2.5em;
                   }
-                `} ><TextPop>47</TextPop> Media Entrepreneurs
+                `} ><TextPop>47 Media Entrepreneurs</TextPop>
               </div>
               <TriggeredLottie
                 css={css`
                   position: absolute;
                   background: rgba(221, 175, 36, 0.6);
                   clip-path: inset(20% 0% 20% 0%);
-                  width: 120px;
+                  width: 350px;
                   bottom: 0;
                   right: 0;
-                  margin-right: 29px;
-                  margin-bottom: 32px;   
+                  margin-right: 0px;
+                  margin-bottom: 0px;
                   @media(min-width:${mobile}){
-                    width: 260px;   
-                    margin-bottom: -36px; 
+                    width: 260px;
+                    margin-bottom: -36px;
                   }
                 `}
                 animation={animationMiddleEast}
@@ -1325,7 +1326,7 @@ export default function Home() {
                   margin-bottom: 12px;
                   bottom: 0;
                   right: 0;
-                  width: 124px;
+                  width: 324px;
                   @media(min-width:${mobile}){
                     width: 260px;
                     margin-right: -27px;
@@ -1338,15 +1339,16 @@ export default function Home() {
                 <div css={css`
                     background: rgba(20, 158, 231, 0.7);
                     position: absolute;
-                    top: 0;
+                    bottom: 50px;
                     padding: 16px 32px;
                     font-family: interstate-condensed;
+                    font-weight: 700;
                     font-size: 1.7em;
                     color: white;
                     @media (min-width: ${mobile}) {
                       font-size: 2.5em;
                     }
-                  `} ><TextPop>600,000</TextPop> Registered Users
+                  `} ><TextPop>600,000 Registered Users</TextPop>
                 </div>
               </div>
               <div
@@ -1364,7 +1366,7 @@ export default function Home() {
                     font-size: 1.5em;
                   }
                 `}
-              > 
+              >
 
                 Local newsrooms in Brazil increase their readers while
                 participating in the{" "}
@@ -1402,11 +1404,12 @@ export default function Home() {
                   font-family: interstate-condensed;
                   font-size: 1.7em;
                   color: white;
-                  top: 0;
+                  bottom: 50px;
+                  font-weight: 700;
                   @media(min-width:${mobile}){
                    font-size: 2.5em;
                   }
-                `} ><TextPop>$350,00</TextPop> in New Revenue
+                `} ><TextPop>$350,000 in New Revenue</TextPop>
               </div>
                <TriggeredLottie
                 css={css`
@@ -1417,11 +1420,11 @@ export default function Home() {
                   bottom: 0;
                   right: 0;
                   margin-right: 12px;
-                  margin-bottom: 48px;   
+                  margin-bottom: 48px;
                   @media(min-width:${mobile}){
-                    width: 260px;      
+                    width: 260px;
                     margin-right: -27px;
-                    margin-bottom: 16px;            
+                    margin-bottom: 16px;
                   }
                 `}
                 animation={animationSouthAmerica}
@@ -1863,8 +1866,8 @@ export default function Home() {
               display: grid;
               grid-template-columns: 100%;
               @media(min-width:${tablet}){
-                grid-template-columns: 50% 50%;      
-                margin-top: 5rem;          
+                grid-template-columns: 50% 50%;
+                margin-top: 5rem;
               }
               `} >
             <div>
