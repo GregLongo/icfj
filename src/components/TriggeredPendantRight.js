@@ -26,15 +26,15 @@ export default function TriggeredPendantRight(props) {
     height: 80px;
     position: relative;
     ${mq({
-      fontSize: ["2em", "2.5em", "3em", "3em"],
+      fontSize: ["1.7em", "2.5em", "3em", "3em"],
       paddingLeft: ["1em", "1em", "1em", "3em"],
     })}
     &:after {
       content: "";
       position: absolute;
       top: 0;
-      right: -160%;
-      width: 260%;
+      right: -180%;
+      width: 280%;
       height: 100%;
       background: ${props => props.theme.colors[color]};
       transform-origin: 100% 0;
@@ -46,7 +46,7 @@ export default function TriggeredPendantRight(props) {
   const ref = useRef(null)
   useEffect(() => {
     gsap.from(ref.current, {
-      x: "260%",
+      x: "280%",
       duration: 0.5,
       scrollTrigger: {
         trigger: ref.current,

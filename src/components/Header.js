@@ -77,7 +77,7 @@ export default function Header(props) {
       <MenuSlant />
       <LogoMd />
       <Social>
-        <SocialText href="http://icfj.org">Donate to ICFJ</SocialText>
+        <SocialText href="http://icfj.org">Donate</SocialText>
         <SocialText href="http://icfj.org">Share</SocialText>
         <FontAwesomeIcon icon={faFacebookF} size="1x" />
         <FontAwesomeIcon icon={faTwitter} size="1x" />
