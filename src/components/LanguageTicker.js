@@ -19,7 +19,7 @@ export default function LanguageTicker(props) {
   // `
   return (
     <Ticker className={props.className}>
-      <Marquee>{props.children}</Marquee>
+      <Marquee speed={.06} >{props.children}</Marquee>
     </Ticker>
   )
 }

@@ -46,10 +46,10 @@ import animationTweet from "../lotties/tweet.json"
 import animationAfrica from "../lotties/africa.json"
 import animationAfrica2 from "../lotties/africa2.json"
 import animationBrazil from "../lotties/brazil.json"
-// import animationSouthAmerica from "../lotties/southamerica.json"
+import animationSouthAmerica from "../lotties/southamerica.json"
 import animationPie from "../lotties/piechart.json"
 import animationTribute from "../lotties/tribute.json"
-
+import animationMiddleEast from "../lotties/northafrica_middleeast.json"                         
 //svg
 import Platinum from "../svg/platinum.svg"
 import Signature from "../svg/jsignature.svg"
@@ -163,13 +163,13 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
   useEffect(() => {
-    const pmFrame = new window.Pmframe({
-      element: "mosaics",
-      page: "https://icfjmosaic.com",
-      minWidth: "300",
-      pmBrand: 1,
-    })
-    pmFrame.init()
+    // const pmFrame = new window.Pmframe({
+    //   element: "mosaics",
+    //   page: "https://icfjmosaic.com",
+    //   minWidth: "300",
+    //   pmBrand: 1,
+    // })
+    // pmFrame.init()
     const timer = setTimeout(() => {
       ScrollTrigger.refresh(true)
     }, 1000)
@@ -385,8 +385,8 @@ export default function Home() {
                   there to support and empower the journalists who are helping
                   make our world a better place.
                 </p>
-                <p>Joyce Barnathan, President</p>
-                <Signature />
+                <p css={css`font-size: 1.5em`}>Joyce Barnathan, President</p>
+                <Signature css={css`@media(max-width:${mobile}){transform:scale(.7) translatex(-25%);}`}/>
               </ParagraphSlant>
             </div>
           </Container>
@@ -454,7 +454,6 @@ export default function Home() {
                 margin-top: 10rem;
                 width: 100%;
                 height: 600px;
-                overflow: hidden;
                 @media (min-width: ${tablet}) {
                   margin-top: 15rem;
                 }
@@ -1231,14 +1230,49 @@ export default function Home() {
               css={css`
                 margin-top: 5rem;
               `}
-            >
+            > 
+            <div css={css`
+                position: relative;
+              `}>
               <ImageQuery
                 css={css`
                   height: 510px;
                 `}
                 filename="conference.jpeg"
               />
-              <Credits>Credit: Ibrahim Thunian/Saudi Women Stories</Credits>
+                <div css={css`
+                  background: rgba(221, 175, 36, 0.6);
+                position: absolute;
+                  top:0;
+                  padding: 16px 32px;
+                  font-family: interstate-condensed;
+                  font-size: 1.7em;
+                  color: white;
+                  @media (min-width: ${mobile}) {
+                    font-size: 2.5em;
+                  }
+                `} ><TextPop>47</TextPop> Media Entrepreneurs
+              </div>
+              <TriggeredLottie
+                css={css`
+                  position: absolute;
+                  background: rgba(221, 175, 36, 0.6);
+                  clip-path: inset(20% 0% 20% 0%);
+                  width: 120px;
+                  bottom: 0;
+                  right: 0;
+                  margin-right: 29px;
+                  margin-bottom: 32px;   
+                  @media(min-width:${mobile}){
+                    width: 260px;   
+                    margin-bottom: -36px; 
+                  }
+                `}
+                animation={animationMiddleEast}
+                loop={false}
+              />
+          <Credits>Credit: Ibrahim Thunian/Saudi Women Stories</Credits>
+          </div>
               <div
                 css={css`
                   color: white;
@@ -1273,12 +1307,48 @@ export default function Home() {
                 margin-top: 5rem;
               `}
             >
+            <div css={css`
+                position: relative;
+              `}>
               <ImageQuery
                 css={css`
                   height: 510px;
                 `}
                 filename="FacebookAccelerator.jpg"
               />
+              <TriggeredLottie
+                css={css`
+                  position: absolute;
+                  background: rgba(20, 158, 231, 0.6);
+                  clip-path: inset(8% 10% 10% 20%);
+                  margin-right: 12px;
+                  margin-bottom: 12px;
+                  bottom: 0;
+                  right: 0;
+                  width: 124px;
+                  @media(min-width:${mobile}){
+                    width: 260px;
+                    margin-right: -27px;
+                    margin-bottom: -27px;
+                  }
+                `}
+                animation={animationBrazil}
+                loop={false}
+              />
+                <div css={css`
+                    background: rgba(20, 158, 231, 0.7);
+                    position: absolute;
+                    top: 0;
+                    padding: 16px 32px;
+                    font-family: interstate-condensed;
+                    font-size: 1.7em;
+                    color: white;
+                    @media (min-width: ${mobile}) {
+                      font-size: 2.5em;
+                    }
+                  `} ><TextPop>600,000</TextPop> Registered Users
+                </div>
+              </div>
               <div
                 css={css`
                   color: white;
@@ -1289,11 +1359,13 @@ export default function Home() {
                   padding-right: 2rem;
                   font-size: 1.25em;
                   font-weight: 500;
+                  overflow: hidden;
                   @media (min-width: ${mobile}) {
                     font-size: 1.5em;
                   }
                 `}
-              >
+              > 
+
                 Local newsrooms in Brazil increase their readers while
                 participating in the{" "}
                 <Highlighter color="curiousBlue">
@@ -1314,13 +1386,49 @@ export default function Home() {
                 margin-top: 5rem;
               `}
             >
+            <div css={css`
+              position: relative;
+              `}>
               <ImageQuery
                 css={css`
                   height: 510px;
                 `}
                 filename="Pitazo.jpeg"
               />
+              <div css={css`
+                background: rgba(212, 73, 52, 0.6);
+                position: absolute;
+                  padding: 16px 32px;
+                  font-family: interstate-condensed;
+                  font-size: 1.7em;
+                  color: white;
+                  top: 0;
+                  @media(min-width:${mobile}){
+                   font-size: 2.5em;
+                  }
+                `} ><TextPop>$350,00</TextPop> in New Revenue
+              </div>
+               <TriggeredLottie
+                css={css`
+                  position: absolute;
+                  background: rgba(212, 73, 52, 0.6);
+                  clip-path: inset(8% 10% 0% 20%);
+                  width: 120px;
+                  bottom: 0;
+                  right: 0;
+                  margin-right: 12px;
+                  margin-bottom: 48px;   
+                  @media(min-width:${mobile}){
+                    width: 260px;      
+                    margin-right: -27px;
+                    margin-bottom: 16px;            
+                  }
+                `}
+                animation={animationSouthAmerica}
+                loop={false}
+              />
               <Credits>Credit: Ruth Lara Castillo/El Pitazo</Credits>
+              </div>
               <div
                 css={css`
                   color: white;
@@ -1751,10 +1859,19 @@ export default function Home() {
               animation={animationPie}
               loop={false}
             />
+            <div css={css`
+              display: grid;
+              grid-template-columns: 100%;
+              @media(min-width:${tablet}){
+                grid-template-columns: 50% 50%;      
+                margin-top: 5rem;          
+              }
+              `} >
+            <div>
             <ImageQuery
               filename="fourstar.png"
               css={css`
-                margin-top: 10rem;
+                margin-top: 12.5rem;
                 margin-bottom: 10rem;
               `}
             />
@@ -1772,18 +1889,20 @@ export default function Home() {
                 css={mq({
                   color: "white",
                   fontWeight: "bold",
-                  fontSize: ["2em", "2.2em", "3.2em"],
+                  fontSize: ["2em", "2.2em", "3.1em"],
                 })}
               >
                 Charity Navigator Ranking
               </Subheader>
               <Subheader
-                css={mq({ color: "white", fontSize: ["2em", "2em", "3em"] })}
+                css={mq({ color: "white", fontSize: ["2em", "2em", "2em"] })}
               >
                 ICFJ’s four-star track record with Charity Navigator places us
                 among the top 2 percent of nonprofits evaluated.
               </Subheader>
             </div>
+            </div>
+            <div>
             <div
               css={css`
                 display: flex;
@@ -1815,14 +1934,16 @@ export default function Home() {
                   fontSize: ["2em", "2.2em", "3.2em"],
                 })}
               >
-                Guidestar Rating
+                Guidestar<br/> Rating
               </Subheader>
               <Subheader
-                css={mq({ color: "white", fontSize: ["2em", "2em", "3em"] })}
+                css={mq({ color: "white", fontSize: ["2em", "2em", "2em"] })}
               >
                 ICFJ also has a platinum-level rating from GuideStar, the
                 highest ranking given.
               </Subheader>
+            </div>
+            </div>
             </div>
           </Container>
           <TriggeredBgColor color="curiousBlue" />
