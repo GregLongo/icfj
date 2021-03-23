@@ -691,7 +691,7 @@ export default function Home() {
                 <span css={theme => ({
                     color: theme.colors.curiousBlue,
                     fontWeight: "800",
-                  })}
+                  })}>
                   The World's Most Comprehensive Site for Journalists{" "}
                 </span>
               </Subheader>
@@ -713,9 +713,10 @@ export default function Home() {
                 @media (min-width: ${tablet}) {
                   margin-top: 8rem;
                 }
-              `}
+              `}>
               <ImageQuery filename="ijnet.png" />
               </div>
+            </div>
             </div>
           </Container>
           <Container
