@@ -2,7 +2,7 @@ import React from "react"
 import styled from "@emotion/styled"
 import { css } from "@emotion/react"
 import TriggeredCounter from "../components/TriggeredCounter.js"
-import Highlighter from "../components/Highlighter.js"
+// import Highlighter from "../components/Highlighter.js"
 import facepaint from "facepaint"
 
 export default function CountBox(props) {
@@ -122,17 +122,24 @@ export default function CountBox(props) {
     ${mq({
       fontSize: ["1.5em", "2em", "3em"],
     })} color: white;
-    margin: 1em;
+    margin: .5em;
+  `
+  const SubSubheader = styled.div`
+    font-family: ubuntu;
+    ${mq({
+      fontSize: ["1em", "1.25em", "1.5em"],
+    })} color: black;
+    margin: .5em;
+    font-weight: 700;
   `
 
   return (
     <Square className={props.className}>
-      <Subheader> First Covid-19 Survey of It's Kind</Subheader>
-      <Subheader>
-        {" "}
+      <Subheader> First COVID-19 Survey of Its Kind</Subheader>
+      <SubSubheader>
         A partnership with the Tow Center for Digital Journalism at Columbia
         University
-      </Subheader>
+      </SubSubheader>
       <SquareInner>
         <SubSquare
           css={css`
@@ -190,23 +197,10 @@ export default function CountBox(props) {
           </span>
           <Label>
             said their organizations did not supply field reporters with
-            protective equipment.
+            protective equipment
           </Label>
         </SubSquare>
       </SquareInner>
-      <p
-        css={css`
-          color: white;
-          font-style: italic;
-          margin: 3em;
-        `}
-      >
-        <Highlighter color="mineShaft">
-          {" "}
-          *Research in partnership with the Tow Center for Digital Journalism at
-          Columbia University
-        </Highlighter>
-      </p>
     </Square>
   )
 }
