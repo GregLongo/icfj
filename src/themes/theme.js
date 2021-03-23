@@ -6,7 +6,7 @@ const theme = {
     boulder: "#757575",
     fruitSalad: "#4E954B",
     mineShaft: "#313131",
-    sanMarino: "#47609F",
+    sanMarino: "#693c73",
     valencia: "#D44934",
     white: "#fff",
   },

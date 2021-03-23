@@ -16,16 +16,16 @@ export default function Header(props) {
     grid-template-columns: repeat(3, 1fr);
     margin-left: .5rem;
     margin-right: 1rem;
-    height: 6rem;
+    height: 3rem;
     @media (min-width: ${mobile}) {
       margin-left: 2rem;
       margin-right: 2rem;
-      height: 10rem;
+      height: 4rem;
     }
     @media (min-width: ${tablet}) {
       margin-left: 4rem;
       margin-right: 4rem;
-      height: 10rem;
+      height: 6rem;
     }
   `
   const LogoMd = styled(Logo)`
@@ -77,10 +77,6 @@ export default function Header(props) {
       <MenuSlant />
       <LogoMd />
       <Social>
-        <SocialText href="http://icfj.org">Donate</SocialText>
-        <SocialText href="http://icfj.org">Share</SocialText>
-        <FontAwesomeIcon icon={faFacebookF} size="1x" />
-        <FontAwesomeIcon icon={faTwitter} size="1x" />
       </Social>
     </HeaderContainer>
   )

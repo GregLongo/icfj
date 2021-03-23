@@ -37,7 +37,7 @@ export default function WinnerRight(props) {
   const Name = styled.div`
     color: ${props => props.theme.colors.curiousBlue};
     font-family: Ubuntu;
-    margin: 1rem 0 0 0;
+    margin: 1rem 2rem 0 0;
     text-align: right;
     font-size: 2em;
     padding-right: 2rem;
@@ -49,7 +49,7 @@ export default function WinnerRight(props) {
   const Title = styled.div`
     font-size: 1.5em;
     font-family: interstate-condensed;
-    margin: 1rem 0 0 0;
+    margin: 1rem 2rem 0 0;
     text-align: right;
   `
   const Bio = styled.div`

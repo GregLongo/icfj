@@ -66,32 +66,32 @@ class AnimatedColumn extends Component {
       background-color: ${props => props.theme.colors[color]};
       animation: ${loop} 20s linear infinite;
       ${mq({
-        width: ["300px", "400px", "600px", "800px"],
-        height: ["300px", "400px", "600px", "800px"],
+        width: ["300px", "400px", "300px", "400px"],
+        height: ["300px", "400px", "300px", "400px"],
       })}
     `
 
     const Column = styled.div`
       position: relative;
       ${mq({
-        width: ["160px", "160px", "320px", "480px"],
-        height: ["160px", "160px", "320px", "480px"],
+        width: ["160px", "240px", "160px", "240px"],
+        height: ["160px", "240px", "160px", "240px"],
       })}
     `
 
     const CounterSmol = styled(TriggeredCounter)`
       padding-top: 25%;
-      ${mq({ fontSize: ["2em", "3em", "3em", "5em"] })};
+      ${mq({ fontSize: ["1em", "1.5 em", "2em", "3em"] })};
     `
 
     const Title = styled.div`
-      ${mq({ fontSize: ["1em", "1.5em", "1.5em", "3em"] })};
+      ${mq({ fontSize: ["1em", "1em", "1em", "2em"] })};
     `
 
     const Sign = styled.span`
       position: absolute;
       ${mq({
-        fontSize: ["3em", "3em", "3em", "5em"],
+        fontSize: ["1em", "1.5em", "2em", "3em"],
         transform: [
           "translate(50px, 65px)",
           "translate(50px, 65px)",
