@@ -1839,7 +1839,7 @@ export default function Home() {
                 text-align: right;
               `}
             >
-              Total Reveue for 2019: $19.9 million
+              Total Revenue for 2019: $19.9 million
             </Subheader>
             <Subheader
               css={css`
