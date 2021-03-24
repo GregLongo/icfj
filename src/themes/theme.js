@@ -7,6 +7,7 @@ const theme = {
     fruitSalad: "#4E954B",
     mineShaft: "#313131",
     sanMarino: "#693c73",
+    oldSanMarino: "#47609F",
     valencia: "#D44934",
     white: "#fff",
   },
