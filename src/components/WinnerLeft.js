@@ -20,7 +20,7 @@ export default function WinnerLeft(props) {
   `
 
   const Award = styled.div`
-    background: ${props => props.theme.colors.goldenGrass};
+    background: ${props => props.theme.colors.oldSanMarino};
     color: white;
     font-family: interstate-condensed;
     font-size: 1em;
@@ -35,7 +35,7 @@ export default function WinnerLeft(props) {
   `
 
   const Name = styled.div`
-    color: ${props => props.theme.colors.goldenGrass};
+    color: ${props => props.theme.colors.oldSanMarino};
     font-family: Ubuntu;
     margin: 1rem 0 0 3rem;
     font-size: 2em;

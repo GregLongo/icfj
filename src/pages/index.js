@@ -267,9 +267,9 @@ export default function Home() {
             >
               <div
                 css={mq({
-                  fontSize: ["2em", "3em", "3em", "4em"],
+                  fontSize: ["1.5em", "3em", "3em", "4em"],
                   fontFamily: "ubuntu",
-                  linHeight: "2",
+                  lineHeight: "1.5",
                   opacity: "1",
                 })}
                 id="Mission-To"
@@ -278,7 +278,7 @@ export default function Home() {
               </div>
               <div
                 css={mq({
-                  fontSize: ["1.2em", "1.5em", "2em"],
+                  fontSize: [".75em", "1.5em", "2em"],
                   fontFamily: "interstate-condensed",
                   lineHeight: 1.5,
                   fontWeight: "500",
@@ -477,7 +477,7 @@ export default function Home() {
             <FrameEmbed
               bp={breakpoints}
               buttonColor="goldenGrass"
-              caption="Learn more about ICFJ’s world-leading COVID-19 journalism initiative."
+              caption="Learn how ICFJ is giving reporters the skills to cover today's most pressing issues."
               css={css`
                 margin-top: 1.75rem;
                 width: 100%;
@@ -579,7 +579,7 @@ export default function Home() {
               bp={breakpoints}
               height="570px"
               buttonColor="fruitSalad"
-              caption="Our Global Health Crisis Reporting Forum, the most far-reaching COVID-19 journalism initiative."
+              caption="Learn more about ICFJ’s world-leading COVID-19 journalism initiative."
               css={css`
                 margin-top: 5rem;
                 width: 100%;
@@ -914,7 +914,7 @@ export default function Home() {
                 grid-column-gap: 3rem;
                 margin-top: 2rem;
                 @media (min-width: ${tablet}) {
-                  grid-template-columns: 40% 60%;
+                  grid-template-columns: 50% 50%;
                 }
               `}
             >
@@ -924,7 +924,7 @@ export default function Home() {
                 `}
               >
                 <Subheader>
-                  Journalists in Our Network Are Uncovering Corruption
+                  Journalists in the ICFJ Network Are Uncovering Corruption
                 </Subheader>
               </div>
               <div>
@@ -990,7 +990,7 @@ export default function Home() {
           <TriggeredBgColor color="mineShaft" />
           <TriggeredLottie
             css={css`
-              opacity: 0.7;
+              opacity: 1;
             `}
             animation={animationTweet}
             loop={true}
@@ -1205,7 +1205,7 @@ export default function Home() {
           <TriggeredBgColor color="sanMarino" />
           <TriggeredLottie
             css={css`
-              opacity: 0.7;
+              opacity: .8;
             `}
             animation={animationPenPaper}
             loop={true}
@@ -1288,15 +1288,16 @@ export default function Home() {
                   position: absolute;
                   background: rgba(221, 175, 36, 0.6);
                   clip-path: inset(20% 0% 20% 0%);
-                  width: 350px;
+                  width: 400px;
                   bottom: 0;
                   right: 0;
                   margin-right: 0px;
-                  margin-bottom: 0px;
-                  @media(min-width:${mobile}){
+                  margin-bottom: -63px;
+                @media(max-width:${mobile}){
                     width: 260px;
-                    margin-bottom: -36px;
-                  }
+                    margin-right: -27px;
+                    margin-bottom: -60px;
+              }
                 `}
                 animation={animationMiddleEast}
                 loop={false}
@@ -1357,9 +1358,8 @@ export default function Home() {
                   right: 0;
                   width: 324px;
                   @media(min-width:${mobile}){
-                    width: 260px;
-                    margin-right: -27px;
-                    margin-bottom: -27px;
+                    margin-right: -33px;
+                    margin-bottom: -33px;
                   }
                 `}
                 animation={animationBrazil}
@@ -1445,15 +1445,12 @@ export default function Home() {
                   position: absolute;
                   background: rgba(212, 73, 52, 0.6);
                   clip-path: inset(8% 10% 0% 20%);
-                  width: 120px;
+                  width: 324px;
                   bottom: 0;
                   right: 0;
-                  margin-right: 12px;
-                  margin-bottom: 48px;
-                  @media(min-width:${mobile}){
-                    width: 260px;
-                    margin-right: -27px;
-                    margin-bottom: 16px;
+                @media(min-width:${mobile}){
+                    margin-right: -33px;
+                    margin-bottom: 18px;
                   }
                 `}
                 animation={animationSouthAmerica}
@@ -1518,7 +1515,7 @@ export default function Home() {
           <TriggeredBgColor color="valencia" />
           <TriggeredLottie
             css={css`
-              opacity: 0.7;
+              opacity: .8;
             `}
             animation={animationAudio}
             loop={true}
@@ -1526,11 +1523,11 @@ export default function Home() {
           <Container id="Leadership">
             <TriggeredPendantRight
               bp={breakpoints}
-              color="white"
+              color="sanMarino"
               id="Leadership-To"
             >
             <span css={css`
-              color: #149EE7;
+              color: "white";
             `}>  Thought Leadership</span>
             </TriggeredPendantRight>
             <div
@@ -1694,7 +1691,7 @@ export default function Home() {
           <TriggeredBgColor color="white" />
           <TriggeredLottie
             css={css`
-              opacity: 0.7;
+              opacity: 1;
             `}
             animation={animationCameras}
             loop={true}
@@ -1705,7 +1702,7 @@ export default function Home() {
           >
             <TriggeredPendantLeft
               bp={breakpoints}
-              color="sanMarino"
+              color="oldSanMarino"
               id="Honorees-To"
             >
               {" "}
@@ -1800,8 +1797,8 @@ export default function Home() {
               bp={breakpoints}
               image="Fareed.jpg"
               award="ICFJ Founders Award for Excellence in Journalism"
-              name="Fareed Zakaria, CNN"
-              title=""
+              name="Fareed Zakaria"
+              title="Host, CNN"
               bio="Zakaria's expert analysis helps us understand complex global issues."
             />
             <WinnerLeft
@@ -1867,23 +1864,46 @@ export default function Home() {
             >
               We are careful stewards of our donors’ funds.
             </SmallSubheader>
+
             <Subheader
               css={css`
-                color: white;
+                color: black;
+                font-weight: bold;
                 margin-top: 10rem;
-                text-align: right;
+                text-align: left;
               `}
             >
-              Total Revenue for 2019: $19.9 million
-            </Subheader>
-            <Subheader
-              css={css`
-                color: white;
-                text-align: right;
+              Total Revenue for 2019:
+              <span
+                css={css`
+                  color: white;
+                  font-weight: normal;
               `}
-            >
-              2019 Expense Breakdown:
+              > $19.9 million
+              </span>
             </Subheader>
+
+
+            <div css={css`
+              display: grid;
+              grid-template-columns: 100%;
+              @media(min-width:${tablet}){
+                grid-template-columns: 20% 80%;
+                margin-top: 3rem;
+              }
+              `} >
+            <div>
+              <Subheader
+              css={mq({
+                  color: "black",
+                  fontWeight: "bold",
+                  fontSize: ["2em", "2.5em", "3em"],
+                })}
+              >
+              <br></br><br></br>  Expense Breakdown for 2019:
+              </Subheader>
+            </div>
+            <div>
             <TriggeredLottie
               css={css`
                 width: 60%;
@@ -1892,11 +1912,14 @@ export default function Home() {
                 }
                 margin-right: auto;
                 margin-left: auto;
-                margin-top: 5rem;
+                margin-top: 3rem;
               `}
               animation={animationPie}
               loop={false}
             />
+            </div>
+            </div>
+
             <div css={css`
               display: grid;
               grid-template-columns: 100%;
@@ -2077,7 +2100,7 @@ export default function Home() {
                     padding-left: 0;
                   `}
                 >
-                  <OrgPeople>JASON WRIGHT</OrgPeople>
+                  <OrgPeople>JASON H. WRIGHT</OrgPeople>
                   <OrgPeopleDesc>Development Chair, ICFJ</OrgPeopleDesc>
                   <OrgPeopleDesc>
                     Principal, Geer Mountain Holdings LLC
@@ -2104,7 +2127,7 @@ export default function Home() {
                   margin-bottom: 2rem;
                 `}
               >
-                Board of Directors
+                Directors
               </Subheader>
               <div
                 css={css`
@@ -2114,9 +2137,9 @@ export default function Home() {
                   color: white;
                   font-family: interstate-condensed;
                   font-weight: 500;
+                  margin-top: 2rem;
                   @media (min-width: ${tablet}) {
                     grid-template-columns: repeat(2, 1fr);
-                    margin-top: 2rem;
                   }
                 `}
               >
@@ -2171,7 +2194,7 @@ export default function Home() {
 
                   <OrgPeople>Brent JONES</OrgPeople>
                   <OrgPeopleDesc>
-                    Editor of Culture,Training and Outreach,
+                    Editor of Culture, Training and Outreach,
                     The Wall Street Journal</OrgPeopleDesc>
               </ul></div>
 
@@ -2182,7 +2205,7 @@ export default function Home() {
                       padding-left: 0;
                     `}
                   >
-                  <OrgPeople>Rik Kirkland</OrgPeople>
+                  <OrgPeople>RIK KIRKLAND</OrgPeople>
                     <OrgPeopleDesc>
                     Formerly, Director of Publishing, McKinsey and Co.</OrgPeopleDesc>
 
@@ -2210,11 +2233,11 @@ export default function Home() {
 
                   <OrgPeople>ROB REHG</OrgPeople>
                   <OrgPeopleDesc>
-                    U.S. Client Services, Edelman
+                    Chair, U.S. Client Services, Edelman
                   </OrgPeopleDesc>
 
-                  <OrgPeople>Sophie Schmidt</OrgPeople>
-                  <OrgPeopleDesc>Founderm Rest of World</OrgPeopleDesc>
+                  <OrgPeople>SOPHIE SCHMIDT</OrgPeople>
+                  <OrgPeopleDesc>Founder Rest of World</OrgPeopleDesc>
 
                   <OrgPeople>MARY ANN STERNBERG</OrgPeople>
                   <OrgPeopleDesc>Freelance Writer and Author</OrgPeopleDesc>
@@ -2240,6 +2263,7 @@ export default function Home() {
                 margin-bottom: 15rem;
                 color: white;
                 font-family: interstate-condensed;
+                margin-top: 2rem;
                 font-weight: 500;
                 @media (min-width: ${tablet}) {
                   grid-template-columns: repeat(2, 1fr);
@@ -2365,7 +2389,7 @@ export default function Home() {
               css={css`
                 display: grid;
                 grid-template-columns: repeat(1, 1fr);
-                margin-top: 5rem;
+                margin-top: 2rem;
                 color: white;
                 font-family: interstate-condensed;
                 font-weight: 500;

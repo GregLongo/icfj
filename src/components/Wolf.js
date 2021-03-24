@@ -15,7 +15,7 @@ export default function Wolf(props) {
     flex-direction: column;
     background: white;
     overflow: hidden;
-    background: ${props => props.theme.colors.goldenGrass};
+    background: ${props => props.theme.colors.oldSanMarino};
     padding-bottom: 2rem;
     margin-top: 4rem;
     @media (min-width: ${tablet}) {
