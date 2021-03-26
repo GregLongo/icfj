@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "@emotion/styled"
-import Logo from "../svg/logo-md.svg"
+import Logo from "../images/icfj-logo.png"
 import MenuSlant from "../components/MenuSlant.js"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faTwitter, faFacebookF } from "@fortawesome/free-brands-svg-icons"
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+// import { faTwitter, faFacebookF } from "@fortawesome/free-brands-svg-icons"
 
 export default function Header(props) {
   const mobile = props.bp[1]
@@ -16,19 +16,17 @@ export default function Header(props) {
     grid-template-columns: repeat(3, 1fr);
     margin-left: .5rem;
     margin-right: 1rem;
-    height: 3rem;
+    height: 6rem;
     @media (min-width: ${mobile}) {
       margin-left: 2rem;
       margin-right: 2rem;
-      height: 4rem;
     }
     @media (min-width: ${tablet}) {
       margin-left: 4rem;
       margin-right: 4rem;
-      height: 6rem;
     }
   `
-  const LogoMd = styled(Logo)`
+  const LogoMd = styled.img`
     justify-self: center;
     width: 150px;
     margin-left: 1rem;
@@ -54,28 +52,28 @@ export default function Header(props) {
     }
   `
 
-  const SocialText = styled.a`
-    font-size: 1em;
-    text-decoration: none;
-    float: right;
-    @media (min-width: ${mobile}) {
-      font-size: 1.4em;
-    }
-    &:nth-of-type(1) {
-      color: #149ee7;
-      grid-column-start: span 4;
-      @media (min-width: ${tablet}) {
-        grid-column-start: span 1;
-      }
-    }
-    &:nth-of-type(2) {
-      color: black;
-    }
-  `
+  // const SocialText = styled.a`
+  //   font-size: 1em;
+  //   text-decoration: none;
+  //   float: right;
+  //   @media (min-width: ${mobile}) {
+  //     font-size: 1.4em;
+  //   }
+  //   &:nth-of-type(1) {
+  //     color: #149ee7;
+  //     grid-column-start: span 4;
+  //     @media (min-width: ${tablet}) {
+  //       grid-column-start: span 1;
+  //     }
+  //   }
+  //   &:nth-of-type(2) {
+  //     color: black;
+  //   }
+  // `
   return (
     <HeaderContainer>
       <MenuSlant />
-      <LogoMd />
+      <LogoMd src ={Logo}/>
       <Social>
       </Social>
     </HeaderContainer>

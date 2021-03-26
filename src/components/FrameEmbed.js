@@ -14,8 +14,11 @@ export default function FrameEmbed(props) {
     overflow: visible;
   `
   const Frame = styled.div`
-    position: relative;
-    height: 0 iframe {
+      position:relative;
+      padding-bottom:56.25%;
+      padding-top:30px;
+      overflow:hidden;
+      iframe {
       position: absolute;
       top: 0;
       left: 0;
@@ -33,19 +36,23 @@ export default function FrameEmbed(props) {
     font-family: interstate-condensed;
     margin: 1em;
     margin-right: 0;
-    font-size: 1em;
+    font-size: .65em;
     @media (min-width: ${mobile}) {
       font-size: 1.5em;
     }
   `
   const buttonColor = props.buttonColor
   const Button = styled.button`
-    height: 48px;
-    width: 48px;
+    height: 24px;
+    width: 24px;
     display: inline;
     background: ${props => props.theme.colors[buttonColor]};
     border: none;
     color: white;
+    @media (min-width: ${mobile}) {
+      height: 48px;
+      width: 48px;
+    }
   `
   const ref = useRef()
 

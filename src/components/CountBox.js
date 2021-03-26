@@ -17,7 +17,7 @@ export default function CountBox(props) {
     ${mq({
       fontSize: ["2em", "3em", "5em", "8em"],
     })}
-    color: ${props => props.theme.colors.sanMarino}
+    color: ${props => props.theme.colors.affair}
   `
   const CounterThree = styled(TriggeredCounter)`
     ${mq({

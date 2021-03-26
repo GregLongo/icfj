@@ -8,6 +8,8 @@ import styled from "@emotion/styled"
 import facepaint from "facepaint"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { isMobile} from "react-device-detect"
+
 
 //UI
 import Header from "../components/Header.js"
@@ -30,7 +32,6 @@ import CountBox from "../components/CountBox.js"
 import WinnerLeft from "../components/WinnerLeft.js"
 import WinnerRight from "../components/WinnerRight.js"
 import Wolf from "../components/Wolf.js"
-// import ReadMore from "../components/ReadMore.js"
 
 //Animation Players
 // import UncontrolledLottie from "../components/UncontrolledLottie.js"
@@ -39,7 +40,8 @@ import TriggeredLottie from "../components/TriggeredLottie.js"
 
 //Animations
 // import animationMasthead from "../lotties/mastheadnu.json"
-import animationCameras from "../lotties/cameras.json"
+import animationCameras from "../lotties/cameras.json" 
+import animationCamerasMobile from "../lotties/cameras_mobile.json" 
 import animationPenPaper from "../lotties/penpaper.json"
 import animationAudio from "../lotties/audio.json"
 import animationTweet from "../lotties/tweet.json"
@@ -47,7 +49,7 @@ import animationAfrica from "../lotties/africa.json"
 import animationAfrica2 from "../lotties/africa2.json"
 import animationBrazil from "../lotties/brazil.json"
 import animationSouthAmerica from "../lotties/southamerica.json"
-import animationPie from "../lotties/piechart.json"
+import animationPie from "../lotties/pie_nu.json"
 import animationTribute from "../lotties/tribute.json"
 import animationMiddleEast from "../lotties/northafrica_middleeast.json"
 //svg
@@ -60,7 +62,7 @@ import PatternCountries from "../images/Pattern_Countries.png"
 import PatternLanguages from "../images/Pattern_Languages.png"
 import PatternCovid from "../images/Pattern_Covid.png"
 import Languages from "../images/languages_ticker.png"
-import Masthead from "../gif/masthead.gif"
+import Masthead from "../gif/masthead_webp.webp"
 
 //Themes
 import theme from "../themes/theme.js"
@@ -111,7 +113,9 @@ const Credits = styled.div`
   color: white;
   opacity: 0.4;
 `
-
+const Link = styled.a`
+  color: white;
+`
 const OrgPeople = styled.li`
   font-family: ubuntu;
   font-size: 1.5em;
@@ -121,7 +125,6 @@ const OrgPeople = styled.li`
     font-size: 1.75em;
   }
 `
-
 const OrgPeopleDesc = styled.li`
   font-family: interstate-condensed;
   font-size: 1.5em;
@@ -131,44 +134,21 @@ const OrgPeopleDesc = styled.li`
     font-size: 1.5em;
   }
 `
+const DonorTitle = styled(OrgPeople)``
 
-const Link = styled.a`
-  color: white;
-`
-
-//read more as a block of text
-// const ReadMore = styled.div`
-//     text-align: justify;
-//     font-family: interstate-condensed;
-//     font-weight: 500;
-//     font-size: 1.1em;
-//     color: black;
-//     margin-bottom: 10rem;
-//     @media (min-width: ${mobile}) {
-//       font-size: 1.7em;
-//       margin-bottom: 15rem;
-//     }
-
-// `
-
-//add scroll to internal anchor links
-
-// if (typeof window !== "undefined") {
-//   // eslint-disable-next-line global-require
-//   require("smooth-scroll")('a[href*="#"]')
-// }
+const Donor = styled(OrgPeopleDesc)``
 
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
   useEffect(() => {
-    // const pmFrame = new window.Pmframe({
-    //   element: "mosaics",
-    //   page: "https://icfjmosaic.com",
-    //   minWidth: "300",
-    //   pmBrand: 1,
-    // })
-    // pmFrame.init()
+    const pmFrame = new window.Pmframe({
+      element: "mosaics",
+      page: "https://icfjmosaic.com",
+      minWidth: "300",
+      pmBrand: 1,
+    })
+    pmFrame.init()
     const timer = setTimeout(() => {
       ScrollTrigger.refresh(true)
     }, 1000)
@@ -202,7 +182,7 @@ export default function Home() {
               wordSpacing: "999999px",
               paddingTop: "1rem ",
               paddingBottom: "1rem",
-              paddingRight: ["1rem", "1rem", "1rem", "4rem"],
+              paddingRight: ["1rem", "1rem", "2rem", "4rem"],
               paddingLeft: "0",
             })}
           >
@@ -221,7 +201,7 @@ export default function Home() {
         <Container
           css={mq({
             marginTop: ["2rem", "2rem", "3rem"],
-            marginBottom: "-1.2rem",
+            marginBottom: ["-.6rem","-.7rem","-1rem","-1.2rem"],
             maxWidth: ["100%", "100%", "100%", "1024px"],
           })}
         >
@@ -278,7 +258,7 @@ export default function Home() {
               </div>
               <div
                 css={mq({
-                  fontSize: [".75em", "1.5em", "2em"],
+                  fontSize: ["1em", "1.5em", "2em"],
                   fontFamily: "interstate-condensed",
                   lineHeight: 1.5,
                   fontWeight: "500",
@@ -381,7 +361,14 @@ export default function Home() {
                   make our world a better place.
                 </p>
                 <p css={css`font-size: 1.5em`}>Joyce Barnathan, President</p>
-                <ImageQuery filename="sig.png" css={css`@media(max-width:${mobile}){transform:scale(.7)}`}/>
+                <ImageQuery filename="sig.png" css={css`
+                 transform:scale(.7)            
+                  @media(min-width:${mobile})
+                  {
+                    margin-left: 5rem;
+                    transform:scale(.8);
+                  }`
+                }/> 
               </ParagraphSlant>
             </div>
           </Container>
@@ -430,10 +417,13 @@ export default function Home() {
                 css={css`
                   color: white;
                   font-family: interstate-condensed;
-                  font-size: 1.7em;
+                  font-size: 1.5em;
                   line-height: 1.65;
                   font-weight: 500;
                   transition-delay: 10ms;
+                  @media(min-width:${mobile}){
+                   font-size: 1.7em;                  
+                  }
                 `}
               >
                 Tens of thousands of journalists in our global network produce
@@ -481,7 +471,9 @@ export default function Home() {
               css={css`
                 margin-top: 1.75rem;
                 width: 100%;
-                height: 600px;
+                @media (min-width: ${mobile}) {
+                  margin-top: 5.5rem;
+                }
                 @media (min-width: ${tablet}) {
                   margin-top: 2.5rem;
                 }
@@ -605,7 +597,7 @@ export default function Home() {
                 grid-row-gap: 2rem;
                 margin-top: 3rem;
                 @media (min-width: ${tablet}) {
-                  margin-top: 5rem;
+                  margin-top: 10rem;
                   grid-template-columns: repeat(4, 1fr);
                 }
               `}
@@ -634,7 +626,7 @@ export default function Home() {
               <AnimatedColumn
                 bp={breakpoints}
                 image={PatternCovid}
-                color="sanMarino"
+                color="affair"
                 title="COVID-19 Resources"
                 val="840"
                 sign="+"
@@ -702,7 +694,7 @@ export default function Home() {
                 grid-column-gap: 1.5rem;
                 margin-top: 2rem;
                 @media (min-width: ${tablet}) {
-                  grid-template-columns: 60% 30%;
+                  grid-template-columns: 6fr 4fr;
                 }
               `}
             >
@@ -726,13 +718,17 @@ export default function Home() {
                 media
               </p>
               </div>
-            <div>
-               <a href="https://ijnet.org" aria-label="IJNet Link" rel="noreferrer" target = "_blank"><ImageQuery filename="ijnet.png" /></a>
+              <div css={css`
+
+              `}>
+
+               <a href="https://ijnet.org" aria-label="IJNet Link" rel="noreferrer" target = "_blank">
+                <ImageQuery css={css`@media(max-width:${tablet}){max-width: 60%; margin: auto}`} filename="ijnet.png" />
+               </a>
             </div>
             </div>
           </div>
-          </Container>
-          <Container
+          <div
             css={css`
               margin-top: 2rem;
               display: grid;
@@ -803,10 +799,11 @@ export default function Home() {
               />
               <span>Average Monthly Visitors</span>
             </div>
+            </div>
           </Container>
           <LanguageTicker
             css={css`
-              margin-top: 2.5rem;
+              margin-top: 5rem;
               margin-bottom: 3rem;
             `}
           >
@@ -826,7 +823,7 @@ export default function Home() {
             css={css`
               opacity: 0.7;
             `}
-            animation={animationCameras}
+            animation={ isMobile ? animationCameras : animationCamerasMobile }
             loop={true}
           />
           <Container id="Networks">
@@ -871,10 +868,13 @@ export default function Home() {
                 display: grid;
                 grid-template-columns: 5% 95%;
                 margin-top: 3rem;
-               margin-bottom: -5rem;
+               margin-bottom: -27rem;
+               @media (min-width: ${mobile}) {
+                  margin-bottom: -35rem;
+                }
                 @media (min-width: ${tablet}) {
                   margin-top: 4rem;
-                  margin-bottom: -20rem;
+                  margin-bottom: -35rem;
                 }
               `}
             >
@@ -893,7 +893,7 @@ export default function Home() {
                     margin-top: 2rem;
                   }
                 `}
-              >
+              ><p>
                 Peru-based{" "}
                 <TextPop
                   color="#DDAF24"
@@ -902,9 +902,13 @@ export default function Home() {
                   ICFJ Knight Fellow Fabiola Torres
                 </TextPop>{" "}
                 created Salud con Lupa, a health news outlet that is uncovering
-                corruption during COVID-19. <br></br><br></br>They exposed inflated prices for
+                corruption during COVID-19.
+              </p>
+              <p>
+                They exposed inflated prices for
                 face shields, environmental violations by corporations and
                 wasted protective-gear spending, prompting government action.
+              </p>
               </ParagraphSlant>
             </div>
             <div
@@ -914,7 +918,8 @@ export default function Home() {
                 grid-column-gap: 3rem;
                 margin-top: 2rem;
                 @media (min-width: ${tablet}) {
-                  grid-template-columns: 50% 50%;
+                  grid-template-columns: repeat(2, 1fr);
+                  margin-top: 0rem;
                 }
               `}
             >
@@ -928,7 +933,12 @@ export default function Home() {
                 </Subheader>
               </div>
               <div>
-                <ImageQuery filename="bigeye.jpg" />
+                <ImageQuery
+                 css={css`
+                  max-width: 100%;
+                   max-height: 280px;
+                `}
+                 filename="bigeye.jpg" />
                 <Credits>Credit: Rocío Urtecho</Credits>
               </div>
               </div>
@@ -998,7 +1008,7 @@ export default function Home() {
           <Container id="Innovation">
             <TriggeredPendantRight
               bp={breakpoints}
-              color="sanMarino"
+              color="affair"
               id="Innovation-To"
             >
               Innovation
@@ -1202,7 +1212,7 @@ export default function Home() {
           <TriggeredBgColor color="mineShaft" />
         </Section>
         <Section name="Sustainability">
-          <TriggeredBgColor color="sanMarino" />
+          <TriggeredBgColor color="affair" />
           <TriggeredLottie
             css={css`
               opacity: .8;
@@ -1283,21 +1293,23 @@ export default function Home() {
                   }
                 `} ><TextPop>47 Media Entrepreneurs</TextPop>
               </div>
-              <TriggeredLottie
+ <TriggeredLottie
                 css={css`
                   position: absolute;
                   background: rgba(221, 175, 36, 0.6);
                   clip-path: inset(20% 0% 20% 0%);
-                  width: 400px;
-                  bottom: 0;
+                  width: 120px;
+                  top: 0;
                   right: 0;
-                  margin-right: 0px;
-                  margin-bottom: -63px;
-                @media(max-width:${mobile}){
+                  margin-right: 30px;
+                  margin-top: -6px;
+                  @media(min-width:${mobile}){
                     width: 260px;
-                    margin-right: -27px;
-                    margin-bottom: -60px;
-              }
+                    margin-right: 0px;
+                    margin-bottom: -32px;
+                    bottom: 0;
+                    top: auto;
+                  }
                 `}
                 animation={animationMiddleEast}
                 loop={false}
@@ -1347,19 +1359,22 @@ export default function Home() {
                 `}
                 filename="FacebookAccelerator.jpg"
               />
-              <TriggeredLottie
+ <TriggeredLottie
                 css={css`
                   position: absolute;
                   background: rgba(20, 158, 231, 0.6);
                   clip-path: inset(8% 10% 10% 20%);
-                  margin-right: 12px;
-                  margin-bottom: 12px;
-                  bottom: 0;
+                  width: 120px;
+                  top: 0;
                   right: 0;
-                  width: 324px;
+                  margin-right: 12px;
+                  margin-top: 16px;
                   @media(min-width:${mobile}){
-                    margin-right: -33px;
-                    margin-bottom: -33px;
+                    width: 260px;
+                    margin-right: -27px;
+                    margin-bottom: -26px;
+                    bottom: 0;
+                    top: auto;
                   }
                 `}
                 animation={animationBrazil}
@@ -1440,17 +1455,22 @@ export default function Home() {
                   }
                 `} ><TextPop>$350,000 in New Revenue</TextPop>
               </div>
-               <TriggeredLottie
+ <TriggeredLottie
                 css={css`
                   position: absolute;
                   background: rgba(212, 73, 52, 0.6);
                   clip-path: inset(8% 10% 0% 20%);
-                  width: 324px;
-                  bottom: 0;
+                  width: 120px;
+                  top: 0;
                   right: 0;
-                @media(min-width:${mobile}){
-                    margin-right: -33px;
-                    margin-bottom: 18px;
+                  margin-right: 12px;
+                  margin-top: 16px;
+                  @media(min-width:${mobile}){
+                    width: 260px;
+                    margin-right: -27px;
+                    margin-bottom: 16px;
+                    bottom: 0;
+                    top: auto;
                   }
                 `}
                 animation={animationSouthAmerica}
@@ -1509,7 +1529,7 @@ export default function Home() {
               &mdash; Sheikha Aldosary, Saudi Women's Stories, Saudi Arabia </span>
             </Quote>
           </Container>
-          <TriggeredBgColor color="sanMarino" />
+          <TriggeredBgColor color="affair" />
         </Section>
         <Section name="Leadership">
           <TriggeredBgColor color="valencia" />
@@ -1523,8 +1543,13 @@ export default function Home() {
           <Container id="Leadership">
             <TriggeredPendantRight
               bp={breakpoints}
-              color="sanMarino"
+              color="affair"
               id="Leadership-To"
+              css={css`
+                @media (max-width: ${mobile}) {
+                  font-size: 0.7em;
+                }
+              `}
             >
             <span css={css`
               color: "white";
@@ -1702,10 +1727,9 @@ export default function Home() {
           >
             <TriggeredPendantLeft
               bp={breakpoints}
-              color="oldSanMarino"
+              color="sanMarino"
               id="Honorees-To"
             >
-              {" "}
               Honorees
             </TriggeredPendantLeft>
             <div
@@ -1826,13 +1850,6 @@ export default function Home() {
               bio="Despite relentless persecution, Ressa and her team shine a light on injustices."
             />
           </Container>
-          <div
-            css={css`
-              @media (min-width: ${tablet}) {
-                margin-bottom: 20rem;
-              }
-            `}
-          />
           <TriggeredBgColor color="white" />
         </Section>
         <Section name="Financials">
@@ -1951,14 +1968,16 @@ export default function Home() {
                   color: "white",
                   fontWeight: "bold",
                   fontSize: ["1.5em", "1.8em", "2.7em"],
+                  marginBottom: "2rem"
                 })}
               >
                 Charity Navigator Ranking
               </Subheader>
               <Subheader
-                css={mq({ color: "white", fontSize: ["1.5em", "1.5em", "1.5em"] })}
-              ><br></br>
-                ICFJ’s four-star track record with Charity Navigator places us
+                css={mq({ 
+                  color: "white", fontSize: ["1.5em", "1.5em", "1.5em"],
+              })}
+              > ICFJ’s four-star track record with Charity Navigator places us
                 among the top 2 percent of nonprofits evaluated.
               </Subheader>
             </div>
@@ -1993,6 +2012,7 @@ export default function Home() {
                   color: "white",
                   fontWeight: "bold",
                   fontSize: ["1.5em", "1.8em", "2.7em"],
+                  marginBottom: "2rem"
                 })}
               >
                 GuideStar<br/> Rating
@@ -2000,7 +2020,7 @@ export default function Home() {
               <Subheader
                 css={mq({ color: "white", fontSize: ["1.5em", "1.5em", "1.5em"] })}
               >
-              <br></br>  ICFJ also has a platinum-level rating from GuideStar, the
+                ICFJ also has a platinum-level rating from GuideStar, the
                 highest ranking given.
               </Subheader>
             </div>
@@ -2037,7 +2057,7 @@ export default function Home() {
               css={css`
                 color: white;
                 font-weight: 500;
-                margin-top: 2rem;
+                margin-top: 4rem;
                 font-size: 3.25em;
                 margin-bottom: 2rem;
               `}
@@ -2404,54 +2424,53 @@ export default function Home() {
                   padding-left: 0;
                 `}
               >
-                <OrgPeople>Chairman’s Circle</OrgPeople>
-                <OrgPeopleDesc>Ahmed Charai</OrgPeopleDesc>
-                <OrgPeopleDesc>Pamela Howard</OrgPeopleDesc>
-                <OrgPeopleDesc>Rodman and Alice Moorhead</OrgPeopleDesc>
-                <OrgPeopleDesc>The Reilly Family</OrgPeopleDesc>
-                <OrgPeople>President’s Circle</OrgPeople>
-                <OrgPeopleDesc>The Ewing Family</OrgPeopleDesc>
-                <OrgPeopleDesc>Anonymous</OrgPeopleDesc>
-                <OrgPeopleDesc>Anonymous 2</OrgPeopleDesc>
-                <OrgPeople>Benefactors</OrgPeople>
-                <OrgPeopleDesc>Michael and Anne Golden</OrgPeopleDesc>
-                <OrgPeopleDesc>John Maxwell Hamilton</OrgPeopleDesc>
-                <OrgPeople>Leaders</OrgPeople>
-                <OrgPeopleDesc>
+                <DonorTitle>Chairman’s Circle</DonorTitle>
+                <Donor>Ahmed Charai</Donor>
+                <Donor>Pamela Howard</Donor>
+                <Donor>Rodman and Alice Moorhead</Donor>
+                <Donor>The Reilly Family</Donor>
+                <DonorTitle>President’s Circle</DonorTitle>
+                <Donor>The Ewing Family</Donor>
+                <Donor>Anonymous</Donor>
+                <Donor>Anonymous 2</Donor>
+                <DonorTitle>Benefactors</DonorTitle>
+                <Donor>Michael and Anne Golden</Donor>
+                <Donor>John Maxwell Hamilton</Donor>
+                <DonorTitle>Leaders</DonorTitle>
+                <Donor>
                   Elizabeth Ballantine and Paul Leavitt
-                </OrgPeopleDesc>
-                <OrgPeopleDesc>
+                </Donor>
+                <Donor>
                   Joyce Barnathan and Steven Strasser
-                </OrgPeopleDesc>
-                <OrgPeopleDesc>Lauretta J. Bruno</OrgPeopleDesc>
-                <OrgPeopleDesc>David Callaway</OrgPeopleDesc>
-                <OrgPeopleDesc>Vint Cerf</OrgPeopleDesc>
-                <OrgPeopleDesc>Patricia Dunnington</OrgPeopleDesc>
-                <OrgPeopleDesc>John Harris</OrgPeopleDesc>
-                <OrgPeopleDesc>
+                </Donor>
+                <Donor>Lauretta J. Bruno</Donor>
+                <Donor>David Callaway</Donor>
+                <Donor>Vint Cerf</Donor>
+                <Donor>Patricia Dunnington</Donor>
+                <Donor>John Harris</Donor>
+                <Donor>
                   James F. Hoge Jr. and Kathleen Lacey
-                </OrgPeopleDesc>
-                <OrgPeopleDesc>
+                </Donor>
+                <Donor>
                   Martina Hund-Mejean and Bruno Mejean
-                </OrgPeopleDesc>
-                <OrgPeopleDesc>Alex S. Jones</OrgPeopleDesc>
-                <OrgPeopleDesc>Marci and Mike McCue</OrgPeopleDesc>
-                <OrgPeopleDesc>Rob and Maureen Rehg</OrgPeopleDesc>
-                <OrgPeopleDesc>
+                </Donor>
+                <Donor>Alex S. Jones</Donor>
+                <Donor>Marci and Mike McCue</Donor>
+                <Donor>Rob and Maureen Rehg</Donor>
+                <Donor>
                   John Towriss, Envoy Strategy Group
-                </OrgPeopleDesc>
-                <OrgPeopleDesc>Alexandra Wrage</OrgPeopleDesc>
-                <OrgPeopleDesc>Jason H. Wright</OrgPeopleDesc>
-                <OrgPeople>Champions</OrgPeople>
-                <OrgPeopleDesc>
+                </Donor>
+                <Donor>Alexandra Wrage</Donor>
+                <Donor>Jason H. Wright</Donor>
+                <Donor>Champions</Donor>
+                <Donor>
                   David Elliot Cohen and Laureen Seeger
-                </OrgPeopleDesc>
-                <OrgPeopleDesc>Richard Gingras</OrgPeopleDesc>
-                <OrgPeopleDesc>Marcy McGinnis</OrgPeopleDesc>
-                <OrgPeopleDesc>Nicholas Tzitzon</OrgPeopleDesc>
-                <OrgPeopleDesc>Matthew and Lisa Winkler</OrgPeopleDesc>
-                <OrgPeopleDesc>Anonymous</OrgPeopleDesc>
-
+                </Donor>
+                <Donor>Richard Gingras</Donor>
+                <Donor>Marcy McGinnis</Donor>
+                <Donor>Nicholas Tzitzon</Donor>
+                <Donor>Matthew and Lisa Winkler</Donor>
+                <Donor>Anonymous</Donor>
                 <p>
                   <i>
                     * For contributions made in 2019. Donations below $5,000 are
@@ -2465,67 +2484,67 @@ export default function Home() {
                   padding-left: 0;
                 `}
               >
-                <OrgPeople>Foundations</OrgPeople>
-                <OrgPeopleDesc>
+                <DonorTitle>Foundations</DonorTitle>
+                <Donor>
                   John S. and James L. Knight Foundation
-                </OrgPeopleDesc>
-                <OrgPeopleDesc>Bill & Melinda Gates Foundation</OrgPeopleDesc>
-                <OrgPeopleDesc>Luminate</OrgPeopleDesc>
-                <OrgPeopleDesc>Arnold Ventures</OrgPeopleDesc>
-                <OrgPeopleDesc>Bloomberg Philanthropies</OrgPeopleDesc>
-                <OrgPeopleDesc>National Endowment for Democracy</OrgPeopleDesc>
-                <OrgPeopleDesc>
+                </Donor>
+                <Donor>Bill & Melinda Gates Foundation</Donor>
+                <Donor>Luminate</Donor>
+                <Donor>Arnold Ventures</Donor>
+                <Donor>Bloomberg Philanthropies</Donor>
+                <Donor>National Endowment for Democracy</Donor>
+                <Donor>
                   The Brooks and Joan Fortune Family Foundation, Inc.
-                </OrgPeopleDesc>
-                <OrgPeopleDesc>Scripps Howard Foundation</OrgPeopleDesc>
-                <OrgPeopleDesc>The Ambrose Monell Foundation</OrgPeopleDesc>
-                <OrgPeopleDesc>
+                </Donor>
+                <Donor>Scripps Howard Foundation</Donor>
+                <Donor>The Ambrose Monell Foundation</Donor>
+                <Donor>
                   Samuel I. Newhouse Foundation, Inc.
-                </OrgPeopleDesc>
-                <OrgPeopleDesc>Gannett Foundation</OrgPeopleDesc>
-                <OrgPeople>Corporations</OrgPeople>
-                <OrgPeopleDesc>Facebook Journalism Project</OrgPeopleDesc>
-                <OrgPeopleDesc>Dow Jones/News Corp</OrgPeopleDesc>
-                <OrgPeopleDesc>Microsoft</OrgPeopleDesc>
-                <OrgPeopleDesc>Google News Initiative</OrgPeopleDesc>
-                <OrgPeopleDesc>Al Jazeera Media Network</OrgPeopleDesc>
-                <OrgPeopleDesc>Apple News</OrgPeopleDesc>
-                <OrgPeopleDesc>Edelman</OrgPeopleDesc>
-                <OrgPeopleDesc>National Geographic</OrgPeopleDesc>
-                <OrgPeopleDesc>BakerHostetler</OrgPeopleDesc>
-                <OrgPeopleDesc>Univision</OrgPeopleDesc>
-                <OrgPeopleDesc>Associated Press</OrgPeopleDesc>
-                <OrgPeopleDesc>APCO Worldwide</OrgPeopleDesc>
-                <OrgPeopleDesc>CBS News</OrgPeopleDesc>
-                <OrgPeopleDesc>CNN</OrgPeopleDesc>
-                <OrgPeopleDesc>Discovery</OrgPeopleDesc>
-                <OrgPeopleDesc>Fox</OrgPeopleDesc>
-                <OrgPeopleDesc>GRF CPAs & Advisors</OrgPeopleDesc>
-                <OrgPeopleDesc>Mannheim LLC</OrgPeopleDesc>
-                <OrgPeopleDesc>McKinsey & Company</OrgPeopleDesc>
-                <OrgPeopleDesc>POLITICO</OrgPeopleDesc>
-                <OrgPeopleDesc>The New York Times Company</OrgPeopleDesc>
-                <OrgPeopleDesc>The Washington Post</OrgPeopleDesc>
-                <OrgPeopleDesc>TRACE International</OrgPeopleDesc>
-                <OrgPeopleDesc>Ernst & Young</OrgPeopleDesc>
-                <OrgPeopleDesc>Cision</OrgPeopleDesc>
-                <OrgPeopleDesc>Cresa</OrgPeopleDesc>
-                <OrgPeopleDesc>UBS</OrgPeopleDesc>
-                <OrgPeopleDesc>Anonymous</OrgPeopleDesc>
+                </Donor>
+                <Donor>Gannett Foundation</Donor>
+                <DonorTitle>Corporations</DonorTitle>
+                <Donor>Facebook Journalism Project</Donor>
+                <Donor>Dow Jones/News Corp</Donor>
+                <Donor>Microsoft</Donor>
+                <Donor>Google News Initiative</Donor>
+                <Donor>Al Jazeera Media Network</Donor>
+                <Donor>Apple News</Donor>
+                <Donor>Edelman</Donor>
+                <Donor>National Geographic</Donor>
+                <Donor>BakerHostetler</Donor>
+                <Donor>Univision</Donor>
+                <Donor>Associated Press</Donor>
+                <Donor>APCO Worldwide</Donor>
+                <Donor>CBS News</Donor>
+                <Donor>CNN</Donor>
+                <Donor>Discovery</Donor>
+                <Donor>Fox</Donor>
+                <Donor>GRF CPAs & Advisors</Donor>
+                <Donor>Mannheim LLC</Donor>
+                <Donor>McKinsey & Company</Donor>
+                <Donor>POLITICO</Donor>
+                <Donor>The New York Times Company</Donor>
+                <Donor>The Washington Post</Donor>
+                <Donor>TRACE International</Donor>
+                <Donor>Ernst & Young</Donor>
+                <Donor>Cision</Donor>
+                <Donor>Cresa</Donor>
+                <Donor>UBS</Donor>
+                <Donor>Anonymous</Donor>
                 <OrgPeople>Government Agencies</OrgPeople>
-                <OrgPeopleDesc>U.S. Department of State</OrgPeopleDesc>
-                <OrgPeopleDesc>
+                <Donor>U.S. Department of State</Donor>
+                <Donor>
                   United States Agency for International Development
-                </OrgPeopleDesc>
-                <OrgPeople>Organizations</OrgPeople>
-                <OrgPeopleDesc>World Health Organization</OrgPeopleDesc>
-                <OrgPeopleDesc>Radio Free Asia</OrgPeopleDesc>
-                <OrgPeopleDesc>Freedom House</OrgPeopleDesc>
-                <OrgPeopleDesc>Northwestern University in Qatar</OrgPeopleDesc>
-                <OrgPeopleDesc>Stanford University</OrgPeopleDesc>
-                <OrgPeopleDesc>
+                </Donor>
+                <DonorTitle>Organizations</DonorTitle>
+                <Donor>World Health Organization</Donor>
+                <Donor>Radio Free Asia</Donor>
+                <Donor>Freedom House</Donor>
+                <Donor>Northwestern University in Qatar</Donor>
+                <Donor>Stanford University</Donor>
+                <Donor>
                   Arthur F. Burns Fellowship Program Inc.
-                </OrgPeopleDesc>
+                </Donor>
               </ul>
             </div>
             <TriggeredPendantLeft
@@ -2541,6 +2560,7 @@ export default function Home() {
             <SmallSubheader
               css={css`
                 color: white;
+                margin-left: 0;
               `}
             >
             All of us at ICFJ thank you for your support.
@@ -2550,9 +2570,9 @@ export default function Home() {
               buttonColor="fruitSalad"
               css={css`
                 width: 100%;
-                height: 600px;
                 overflow: hidden;
                 opacity: 1 !important;
+                clip-path: inset(32px);
               `}
             >
               <iframe
@@ -2562,7 +2582,7 @@ export default function Home() {
                 src="https://www.youtube.com/embed/Td6AYW3zyo8?"
                 frameBorder="0"
                 allowFullScreen
-                autoPlay
+                autoPlay="true"
                 loop
               ></iframe>
             </FrameEmbed>
@@ -2579,14 +2599,16 @@ export default function Home() {
             color: "white",
             display: "flex",
             justifyContent: "center",
+            flexDirection: "column",
             alignItems: "center",
-            height: "64px",
+            height: "128px",
             fontFamily: "ubuntu",
             fontSize: "2.5em",
           })}
         >
-          {" "}
-          ICFJ.org{" "}
+          <div>{" "}
+          ICFJ.org{" "}</div>
+                  <div css={css`margin: 1rem; font-size: 18px;`}> Site by TappingBones Ⓣ</div>
         </div>
       </ThemeProvider>
     </div>
