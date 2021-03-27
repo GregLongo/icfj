@@ -20,10 +20,10 @@ export default function WinnerLeft(props) {
   `
 
   const Award = styled.div`
-    background: ${props => props.theme.colors.oldSanMarino};
+    background: ${props => props.theme.colors.sanMarino};
     color: white;
     font-family: interstate-condensed;
-    font-size: 1em;
+    font-size: 1.2em;
     padding-top: 1rem;
     padding-bottom: 1rem;
     margin-left: -5rem;
@@ -35,14 +35,15 @@ export default function WinnerLeft(props) {
   `
 
   const Name = styled.div`
-    color: ${props => props.theme.colors.oldSanMarino};
+    color: ${props => props.theme.colors.sanMarino};
     font-family: Ubuntu;
-    margin: 1rem 0 0 3rem;
+    margin: 1rem 0 0 1rem;
     font-size: 2em;
     padding-left: 2rem;
     @media (min-width: ${tablet}) {
       padding-left: 0;
       font-size: 3em;
+      margin: 1rem 0 0 3rem;
     }
   `
   const Title = styled.div`

@@ -23,11 +23,6 @@ const Toggle = styled.div`
   outline: none;
   z-index: 1000;
   position: relative;
-  &.open {
-    position: fixed;
-    top: 60px;
-    left: 100px;
-  }
 `
 const List = styled.ul`
   list-style: none;

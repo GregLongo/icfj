@@ -1,13 +1,13 @@
 /**
  * Configure your Gatsby site with this file.
  *
- * See: https://www.gatsbyjs.com/docs/gatsby-config/
+ * See: https://wwgw.gatsbyjs.com/docs/gatsby-config/
  */
 const path = require(`path`)
 
 module.exports = {
   /* Your site config here */
-  // pathPrefix: `/icfj`,
+  pathPrefix: `/icfj`,
   plugins: [
     {
       resolve: "gatsby-plugin-emotion",
