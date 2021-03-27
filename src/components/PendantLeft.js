@@ -24,9 +24,12 @@ export default function PendantLeft(props) {
     justify-content: center;
     background: ${props => props.theme.colors[color]};
     position: relative;
+    @media(max-width:330px){
+      padding-left: 1.5rem; 
+    }
     ${mq({
-      paddingLeft: ["1.5rem", "2.6rem",  "0rem","calc((100vw - 1024px) / 1.97)"],
-      maxWidth: ["85vw", "80vw", "auto"],
+      paddingLeft: [".5rem", "1rem",  "0rem","calc((100vw - 1024px) / 1.97)"],
+      maxWidth: ["85vw", "89vw", "auto"],
     })}
     &:after {
       content: "";

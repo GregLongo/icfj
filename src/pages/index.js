@@ -142,13 +142,13 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
   useEffect(() => {
-    const pmFrame = new window.Pmframe({
-      element: "mosaics",
-      page: "https://icfjmosaic.com",
-      minWidth: "300",
-      pmBrand: 1,
-    })
-    pmFrame.init()
+    // const pmFrame = new window.Pmframe({
+    //   element: "mosaics",
+    //   page: "https://icfjmosaic.com",
+    //   minWidth: "300",
+    //   pmBrand: 1,
+    // })
+    // pmFrame.init()
     const timer = setTimeout(() => {
       ScrollTrigger.refresh(true)
     }, 1000)
@@ -175,24 +175,23 @@ export default function Home() {
             css={mq({
               fontFamily: "interstate-condensed",
               fontSize: [".75em", ".85em", "1.25em", "1.5em"],
-              maxWidth: "130px",
+              maxWidth: ["50px","70px","110px","130px"],
               lineHeight: "1",
               fontWeight: "200",
               textAlign: "center",
               wordSpacing: "999999px",
               paddingTop: "1rem ",
               paddingBottom: "1rem",
-              paddingRight: ["1rem", "1rem", "2rem", "4rem"],
-              paddingLeft: "0",
+              paddingRight: ["1rem", "1.5rem", "1.5rem", "4rem"],
             })}
           >
             ANNUAL REVIEW
           </div>
           <span
             css={mq({
-              paddingRight: "3rem",
+              paddingRight:[ "1rem","2rem","2rem","3rem"],
               whiteSpace: "noWrap",
-              fontSize: ["1.7em", "2em", "3em", "3em"],
+              fontSize: ["1.7em", "2em", "2.5em", "3em"],
             })}
           >
             It Takes a Journalist
@@ -258,7 +257,7 @@ export default function Home() {
               </div>
               <div
                 css={mq({
-                  fontSize: ["1em", "1.5em", "2em"],
+                  fontSize: ["1em", "1.5em", "1.7em", "2em"],
                   fontFamily: "interstate-condensed",
                   lineHeight: 1.5,
                   fontWeight: "500",
@@ -276,7 +275,10 @@ export default function Home() {
           <Container id="Joyce">
             <TriggeredPendantRight
               css={css`
-                @media (max-width: ${mobile}) {
+                @media (max-width: ${smol}) {
+                  font-size: 1em;
+                }
+                @media (max-width: ${tablet}) {
                   font-size: 0.6em;
                 }
               `}
@@ -367,8 +369,13 @@ export default function Home() {
                   {
                     margin-left: 5rem;
                     transform:scale(.8);
-                  }`
-                }/> 
+                  }
+                  @media(min-width:${desktop})
+                  {
+                    margin-left: 8rem;
+                    transform:scale(1);
+                  }
+                  `}/> 
               </ParagraphSlant>
             </div>
           </Container>
@@ -438,17 +445,18 @@ export default function Home() {
               caption="Click on this photo to meet members of our inspiring network."
               css={css`
                 width: 100%;
-                height: 765px;
+                max-height: 765px;
                 overflow: hidden;
                 margin-top: 3rem;
-                margin-bottom: -15rem;
+                margin-bottom: 10rem;
+                background: url(https://i0.wp.com/losalamosnetwork.com/wp-content/uploads/2016/07/h-under-maintenance-background.jpg);
                 @media (min-width: ${tablet}) {
                   margin-top: 5rem;
                   margin-bottom: 0;
                 }
               `}
             >
-              <div id="mosaics"></div>
+              {/*<div id="mosaics"></div>*/}
             </FrameEmbed>
             <div
               css={css`
@@ -868,13 +876,13 @@ export default function Home() {
                 display: grid;
                 grid-template-columns: 5% 95%;
                 margin-top: 3rem;
-               margin-bottom: -27rem;
+               margin-bottom: -15rem;
                @media (min-width: ${mobile}) {
-                  margin-bottom: -35rem;
+                  margin-bottom: -10rem;
                 }
                 @media (min-width: ${tablet}) {
                   margin-top: 4rem;
-                  margin-bottom: -35rem;
+                  margin-bottom: -40rem;
                 }
               `}
             >
@@ -897,7 +905,7 @@ export default function Home() {
                 Peru-based{" "}
                 <TextPop
                   color="#DDAF24"
-                  css={mq({ display: ["block", "block", "inline-block"] })}
+                  css={mq({ display: ["block", "block", "block","inline-block"] })}
                 >
                   ICFJ Knight Fellow Fabiola Torres
                 </TextPop>{" "}
@@ -1307,6 +1315,8 @@ export default function Home() {
                     width: 260px;
                     margin-right: 0px;
                     margin-bottom: -32px;
+                  }
+                  @media(min-width:${tablet}){
                     bottom: 0;
                     top: auto;
                   }
@@ -1373,6 +1383,8 @@ export default function Home() {
                     width: 260px;
                     margin-right: -27px;
                     margin-bottom: -26px;
+                  }
+                  @media(min-width:${tablet}){
                     bottom: 0;
                     top: auto;
                   }
@@ -1469,6 +1481,8 @@ export default function Home() {
                     width: 260px;
                     margin-right: -27px;
                     margin-bottom: 16px;
+                  }
+                  @media(min-width:${tablet}){
                     bottom: 0;
                     top: auto;
                   }
