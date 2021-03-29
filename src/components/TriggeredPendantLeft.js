@@ -27,7 +27,7 @@ export default function TriggeredPendantRight(props) {
     position: relative;
     ${mq({
       fontSize: ["1.7em", "2em", "2.5em", "3em"],
-      paddingRight: [".5em", ".8em", "3em"],
+      paddingRight: [".5em", ".8em", "1em","3em"],
     })}
     &:after {
       content: "";

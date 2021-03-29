@@ -7,7 +7,7 @@ import facepaint from "facepaint"
 export default function Wolf(props) {
   const mq = facepaint(props.bp.map(bp => `@media (min-width:${bp})`))
 
-  const tablet = props.bp[1]
+  const tablet = props.bp[2]
 
   const Card = styled.div`
     width: 100%;

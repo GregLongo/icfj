@@ -24,6 +24,7 @@
     "facepaint": "^1.2.1",
     "gatsby": "^2.32.6",
     "gatsby-image": "^2.10.0",
+    "gatsby-plugin-compression": "0.0.1",
     "gatsby-plugin-emotion": "^5.2.0",
     "gatsby-plugin-fontawesome-css": "^1.0.0",
     "gatsby-plugin-react-svg": "^3.0.0",
