@@ -7,7 +7,8 @@ const path = require(`path`)
 
 module.exports = {
   /* Your site config here */
-  pathPrefix: `/icfj`,
+  pathPrefix: `/sites/default/files/annual-report-2020`,
+  // pathPrefix: `/icfj`,
   plugins: [
     {
       resolve: "gatsby-plugin-emotion",
@@ -37,5 +38,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-fontawesome-css`,
+    `gatsby-plugin-compression`,
   ],
 }

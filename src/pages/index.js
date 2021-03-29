@@ -39,12 +39,15 @@ import TriggeredBgColor from "../components/TriggeredBgColor.js"
 import TriggeredLottie from "../components/TriggeredLottie.js"
 
 //Animations
-// import animationMasthead from "../lotties/mastheadnu.json"
+// import animationMasthead from "../lotties/masthead_test3.json"
 import animationCameras from "../lotties/cameras.json" 
 import animationCamerasMobile from "../lotties/cameras_mobile.json" 
 import animationPenPaper from "../lotties/penpaper.json"
+import animationPenPaperMobile from "../lotties/penpaper_mobile.json"
 import animationAudio from "../lotties/audio.json"
+import animationAudioMobile from "../lotties/audio_mobile.json"
 import animationTweet from "../lotties/tweet.json"
+import animationTweetMobile from "../lotties/tweet_mobile.json"
 import animationAfrica from "../lotties/africa.json"
 import animationAfrica2 from "../lotties/africa2.json"
 import animationBrazil from "../lotties/brazil.json"
@@ -62,7 +65,7 @@ import PatternCountries from "../images/Pattern_Countries.png"
 import PatternLanguages from "../images/Pattern_Languages.png"
 import PatternCovid from "../images/Pattern_Covid.png"
 import Languages from "../images/languages_ticker.png"
-import Masthead from "../gif/masthead_webp.webp"
+import Masthead from "../gif/masthead.gif"
 
 //Themes
 import theme from "../themes/theme.js"
@@ -173,26 +176,26 @@ export default function Home() {
         <PendantLeft bp={breakpoints} color="mineShaft">
           <div
             css={mq({
+              display:"table-caption",
               fontFamily: "interstate-condensed",
               fontSize: [".75em", ".85em", "1.25em", "1.5em"],
-              maxWidth: "130px",
+              maxWidth: ["fit-content","fit-content","fit-content","130px"],
               lineHeight: "1",
               fontWeight: "200",
               textAlign: "center",
               wordSpacing: "999999px",
               paddingTop: "1rem ",
               paddingBottom: "1rem",
-              paddingRight: ["1rem", "1rem", "2rem", "4rem"],
-              paddingLeft: "0",
+              paddingRight: ["1rem", "1.5rem", "1.5rem", "4rem"],
             })}
           >
             ANNUAL REVIEW
           </div>
           <span
             css={mq({
-              paddingRight: "3rem",
+              paddingRight:[ "1rem","2rem","2rem","3rem"],
               whiteSpace: "noWrap",
-              fontSize: ["1.7em", "2em", "3em", "3em"],
+              fontSize: ["1.7em", "2em", "2.5em", "3em"],
             })}
           >
             It Takes a Journalist
@@ -212,6 +215,8 @@ export default function Home() {
             alt="masthead"
             src={Masthead}
           />
+
+          {/*<UncontrolledLottie animation={animationMasthead} />*/}
         </Container>
         <TriggeredBgColor color="white" />
         <Section
@@ -258,7 +263,7 @@ export default function Home() {
               </div>
               <div
                 css={mq({
-                  fontSize: ["1em", "1.5em", "2em"],
+                  fontSize: ["1em", "1.5em", "1.7em", "2em"],
                   fontFamily: "interstate-condensed",
                   lineHeight: 1.5,
                   fontWeight: "500",
@@ -276,7 +281,10 @@ export default function Home() {
           <Container id="Joyce">
             <TriggeredPendantRight
               css={css`
-                @media (max-width: ${mobile}) {
+                @media (max-width: ${smol}) {
+                  font-size: 1em;
+                }
+                @media (max-width: ${tablet}) {
                   font-size: 0.6em;
                 }
               `}
@@ -367,8 +375,13 @@ export default function Home() {
                   {
                     margin-left: 5rem;
                     transform:scale(.8);
-                  }`
-                }/> 
+                  }
+                  @media(min-width:${desktop})
+                  {
+                    margin-left: 8rem;
+                    transform:scale(1);
+                  }
+                  `}/> 
               </ParagraphSlant>
             </div>
           </Container>
@@ -380,7 +393,7 @@ export default function Home() {
             css={css`
               opacity: 0.7;
             `}
-            animation={animationPenPaper}
+            animation={!isMobile ? animationPenPaper : animationPenPaperMobile}
             loop={true}
           />
           <Container id="Change">
@@ -433,22 +446,20 @@ export default function Home() {
             </div>
               <FrameEmbed
               bp={breakpoints}
-              height="570px"
               buttonColor="goldenGrass"
               caption="Click on this photo to meet members of our inspiring network."
               css={css`
                 width: 100%;
-                height: 765px;
+                max-height: 620px;
                 overflow: hidden;
                 margin-top: 3rem;
-                margin-bottom: -15rem;
                 @media (min-width: ${tablet}) {
                   margin-top: 5rem;
-                  margin-bottom: 0;
+                  max-height: 765px;
                 }
               `}
             >
-              <div id="mosaics"></div>
+          <div id="mosaics"></div> 
             </FrameEmbed>
             <div
               css={css`
@@ -516,7 +527,7 @@ export default function Home() {
             css={css`
               opacity: 0.7;
             `}
-            animation={animationAudio}
+            animation={!isMobile ? animationAudio : animationAudioMobile}
             loop={true}
           />
           <Container id="Resources">
@@ -823,7 +834,7 @@ export default function Home() {
             css={css`
               opacity: 0.7;
             `}
-            animation={ isMobile ? animationCameras : animationCamerasMobile }
+            animation={ !isMobile ? animationCameras : animationCamerasMobile }
             loop={true}
           />
           <Container id="Networks">
@@ -868,13 +879,13 @@ export default function Home() {
                 display: grid;
                 grid-template-columns: 5% 95%;
                 margin-top: 3rem;
-               margin-bottom: -27rem;
+               margin-bottom: -15rem;
                @media (min-width: ${mobile}) {
-                  margin-bottom: -35rem;
+                  margin-bottom: -10rem;
                 }
                 @media (min-width: ${tablet}) {
                   margin-top: 4rem;
-                  margin-bottom: -35rem;
+                  margin-bottom: -40rem;
                 }
               `}
             >
@@ -897,7 +908,7 @@ export default function Home() {
                 Peru-based{" "}
                 <TextPop
                   color="#DDAF24"
-                  css={mq({ display: ["block", "block", "inline-block"] })}
+                  css={mq({ display: ["block", "block", "block","inline-block"] })}
                 >
                   ICFJ Knight Fellow Fabiola Torres
                 </TextPop>{" "}
@@ -1002,7 +1013,7 @@ export default function Home() {
             css={css`
               opacity: 1;
             `}
-            animation={animationTweet}
+            animation={!isMobile ? animationTweet : animationTweetMobile}
             loop={true}
           />
           <Container id="Innovation">
@@ -1078,7 +1089,7 @@ export default function Home() {
                   fontSize: ["1em", "1.2em", "1.5em"],
                   lineHeight: ["1", "1.5", "2"],
                   textAlign: "right",
-                  marginTop: ["1em", "2em", "4em"],
+                  marginTop: ["1em", "2em", "2em","4em"],
                 })}
               >
                 In Nigeria, journalists, fact checkers and social media
@@ -1217,7 +1228,7 @@ export default function Home() {
             css={css`
               opacity: .8;
             `}
-            animation={animationPenPaper}
+            animation={!isMobile ? animationPenPaper : animationPenPaperMobile}
             loop={true}
           />
           <Container id="Sustainability">
@@ -1302,11 +1313,13 @@ export default function Home() {
                   top: 0;
                   right: 0;
                   margin-right: 30px;
-                  margin-top: -6px;
                   @media(min-width:${mobile}){
                     width: 260px;
                     margin-right: 0px;
                     margin-bottom: -32px;
+                    margin-top: -6px;
+                  }
+                  @media(min-width:${tablet}){
                     bottom: 0;
                     top: auto;
                   }
@@ -1373,6 +1386,8 @@ export default function Home() {
                     width: 260px;
                     margin-right: -27px;
                     margin-bottom: -26px;
+                  }
+                  @media(min-width:${tablet}){
                     bottom: 0;
                     top: auto;
                   }
@@ -1469,6 +1484,8 @@ export default function Home() {
                     width: 260px;
                     margin-right: -27px;
                     margin-bottom: 16px;
+                  }
+                  @media(min-width:${tablet}){
                     bottom: 0;
                     top: auto;
                   }
@@ -1537,7 +1554,7 @@ export default function Home() {
             css={css`
               opacity: .8;
             `}
-            animation={animationAudio}
+            animation={!isMobile ? animationAudio : animationAudioMobile}
             loop={true}
           />
           <Container id="Leadership">
@@ -1641,6 +1658,7 @@ export default function Home() {
                 </Subheader>
               </div>
               <SmallSubheader>A UNESCO-ICFJ partnership</SmallSubheader>
+              <div css={css`position:relative`}>
               <div
                 css={css`
                   background: rgba(212, 73, 52, 0.6);
@@ -1674,14 +1692,14 @@ export default function Home() {
                   font-weight: 500;
                   ${mq({
                     padding: [
-                      "1rem 1rem 1rem 1rem",
+                      ".5rem .5rem .5rem .5rem",
                       "1rem 1rem 1rem 1rem",
                       "2rem 1rem 3rem 1rem",
                     ],
                     fontSize: ["1em", "1.2em", "1.5em"],
                     width: ["200px", "180px", "212px"],
-                    right: ["60px", "80px", "280px"],
-                    top: ["260px", "380px", "280px"],
+                    right: ["0px", "0px", "0px", "260px"],
+                    top: ["0px", "0px","0px","60px"],
                   })}
                 `}
               >
@@ -1693,6 +1711,7 @@ export default function Home() {
                 css={mq({ height: ["200px", "400px", "510px"] })}
                 filename="Anna.jpeg"
               />
+            </div>
             </div>
             <Credits>Credit: Anna Cunningham</Credits>
             <p
@@ -1718,7 +1737,7 @@ export default function Home() {
             css={css`
               opacity: 1;
             `}
-            animation={animationCameras}
+            animation={!isMobile ? animationCameras : animationCamerasMobile}
             loop={true}
           />
           <Container
@@ -1730,7 +1749,10 @@ export default function Home() {
               color="sanMarino"
               id="Honorees-To"
             >
-              Honorees
+            <span css={mq({
+              paddingLeft:["40%", "40%", 0],
+              paddingRight:["20%", "20%", 0],              
+              })}>Honorees</span>
             </TriggeredPendantLeft>
             <div
               css={css`
@@ -1858,7 +1880,7 @@ export default function Home() {
             css={css`
               opacity: 0.7;
             `}
-            animation={animationTweet}
+            animation={!isMobile ? animationTweet : animationTweetMobile}
             loop={true}
           />
           <Container id="Financials">
@@ -2042,7 +2064,7 @@ export default function Home() {
             css={css`
               opacity: 0.7;
             `}
-            animation={animationCameras}
+            animation={!isMobile ? animationCameras : animationCamerasMobile}
             loop={true}
           />
           <Container id="Board">

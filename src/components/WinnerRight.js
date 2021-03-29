@@ -3,7 +3,7 @@ import styled from "@emotion/styled"
 import ImageQuery from "./ImageQuery.js"
 
 export default function WinnerRight(props) {
-  const tablet = props.bp[1]
+  const tablet = props.bp[2]
 
   const Card = styled.div`
     width: 100%;
