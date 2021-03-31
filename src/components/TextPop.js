@@ -42,6 +42,9 @@ class TextPop extends Component {
 			};
 		`
     const popFlare = keyframes`
+      0%{
+        opacity: 0.3; 
+      }
 			50%  {transform: scale(1.7) translate(0px, -10px) ;
 			text-shadow: 4px 10px 20px ${color};
 			}
@@ -60,7 +63,7 @@ class TextPop extends Component {
       &:before {
         content: "${this.props.children}";
         position: absolute;
-        opacity: 0.3;
+        opacity: 0;
         animation: ${this.state.pop ? popFlare : ""} 1s ease;
       }
     `
