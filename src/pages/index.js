@@ -8,7 +8,7 @@ import styled from "@emotion/styled"
 import facepaint from "facepaint"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { isMobile} from "react-device-detect"
+import {isIOS, isMobile} from "react-device-detect"
 
 
 //UI
@@ -55,6 +55,8 @@ import animationSouthAmerica from "../lotties/southamerica.json"
 import animationPie from "../lotties/pie_nu.json"
 import animationTribute from "../lotties/tribute.json"
 import animationMiddleEast from "../lotties/northafrica_middleeast.json"
+
+
 //svg
 import Platinum from "../svg/platinum.svg"
 
@@ -65,7 +67,9 @@ import PatternCountries from "../images/Pattern_Countries.png"
 import PatternLanguages from "../images/Pattern_Languages.png"
 import PatternCovid from "../images/Pattern_Covid.png"
 import Languages from "../images/languages_ticker.png"
-import Masthead from "../gif/masthead.gif"
+// import Masthead from "../gif/masthead_webp.webp"
+import Masthead from "../vid/masthead_600px.webm"
+import MastheadIOS from "../vid/masthead_fromwebp_sosmol.mp4"
 
 //Themes
 import theme from "../themes/theme.js"
@@ -145,13 +149,13 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
   useEffect(() => {
-    const pmFrame = new window.Pmframe({
-      element: "mosaics",
-      page: "https://icfjmosaic.com",
-      minWidth: "300",
-      pmBrand: 1,
-    })
-    pmFrame.init()
+    // const pmFrame = new window.Pmframe({
+    //   element: "mosaics",
+    //   page: "https://icfjmosaic.com",
+    //   minWidth: "300",
+    //   pmBrand: 1,
+    // })
+    // pmFrame.init()
     const timer = setTimeout(() => {
       ScrollTrigger.refresh(true)
     }, 1000)
@@ -208,7 +212,17 @@ export default function Home() {
             maxWidth: ["100%", "100%", "100%", "1024px"],
           })}
         >
-          <img
+         <video
+            css={css`
+              width: 100%;
+            `}
+            autoplay ="autoplay"
+            loop="true"
+            muted
+            >
+          <source src={!isIOS ? Masthead : MastheadIOS} type="video/mp4" />
+        </video>
+        {/*  <img
             css={css`
               width: 100%;
             `}
@@ -216,7 +230,7 @@ export default function Home() {
             src={Masthead}
           />
 
-          {/*<UncontrolledLottie animation={animationMasthead} />*/}
+          <UncontrolledLottie animation={animationMasthead} />*/}
         </Container>
         <TriggeredBgColor color="white" />
         <Section
@@ -459,7 +473,7 @@ export default function Home() {
                 }
               `}
             >
-          <div id="mosaics"></div> 
+        {/*  <div id="mosaics"></div>*/} 
             </FrameEmbed>
             <div
               css={css`

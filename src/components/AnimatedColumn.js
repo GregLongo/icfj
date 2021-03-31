@@ -99,7 +99,7 @@ class AnimatedColumn extends Component {
       ${mq({
         fontSize: ["3em", "3em", "3em", "3em"],
         transform: [
-          "translate(20px, 25px)",
+          "translate(40px, 30px)",
           "translate(45px, 30px)",
           "translate(50px, 60px)",
           "translate(55px, 60px)",

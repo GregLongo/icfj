@@ -7,8 +7,8 @@ const path = require(`path`)
 
 module.exports = {
   /* Your site config here */
-  pathPrefix: `/sites/default/files/annual-report-2020`,
-  // pathPrefix: `/icfj`,
+  // pathPrefix: `/sites/default/files/annual-report-2020`,
+  // pathPrefix: `/icfj-webm`,
   plugins: [
     {
       resolve: "gatsby-plugin-emotion",
@@ -35,9 +35,17 @@ module.exports = {
         },
       },
     },
+  //   {
+  //     resolve: 'gatsby-plugin-webpack-bundle-analyzer',
+  //     options: {
+  //       production: true,
+  //   },
+  // },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-compression`,
+    // `gatsby-plugin-preact`,
+    // `gatsby-plugin-loadable-components-ssr`,
   ],
 }
