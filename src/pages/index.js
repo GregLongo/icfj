@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
 
 //Libraries
 import { Global, css, jsx, ThemeProvider } from "@emotion/react"
@@ -8,8 +8,9 @@ import styled from "@emotion/styled"
 import facepaint from "facepaint"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import {isIOS, isMobile} from "react-device-detect"
-
+// import {  isMobile} from "react-device-detect"
+import LazyLoad from 'react-lazy-load';
+import useDeviceDetect from "../utils/useDeviceDetect";
 
 //UI
 import Header from "../components/Header.js"
@@ -62,14 +63,14 @@ import Platinum from "../svg/platinum.svg"
 
 //patterns
 
-import PatternTools from "../images/Pattern_Tools.png"
-import PatternCountries from "../images/Pattern_Countries.png"
-import PatternLanguages from "../images/Pattern_Languages.png"
-import PatternCovid from "../images/Pattern_Covid.png"
+import PatternTools from "../images/Pattern_Tools.jpg"
+import PatternCountries from "../images/Pattern_Countries.jpg"
+import PatternLanguages from "../images/Pattern_Languages.jpg"
+import PatternCovid from "../images/Pattern_Covid.jpg"
 import Languages from "../images/languages_ticker.png"
 // import Masthead from "../gif/masthead_webp.webp"
-import Masthead from "../vid/masthead_600px.webm"
-import MastheadIOS from "../vid/masthead_fromwebp_sosmol.mp4"
+import Masthead from "../vid/masthead_1024.webm"
+import MastheadIOS from "../vid/masthead_mob.mp4"
 
 //Themes
 import theme from "../themes/theme.js"
@@ -145,9 +146,28 @@ const DonorTitle = styled(OrgPeople)``
 
 const Donor = styled(OrgPeopleDesc)``
 
+
 gsap.registerPlugin(ScrollTrigger)
 
+
 export default function Home() {
+
+
+  const { isMobile }= useDeviceDetect()
+
+  // const [isMob , setIsMob ] = useState()
+
+  // useEffect(()=> {
+  //   setIsMob(isMobile)
+  // }, [])
+
+  const [mastheadLive, setMastheadLive] = useState()
+
+  useEffect(() => {
+
+    setMastheadLive( isMobile ? MastheadIOS : Masthead)
+  },[mastheadLive, isMobile])
+
   useEffect(() => {
     // const pmFrame = new window.Pmframe({
     //   element: "mosaics",
@@ -156,6 +176,7 @@ export default function Home() {
     //   pmBrand: 1,
     // })
     // pmFrame.init()
+
     const timer = setTimeout(() => {
       ScrollTrigger.refresh(true)
     }, 1000)
@@ -201,8 +222,11 @@ export default function Home() {
               whiteSpace: "noWrap",
               fontSize: ["1.7em", "2em", "2.5em", "3em"],
             })}
-          >
-            It Takes a Journalist
+          >            <LazyLoad>
+
+            {mastheadLive}
+                        </LazyLoad>
+
           </span>
         </PendantLeft>
         <Container
@@ -212,17 +236,20 @@ export default function Home() {
             maxWidth: ["100%", "100%", "100%", "1024px"],
           })}
         >
+
+         
          <video
             css={css`
               width: 100%;
             `}
-            autoplay ="autoplay"
-            loop="true"
+            autoPlay
+            loop
             muted
             >
-          <source src={!isIOS ? Masthead : MastheadIOS} type="video/mp4" />
+            <source src={ mastheadLive } type="video/mp4" />
         </video>
-        {/*  <img
+        {/* 
+        <img
             css={css`
               width: 100%;
             `}
@@ -504,14 +531,15 @@ export default function Home() {
                 }
               `}
             >
+            <LazyLoad>
               <iframe
                 title="vidtwo"
-                width="100%"
-                height="570px"
                 src="https://www.youtube.com/embed/f1SBTk3CXhI"
                 frameBorder="0"
                 allowFullScreen
+                loading="lazy"
               ></iframe>
+              </LazyLoad>
             </FrameEmbed>
 
             <Quote
@@ -606,6 +634,7 @@ export default function Home() {
                 }
               `}
             >
+            <LazyLoad>
               <iframe
                 title="vidfour"
                 width="100%"
@@ -613,7 +642,9 @@ export default function Home() {
                 src="https://www.youtube.com/embed/UoshtxBZhGs"
                 frameBorder="0"
                 allowFullScreen
+                loading="lazy"
               ></iframe>
+            </LazyLoad>
             </FrameEmbed>
             <div
               css={css`
@@ -690,10 +721,10 @@ export default function Home() {
             >
               <ImageQuery filename="Sid.jpg" />
               <ImageQuery filename="redshoes.jpg" />
-              <ImageQuery filename="maskgirlcrop.png" />
-              <ImageQuery filename="docwhite.png" />
-              <ImageQuery filename="docblue.png" />
-              <ImageQuery filename="agnes.png" />
+              <ImageQuery filename="maskgirlcrop.jpg" />
+              <ImageQuery filename="docwhite.jpg" />
+              <ImageQuery filename="docblue.jpg" />
+              <ImageQuery filename="agnes.jpg" />
             </div>
             <Credits>
               {" "}
@@ -1836,6 +1867,7 @@ export default function Home() {
                 padding-bottom: -20px;
               `}
             >
+            <LazyLoad>
               <iframe
                 title="vidone"
                 width="100%"
@@ -1843,11 +1875,13 @@ export default function Home() {
                 src="https://www.youtube.com/embed/jIialLILHq8"
                 frameBorder="0"
                 allowFullScreen
+                loading="lazy"
               ></iframe>
+             </LazyLoad>
             </FrameEmbed>
             <Wolf
               bp={breakpoints}
-              image="Wolf.png"
+              image="Wolf.jpg"
               award="Master of Ceremonies"
               name="Wolf Blitzer, CNN"
               title=""
@@ -1863,7 +1897,7 @@ export default function Home() {
             />
             <WinnerLeft
               bp={breakpoints}
-              image="Roman.png"
+              image="Roman.jpg"
               award="ICFJ Knight Trailblazer Award"
               name="Roman Anin"
               title="IStories, Russia"
@@ -1871,7 +1905,7 @@ export default function Home() {
             />
             <WinnerRight
               bp={breakpoints}
-              image="Lina.png"
+              image="Lina.jpg"
               award="ICFJ Knight International Journalism Award"
               name="Lina Attalah"
               title="Mada Masr, Egypt"
@@ -1879,7 +1913,7 @@ export default function Home() {
             />
             <WinnerLeft
               bp={breakpoints}
-              image="Maria.png"
+              image="Maria.jpg"
               award="2018 ICFJ Knight Award Winner"
               name="Maria Ressa"
               title="Rappler, Philippines"
@@ -1983,7 +2017,7 @@ export default function Home() {
               `} >
             <div>
             <ImageQuery
-              filename="fourstar.png"
+              filename="fourstar.jpg"
               css={css`
                 margin-top: 4.5rem;
                 margin-bottom: 3rem;
@@ -2611,6 +2645,7 @@ export default function Home() {
                 clip-path: inset(32px);
               `}
             >
+            <LazyLoad>
               <iframe
                 title="vidthree"
                 width="100%"
@@ -2620,7 +2655,9 @@ export default function Home() {
                 allowFullScreen
                 autoPlay="true"
                 loop
+                loading="lazy"
               ></iframe>
+            </LazyLoad>
             </FrameEmbed>
           </Container>
         </Section>
