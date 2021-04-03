@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 
 //Libraries
 import { Global, css, jsx, ThemeProvider } from "@emotion/react"
@@ -8,9 +8,7 @@ import styled from "@emotion/styled"
 import facepaint from "facepaint"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-// import {  isMobile} from "react-device-detect"
 import LazyLoad from 'react-lazy-load';
-import useDeviceDetect from "../utils/useDeviceDetect";
 
 //UI
 import Header from "../components/Header.js"
@@ -35,20 +33,16 @@ import WinnerRight from "../components/WinnerRight.js"
 import Wolf from "../components/Wolf.js"
 
 //Animation Players
-// import UncontrolledLottie from "../components/UncontrolledLottie.js"
+import UncontrolledLottie from "../components/UncontrolledLottie.js"
 import TriggeredBgColor from "../components/TriggeredBgColor.js"
 import TriggeredLottie from "../components/TriggeredLottie.js"
 
 //Animations
-// import animationMasthead from "../lotties/masthead_test3.json"
-import animationCameras from "../lotties/cameras.json" 
-import animationCamerasMobile from "../lotties/cameras_mobile.json" 
-import animationPenPaper from "../lotties/penpaper.json"
-import animationPenPaperMobile from "../lotties/penpaper_mobile.json"
-import animationAudio from "../lotties/audio.json"
-import animationAudioMobile from "../lotties/audio_mobile.json"
-import animationTweet from "../lotties/tweet.json"
-import animationTweetMobile from "../lotties/tweet_mobile.json"
+import animationMasthead from "../lotties/Masthead_TestRender_01.json"
+import animationCameras from "../lotties/cameras_mobile.json" 
+import animationPenPaper from "../lotties/penpaper_mobile.json"
+import animationAudio from "../lotties/audio_mobile.json"
+import animationTweet from "../lotties/tweet_mobile.json"
 import animationAfrica from "../lotties/africa.json"
 import animationAfrica2 from "../lotties/africa2.json"
 import animationBrazil from "../lotties/brazil.json"
@@ -63,14 +57,12 @@ import Platinum from "../svg/platinum.svg"
 
 //patterns
 
-import PatternTools from "../images/Pattern_Tools.jpg"
-import PatternCountries from "../images/Pattern_Countries.jpg"
-import PatternLanguages from "../images/Pattern_Languages.jpg"
-import PatternCovid from "../images/Pattern_Covid.jpg"
+import PatternTools from "../images/Pattern_Tools_Kuler.jpg"
+import PatternCountries from "../images/Pattern_Countries_Kuler.jpg"
+import PatternLanguages from "../images/Pattern_Languages_Kuler.jpg"
+import PatternCovid from "../images/Pattern_Covid_Kuler.jpg"
 import Languages from "../images/languages_ticker.png"
-// import Masthead from "../gif/masthead_webp.webp"
-import Masthead from "../vid/masthead_1024.webm"
-import MastheadIOS from "../vid/masthead_mob.mp4"
+
 
 //Themes
 import theme from "../themes/theme.js"
@@ -152,22 +144,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
 
-
-  const { isMobile }= useDeviceDetect()
-
-  // const [isMob , setIsMob ] = useState()
-
-  // useEffect(()=> {
-  //   setIsMob(isMobile)
-  // }, [])
-
-  const [mastheadLive, setMastheadLive] = useState()
-
-  useEffect(() => {
-
-    setMastheadLive( isMobile ? MastheadIOS : Masthead)
-  },[mastheadLive, isMobile])
-
   useEffect(() => {
     // const pmFrame = new window.Pmframe({
     //   element: "mosaics",
@@ -222,11 +198,7 @@ export default function Home() {
               whiteSpace: "noWrap",
               fontSize: ["1.7em", "2em", "2.5em", "3em"],
             })}
-          >            <LazyLoad>
-
-            {mastheadLive}
-                        </LazyLoad>
-
+          >It Takes a Journalist
           </span>
         </PendantLeft>
         <Container
@@ -236,28 +208,7 @@ export default function Home() {
             maxWidth: ["100%", "100%", "100%", "1024px"],
           })}
         >
-
-         
-         <video
-            css={css`
-              width: 100%;
-            `}
-            autoPlay
-            loop
-            muted
-            >
-            <source src={ mastheadLive } type="video/mp4" />
-        </video>
-        {/* 
-        <img
-            css={css`
-              width: 100%;
-            `}
-            alt="masthead"
-            src={Masthead}
-          />
-
-          <UncontrolledLottie animation={animationMasthead} />*/}
+          <UncontrolledLottie animation={animationMasthead} />
         </Container>
         <TriggeredBgColor color="white" />
         <Section
@@ -430,13 +381,19 @@ export default function Home() {
         </Section>
         <Section name="Change">
           <TriggeredBgColor color="curiousBlue" />
+          <LazyLoad
+            debounce={false}
+            offsetTop={1000} 
+            onContentVisible={()=> ScrollTrigger.refresh()}
+            >
           <TriggeredLottie
             css={css`
               opacity: 0.7;
             `}
-            animation={!isMobile ? animationPenPaper : animationPenPaperMobile}
+            animation={animationPenPaper}
             loop={true}
           />
+          </LazyLoad>
           <Container id="Change">
             <TriggeredPendantLeft
               bp={breakpoints}
@@ -531,7 +488,7 @@ export default function Home() {
                 }
               `}
             >
-            <LazyLoad>
+            <LazyLoad  debounce={false} offsetTop={200} >
               <iframe
                 title="vidtwo"
                 src="https://www.youtube.com/embed/f1SBTk3CXhI"
@@ -541,7 +498,6 @@ export default function Home() {
               ></iframe>
               </LazyLoad>
             </FrameEmbed>
-
             <Quote
               bp={breakpoints}
               css={mq({
@@ -565,13 +521,19 @@ export default function Home() {
         </Section>
         <Section name="Resources">
           <TriggeredBgColor color="boulder" />
+            <LazyLoad
+            debounce={false}
+            offsetTop={1000} 
+            onContentVisible={()=> ScrollTrigger.refresh()}
+            >
           <TriggeredLottie
             css={css`
               opacity: 0.7;
             `}
-            animation={!isMobile ? animationAudio : animationAudioMobile}
+            animation={animationAudio}
             loop={true}
           />
+          </LazyLoad>
           <Container id="Resources">
             <TriggeredPendantRight
               bp={breakpoints}
@@ -634,7 +596,7 @@ export default function Home() {
                 }
               `}
             >
-            <LazyLoad>
+            <LazyLoad  debounce={false} offsetTop={200}>
               <iframe
                 title="vidfour"
                 width="100%"
@@ -773,7 +735,7 @@ export default function Home() {
                 Offering expert advice, tools and opportunities for the news
                 media
               </p>
-              </div>
+              </div> 
               <div css={css`
 
               `}>
@@ -875,13 +837,19 @@ export default function Home() {
         </Section>
         <Section name="Networks">
           <TriggeredBgColor color="fruitSalad" />
+          <LazyLoad
+            debounce={false}
+            offsetTop={1000} 
+            onContentVisible={()=> ScrollTrigger.refresh()}
+            >
           <TriggeredLottie
             css={css`
               opacity: 0.7;
             `}
-            animation={ !isMobile ? animationCameras : animationCamerasMobile }
+            animation={animationCameras}
             loop={true}
           />
+          </LazyLoad>
           <Container id="Networks">
             <TriggeredPendantLeft
               bp={breakpoints}
@@ -1054,13 +1022,19 @@ export default function Home() {
         </Section>
         <Section name="Innovation">
           <TriggeredBgColor color="mineShaft" />
+            <LazyLoad
+            debounce={false}
+            offsetTop={1000} 
+            onContentVisible={()=> ScrollTrigger.refresh()}
+            >
           <TriggeredLottie
             css={css`
               opacity: 1;
             `}
-            animation={!isMobile ? animationTweet : animationTweetMobile}
+            animation={animationTweet}
             loop={true}
           />
+          </LazyLoad>
           <Container id="Innovation">
             <TriggeredPendantRight
               bp={breakpoints}
@@ -1269,13 +1243,19 @@ export default function Home() {
         </Section>
         <Section name="Sustainability">
           <TriggeredBgColor color="affair" />
+            <LazyLoad
+            debounce={false}
+            offsetTop={1000} 
+            onContentVisible={()=> ScrollTrigger.refresh()}
+            >
           <TriggeredLottie
             css={css`
               opacity: .8;
             `}
-            animation={!isMobile ? animationPenPaper : animationPenPaperMobile}
+            animation={animationPenPaper}
             loop={true}
           />
+          </LazyLoad>
           <Container id="Sustainability">
             <TriggeredPendantLeft
               bp={breakpoints}
@@ -1334,7 +1314,7 @@ export default function Home() {
                 css={css`
                   height: 510px;
                 `}
-                filename="conference.jpeg"
+                filename="conference.jpg"
               />
                 <div css={css`
                   background: rgba(221, 175, 36, 0.6);
@@ -1499,7 +1479,7 @@ export default function Home() {
                 css={css`
                   height: 510px;
                 `}
-                filename="Pitazo.jpeg"
+                filename="Pitazo.jpg"
               />
               <div css={css`
                 background: rgba(212, 73, 52, 0.6);
@@ -1595,13 +1575,19 @@ export default function Home() {
         </Section>
         <Section name="Leadership">
           <TriggeredBgColor color="valencia" />
+            <LazyLoad
+            debounce={false}
+            offsetTop={1000} 
+            onContentVisible={()=> ScrollTrigger.refresh()}
+            >
           <TriggeredLottie
             css={css`
               opacity: .8;
             `}
-            animation={!isMobile ? animationAudio : animationAudioMobile}
+            animation={animationAudio}
             loop={true}
           />
+          </LazyLoad>
           <Container id="Leadership">
             <TriggeredPendantRight
               bp={breakpoints}
@@ -1754,7 +1740,7 @@ export default function Home() {
               </div>
               <ImageQuery
                 css={mq({ height: ["200px", "400px", "510px"] })}
-                filename="Anna.jpeg"
+                filename="Anna.jpg"
               />
             </div>
             </div>
@@ -1778,13 +1764,19 @@ export default function Home() {
         </Section>
         <Section name="Honorees">
           <TriggeredBgColor color="white" />
+            <LazyLoad
+            debounce={false}
+            offsetTop={1000} 
+            onContentVisible={()=> ScrollTrigger.refresh()}
+            >
           <TriggeredLottie
             css={css`
               opacity: 1;
             `}
-            animation={!isMobile ? animationCameras : animationCamerasMobile}
+            animation={animationCameras}
             loop={true}
           />
+          </LazyLoad>
           <Container
             id="Honorees"
             css={mq({ maxWidth: ["100%", "100%", "90%", "1024px"] })}
@@ -1867,7 +1859,7 @@ export default function Home() {
                 padding-bottom: -20px;
               `}
             >
-            <LazyLoad>
+            <LazyLoad debounce={false}  offsetTop={200}>
               <iframe
                 title="vidone"
                 width="100%"
@@ -1924,13 +1916,19 @@ export default function Home() {
         </Section>
         <Section name="Financials">
           <TriggeredBgColor color="curiousBlue" />
+            <LazyLoad
+            debounce={false}
+            offsetTop={1000} 
+            onContentVisible={()=> ScrollTrigger.refresh()}
+            >
           <TriggeredLottie
             css={css`
               opacity: 0.7;
             `}
-            animation={!isMobile ? animationTweet : animationTweetMobile}
+            animation={animationTweet}
             loop={true}
           />
+          </LazyLoad>
           <Container id="Financials">
             <TriggeredPendantRight
               bp={breakpoints}
@@ -2108,13 +2106,19 @@ export default function Home() {
         </Section>
         <Section name="BoardMembers">
           <TriggeredBgColor color="fruitSalad" />
+            <LazyLoad
+            debounce={false}
+            offsetTop={1000} 
+            onContentVisible={()=> ScrollTrigger.refresh()}
+            >
           <TriggeredLottie
             css={css`
               opacity: 0.7;
             `}
-            animation={!isMobile ? animationCameras : animationCamerasMobile}
+            animation={animationCameras}
             loop={true}
           />
+          </LazyLoad>
           <Container id="Board">
             <TriggeredPendantLeft
               bp={breakpoints}
@@ -2645,7 +2649,7 @@ export default function Home() {
                 clip-path: inset(32px);
               `}
             >
-            <LazyLoad>
+            <LazyLoad debounce={false}  offsetTop={200}>
               <iframe
                 title="vidthree"
                 width="100%"

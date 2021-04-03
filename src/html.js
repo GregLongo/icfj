@@ -12,12 +12,11 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-<script src="https://cdn.picturemosaics.com/client/iframe/js/pageEmbed.VID2.js"></script>
+        <script src="https://cdn.picturemosaics.com/client/iframe/js/pageEmbed.VID2.js"></script>
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
-
         <div
           key={`loader`}
           id="___loader"

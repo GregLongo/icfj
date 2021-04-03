@@ -41,11 +41,14 @@ module.exports = {
   //       production: true,
   //   },
   // },
+   {
+      resolve: 'gatsby-plugin-zopfli',
+      options: {
+        verbose: true,
+        // extensions: ['css', 'html', 'js', 'svg']
+      }
+    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-fontawesome-css`,
-    `gatsby-plugin-compression`,
-    // `gatsby-plugin-preact`,
-    // `gatsby-plugin-loadable-components-ssr`,
   ],
 }

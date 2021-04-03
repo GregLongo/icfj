@@ -3,9 +3,8 @@ import styled from "@emotion/styled"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import TriggeredCounter from "../components/TriggeredCounter.js"
-import { keyframes, css } from "@emotion/react"
+import { keyframes } from "@emotion/react"
 import facepaint from "facepaint"
-import { isIOS} from "react-device-detect"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -58,18 +57,12 @@ class AnimatedColumn extends Component {
   render() {
     const mq = facepaint(this.props.bp.map(bp => `@media (min-width:${bp})`))
 
-    const color = this.props.color
+    // const color = this.props.color
     const Content = styled.div`
       margin-top: -24px;
       background-image: url(${this.props.image});
       background-size: contain;
-      background-blend-mode: soft-light;
-      background-color: ${props => props.theme.colors[color]};
       animation: ${loop} 20s linear infinite;
-      ${isIOS&& css`
-        animation: none;
-        background-repeat: no-repeat
-      `}
       ${mq({
         width: ["300px", "400px", "400px", "400px"],
         height: ["300px", "400px", "400px", "400px"],
