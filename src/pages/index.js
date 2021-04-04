@@ -205,7 +205,7 @@ export default function Home() {
             maxWidth: ["100%", "100%", "100%", "1024px"],
           })}
         >
-          <UncontrolledLottie css={css`transform:scaleY(.9175)`} animation={animationMasthead} />
+          <UncontrolledLottie  animation={animationMasthead} />
         </Container>
         <TriggeredBgColor color="white" />
         <Section
@@ -457,7 +457,7 @@ export default function Home() {
                 }
               `}
             >
-              {/*  <div id="mosaics"></div>*/}
+          {/*  <div id="mosaics"></div>*/}
             </FrameEmbed>
             <div
               css={css`
@@ -1906,7 +1906,7 @@ export default function Home() {
             </FrameEmbed>
             <Wolf
               bp={breakpoints}
-              image="Wolf.jpg"
+              image="Wolf.png"
               award="Master of Ceremonies"
               name="Wolf Blitzer, CNN"
               title=""
