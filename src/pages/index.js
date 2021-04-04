@@ -38,7 +38,7 @@ import TriggeredBgColor from "../components/TriggeredBgColor.js"
 import TriggeredLottie from "../components/TriggeredLottie.js"
 
 //Animations
-import animationMasthead from "../lotties/Masthead_TestRender_01.json"
+import animationMasthead from "../lotties/Masthead_CompressedStrips_V02"
 import animationCameras from "../lotties/cameras_mobile.json" 
 import animationPenPaper from "../lotties/penpaper_mobile.json"
 import animationAudio from "../lotties/audio_mobile.json"
@@ -381,11 +381,6 @@ export default function Home() {
         </Section>
         <Section name="Change">
           <TriggeredBgColor color="curiousBlue" />
-          <LazyLoad
-            debounce={false}
-            offsetTop={1000} 
-            onContentVisible={()=> ScrollTrigger.refresh()}
-            >
           <TriggeredLottie
             css={css`
               opacity: 0.7;
@@ -393,7 +388,6 @@ export default function Home() {
             animation={animationPenPaper}
             loop={true}
           />
-          </LazyLoad>
           <Container id="Change">
             <TriggeredPendantLeft
               bp={breakpoints}
@@ -521,11 +515,6 @@ export default function Home() {
         </Section>
         <Section name="Resources">
           <TriggeredBgColor color="boulder" />
-            <LazyLoad
-            debounce={false}
-            offsetTop={1000} 
-            onContentVisible={()=> ScrollTrigger.refresh()}
-            >
           <TriggeredLottie
             css={css`
               opacity: 0.7;
@@ -533,7 +522,6 @@ export default function Home() {
             animation={animationAudio}
             loop={true}
           />
-          </LazyLoad>
           <Container id="Resources">
             <TriggeredPendantRight
               bp={breakpoints}
@@ -683,10 +671,10 @@ export default function Home() {
             >
               <ImageQuery filename="Sid.jpg" />
               <ImageQuery filename="redshoes.jpg" />
-              <ImageQuery filename="maskgirlcrop.jpg" />
-              <ImageQuery filename="docwhite.jpg" />
-              <ImageQuery filename="docblue.jpg" />
-              <ImageQuery filename="agnes.jpg" />
+              <ImageQuery filename="maskgirlcrop.png" />
+              <ImageQuery filename="docwhite.png" />
+              <ImageQuery filename="docblue.png" />
+              <ImageQuery filename="agnes.png" />
             </div>
             <Credits>
               {" "}
@@ -837,11 +825,6 @@ export default function Home() {
         </Section>
         <Section name="Networks">
           <TriggeredBgColor color="fruitSalad" />
-          <LazyLoad
-            debounce={false}
-            offsetTop={1000} 
-            onContentVisible={()=> ScrollTrigger.refresh()}
-            >
           <TriggeredLottie
             css={css`
               opacity: 0.7;
@@ -849,7 +832,6 @@ export default function Home() {
             animation={animationCameras}
             loop={true}
           />
-          </LazyLoad>
           <Container id="Networks">
             <TriggeredPendantLeft
               bp={breakpoints}
@@ -1022,11 +1004,6 @@ export default function Home() {
         </Section>
         <Section name="Innovation">
           <TriggeredBgColor color="mineShaft" />
-            <LazyLoad
-            debounce={false}
-            offsetTop={1000} 
-            onContentVisible={()=> ScrollTrigger.refresh()}
-            >
           <TriggeredLottie
             css={css`
               opacity: 1;
@@ -1034,7 +1011,6 @@ export default function Home() {
             animation={animationTweet}
             loop={true}
           />
-          </LazyLoad>
           <Container id="Innovation">
             <TriggeredPendantRight
               bp={breakpoints}
@@ -1243,11 +1219,6 @@ export default function Home() {
         </Section>
         <Section name="Sustainability">
           <TriggeredBgColor color="affair" />
-            <LazyLoad
-            debounce={false}
-            offsetTop={1000} 
-            onContentVisible={()=> ScrollTrigger.refresh()}
-            >
           <TriggeredLottie
             css={css`
               opacity: .8;
@@ -1255,7 +1226,6 @@ export default function Home() {
             animation={animationPenPaper}
             loop={true}
           />
-          </LazyLoad>
           <Container id="Sustainability">
             <TriggeredPendantLeft
               bp={breakpoints}
@@ -1314,7 +1284,7 @@ export default function Home() {
                 css={css`
                   height: 510px;
                 `}
-                filename="conference.jpg"
+                filename="conference.jpeg"
               />
                 <div css={css`
                   background: rgba(221, 175, 36, 0.6);
@@ -1479,7 +1449,7 @@ export default function Home() {
                 css={css`
                   height: 510px;
                 `}
-                filename="Pitazo.jpg"
+                filename="Pitazo.jpeg"
               />
               <div css={css`
                 background: rgba(212, 73, 52, 0.6);
@@ -1575,11 +1545,6 @@ export default function Home() {
         </Section>
         <Section name="Leadership">
           <TriggeredBgColor color="valencia" />
-            <LazyLoad
-            debounce={false}
-            offsetTop={1000} 
-            onContentVisible={()=> ScrollTrigger.refresh()}
-            >
           <TriggeredLottie
             css={css`
               opacity: .8;
@@ -1587,7 +1552,6 @@ export default function Home() {
             animation={animationAudio}
             loop={true}
           />
-          </LazyLoad>
           <Container id="Leadership">
             <TriggeredPendantRight
               bp={breakpoints}
@@ -1740,7 +1704,7 @@ export default function Home() {
               </div>
               <ImageQuery
                 css={mq({ height: ["200px", "400px", "510px"] })}
-                filename="Anna.jpg"
+                filename="Anna.jpeg"
               />
             </div>
             </div>
@@ -1764,11 +1728,6 @@ export default function Home() {
         </Section>
         <Section name="Honorees">
           <TriggeredBgColor color="white" />
-            <LazyLoad
-            debounce={false}
-            offsetTop={1000} 
-            onContentVisible={()=> ScrollTrigger.refresh()}
-            >
           <TriggeredLottie
             css={css`
               opacity: 1;
@@ -1776,7 +1735,6 @@ export default function Home() {
             animation={animationCameras}
             loop={true}
           />
-          </LazyLoad>
           <Container
             id="Honorees"
             css={mq({ maxWidth: ["100%", "100%", "90%", "1024px"] })}
@@ -1916,11 +1874,6 @@ export default function Home() {
         </Section>
         <Section name="Financials">
           <TriggeredBgColor color="curiousBlue" />
-            <LazyLoad
-            debounce={false}
-            offsetTop={1000} 
-            onContentVisible={()=> ScrollTrigger.refresh()}
-            >
           <TriggeredLottie
             css={css`
               opacity: 0.7;
@@ -1928,7 +1881,6 @@ export default function Home() {
             animation={animationTweet}
             loop={true}
           />
-          </LazyLoad>
           <Container id="Financials">
             <TriggeredPendantRight
               bp={breakpoints}
@@ -2015,7 +1967,7 @@ export default function Home() {
               `} >
             <div>
             <ImageQuery
-              filename="fourstar.jpg"
+              filename="fourstar.png"
               css={css`
                 margin-top: 4.5rem;
                 margin-bottom: 3rem;
@@ -2106,11 +2058,6 @@ export default function Home() {
         </Section>
         <Section name="BoardMembers">
           <TriggeredBgColor color="fruitSalad" />
-            <LazyLoad
-            debounce={false}
-            offsetTop={1000} 
-            onContentVisible={()=> ScrollTrigger.refresh()}
-            >
           <TriggeredLottie
             css={css`
               opacity: 0.7;
@@ -2118,7 +2065,6 @@ export default function Home() {
             animation={animationCameras}
             loop={true}
           />
-          </LazyLoad>
           <Container id="Board">
             <TriggeredPendantLeft
               bp={breakpoints}
