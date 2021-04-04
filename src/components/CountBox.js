@@ -2,7 +2,6 @@ import React from "react"
 import styled from "@emotion/styled"
 import { css } from "@emotion/react"
 import TriggeredCounter from "../components/TriggeredCounter.js"
-// import Highlighter from "../components/Highlighter.js"
 import facepaint from "facepaint"
 
 export default function CountBox(props) {

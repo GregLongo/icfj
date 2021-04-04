@@ -39,10 +39,10 @@ import TriggeredLottie from "../components/TriggeredLottie.js"
 
 //Animations
 import animationMasthead from "../lotties/Masthead_CompressedStrips_V02"
-import animationCameras from "../lotties/cameras_mobile.json" 
-import animationPenPaper from "../lotties/penpaper_mobile.json"
-import animationAudio from "../lotties/audio_mobile.json"
-import animationTweet from "../lotties/tweet_mobile.json"
+import animationCameras from "../lotties/cameras.json" 
+import animationPenPaper from "../lotties/penpaper.json"
+import animationAudio from "../lotties/audio.json"
+import animationTweet from "../lotties/tweet.json"
 import animationAfrica from "../lotties/africa.json"
 import animationAfrica2 from "../lotties/africa2.json"
 import animationBrazil from "../lotties/brazil.json"
@@ -145,6 +145,8 @@ gsap.registerPlugin(ScrollTrigger)
 export default function Home() {
 
   useEffect(() => {
+
+    //Creates CORS error when not on ICFJ domain. Uncomment For Production
     // const pmFrame = new window.Pmframe({
     //   element: "mosaics",
     //   page: "https://icfjmosaic.com",

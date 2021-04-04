@@ -14,9 +14,6 @@ export default function LanguageTicker(props) {
     padding-bottom: 24px;
     word-spacing: 3em;
   `
-  // const Languages = styled(Marquee)`
-
-  // `
   return (
     <Ticker className={props.className}>
       <Marquee speed={.06} >{props.children}</Marquee>

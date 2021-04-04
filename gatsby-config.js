@@ -45,7 +45,6 @@ module.exports = {
       resolve: 'gatsby-plugin-zopfli',
       options: {
         verbose: true,
-        // extensions: ['css', 'html', 'js', 'svg']
       }
     },
     `gatsby-plugin-sharp`,
