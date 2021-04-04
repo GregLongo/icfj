@@ -4,7 +4,7 @@ import Lottie from "react-lottie"
 
 class UncontrolledLottie extends Component {
   render() {
-     const defaultOptions = {
+    const defaultOptions = {
       autoplay: true,
       loop: true,
       animationData: this.props.animation,

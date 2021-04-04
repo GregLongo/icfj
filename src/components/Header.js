@@ -2,8 +2,6 @@ import React from "react"
 import styled from "@emotion/styled"
 import Logo from "../images/icfj-logo.png"
 import MenuSlant from "../components/MenuSlant.js"
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-// import { faTwitter, faFacebookF } from "@fortawesome/free-brands-svg-icons"
 
 export default function Header(props) {
   const mobile = props.bp[1]
@@ -14,7 +12,7 @@ export default function Header(props) {
     display: grid;
     align-items: center;
     grid-template-columns: repeat(3, 1fr);
-    margin-left: .5rem;
+    margin-left: 0.5rem;
     margin-right: 1rem;
     height: 6rem;
     @media (min-width: ${mobile}) {
@@ -34,48 +32,10 @@ export default function Header(props) {
       width: 300px;
     }
   `
-  const Social = styled.div`
-    white-space: nowrap;
-    font-family: ubuntu;
-    display: grid;
-    grid-column-gap: 1rem;
-    align-items: center;
-    justify-content: end;
-    grid-template-columns: repeat(3, auto);
-    margin-left: 20px;
-    @media (min-width: ${mobile}) {
-      grid-template-columns: repeat(4, auto);
-      margin-left: 0;
-    }
-    svg {
-      font-size: 18px;
-    }
-  `
-
-  // const SocialText = styled.a`
-  //   font-size: 1em;
-  //   text-decoration: none;
-  //   float: right;
-  //   @media (min-width: ${mobile}) {
-  //     font-size: 1.4em;
-  //   }
-  //   &:nth-of-type(1) {
-  //     color: #149ee7;
-  //     grid-column-start: span 4;
-  //     @media (min-width: ${tablet}) {
-  //       grid-column-start: span 1;
-  //     }
-  //   }
-  //   &:nth-of-type(2) {
-  //     color: black;
-  //   }
-  // `
   return (
     <HeaderContainer>
       <MenuSlant />
-      <LogoMd src ={Logo}/>
-      <Social>
-      </Social>
+      <LogoMd src={Logo} />
     </HeaderContainer>
   )
 }

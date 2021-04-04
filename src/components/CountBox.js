@@ -2,7 +2,6 @@ import React from "react"
 import styled from "@emotion/styled"
 import { css } from "@emotion/react"
 import TriggeredCounter from "../components/TriggeredCounter.js"
-// import Highlighter from "../components/Highlighter.js"
 import facepaint from "facepaint"
 
 export default function CountBox(props) {
@@ -122,14 +121,14 @@ export default function CountBox(props) {
     ${mq({
       fontSize: ["1.5em", "2em", "3em"],
     })} color: white;
-    margin: .5em;
+    margin: 0.5em;
   `
   const SubSubheader = styled.div`
     font-family: ubuntu;
     ${mq({
       fontSize: ["1em", "1.25em", "1.5em"],
     })} color: black;
-    margin: .5em;
+    margin: 0.5em;
     font-weight: 700;
   `
 

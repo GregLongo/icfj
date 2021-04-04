@@ -8,7 +8,7 @@ import styled from "@emotion/styled"
 import facepaint from "facepaint"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import LazyLoad from 'react-lazy-load';
+import LazyLoad from "react-lazy-load"
 
 //UI
 import Header from "../components/Header.js"
@@ -39,10 +39,10 @@ import TriggeredLottie from "../components/TriggeredLottie.js"
 
 //Animations
 import animationMasthead from "../lotties/Masthead_CompressedStrips_V02"
-import animationCameras from "../lotties/cameras_mobile.json" 
-import animationPenPaper from "../lotties/penpaper_mobile.json"
-import animationAudio from "../lotties/audio_mobile.json"
-import animationTweet from "../lotties/tweet_mobile.json"
+import animationCameras from "../lotties/cameras.json"
+import animationPenPaper from "../lotties/penpaper.json"
+import animationAudio from "../lotties/audio.json"
+import animationTweet from "../lotties/tweet.json"
 import animationAfrica from "../lotties/africa.json"
 import animationAfrica2 from "../lotties/africa2.json"
 import animationBrazil from "../lotties/brazil.json"
@@ -50,7 +50,6 @@ import animationSouthAmerica from "../lotties/southamerica.json"
 import animationPie from "../lotties/pie_nu.json"
 import animationTribute from "../lotties/tribute.json"
 import animationMiddleEast from "../lotties/northafrica_middleeast.json"
-
 
 //svg
 import Platinum from "../svg/platinum.svg"
@@ -62,7 +61,6 @@ import PatternCountries from "../images/Pattern_Countries_Kuler.jpg"
 import PatternLanguages from "../images/Pattern_Languages_Kuler.jpg"
 import PatternCovid from "../images/Pattern_Covid_Kuler.jpg"
 import Languages from "../images/languages_ticker.png"
-
 
 //Themes
 import theme from "../themes/theme.js"
@@ -138,13 +136,11 @@ const DonorTitle = styled(OrgPeople)``
 
 const Donor = styled(OrgPeopleDesc)``
 
-
 gsap.registerPlugin(ScrollTrigger)
 
-
 export default function Home() {
-
   useEffect(() => {
+    //Creates CORS error when not on ICFJ domain. Uncomment For Production
     // const pmFrame = new window.Pmframe({
     //   element: "mosaics",
     //   page: "https://icfjmosaic.com",
@@ -177,10 +173,10 @@ export default function Home() {
         <PendantLeft bp={breakpoints} color="mineShaft">
           <div
             css={mq({
-              display:"table-caption",
+              display: "table-caption",
               fontFamily: "interstate-condensed",
               fontSize: [".75em", ".85em", "1.25em", "1.5em"],
-              maxWidth: ["fit-content","fit-content","fit-content","130px"],
+              maxWidth: ["fit-content", "fit-content", "fit-content", "130px"],
               lineHeight: "1",
               fontWeight: "200",
               textAlign: "center",
@@ -194,21 +190,22 @@ export default function Home() {
           </div>
           <span
             css={mq({
-              paddingRight:[ "1rem","2rem","2rem","3rem"],
+              paddingRight: ["1rem", "2rem", "2rem", "3rem"],
               whiteSpace: "noWrap",
               fontSize: ["1.7em", "2em", "2.5em", "3em"],
             })}
-          >It Takes a Journalist
+          >
+            It Takes a Journalist
           </span>
         </PendantLeft>
         <Container
           css={mq({
             marginTop: ["2rem", "2rem", "3rem"],
-            marginBottom: ["-.6rem","-.7rem","-1rem","-1.2rem"],
+            marginBottom: ["-.6rem", "-.7rem", "-1rem", "-1.2rem"],
             maxWidth: ["100%", "100%", "100%", "1024px"],
           })}
         >
-          <UncontrolledLottie animation={animationMasthead} />
+          <UncontrolledLottie css={css`transform:scaleY(.9175)`} animation={animationMasthead} />
         </Container>
         <TriggeredBgColor color="white" />
         <Section
@@ -319,14 +316,15 @@ export default function Home() {
                 >
                   Over 36 years, ICFJ has provided more than{" "}
                   <TextPop>150,000 journalists</TextPop> from{" "}
-                  <TextPop> 80 countries</TextPop> with{" "}
-                  valuable programs and resources. But we’ve never had a year like 2020.
+                  <TextPop> 80 countries</TextPop> with valuable programs and
+                  resources. But we’ve never had a year like 2020.
                 </p>
                 <p>
                   The pandemic that raged across the globe would have been much
                   worse if journalists had not fulfilled their vital role of
-                  providing audiences with <TextPop>accurate, lifesaving news,</TextPop> and doing
-                  it while combating the spread of false information.
+                  providing audiences with{" "}
+                  <TextPop>accurate, lifesaving news,</TextPop> and doing it
+                  while combating the spread of false information.
                 </p>
                 <p
                   css={css`
@@ -334,46 +332,54 @@ export default function Home() {
                   `}
                 >
                   We at ICFJ are doing our best to help journalists better cover
-                  the <TextPop>story of the century.</TextPop> At the onset of COVID-19, we
-                  galvanized quickly to help them gain access to top
-                  epidemiologists and health practitioners, to the world’s best
-                  trainers in digital journalism techniques, to disinformation
-                  and media sustainability experts. As you’ll see below, tens of
-                  thousands of journalists are benefiting from that effort.
+                  the <TextPop>story of the century.</TextPop> At the onset of
+                  COVID-19, we galvanized quickly to help them gain access to
+                  top epidemiologists and health practitioners, to the world’s
+                  best trainers in digital journalism techniques, to
+                  disinformation and media sustainability experts. As you’ll see
+                  below, tens of thousands of journalists are benefiting from
+                  that effort.
                 </p>
                 <p>
                   In other ICFJ programs, investigative journalists in our
                   networks are collaborating to uncover corruption by those
-                  seeking to get rich from the pandemic. <TextPop>Pioneers in media
-                  innovation</TextPop> are creating new data and social media tools to
-                  help journalists tell the stories of COVID-19 better. And
-                  sustainability experts are helping news outlets improve the
-                  bottom line in a time when economic and political forces
-                  threaten to shut down independent voices.
+                  seeking to get rich from the pandemic.{" "}
+                  <TextPop>Pioneers in media innovation</TextPop> are creating
+                  new data and social media tools to help journalists tell the
+                  stories of COVID-19 better. And sustainability experts are
+                  helping news outlets improve the bottom line in a time when
+                  economic and political forces threaten to shut down
+                  independent voices.
                 </p>
                 <p>
-                  Our motto is <TextPop>It Takes a Journalist.</TextPop> Whether the story is a
-                  global pandemic, racial injustice, climate change or
-                  government malfeasance, it takes a journalist to bring the
-                  public factual information that can mean the difference
-                  between life and death. And whatever the story, ICFJ will be
-                  there to support and empower the journalists who are helping
-                  make our world a better place.
+                  Our motto is <TextPop>It Takes a Journalist.</TextPop> Whether
+                  the story is a global pandemic, racial injustice, climate
+                  change or government malfeasance, it takes a journalist to
+                  bring the public factual information that can mean the
+                  difference between life and death. And whatever the story,
+                  ICFJ will be there to support and empower the journalists who
+                  are helping make our world a better place.
                 </p>
-                <p css={css`font-size: 1.5em`}>Joyce Barnathan, President</p>
-                <ImageQuery filename="sig.png" css={css`
-                 transform:scale(.7)            
-                  @media(min-width:${mobile})
-                  {
-                    margin-left: 5rem;
-                    transform:scale(.8);
-                  }
-                  @media(min-width:${desktop})
-                  {
-                    margin-left: 8rem;
-                    transform:scale(1);
-                  }
-                  `}/> 
+                <p
+                  css={css`
+                    font-size: 1.5em;
+                  `}
+                >
+                  Joyce Barnathan, President
+                </p>
+                <ImageQuery
+                  filename="sig.png"
+                  css={css`
+                    transform:scale(.7) @media(min-width:${mobile}) {
+                      margin-left: 5rem;
+                      transform: scale(0.8);
+                    }
+                    @media (min-width: ${desktop}) {
+                      margin-left: 8rem;
+                      transform: scale(1);
+                    }
+                  `}
+                />
               </ParagraphSlant>
             </div>
           </Container>
@@ -426,8 +432,8 @@ export default function Home() {
                   line-height: 1.65;
                   font-weight: 500;
                   transition-delay: 10ms;
-                  @media(min-width:${mobile}){
-                   font-size: 1.7em;                  
+                  @media (min-width: ${mobile}) {
+                    font-size: 1.7em;
                   }
                 `}
               >
@@ -436,7 +442,7 @@ export default function Home() {
                 societies and lives.
               </TriggeredTextBlock>
             </div>
-              <FrameEmbed
+            <FrameEmbed
               bp={breakpoints}
               buttonColor="goldenGrass"
               caption="Click on this photo to meet members of our inspiring network."
@@ -451,7 +457,7 @@ export default function Home() {
                 }
               `}
             >
-        {/*  <div id="mosaics"></div>*/} 
+              {/*  <div id="mosaics"></div>*/}
             </FrameEmbed>
             <div
               css={css`
@@ -466,7 +472,7 @@ export default function Home() {
               `}
             >
               Better Journalism, Better Lives
-          </div>
+            </div>
             <FrameEmbed
               bp={breakpoints}
               buttonColor="goldenGrass"
@@ -482,14 +488,14 @@ export default function Home() {
                 }
               `}
             >
-            <LazyLoad  debounce={false} offsetTop={200} >
-              <iframe
-                title="vidtwo"
-                src="https://www.youtube.com/embed/f1SBTk3CXhI"
-                frameBorder="0"
-                allowFullScreen
-                loading="lazy"
-              ></iframe>
+              <LazyLoad debounce={false} offsetTop={200}>
+                <iframe
+                  title="vidtwo"
+                  src="https://www.youtube.com/embed/f1SBTk3CXhI"
+                  frameBorder="0"
+                  allowFullScreen
+                  loading="lazy"
+                ></iframe>
               </LazyLoad>
             </FrameEmbed>
             <Quote
@@ -504,11 +510,16 @@ export default function Home() {
                 marginRight: "auto",
               })}
             >
-              With ICFJ’s support, we are partnering with under-resourced communities to change lives with reliable, crowdsourced news."<br></br>
-              <span css={css`
-                opacity: 0.5;
-              `}>
-              &mdash; Devansh Mehta, CGNet Swara, India </span>
+              With ICFJ’s support, we are partnering with under-resourced
+              communities to change lives with reliable, crowdsourced news."
+              <br></br>
+              <span
+                css={css`
+                  opacity: 0.5;
+                `}
+              >
+                &mdash; Devansh Mehta, CGNet Swara, India{" "}
+              </span>
             </Quote>
           </Container>
           <TriggeredBgColor color="curiousBlue" />
@@ -584,17 +595,17 @@ export default function Home() {
                 }
               `}
             >
-            <LazyLoad  debounce={false} offsetTop={200}>
-              <iframe
-                title="vidfour"
-                width="100%"
-                height="570px"
-                src="https://www.youtube.com/embed/UoshtxBZhGs"
-                frameBorder="0"
-                allowFullScreen
-                loading="lazy"
-              ></iframe>
-            </LazyLoad>
+              <LazyLoad debounce={false} offsetTop={200}>
+                <iframe
+                  title="vidfour"
+                  width="100%"
+                  height="570px"
+                  src="https://www.youtube.com/embed/UoshtxBZhGs"
+                  frameBorder="0"
+                  allowFullScreen
+                  loading="lazy"
+                ></iframe>
+              </LazyLoad>
             </FrameEmbed>
             <div
               css={css`
@@ -656,10 +667,13 @@ export default function Home() {
             >
               ICFJ gave me and my listeners a global perspective of how other
               countries were handling the pandemic. ”<br></br>
-              <span css={css`
-                opacity: 0.5;
-              `}>
-              &mdash; Chidera Rosecamille Aneke, Darling FM, Nigeria </span>
+              <span
+                css={css`
+                  opacity: 0.5;
+                `}
+              >
+                &mdash; Chidera Rosecamille Aneke, Darling FM, Nigeria{" "}
+              </span>
             </Quote>
             <div
               css={css`
@@ -672,15 +686,15 @@ export default function Home() {
               <ImageQuery filename="Sid.jpg" />
               <ImageQuery filename="redshoes.jpg" />
               <ImageQuery filename="maskgirlcrop.png" />
-              <ImageQuery filename="docwhite.png" />
+              <ImageQuery filename="docwhite.jpg" />
               <ImageQuery filename="docblue.png" />
               <ImageQuery filename="agnes.png" />
             </div>
             <Credits>
               {" "}
-              Credits: Siddharth Bokolia (top left), John Gitonga
-              (top right), Lucina Paternesi Meloni (middle left), Carolyn Sung (middle right),
-              Amit Chakraborty (bottom left), Agnes Penda (bottom right)
+              Credits: Siddharth Bokolia (top left), John Gitonga (top right),
+              Lucina Paternesi Meloni (middle left), Carolyn Sung (middle
+              right), Amit Chakraborty (bottom left), Agnes Penda (bottom right)
             </Credits>
             <div
               css={css`
@@ -693,118 +707,130 @@ export default function Home() {
                 }
               `}
             >
-            <div
-              css={css`
-                display: grid;
-                grid-template-columns: 100%;
-                grid-column-gap: 1.5rem;
-                margin-top: 2rem;
-                @media (min-width: ${tablet}) {
-                  grid-template-columns: 6fr 4fr;
-                }
-              `}
-            >
-              <div>
-               <Subheader>
-                <span css={theme => ({
-                    color: theme.colors.curiousBlue,
-                    fontWeight: "800",
-                  })}>
-                  The World's Most Comprehensive Site for Journalists{" "}
-                </span>
-              </Subheader>
-              <p
+              <div
                 css={css`
-                  font-family: interstate-condensed;
-                  font-size: 1.75em;
-                  font-weight: 500;
+                  display: grid;
+                  grid-template-columns: 100%;
+                  grid-column-gap: 1.5rem;
+                  margin-top: 2rem;
+                  @media (min-width: ${tablet}) {
+                    grid-template-columns: 6fr 4fr;
+                  }
                 `}
               >
-                Offering expert advice, tools and opportunities for the news
-                media
-              </p>
-              </div> 
-              <div css={css`
-
-              `}>
-
-               <a href="https://ijnet.org" aria-label="IJNet Link" rel="noreferrer" target = "_blank">
-                <ImageQuery css={css`@media(max-width:${tablet}){max-width: 60%; margin: auto}`} filename="ijnet.png" />
-               </a>
-            </div>
-            </div>
-          </div>
-          <div
-            css={css`
-              margin-top: 2rem;
-              display: grid;
-              font-family: interstate-condensed;
-              font-weight: 500;
-              grid-template-columns: 100%;
-              @media (min-width: ${tablet}) {
-                margin-top: 2.5rem;
-                grid-template-columns: 25% 35% 40%;
-              }
-              div {
-                text-align: center;
-                justify-content: center;
-                display: flex;
-                flex-direction: column;
-              }
-              span {
-                color: white;
-                font-size: 2em;
-              }
-            `}
-          >
-            <div
-              css={css`
-                @media (min-width: ${tablet}) {
-                  border: 20px solid #149ee7;
-                  padding: 2rem;
-                }
-              `}
-            >
-              <TriggeredCounter
-                css={theme => ({ color: theme.colors.black })}
-                val={"8"}
-              />
-              <span>Languages</span>
+                <div>
+                  <Subheader>
+                    <span
+                      css={theme => ({
+                        color: theme.colors.curiousBlue,
+                        fontWeight: "800",
+                      })}
+                    >
+                      The World's Most Comprehensive Site for Journalists{" "}
+                    </span>
+                  </Subheader>
+                  <p
+                    css={css`
+                      font-family: interstate-condensed;
+                      font-size: 1.75em;
+                      font-weight: 500;
+                    `}
+                  >
+                    Offering expert advice, tools and opportunities for the news
+                    media
+                  </p>
+                </div>
+                <div css={css``}>
+                  <a
+                    href="https://ijnet.org"
+                    aria-label="IJNet Link"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <ImageQuery
+                      css={css`
+                        @media (max-width: ${tablet}) {
+                          max-width: 60%;
+                          margin: auto;
+                        }
+                      `}
+                      filename="ijnet.png"
+                    />
+                  </a>
+                </div>
+              </div>
             </div>
             <div
               css={css`
+                margin-top: 2rem;
+                display: grid;
+                font-family: interstate-condensed;
+                font-weight: 500;
+                grid-template-columns: 100%;
                 @media (min-width: ${tablet}) {
-                  border: 20px solid black;
-                  padding: 2rem;
+                  margin-top: 2.5rem;
+                  grid-template-columns: 25% 35% 40%;
+                }
+                div {
+                  text-align: center;
+                  justify-content: center;
+                  display: flex;
+                  flex-direction: column;
+                }
+                span {
+                  color: white;
+                  font-size: 2em;
                 }
               `}
             >
-              <TriggeredCounter
-                css={theme => ({
-                  color: theme.colors.curiousBlue,
-                  fontSize: "8em",
-                })}
-                val={"1725"}
-              />
-              <span>Resources</span>
-            </div>
-            <div
-              css={css`
-                @media (min-width: ${tablet}) {
-                  border: 20px solid #149ee7;
-                  padding: 2rem;
-                }
-              `}
-            >
-              <TriggeredCounter
-                css={theme => ({
-                  color: theme.colors.black,
-                  fontSize: "6em",
-                })}
-                val={"182000"}
-              />
-              <span>Average Monthly Visitors</span>
-            </div>
+              <div
+                css={css`
+                  @media (min-width: ${tablet}) {
+                    border: 20px solid #149ee7;
+                    padding: 2rem;
+                  }
+                `}
+              >
+                <TriggeredCounter
+                  css={theme => ({ color: theme.colors.black })}
+                  val={"8"}
+                />
+                <span>Languages</span>
+              </div>
+              <div
+                css={css`
+                  @media (min-width: ${tablet}) {
+                    border: 20px solid black;
+                    padding: 2rem;
+                  }
+                `}
+              >
+                <TriggeredCounter
+                  css={theme => ({
+                    color: theme.colors.curiousBlue,
+                    fontSize: "8em",
+                  })}
+                  val={"1725"}
+                />
+                <span>Resources</span>
+              </div>
+              <div
+                css={css`
+                  @media (min-width: ${tablet}) {
+                    border: 20px solid #149ee7;
+                    padding: 2rem;
+                  }
+                `}
+              >
+                <TriggeredCounter
+                  css={theme => ({
+                    color: theme.colors.black,
+                    fontSize: "6em",
+                  })}
+                  val={"182000"}
+                />
+                <span>Average Monthly Visitors</span>
+              </div>
             </div>
           </Container>
           <LanguageTicker
@@ -874,8 +900,8 @@ export default function Home() {
                 display: grid;
                 grid-template-columns: 5% 95%;
                 margin-top: 3rem;
-               margin-bottom: -15rem;
-               @media (min-width: ${mobile}) {
+                margin-bottom: -15rem;
+                @media (min-width: ${mobile}) {
                   margin-bottom: -10rem;
                 }
                 @media (min-width: ${tablet}) {
@@ -899,22 +925,25 @@ export default function Home() {
                     margin-top: 2rem;
                   }
                 `}
-              ><p>
-                Peru-based{" "}
-                <TextPop
-                  color="#DDAF24"
-                  css={mq({ display: ["block", "block", "block","inline-block"] })}
-                >
-                  ICFJ Knight Fellow Fabiola Torres
-                </TextPop>{" "}
-                created Salud con Lupa, a health news outlet that is uncovering
-                corruption during COVID-19.
-              </p>
-              <p>
-                They exposed inflated prices for
-                face shields, environmental violations by corporations and
-                wasted protective-gear spending, prompting government action.
-              </p>
+              >
+                <p>
+                  Peru-based{" "}
+                  <TextPop
+                    color="#DDAF24"
+                    css={mq({
+                      display: ["block", "block", "block", "inline-block"],
+                    })}
+                  >
+                    ICFJ Knight Fellow Fabiola Torres
+                  </TextPop>{" "}
+                  created Salud con Lupa, a health news outlet that is
+                  uncovering corruption during COVID-19.
+                </p>
+                <p>
+                  They exposed inflated prices for face shields, environmental
+                  violations by corporations and wasted protective-gear
+                  spending, prompting government action.
+                </p>
               </ParagraphSlant>
             </div>
             <div
@@ -940,43 +969,43 @@ export default function Home() {
               </div>
               <div>
                 <ImageQuery
-                 css={css`
-                  max-width: 100%;
-                   max-height: 280px;
-                `}
-                 filename="bigeye.jpg" />
+                  css={css`
+                    max-width: 100%;
+                    max-height: 280px;
+                  `}
+                  filename="bigeye.jpg"
+                />
                 <Credits>Credit: Rocío Urtecho</Credits>
               </div>
-              </div>
+            </div>
 
-
-                <div
-                  css={css`
-                    color: white;
-                    font-family: interstate-condensed;
-                    font-weight: 500;
-                    font-size: 1.25em;
-                    line-height: 2;
-                    @media (min-width: ${mobile}) {
-                      font-size: 1.7em;
-                    }
-                  `}
-                >
-                  <p>
-                    Stories by ICFJ partner, the Organized Crime and Corruption
-                    Reporting Project (OCCRP), based in Eastern Europe, have contributed to the recovery of more than{" "}
-                    <TextPop color="#DDAF24">
-                      $7.3 billion in illicitly acquired funds.
-                    </TextPop>
-                    </p>
-                  <p>
-                    In Latin America, ICFJ helped launch Connectas, which has
-                    produced more than &nbsp;
-                    <TextPop color="#DDAF24">274 in-depth stories</TextPop>{" "}
-                    exposing mismanagement of billions of dollars in public
-                    funds.
-                  </p>
-                </div>
+            <div
+              css={css`
+                color: white;
+                font-family: interstate-condensed;
+                font-weight: 500;
+                font-size: 1.25em;
+                line-height: 2;
+                @media (min-width: ${mobile}) {
+                  font-size: 1.7em;
+                }
+              `}
+            >
+              <p>
+                Stories by ICFJ partner, the Organized Crime and Corruption
+                Reporting Project (OCCRP), based in Eastern Europe, have
+                contributed to the recovery of more than{" "}
+                <TextPop color="#DDAF24">
+                  $7.3 billion in illicitly acquired funds.
+                </TextPop>
+              </p>
+              <p>
+                In Latin America, ICFJ helped launch Connectas, which has
+                produced more than &nbsp;
+                <TextPop color="#DDAF24">274 in-depth stories</TextPop> exposing
+                mismanagement of billions of dollars in public funds.
+              </p>
+            </div>
             <Quote
               bp={breakpoints}
               css={mq({
@@ -986,18 +1015,23 @@ export default function Home() {
                 width: "fit-content",
                 marginLeft: "auto",
                 marginRight: "auto",
-
               })}
             >
-              <span css={css`
-                color: white;
-              `}>
-              We exposed corruption and human rights abuses working in a
-              cross-border network supported by ICFJ.”<br></br>
-              <span css={css`
-                opacity: 0.5;
-              `}>
-              &mdash; Lisseth Boon, Connectas, Venezuela </span></span>
+              <span
+                css={css`
+                  color: white;
+                `}
+              >
+                We exposed corruption and human rights abuses working in a
+                cross-border network supported by ICFJ.”<br></br>
+                <span
+                  css={css`
+                    opacity: 0.5;
+                  `}
+                >
+                  &mdash; Lisseth Boon, Connectas, Venezuela{" "}
+                </span>
+              </span>
             </Quote>
           </Container>
           <TriggeredBgColor color="fruitSalad" />
@@ -1084,13 +1118,14 @@ export default function Home() {
                   fontSize: ["1em", "1.2em", "1.5em"],
                   lineHeight: ["1", "1.5", "2"],
                   textAlign: "right",
-                  marginTop: ["1em", "2em", "2em","4em"],
+                  marginTop: ["1em", "2em", "2em", "4em"],
                 })}
               >
                 In Nigeria, journalists, fact checkers and social media
-                influencers &mdash; including a government minister and a Nollywood
-                star &mdash; are teaming up to combat misinformation about health and
-                other issues that matter to people’s lives, a project led by{" "}
+                influencers &mdash; including a government minister and a
+                Nollywood star &mdash; are teaming up to combat misinformation
+                about health and other issues that matter to people’s lives, a
+                project led by{" "}
                 <TextPop color="#D44934">
                   ICFJ Knight Fellow Hannah Ajakaiye.
                 </TextPop>
@@ -1120,11 +1155,13 @@ export default function Home() {
                 })}
               >
                 Women journalists and data analysts from five countries shed
-                light on marginalized groups &mdash; such as domestic workers and
-                HIV/AIDS patients &mdash; hardest hit by the pandemic, as part of the{" "}
+                light on marginalized groups &mdash; such as domestic workers
+                and HIV/AIDS patients &mdash; hardest hit by the pandemic, as
+                part of the{" "}
                 <Link
                   href="https://urldefense.com/v3/__https:/theawjp.org/__;!!Ie25XFjv7UPO!4QFkJUrcVekppLkvEruzM2TiStyjctG8zz8IV7SGT2ah_DeDeH2DmSK44qtt$"
-                  rel="noreferrer" target="_blank"
+                  rel="noreferrer"
+                  target="_blank"
                 >
                   Africa Women Journalism Project
                 </Link>
@@ -1201,7 +1238,8 @@ export default function Home() {
                 information thanks to{" "}
                 <Link
                   href="https://urldefense.com/v3/__https:/sciencepulse.org/about__;!!Ie25XFjv7UPO!4QFkJUrcVekppLkvEruzM2TiStyjctG8zz8IV7SGT2ah_DeDeH2DmfhbEiCV$"
-                  rel="noreferrer" target="_blank"
+                  rel="noreferrer"
+                  target="_blank"
                 >
                   Science Pulse
                 </Link>
@@ -1221,7 +1259,7 @@ export default function Home() {
           <TriggeredBgColor color="affair" />
           <TriggeredLottie
             css={css`
-              opacity: .8;
+              opacity: 0.8;
             `}
             animation={animationPenPaper}
             loop={true}
@@ -1277,53 +1315,58 @@ export default function Home() {
                 margin-top: 5rem;
               `}
             >
-            <div css={css`
-                position: relative;
-              `}>
-              <ImageQuery
+              <div
                 css={css`
-                  height: 510px;
+                  position: relative;
                 `}
-                filename="conference.jpeg"
-              />
-                <div css={css`
-                  background: rgba(221, 175, 36, 0.6);
-                  position: absolute;
-                  bottom: 50px;
-                  padding: 16px 32px;
-                  font-family: interstate-condensed;
-                  font-size: 1.7em;
-                  color: white;
-                  @media (min-width: ${mobile}) {
-                    font-size: 2.5em;
-                  }
-                `} ><TextPop>47 Media Entrepreneurs</TextPop>
+              >
+                <ImageQuery
+                  css={css`
+                    height: 510px;
+                  `}
+                  filename="conference.jpeg"
+                />
+                <div
+                  css={css`
+                    background: rgba(221, 175, 36, 0.6);
+                    position: absolute;
+                    bottom: 50px;
+                    padding: 16px 32px;
+                    font-family: interstate-condensed;
+                    font-size: 1.7em;
+                    color: white;
+                    @media (min-width: ${mobile}) {
+                      font-size: 2.5em;
+                    }
+                  `}
+                >
+                  <TextPop>47 Media Entrepreneurs</TextPop>
+                </div>
+                <TriggeredLottie
+                  css={css`
+                    position: absolute;
+                    background: rgba(221, 175, 36, 0.6);
+                    clip-path: inset(20% 0% 20% 0%);
+                    width: 120px;
+                    top: 0;
+                    right: 0;
+                    margin-right: 30px;
+                    @media (min-width: ${mobile}) {
+                      width: 260px;
+                      margin-right: 0px;
+                      margin-bottom: -32px;
+                      margin-top: -6px;
+                    }
+                    @media (min-width: ${tablet}) {
+                      bottom: 0;
+                      top: auto;
+                    }
+                  `}
+                  animation={animationMiddleEast}
+                  loop={false}
+                />
+                <Credits>Credit: Ibrahim Thunian/Saudi Women's Stories</Credits>
               </div>
- <TriggeredLottie
-                css={css`
-                  position: absolute;
-                  background: rgba(221, 175, 36, 0.6);
-                  clip-path: inset(20% 0% 20% 0%);
-                  width: 120px;
-                  top: 0;
-                  right: 0;
-                  margin-right: 30px;
-                  @media(min-width:${mobile}){
-                    width: 260px;
-                    margin-right: 0px;
-                    margin-bottom: -32px;
-                    margin-top: -6px;
-                  }
-                  @media(min-width:${tablet}){
-                    bottom: 0;
-                    top: auto;
-                  }
-                `}
-                animation={animationMiddleEast}
-                loop={false}
-              />
-          <Credits>Credit: Ibrahim Thunian/Saudi Women's Stories</Credits>
-          </div>
               <div
                 css={css`
                   color: white;
@@ -1343,7 +1386,8 @@ export default function Home() {
                 improved the business prospects of their startups through our{" "}
                 <Link
                   href="https://ijnet.org/en/story/meet-our-ijnet-arabic-2020-mentoring-center-participants"
-                  rel="noreferrer" target="_blank"
+                  rel="noreferrer"
+                  target="_blank"
                 >
                   <Highlighter color="goldenGrass">
                     IJNet Arabic Mentoring Center
@@ -1358,39 +1402,42 @@ export default function Home() {
                 margin-top: 5rem;
               `}
             >
-            <div css={css`
-                position: relative;
-              `}>
-              <ImageQuery
+              <div
                 css={css`
-                  height: 510px;
+                  position: relative;
                 `}
-                filename="FacebookAccelerator.jpg"
-              />
- <TriggeredLottie
-                css={css`
-                  position: absolute;
-                  background: rgba(20, 158, 231, 0.6);
-                  clip-path: inset(8% 10% 10% 20%);
-                  width: 120px;
-                  top: 0;
-                  right: 0;
-                  margin-right: 12px;
-                  margin-top: 16px;
-                  @media(min-width:${mobile}){
-                    width: 260px;
-                    margin-right: -27px;
-                    margin-bottom: -26px;
-                  }
-                  @media(min-width:${tablet}){
-                    bottom: 0;
-                    top: auto;
-                  }
-                `}
-                animation={animationBrazil}
-                loop={false}
-              />
-                <div css={css`
+              >
+                <ImageQuery
+                  css={css`
+                    height: 510px;
+                  `}
+                  filename="FacebookAccelerator.jpg"
+                />
+                <TriggeredLottie
+                  css={css`
+                    position: absolute;
+                    background: rgba(20, 158, 231, 0.6);
+                    clip-path: inset(8% 10% 10% 20%);
+                    width: 120px;
+                    top: 0;
+                    right: 0;
+                    margin-right: 12px;
+                    margin-top: 16px;
+                    @media (min-width: ${mobile}) {
+                      width: 260px;
+                      margin-right: -27px;
+                      margin-bottom: -26px;
+                    }
+                    @media (min-width: ${tablet}) {
+                      bottom: 0;
+                      top: auto;
+                    }
+                  `}
+                  animation={animationBrazil}
+                  loop={false}
+                />
+                <div
+                  css={css`
                     background: rgba(20, 158, 231, 0.7);
                     position: absolute;
                     bottom: 50px;
@@ -1402,7 +1449,9 @@ export default function Home() {
                     @media (min-width: ${mobile}) {
                       font-size: 2.5em;
                     }
-                  `} ><TextPop>600,000 Registered Users</TextPop>
+                  `}
+                >
+                  <TextPop>600,000 Registered Users</TextPop>
                 </div>
               </div>
               <div
@@ -1421,13 +1470,13 @@ export default function Home() {
                   }
                 `}
               >
-
                 Local newsrooms in Brazil increased their readership while
                 participating in the{" "}
                 <Highlighter color="curiousBlue">
                   <Link
                     href="https://www.facebook.com/journalismproject/programs/accelerator/brazilian-publishers-thriving"
-                    rel="noreferrer" target="_blank"
+                    rel="noreferrer"
+                    target="_blank"
                   >
                     Local News Accelerator
                   </Link>
@@ -1442,53 +1491,58 @@ export default function Home() {
                 margin-top: 5rem;
               `}
             >
-            <div css={css`
-              position: relative;
-              `}>
-              <ImageQuery
+              <div
                 css={css`
-                  height: 510px;
+                  position: relative;
                 `}
-                filename="Pitazo.jpeg"
-              />
-              <div css={css`
-                background: rgba(212, 73, 52, 0.6);
-                position: absolute;
-                  padding: 16px 32px;
-                  font-family: interstate-condensed;
-                  font-size: 1.7em;
-                  color: white;
-                  bottom: 50px;
-                  font-weight: 700;
-                  @media(min-width:${mobile}){
-                   font-size: 2.5em;
-                  }
-                `} ><TextPop>$350,000 in New Revenue</TextPop>
-              </div>
- <TriggeredLottie
-                css={css`
-                  position: absolute;
-                  background: rgba(212, 73, 52, 0.6);
-                  clip-path: inset(8% 10% 0% 20%);
-                  width: 120px;
-                  top: 0;
-                  right: 0;
-                  margin-right: 12px;
-                  margin-top: 16px;
-                  @media(min-width:${mobile}){
-                    width: 260px;
-                    margin-right: -27px;
-                    margin-bottom: 16px;
-                  }
-                  @media(min-width:${tablet}){
-                    bottom: 0;
-                    top: auto;
-                  }
-                `}
-                animation={animationSouthAmerica}
-                loop={false}
-              />
-              <Credits>Credit: Ruth Lara Castillo/El Pitazo</Credits>
+              >
+                <ImageQuery
+                  css={css`
+                    height: 510px;
+                  `}
+                  filename="Pitazo.jpeg"
+                />
+                <div
+                  css={css`
+                    background: rgba(212, 73, 52, 0.6);
+                    position: absolute;
+                    padding: 16px 32px;
+                    font-family: interstate-condensed;
+                    font-size: 1.7em;
+                    color: white;
+                    bottom: 50px;
+                    font-weight: 700;
+                    @media (min-width: ${mobile}) {
+                      font-size: 2.5em;
+                    }
+                  `}
+                >
+                  <TextPop>$350,000 in New Revenue</TextPop>
+                </div>
+                <TriggeredLottie
+                  css={css`
+                    position: absolute;
+                    background: rgba(212, 73, 52, 0.6);
+                    clip-path: inset(8% 10% 0% 20%);
+                    width: 120px;
+                    top: 0;
+                    right: 0;
+                    margin-right: 12px;
+                    margin-top: 16px;
+                    @media (min-width: ${mobile}) {
+                      width: 260px;
+                      margin-right: -27px;
+                      margin-bottom: 16px;
+                    }
+                    @media (min-width: ${tablet}) {
+                      bottom: 0;
+                      top: auto;
+                    }
+                  `}
+                  animation={animationSouthAmerica}
+                  loop={false}
+                />
+                <Credits>Credit: Ruth Lara Castillo/El Pitazo</Credits>
               </div>
               <div
                 css={css`
@@ -1511,7 +1565,8 @@ export default function Home() {
                 advertising and other client services &mdash; and{" "}
                 <Link
                   href="https://www.icfj.org/news/velocidad-helps-news-startups-grow-membership-and-revenue-program-enters-second-phase"
-                  rel="noreferrer" target="_blank"
+                  rel="noreferrer"
+                  target="_blank"
                 >
                   it's just the beginning
                 </Link>
@@ -1535,10 +1590,13 @@ export default function Home() {
               {" "}
               With the help of IJNet mentors, I empowered more women and made my
               news outlet stronger financially.”<br></br>
-              <span css={css`
-                opacity: 0.5;
-              `}>
-              &mdash; Sheikha Aldosary, Saudi Women's Stories, Saudi Arabia </span>
+              <span
+                css={css`
+                  opacity: 0.5;
+                `}
+              >
+                &mdash; Sheikha Aldosary, Saudi Women's Stories, Saudi Arabia{" "}
+              </span>
             </Quote>
           </Container>
           <TriggeredBgColor color="affair" />
@@ -1547,7 +1605,7 @@ export default function Home() {
           <TriggeredBgColor color="valencia" />
           <TriggeredLottie
             css={css`
-              opacity: .8;
+              opacity: 0.8;
             `}
             animation={animationAudio}
             loop={true}
@@ -1563,9 +1621,14 @@ export default function Home() {
                 }
               `}
             >
-            <span css={css`
-              color: "white";
-            `}>  Thought Leadership</span>
+              <span
+                css={css`
+                  color: "white";
+                `}
+              >
+                {" "}
+                Thought Leadership
+              </span>
             </TriggeredPendantRight>
             <div
               css={css`
@@ -1600,14 +1663,16 @@ export default function Home() {
               During a tumultous year, ICFJ and its partners identified the{" "}
               <Link
                 href="https://www.icfj.org/news/new-global-survey-raises-red-flags-journalism-covid-19-era"
-                rel="noreferrer" target="_blank"
+                rel="noreferrer"
+                target="_blank"
               >
                 impact of the pandemic on journalism
               </Link>{" "}
               as well as the escalating problem of{" "}
               <Link
                 href="https://www.icfj.org/news/icfj-unesco-study-online-violence-fueled-disinformation-and-political-attacks-deeply-harms"
-                rel="noreferrer" target="_blank"
+                rel="noreferrer"
+                target="_blank"
               >
                 online violence against women journalists
               </Link>
@@ -1653,66 +1718,71 @@ export default function Home() {
                 </Subheader>
               </div>
               <SmallSubheader>A UNESCO-ICFJ partnership</SmallSubheader>
-              <div css={css`position:relative`}>
               <div
                 css={css`
-                  background: rgba(212, 73, 52, 0.6);
-                  position: absolute;
-                  bottom: 0;
-                  right: 0;
-                  z-index: 999;
-                  font-family: interstate-condensed;
-                  color: white;
-                  font-weight: 500;
-                  ${mq({
-                    padding: [
-                      "1rem 1rem 1rem 1rem",
-                      "1rem 1rem 1rem 1rem",
-                      "2rem 1rem 3rem 1rem",
-                    ],
-                    fontSize: ["1em", "1.2em", "1.5em"],
-                    width: ["160px", "180px", "212px"],
-                  })}
+                  position: relative;
                 `}
               >
-                <TextPop color="#DDAF24">More than one third </TextPop> of
-                respondents said political actors were a common source of abuse.
+                <div
+                  css={css`
+                    background: rgba(212, 73, 52, 0.6);
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    z-index: 999;
+                    font-family: interstate-condensed;
+                    color: white;
+                    font-weight: 500;
+                    ${mq({
+                      padding: [
+                        "1rem 1rem 1rem 1rem",
+                        "1rem 1rem 1rem 1rem",
+                        "2rem 1rem 3rem 1rem",
+                      ],
+                      fontSize: ["1em", "1.2em", "1.5em"],
+                      width: ["160px", "180px", "212px"],
+                    })}
+                  `}
+                >
+                  <TextPop color="#DDAF24">More than one third </TextPop> of
+                  respondents said political actors were a common source of
+                  abuse.
+                </div>
+                <div
+                  css={css`
+                    background: rgba(221, 175, 36, 0.6);
+                    position: absolute;
+                    z-index: 999;
+                    font-family: interstate-condensed;
+                    font-weight: 500;
+                    ${mq({
+                      padding: [
+                        ".5rem .5rem .5rem .5rem",
+                        "1rem 1rem 1rem 1rem",
+                        "2rem 1rem 3rem 1rem",
+                      ],
+                      fontSize: ["1em", "1.2em", "1.5em"],
+                      width: ["200px", "180px", "212px"],
+                      right: ["0px", "0px", "0px", "260px"],
+                      top: ["0px", "0px", "0px", "60px"],
+                    })}
+                  `}
+                >
+                  <TextPop color="#D44934">One in five</TextPop> women said they
+                  suffered attacks or abuse offline in the physical world
+                  stemming from online harassment.
+                </div>
+                <ImageQuery
+                  css={mq({ height: ["200px", "400px", "510px"] })}
+                  filename="Anna.jpeg"
+                />
               </div>
-              <div
-                css={css`
-                  background: rgba(221, 175, 36, 0.6);
-                  position: absolute;
-                  z-index: 999;
-                  font-family: interstate-condensed;
-                  font-weight: 500;
-                  ${mq({
-                    padding: [
-                      ".5rem .5rem .5rem .5rem",
-                      "1rem 1rem 1rem 1rem",
-                      "2rem 1rem 3rem 1rem",
-                    ],
-                    fontSize: ["1em", "1.2em", "1.5em"],
-                    width: ["200px", "180px", "212px"],
-                    right: ["0px", "0px", "0px", "260px"],
-                    top: ["0px", "0px","0px","60px"],
-                  })}
-                `}
-              >
-                <TextPop color="#D44934">One in five</TextPop> women said they
-                suffered attacks or abuse offline in the physical world stemming
-                from online harassment.
-              </div>
-              <ImageQuery
-                css={mq({ height: ["200px", "400px", "510px"] })}
-                filename="Anna.jpeg"
-              />
-            </div>
             </div>
             <Credits>Credit: Anna Cunningham</Credits>
             <p
               css={css`
                 font-family: ubuntu;
-              color: white;
+                color: white;
                 font-style: italic;
                 margin: 1.5em;
               `}
@@ -1744,10 +1814,14 @@ export default function Home() {
               color="sanMarino"
               id="Honorees-To"
             >
-            <span css={mq({
-              paddingLeft:["40%", "40%", 0],
-              paddingRight:["20%", "20%", 0],              
-              })}>Honorees</span>
+              <span
+                css={mq({
+                  paddingLeft: ["40%", "40%", 0],
+                  paddingRight: ["20%", "20%", 0],
+                })}
+              >
+                Honorees
+              </span>
             </TriggeredPendantLeft>
             <div
               css={css`
@@ -1789,7 +1863,8 @@ export default function Home() {
                     color: black;
                   `}
                   href="https://www.icfj.org/calendar/icfj-tribute-journalists-2020"
-                  rel="noreferrer" target="_blank"
+                  rel="noreferrer"
+                  target="_blank"
                 >
                   ICFJ’s annual awards
                 </Link>{" "}
@@ -1817,17 +1892,17 @@ export default function Home() {
                 padding-bottom: -20px;
               `}
             >
-            <LazyLoad debounce={false}  offsetTop={200}>
-              <iframe
-                title="vidone"
-                width="100%"
-                height="570px"
-                src="https://www.youtube.com/embed/jIialLILHq8"
-                frameBorder="0"
-                allowFullScreen
-                loading="lazy"
-              ></iframe>
-             </LazyLoad>
+              <LazyLoad debounce={false} offsetTop={200}>
+                <iframe
+                  title="vidone"
+                  width="100%"
+                  height="570px"
+                  src="https://www.youtube.com/embed/jIialLILHq8"
+                  frameBorder="0"
+                  allowFullScreen
+                  loading="lazy"
+                ></iframe>
+              </LazyLoad>
             </FrameEmbed>
             <Wolf
               bp={breakpoints}
@@ -1847,7 +1922,7 @@ export default function Home() {
             />
             <WinnerLeft
               bp={breakpoints}
-              image="Roman.jpg"
+              image="Roman.png"
               award="ICFJ Knight Trailblazer Award"
               name="Roman Anin"
               title="IStories, Russia"
@@ -1855,7 +1930,7 @@ export default function Home() {
             />
             <WinnerRight
               bp={breakpoints}
-              image="Lina.jpg"
+              image="Lina.png"
               award="ICFJ Knight International Journalism Award"
               name="Lina Attalah"
               title="Mada Masr, Egypt"
@@ -1863,7 +1938,7 @@ export default function Home() {
             />
             <WinnerLeft
               bp={breakpoints}
-              image="Maria.jpg"
+              image="Maria.png"
               award="2018 ICFJ Knight Award Winner"
               name="Maria Ressa"
               title="Rappler, Philippines"
@@ -1915,144 +1990,155 @@ export default function Home() {
                 css={css`
                   color: white;
                   font-weight: normal;
-              `}
-              > $19.9 million
+                `}
+              >
+                {" "}
+                $19.9 million
               </span>
             </Subheader>
 
-
-            <div css={css`
-              display: grid;
-              grid-template-columns: 100%;
-              @media(min-width:${tablet}){
-                grid-template-columns: 20% 80%;
-                margin-top: 3rem;
-              }
-              `} >
-            <div>
-              <Subheader
-              css={mq({
-                  color: "black",
-                  fontWeight: "bold",
-                  fontSize: ["2em", "2.5em", "3em"],
-                })}
-              >
-              <br></br><br></br>  Expense Breakdown for 2019:
-              </Subheader>
-            </div>
-            <div>
-            <TriggeredLottie
-              css={css`
-                width: 60%;
-                @media (min-width: ${tablet}) {
-                  width: 60%;
-                }
-                margin-right: auto;
-                margin-left: auto;
-                margin-top: 3rem;
-              `}
-              animation={animationPie}
-              loop={false}
-            />
-            </div>
-            </div>
-
-            <div css={css`
-              display: grid;
-              grid-template-columns: 100%;
-              @media(min-width:${tablet}){
-                grid-template-columns: 50% 50%;
-                margin-top: 3rem;
-              }
-              `} >
-            <div>
-            <ImageQuery
-              filename="fourstar.png"
-              css={css`
-                margin-top: 4.5rem;
-                margin-bottom: 3rem;
-              `}
-            />
-            <div css={{ textAlign: "center" }}>
-              <Subheader
-                css={mq({
-                  color: "white",
-                  fontWeight: "bold",
-                  fontSize: ["2em", "2.5em", "4em"],
-                })}
-              >
-                95.36%
-              </Subheader>
-              <Subheader
-                css={mq({
-                  color: "white",
-                  fontWeight: "bold",
-                  fontSize: ["1.5em", "1.8em", "2.7em"],
-                  marginBottom: "2rem"
-                })}
-              >
-                Charity Navigator Ranking
-              </Subheader>
-              <Subheader
-                css={mq({ 
-                  color: "white", fontSize: ["1.5em", "1.5em", "1.5em"],
-              })}
-              > ICFJ’s four-star track record with Charity Navigator places us
-                among the top 2 percent of nonprofits evaluated.
-              </Subheader>
-            </div>
-            </div>
-            <div>
             <div
               css={css`
-                display: flex;
-                justify-content: center;
+                display: grid;
+                grid-template-columns: 100%;
+                @media (min-width: ${tablet}) {
+                  grid-template-columns: 20% 80%;
+                  margin-top: 3rem;
+                }
               `}
             >
-              <Platinum
-                css={css`
-                  width: 40%;
-                  margin-top: 2rem;
-                  margin-bottom: 2rem;
-                `}
-              />
+              <div>
+                <Subheader
+                  css={mq({
+                    color: "black",
+                    fontWeight: "bold",
+                    fontSize: ["2em", "2.5em", "3em"],
+                  })}
+                >
+                  <br></br>
+                  <br></br> Expense Breakdown for 2019:
+                </Subheader>
+              </div>
+              <div>
+                <TriggeredLottie
+                  css={css`
+                    width: 60%;
+                    @media (min-width: ${tablet}) {
+                      width: 60%;
+                    }
+                    margin-right: auto;
+                    margin-left: auto;
+                    margin-top: 3rem;
+                  `}
+                  animation={animationPie}
+                  loop={false}
+                />
+              </div>
             </div>
-            <div css={{ textAlign: "center" }}>
-              <Subheader
-                css={mq({
-                  color: "white",
-                  fontWeight: "bold",
-                  fontSize: ["2em", "2.5em", "4em"],
-              })}
-              >
-                Platinum
-              </Subheader>
-              <Subheader
-                css={mq({
-                  color: "white",
-                  fontWeight: "bold",
-                  fontSize: ["1.5em", "1.8em", "2.7em"],
-                  marginBottom: "2rem"
-                })}
-              >
-                GuideStar<br/> Rating
-              </Subheader>
-              <Subheader
-                css={mq({ color: "white", fontSize: ["1.5em", "1.5em", "1.5em"] })}
-              >
-                ICFJ also has a platinum-level rating from GuideStar, the
-                highest ranking given.
-              </Subheader>
-            </div>
-            </div>
+
+            <div
+              css={css`
+                display: grid;
+                grid-template-columns: 100%;
+                @media (min-width: ${tablet}) {
+                  grid-template-columns: 50% 50%;
+                  margin-top: 3rem;
+                }
+              `}
+            >
+              <div>
+                <ImageQuery
+                  filename="fourstar.png"
+                  css={css`
+                    margin-top: 4.5rem;
+                    margin-bottom: 3rem;
+                  `}
+                />
+                <div css={{ textAlign: "center" }}>
+                  <Subheader
+                    css={mq({
+                      color: "white",
+                      fontWeight: "bold",
+                      fontSize: ["2em", "2.5em", "4em"],
+                    })}
+                  >
+                    95.36%
+                  </Subheader>
+                  <Subheader
+                    css={mq({
+                      color: "white",
+                      fontWeight: "bold",
+                      fontSize: ["1.5em", "1.8em", "2.7em"],
+                      marginBottom: "2rem",
+                    })}
+                  >
+                    Charity Navigator Ranking
+                  </Subheader>
+                  <Subheader
+                    css={mq({
+                      color: "white",
+                      fontSize: ["1.5em", "1.5em", "1.5em"],
+                    })}
+                  >
+                    {" "}
+                    ICFJ’s four-star track record with Charity Navigator places
+                    us among the top 2 percent of nonprofits evaluated.
+                  </Subheader>
+                </div>
+              </div>
+              <div>
+                <div
+                  css={css`
+                    display: flex;
+                    justify-content: center;
+                  `}
+                >
+                  <Platinum
+                    css={css`
+                      width: 40%;
+                      margin-top: 2rem;
+                      margin-bottom: 2rem;
+                    `}
+                  />
+                </div>
+                <div css={{ textAlign: "center" }}>
+                  <Subheader
+                    css={mq({
+                      color: "white",
+                      fontWeight: "bold",
+                      fontSize: ["2em", "2.5em", "4em"],
+                    })}
+                  >
+                    Platinum
+                  </Subheader>
+                  <Subheader
+                    css={mq({
+                      color: "white",
+                      fontWeight: "bold",
+                      fontSize: ["1.5em", "1.8em", "2.7em"],
+                      marginBottom: "2rem",
+                    })}
+                  >
+                    GuideStar
+                    <br /> Rating
+                  </Subheader>
+                  <Subheader
+                    css={mq({
+                      color: "white",
+                      fontSize: ["1.5em", "1.5em", "1.5em"],
+                    })}
+                  >
+                    ICFJ also has a platinum-level rating from GuideStar, the
+                    highest ranking given.
+                  </Subheader>
+                </div>
+              </div>
             </div>
           </Container>
           <TriggeredBgColor color="curiousBlue" />
           <div
             css={css`
-              @media (min-width: ${tablet}) {
-                margin-bottom: 20rem;
-              }
+              margin-bottom: 5rem;
             `}
           />
         </Section>
@@ -2088,7 +2174,7 @@ export default function Home() {
               css={css`
                 display: grid;
                 grid-template-columns: repeat(1, 1fr);
-                grid-column-gap: .5rem;
+                grid-column-gap: 0.5rem;
                 color: white;
                 font-family: interstate-condensed;
                 font-weight: 500;
@@ -2131,9 +2217,9 @@ export default function Home() {
                     Professor of Journalism and Founding Dean, Manship School of
                     Mass Communication, Louisiana State University
                   </OrgPeopleDesc>
-              </ul>
-                </div>
-                <div>
+                </ul>
+              </div>
+              <div>
                 <ul
                   css={css`
                     list-style: none;
@@ -2158,37 +2244,39 @@ export default function Home() {
                 </ul>
               </div>
             </div>
-              <Subheader
-                css={css`
-                  color: white;
-                  font-weight: 500;
-                  margin-top: 2rem;
-                  font-size: 3.25em;
-                  margin-bottom: 2rem;
-                `}
-              >
-                Directors
-              </Subheader>
-              <div
-                css={css`
-                  display: grid;
-                  grid-template-columns: repeat(1, 1fr);
-                  grid-column-gap: .5rem;
-                  color: white;
-                  font-family: interstate-condensed;
-                  font-weight: 500;
-                  margin-top: 2rem;
-                  @media (min-width: ${tablet}) {
-                    grid-template-columns: repeat(2, 1fr);
-                  }
-                `}
-              >
-                <div> <ul
-                    css={css`
-                      list-style: none;
-                      padding-left: 0;
-                    `}
-                  >
+            <Subheader
+              css={css`
+                color: white;
+                font-weight: 500;
+                margin-top: 2rem;
+                font-size: 3.25em;
+                margin-bottom: 2rem;
+              `}
+            >
+              Directors
+            </Subheader>
+            <div
+              css={css`
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                grid-column-gap: 0.5rem;
+                color: white;
+                font-family: interstate-condensed;
+                font-weight: 500;
+                margin-top: 2rem;
+                @media (min-width: ${tablet}) {
+                  grid-template-columns: repeat(2, 1fr);
+                }
+              `}
+            >
+              <div>
+                {" "}
+                <ul
+                  css={css`
+                    list-style: none;
+                    padding-left: 0;
+                  `}
+                >
                   <OrgPeople>MARK BAILEN</OrgPeople>
                   <OrgPeopleDesc>Partner, BakerHostetler LLP</OrgPeopleDesc>
                   <OrgPeopleDesc> </OrgPeopleDesc>
@@ -2197,17 +2285,23 @@ export default function Home() {
                   <OrgPeopleDesc>Editor, Politico</OrgPeopleDesc>
 
                   <OrgPeople>DAVID CALLAWAY</OrgPeople>
-                  <OrgPeopleDesc>Founder, Editor, Callaway Climate Insights</OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    Founder, Editor, Callaway Climate Insights
+                  </OrgPeopleDesc>
 
                   <OrgPeople>AHMED CHARAI</OrgPeople>
-                  <OrgPeopleDesc>Chairman and CEO, Global Media Holding</OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    Chairman and CEO, Global Media Holding
+                  </OrgPeopleDesc>
 
                   <OrgPeople>DAVID ELLIOT COHEN</OrgPeople>
                   <OrgPeopleDesc>Author and Publisher</OrgPeopleDesc>
 
                   <OrgPeople>JOHN DANISZEWSKI</OrgPeople>
-                  <OrgPeopleDesc>Vice President and Editor at Large for Standards, Associated
-                    Press</OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    Vice President and Editor at Large for Standards, Associated
+                    Press
+                  </OrgPeopleDesc>
 
                   <OrgPeople>RICHARD GINGRAS</OrgPeople>
                   <OrgPeopleDesc>Vice President, News, Google</OrgPeopleDesc>
@@ -2234,20 +2328,23 @@ export default function Home() {
 
                   <OrgPeople>Brent JONES</OrgPeople>
                   <OrgPeopleDesc>
-                    Editor of Culture, Training and Outreach,
-                    The Wall Street Journal</OrgPeopleDesc>
-              </ul></div>
+                    Editor of Culture, Training and Outreach, The Wall Street
+                    Journal
+                  </OrgPeopleDesc>
+                </ul>
+              </div>
 
               <div>
                 <ul
-                    css={css`
-                      list-style: none;
-                      padding-left: 0;
-                    `}
-                  >
+                  css={css`
+                    list-style: none;
+                    padding-left: 0;
+                  `}
+                >
                   <OrgPeople>RIK KIRKLAND</OrgPeople>
-                    <OrgPeopleDesc>
-                    Formerly, Director of Publishing, McKinsey and Co.</OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    Formerly, Director of Publishing, McKinsey and Co.
+                  </OrgPeopleDesc>
 
                   <OrgPeople>ANNE KORNBLUT</OrgPeople>
                   <OrgPeopleDesc>
@@ -2284,10 +2381,10 @@ export default function Home() {
 
                   <OrgPeople>JOHN TOWRISS</OrgPeople>
                   <OrgPeopleDesc>Principal, Envoy Strategy Group</OrgPeopleDesc>
-                    </ul>
-                  </div>
-                </div>
-            </Container>
+                </ul>
+              </div>
+            </div>
+          </Container>
         </Section>
 
         <Section name="AdvisoryBoard">
@@ -2311,7 +2408,7 @@ export default function Home() {
               `}
             >
               <div>
-                 <ul
+                <ul
                   css={css`
                     list-style: none;
                     padding-left: 0;
@@ -2346,11 +2443,13 @@ export default function Home() {
                   </OrgPeopleDesc>
 
                   <OrgPeople>THOMAS EWING</OrgPeople>
-                  <OrgPeopleDesc>Principal, Ewing Controls, ICFJ Founders Family</OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    Principal, Ewing Controls, ICFJ Founders Family
+                  </OrgPeopleDesc>
 
                   <OrgPeople>CRAIG FORMAN</OrgPeople>
                   <OrgPeopleDesc>
-                  General Partner, NextNews Ventures
+                    General Partner, NextNews Ventures
                   </OrgPeopleDesc>
 
                   <OrgPeople>SUSAN FRIEDMAN</OrgPeople>
@@ -2360,16 +2459,16 @@ export default function Home() {
 
                   <OrgPeople>BOBBY GHOSH</OrgPeople>
                   <OrgPeopleDesc>Editor, Bloomberg Opinion</OrgPeopleDesc>
-                  </ul>
-                  </div>
+                </ul>
+              </div>
 
-                  <div>
-                     <ul
-                      css={css`
-                        list-style: none;
-                        padding-left: 0;
-                      `}
-                    >
+              <div>
+                <ul
+                  css={css`
+                    list-style: none;
+                    padding-left: 0;
+                  `}
+                >
                   <OrgPeople>PETER OSNOS</OrgPeople>
                   <OrgPeopleDesc>
                     Founder and Editor-at-Large, PublicAffairs
@@ -2407,7 +2506,9 @@ export default function Home() {
                   </OrgPeopleDesc>
 
                   <OrgPeople>AMY WEBB</OrgPeople>
-                  <OrgPeopleDesc>Founder and CEO, Future Today Institute</OrgPeopleDesc>
+                  <OrgPeopleDesc>
+                    Founder and CEO, Future Today Institute
+                  </OrgPeopleDesc>
 
                   <OrgPeople>MARGARET WINSHIP</OrgPeople>
                   <OrgPeopleDesc>ICFJ Founders Family</OrgPeopleDesc>
@@ -2457,35 +2558,23 @@ export default function Home() {
                 <Donor>Michael and Anne Golden</Donor>
                 <Donor>John Maxwell Hamilton</Donor>
                 <DonorTitle>Leaders</DonorTitle>
-                <Donor>
-                  Elizabeth Ballantine and Paul Leavitt
-                </Donor>
-                <Donor>
-                  Joyce Barnathan and Steven Strasser
-                </Donor>
+                <Donor>Elizabeth Ballantine and Paul Leavitt</Donor>
+                <Donor>Joyce Barnathan and Steven Strasser</Donor>
                 <Donor>Lauretta J. Bruno</Donor>
                 <Donor>David Callaway</Donor>
                 <Donor>Vint Cerf</Donor>
                 <Donor>Patricia Dunnington</Donor>
                 <Donor>John Harris</Donor>
-                <Donor>
-                  James F. Hoge Jr. and Kathleen Lacey
-                </Donor>
-                <Donor>
-                  Martina Hund-Mejean and Bruno Mejean
-                </Donor>
+                <Donor>James F. Hoge Jr. and Kathleen Lacey</Donor>
+                <Donor>Martina Hund-Mejean and Bruno Mejean</Donor>
                 <Donor>Alex S. Jones</Donor>
                 <Donor>Marci and Mike McCue</Donor>
                 <Donor>Rob and Maureen Rehg</Donor>
-                <Donor>
-                  John Towriss, Envoy Strategy Group
-                </Donor>
+                <Donor>John Towriss, Envoy Strategy Group</Donor>
                 <Donor>Alexandra Wrage</Donor>
                 <Donor>Jason H. Wright</Donor>
                 <Donor>Champions</Donor>
-                <Donor>
-                  David Elliot Cohen and Laureen Seeger
-                </Donor>
+                <Donor>David Elliot Cohen and Laureen Seeger</Donor>
                 <Donor>Richard Gingras</Donor>
                 <Donor>Marcy McGinnis</Donor>
                 <Donor>Nicholas Tzitzon</Donor>
@@ -2505,9 +2594,7 @@ export default function Home() {
                 `}
               >
                 <DonorTitle>Foundations</DonorTitle>
-                <Donor>
-                  John S. and James L. Knight Foundation
-                </Donor>
+                <Donor>John S. and James L. Knight Foundation</Donor>
                 <Donor>Bill & Melinda Gates Foundation</Donor>
                 <Donor>Luminate</Donor>
                 <Donor>Arnold Ventures</Donor>
@@ -2518,9 +2605,7 @@ export default function Home() {
                 </Donor>
                 <Donor>Scripps Howard Foundation</Donor>
                 <Donor>The Ambrose Monell Foundation</Donor>
-                <Donor>
-                  Samuel I. Newhouse Foundation, Inc.
-                </Donor>
+                <Donor>Samuel I. Newhouse Foundation, Inc.</Donor>
                 <Donor>Gannett Foundation</Donor>
                 <DonorTitle>Corporations</DonorTitle>
                 <Donor>Facebook Journalism Project</Donor>
@@ -2562,9 +2647,7 @@ export default function Home() {
                 <Donor>Freedom House</Donor>
                 <Donor>Northwestern University in Qatar</Donor>
                 <Donor>Stanford University</Donor>
-                <Donor>
-                  Arthur F. Burns Fellowship Program Inc.
-                </Donor>
+                <Donor>Arthur F. Burns Fellowship Program Inc.</Donor>
               </ul>
             </div>
             <TriggeredPendantLeft
@@ -2583,7 +2666,7 @@ export default function Home() {
                 margin-left: 0;
               `}
             >
-            All of us at ICFJ thank you for your support.
+              All of us at ICFJ thank you for your support.
             </SmallSubheader>
             <FrameEmbed
               bp={breakpoints}
@@ -2595,19 +2678,19 @@ export default function Home() {
                 clip-path: inset(32px);
               `}
             >
-            <LazyLoad debounce={false}  offsetTop={200}>
-              <iframe
-                title="vidthree"
-                width="100%"
-                height="570px"
-                src="https://www.youtube.com/embed/Td6AYW3zyo8?"
-                frameBorder="0"
-                allowFullScreen
-                autoPlay="true"
-                loop
-                loading="lazy"
-              ></iframe>
-            </LazyLoad>
+              <LazyLoad debounce={false} offsetTop={200}>
+                <iframe
+                  title="vidthree"
+                  width="100%"
+                  height="570px"
+                  src="https://www.youtube.com/embed/Td6AYW3zyo8?"
+                  frameBorder="0"
+                  allowFullScreen
+                  autoPlay="true"
+                  loop
+                  loading="lazy"
+                ></iframe>
+              </LazyLoad>
             </FrameEmbed>
           </Container>
         </Section>
@@ -2629,9 +2712,16 @@ export default function Home() {
             fontSize: "2.5em",
           })}
         >
-          <div>{" "}
-          ICFJ.org{" "}</div>
-                  <div css={css`margin: 1rem; font-size: 18px;`}> Site by TappingBones Ⓣ</div>
+          <div> ICFJ.org </div>
+          <div
+            css={css`
+              margin: 1rem;
+              font-size: 18px;
+            `}
+          >
+            {" "}
+            Site by TappingBones Ⓣ
+          </div>
         </div>
       </ThemeProvider>
     </div>
