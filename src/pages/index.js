@@ -674,7 +674,7 @@ export default function Home() {
               <ImageQuery filename="Sid.jpg" />
               <ImageQuery filename="redshoes.jpg" />
               <ImageQuery filename="maskgirlcrop.png" />
-              <ImageQuery filename="docwhite.png" />
+              <ImageQuery filename="docwhite.jpg" />
               <ImageQuery filename="docblue.png" />
               <ImageQuery filename="agnes.png" />
             </div>
@@ -1849,7 +1849,7 @@ export default function Home() {
             />
             <WinnerLeft
               bp={breakpoints}
-              image="Roman.jpg"
+              image="Roman.png"
               award="ICFJ Knight Trailblazer Award"
               name="Roman Anin"
               title="IStories, Russia"
@@ -1857,7 +1857,7 @@ export default function Home() {
             />
             <WinnerRight
               bp={breakpoints}
-              image="Lina.jpg"
+              image="Lina.png"
               award="ICFJ Knight International Journalism Award"
               name="Lina Attalah"
               title="Mada Masr, Egypt"
@@ -1865,7 +1865,7 @@ export default function Home() {
             />
             <WinnerLeft
               bp={breakpoints}
-              image="Maria.jpg"
+              image="Maria.png"
               award="2018 ICFJ Knight Award Winner"
               name="Maria Ressa"
               title="Rappler, Philippines"
@@ -2052,9 +2052,7 @@ export default function Home() {
           <TriggeredBgColor color="curiousBlue" />
           <div
             css={css`
-              @media (min-width: ${tablet}) {
-                margin-bottom: 20rem;
-              }
+              margin-bottom: 5rem;
             `}
           />
         </Section>
