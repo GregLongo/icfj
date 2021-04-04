@@ -27,5 +27,5 @@
 2.  **Build for Production**
     Run:
     ```shell
-    gatsby build
+    gatsby build --prefix-paths
     ```
