@@ -12,7 +12,7 @@ export default function Header(props) {
     display: grid;
     align-items: center;
     grid-template-columns: repeat(3, 1fr);
-    margin-left: .5rem;
+    margin-left: 0.5rem;
     margin-right: 1rem;
     height: 6rem;
     @media (min-width: ${mobile}) {
@@ -35,7 +35,7 @@ export default function Header(props) {
   return (
     <HeaderContainer>
       <MenuSlant />
-      <LogoMd src ={Logo}/>
+      <LogoMd src={Logo} />
     </HeaderContainer>
   )
 }

@@ -35,17 +35,17 @@ module.exports = {
         },
       },
     },
-  //   {
-  //     resolve: 'gatsby-plugin-webpack-bundle-analyzer',
-  //     options: {
-  //       production: true,
-  //   },
-  // },
-   {
-      resolve: 'gatsby-plugin-zopfli',
+    //   {
+    //     resolve: 'gatsby-plugin-webpack-bundle-analyzer',
+    //     options: {
+    //       production: true,
+    //   },
+    // },
+    {
+      resolve: "gatsby-plugin-zopfli",
       options: {
         verbose: true,
-      }
+      },
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,

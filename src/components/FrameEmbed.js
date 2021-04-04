@@ -14,11 +14,11 @@ export default function FrameEmbed(props) {
     overflow: visible;
   `
   const Frame = styled.div`
-      position:relative;
-      padding-bottom:56.25%;
-      padding-top:30px;
-      overflow:hidden;
-      iframe {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    overflow: hidden;
+    iframe {
       position: absolute;
       top: 0;
       left: 0;
@@ -36,7 +36,7 @@ export default function FrameEmbed(props) {
     font-family: interstate-condensed;
     margin: 1em;
     margin-right: 0;
-    font-size: .65em;
+    font-size: 0.65em;
     @media (min-width: ${mobile}) {
       font-size: 1.5em;
     }

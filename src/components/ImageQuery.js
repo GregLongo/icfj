@@ -12,7 +12,7 @@ const ImageQuery = props => (
               relativePath
               name
               childImageSharp {
-                fluid{
+                fluid {
                   ...GatsbyImageSharpFluid
                 }
               }

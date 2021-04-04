@@ -7,9 +7,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 gsap.registerPlugin(ScrollTrigger)
 
-
-
-
 function ReadMore(props) {
   const mobile = props.bp[1]
   const [readMore, setReadMore] = useState(false)

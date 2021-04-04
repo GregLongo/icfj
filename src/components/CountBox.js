@@ -121,14 +121,14 @@ export default function CountBox(props) {
     ${mq({
       fontSize: ["1.5em", "2em", "3em"],
     })} color: white;
-    margin: .5em;
+    margin: 0.5em;
   `
   const SubSubheader = styled.div`
     font-family: ubuntu;
     ${mq({
       fontSize: ["1em", "1.25em", "1.5em"],
     })} color: black;
-    margin: .5em;
+    margin: 0.5em;
     font-weight: 700;
   `
 
