@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 
 //Libraries
 import { Global, css, jsx, ThemeProvider } from "@emotion/react"
@@ -8,9 +8,7 @@ import styled from "@emotion/styled"
 import facepaint from "facepaint"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-// import {  isMobile} from "react-device-detect"
 import LazyLoad from 'react-lazy-load';
-import useDeviceDetect from "../utils/useDeviceDetect";
 
 //UI
 import Header from "../components/Header.js"
@@ -35,20 +33,16 @@ import WinnerRight from "../components/WinnerRight.js"
 import Wolf from "../components/Wolf.js"
 
 //Animation Players
-// import UncontrolledLottie from "../components/UncontrolledLottie.js"
+import UncontrolledLottie from "../components/UncontrolledLottie.js"
 import TriggeredBgColor from "../components/TriggeredBgColor.js"
 import TriggeredLottie from "../components/TriggeredLottie.js"
 
 //Animations
-// import animationMasthead from "../lotties/masthead_test3.json"
-import animationCameras from "../lotties/cameras.json" 
-import animationCamerasMobile from "../lotties/cameras_mobile.json" 
-import animationPenPaper from "../lotties/penpaper.json"
-import animationPenPaperMobile from "../lotties/penpaper_mobile.json"
-import animationAudio from "../lotties/audio.json"
-import animationAudioMobile from "../lotties/audio_mobile.json"
-import animationTweet from "../lotties/tweet.json"
-import animationTweetMobile from "../lotties/tweet_mobile.json"
+import animationMasthead from "../lotties/Masthead_CompressedStrips_V02"
+import animationCameras from "../lotties/cameras_mobile.json" 
+import animationPenPaper from "../lotties/penpaper_mobile.json"
+import animationAudio from "../lotties/audio_mobile.json"
+import animationTweet from "../lotties/tweet_mobile.json"
 import animationAfrica from "../lotties/africa.json"
 import animationAfrica2 from "../lotties/africa2.json"
 import animationBrazil from "../lotties/brazil.json"
@@ -63,14 +57,12 @@ import Platinum from "../svg/platinum.svg"
 
 //patterns
 
-import PatternTools from "../images/Pattern_Tools.jpg"
-import PatternCountries from "../images/Pattern_Countries.jpg"
-import PatternLanguages from "../images/Pattern_Languages.jpg"
-import PatternCovid from "../images/Pattern_Covid.jpg"
+import PatternTools from "../images/Pattern_Tools_Kuler.jpg"
+import PatternCountries from "../images/Pattern_Countries_Kuler.jpg"
+import PatternLanguages from "../images/Pattern_Languages_Kuler.jpg"
+import PatternCovid from "../images/Pattern_Covid_Kuler.jpg"
 import Languages from "../images/languages_ticker.png"
-// import Masthead from "../gif/masthead_webp.webp"
-import Masthead from "../vid/masthead_1024.webm"
-import MastheadIOS from "../vid/masthead_mob.mp4"
+
 
 //Themes
 import theme from "../themes/theme.js"
@@ -152,22 +144,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
 
-
-  const { isMobile }= useDeviceDetect()
-
-  // const [isMob , setIsMob ] = useState()
-
-  // useEffect(()=> {
-  //   setIsMob(isMobile)
-  // }, [])
-
-  const [mastheadLive, setMastheadLive] = useState()
-
-  useEffect(() => {
-
-    setMastheadLive( isMobile ? MastheadIOS : Masthead)
-  },[mastheadLive, isMobile])
-
   useEffect(() => {
     // const pmFrame = new window.Pmframe({
     //   element: "mosaics",
@@ -222,11 +198,7 @@ export default function Home() {
               whiteSpace: "noWrap",
               fontSize: ["1.7em", "2em", "2.5em", "3em"],
             })}
-          >            <LazyLoad>
-
-            {mastheadLive}
-                        </LazyLoad>
-
+          >It Takes a Journalist
           </span>
         </PendantLeft>
         <Container
@@ -236,28 +208,7 @@ export default function Home() {
             maxWidth: ["100%", "100%", "100%", "1024px"],
           })}
         >
-
-         
-         <video
-            css={css`
-              width: 100%;
-            `}
-            autoPlay
-            loop
-            muted
-            >
-            <source src={ mastheadLive } type="video/mp4" />
-        </video>
-        {/* 
-        <img
-            css={css`
-              width: 100%;
-            `}
-            alt="masthead"
-            src={Masthead}
-          />
-
-          <UncontrolledLottie animation={animationMasthead} />*/}
+          <UncontrolledLottie animation={animationMasthead} />
         </Container>
         <TriggeredBgColor color="white" />
         <Section
@@ -434,7 +385,7 @@ export default function Home() {
             css={css`
               opacity: 0.7;
             `}
-            animation={!isMobile ? animationPenPaper : animationPenPaperMobile}
+            animation={animationPenPaper}
             loop={true}
           />
           <Container id="Change">
@@ -531,7 +482,7 @@ export default function Home() {
                 }
               `}
             >
-            <LazyLoad>
+            <LazyLoad  debounce={false} offsetTop={200} >
               <iframe
                 title="vidtwo"
                 src="https://www.youtube.com/embed/f1SBTk3CXhI"
@@ -541,7 +492,6 @@ export default function Home() {
               ></iframe>
               </LazyLoad>
             </FrameEmbed>
-
             <Quote
               bp={breakpoints}
               css={mq({
@@ -569,7 +519,7 @@ export default function Home() {
             css={css`
               opacity: 0.7;
             `}
-            animation={!isMobile ? animationAudio : animationAudioMobile}
+            animation={animationAudio}
             loop={true}
           />
           <Container id="Resources">
@@ -634,7 +584,7 @@ export default function Home() {
                 }
               `}
             >
-            <LazyLoad>
+            <LazyLoad  debounce={false} offsetTop={200}>
               <iframe
                 title="vidfour"
                 width="100%"
@@ -721,10 +671,10 @@ export default function Home() {
             >
               <ImageQuery filename="Sid.jpg" />
               <ImageQuery filename="redshoes.jpg" />
-              <ImageQuery filename="maskgirlcrop.jpg" />
-              <ImageQuery filename="docwhite.jpg" />
-              <ImageQuery filename="docblue.jpg" />
-              <ImageQuery filename="agnes.jpg" />
+              <ImageQuery filename="maskgirlcrop.png" />
+              <ImageQuery filename="docwhite.png" />
+              <ImageQuery filename="docblue.png" />
+              <ImageQuery filename="agnes.png" />
             </div>
             <Credits>
               {" "}
@@ -773,7 +723,7 @@ export default function Home() {
                 Offering expert advice, tools and opportunities for the news
                 media
               </p>
-              </div>
+              </div> 
               <div css={css`
 
               `}>
@@ -879,7 +829,7 @@ export default function Home() {
             css={css`
               opacity: 0.7;
             `}
-            animation={ !isMobile ? animationCameras : animationCamerasMobile }
+            animation={animationCameras}
             loop={true}
           />
           <Container id="Networks">
@@ -1058,7 +1008,7 @@ export default function Home() {
             css={css`
               opacity: 1;
             `}
-            animation={!isMobile ? animationTweet : animationTweetMobile}
+            animation={animationTweet}
             loop={true}
           />
           <Container id="Innovation">
@@ -1273,7 +1223,7 @@ export default function Home() {
             css={css`
               opacity: .8;
             `}
-            animation={!isMobile ? animationPenPaper : animationPenPaperMobile}
+            animation={animationPenPaper}
             loop={true}
           />
           <Container id="Sustainability">
@@ -1599,7 +1549,7 @@ export default function Home() {
             css={css`
               opacity: .8;
             `}
-            animation={!isMobile ? animationAudio : animationAudioMobile}
+            animation={animationAudio}
             loop={true}
           />
           <Container id="Leadership">
@@ -1782,7 +1732,7 @@ export default function Home() {
             css={css`
               opacity: 1;
             `}
-            animation={!isMobile ? animationCameras : animationCamerasMobile}
+            animation={animationCameras}
             loop={true}
           />
           <Container
@@ -1867,7 +1817,7 @@ export default function Home() {
                 padding-bottom: -20px;
               `}
             >
-            <LazyLoad>
+            <LazyLoad debounce={false}  offsetTop={200}>
               <iframe
                 title="vidone"
                 width="100%"
@@ -1928,7 +1878,7 @@ export default function Home() {
             css={css`
               opacity: 0.7;
             `}
-            animation={!isMobile ? animationTweet : animationTweetMobile}
+            animation={animationTweet}
             loop={true}
           />
           <Container id="Financials">
@@ -2017,7 +1967,7 @@ export default function Home() {
               `} >
             <div>
             <ImageQuery
-              filename="fourstar.jpg"
+              filename="fourstar.png"
               css={css`
                 margin-top: 4.5rem;
                 margin-bottom: 3rem;
@@ -2112,7 +2062,7 @@ export default function Home() {
             css={css`
               opacity: 0.7;
             `}
-            animation={!isMobile ? animationCameras : animationCamerasMobile}
+            animation={animationCameras}
             loop={true}
           />
           <Container id="Board">
@@ -2645,7 +2595,7 @@ export default function Home() {
                 clip-path: inset(32px);
               `}
             >
-            <LazyLoad>
+            <LazyLoad debounce={false}  offsetTop={200}>
               <iframe
                 title="vidthree"
                 width="100%"
