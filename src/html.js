@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import LoaderSVG from './gif/spinner.gif'
+import LoaderSVG from "./gif/Loader_Loop.gif"
 
 export default function HTML(props) {
   return (
@@ -12,33 +12,28 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        <script src="https://cdn.picturemosaics.com/client/iframe/js/pageEmbed.VID2.js"></script>
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
-
         <div
-              key={`loader`}
-              id="___loader"
-              style={{
-                alignItems: "center",
-                backgroundColor: "#F2F2F2",
-                display: "flex",
-                justifyContent: "center",
-                position: "absolute",
-                left: 0,
-                top: 0,
-                right: 0,
-                bottom: 0,
-                zIndex: 100,
-              }}
-           >
-           <img 
-              src={LoaderSVG} 
-              alt="loading spinner" 
-              width="150" 
-              height="150"
-           />
+          key={`loader`}
+          id="___loader"
+          style={{
+            alignItems: "center",
+            backgroundColor: "#ffffff",
+            display: "flex",
+            justifyContent: "center",
+            position: "absolute",
+            left: 0,
+            top: 0,
+            right: 0,
+            bottom: 0,
+            zIndex: 100,
+          }}
+        >
+          <img src={LoaderSVG} alt="loading spinner" width="150" height="150" />
         </div>
 
         <div
@@ -47,6 +42,7 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
+        <script>window.Pmframe = Pmframe;</script>
       </body>
     </html>
   )

@@ -8,14 +8,18 @@
   ICFJ Theme
 </h1>
     gatsby react emotion gsap scrolltrigger lottie hamburgers
-
+    
+    staging: http://tappingbones.works/icfj-bestinshow/
+    Production: https://www.icfj.org/sites/default/files/annual-report-2020/
 ## 🚀 Quick start
 
 1.  **Develop and Run BrowserSync.**
     Run:
+
     ```shell
     gatsby develop
     ```
+
     Visit Browser at:
     `http://localhost:8000`
 
@@ -25,5 +29,5 @@
 2.  **Build for Production**
     Run:
     ```shell
-    gatsby build
+    gatsby build --prefix-paths
     ```
