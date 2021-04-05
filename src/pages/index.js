@@ -39,7 +39,7 @@ import TriggeredBgColor from "../components/TriggeredBgColor.js"
 import TriggeredLottie from "../components/TriggeredLottie.js"
 
 //Animations
-import animationMasthead from "../lotties/Masthead_CompressedStrips_V02"
+import animationMasthead from "../lotties/Masthead.json"
 import animationCameras from "../lotties/cameras.json"
 import animationPenPaper from "../lotties/penpaper.json"
 import animationAudio from "../lotties/audio.json"
@@ -142,13 +142,13 @@ gsap.registerPlugin(ScrollTrigger)
 export default function Home() {
   useEffect(() => {
     //Creates CORS error when not on ICFJ domain. Uncomment For Production
-    const pmFrame = new window.Pmframe({
-      element: "mosaics",
-      page: "https://icfjmosaic.com",
-      minWidth: "300",
-      pmBrand: 1,
-    })
-    pmFrame.init()
+    // const pmFrame = new window.Pmframe({
+    //   element: "mosaics",
+    //   page: "https://icfjmosaic.com",
+    //   minWidth: "300",
+    //   pmBrand: 1,
+    // })
+    // pmFrame.init()
 
     const timer = setTimeout(() => {
       ScrollTrigger.refresh(true)
@@ -177,7 +177,7 @@ export default function Home() {
               display: "table-caption",
               fontFamily: "interstate-condensed",
               fontSize: [".75em", ".85em", "1.25em", "1.5em"],
-              maxWidth: ["fit-content", "fit-content", "fit-content", "130px"],
+              maxWidth: ["fit-content", "fit-content", "60px", "130px"],
               lineHeight: "1",
               fontWeight: "200",
               textAlign: "center",
@@ -461,7 +461,7 @@ export default function Home() {
                 }
               `}
             >
-            <div id="mosaics"></div>
+           {/* <div id="mosaics"></div>*/}
             </FrameEmbed>
             <div
               css={css`
