@@ -31,6 +31,7 @@ import CountBox from "../components/CountBox.js"
 import WinnerLeft from "../components/WinnerLeft.js"
 import WinnerRight from "../components/WinnerRight.js"
 import Wolf from "../components/Wolf.js"
+import Social from "../components/Social.js"
 
 //Animation Players
 import UncontrolledLottie from "../components/UncontrolledLottie.js"
@@ -141,13 +142,13 @@ gsap.registerPlugin(ScrollTrigger)
 export default function Home() {
   useEffect(() => {
     //Creates CORS error when not on ICFJ domain. Uncomment For Production
-    // const pmFrame = new window.Pmframe({
-    //   element: "mosaics",
-    //   page: "https://icfjmosaic.com",
-    //   minWidth: "300",
-    //   pmBrand: 1,
-    // })
-    // pmFrame.init()
+    const pmFrame = new window.Pmframe({
+      element: "mosaics",
+      page: "https://icfjmosaic.com",
+      minWidth: "300",
+      pmBrand: 1,
+    })
+    pmFrame.init()
 
     const timer = setTimeout(() => {
       ScrollTrigger.refresh(true)
@@ -316,7 +317,7 @@ export default function Home() {
                 >
                   Over 36 years, ICFJ has provided more than{" "}
                   <TextPop>150,000 journalists</TextPop> from{" "}
-                  <TextPop> 80 countries</TextPop> with valuable programs and
+                  <TextPop> 180 countries</TextPop> with valuable programs and
                   resources. But we’ve never had a year like 2020.
                 </p>
                 <p>
@@ -370,13 +371,16 @@ export default function Home() {
                 <ImageQuery
                   filename="sig.png"
                   css={css`
-                    transform:scale(.7) @media(min-width:${mobile}) {
+                    transform:scale(.7)
+                      @media(min-width:${mobile}) {
                       margin-left: 5rem;
                       transform: scale(0.8);
                     }
                     @media (min-width: ${desktop}) {
-                      margin-left: 8rem;
-                      transform: scale(1);
+                      margin-left: 5rem;
+                      margin-bottom: -10rem;
+                      transform-origin: top left;
+                      transform: scale(.7);
                     }
                   `}
                 />
@@ -457,7 +461,7 @@ export default function Home() {
                 }
               `}
             >
-          {/*  <div id="mosaics"></div>*/}
+            <div id="mosaics"></div>
             </FrameEmbed>
             <div
               css={css`
@@ -836,7 +840,7 @@ export default function Home() {
           <LanguageTicker
             css={css`
               margin-top: 5rem;
-              margin-bottom: 3rem;
+              margin-bottom: 0rem;
             `}
           >
             <img
@@ -1197,7 +1201,7 @@ export default function Home() {
                 grid-template-columns: 50% 50%;
                 @media (min-width${tablet}) {
                   grid-template-columns: 40% 60%;
-                  margin-bottom: 0;
+                  margin-bottom: 0rem;
                 }
               `}
             >
@@ -1660,7 +1664,7 @@ export default function Home() {
                 }
               `}
             >
-              During a tumultous year, ICFJ and its partners identified the{" "}
+              During a tumultuous year, ICFJ and its partners identified the{" "}
               <Link
                 href="https://www.icfj.org/news/new-global-survey-raises-red-flags-journalism-covid-19-era"
                 rel="noreferrer"
@@ -1807,7 +1811,7 @@ export default function Home() {
           />
           <Container
             id="Honorees"
-            css={mq({ maxWidth: ["100%", "100%", "90%", "1024px"] })}
+            css={mq({ maxWidth: ["100%", "100%", "90%", "1024px"], marginBottom:"5rem" })}
           >
             <TriggeredPendantLeft
               bp={breakpoints}
@@ -2138,7 +2142,7 @@ export default function Home() {
           <TriggeredBgColor color="curiousBlue" />
           <div
             css={css`
-              margin-bottom: 5rem;
+             margin-bottom: 0rem;
             `}
           />
         </Section>
@@ -2702,25 +2706,42 @@ export default function Home() {
         <div
           css={theme => ({
             background: theme.colors.mineShaft,
-            color: "white",
             display: "flex",
             justifyContent: "center",
             flexDirection: "column",
             alignItems: "center",
-            height: "128px",
-            fontFamily: "ubuntu",
-            fontSize: "2.5em",
+            height: "180px",
           })}
         >
-          <div> ICFJ.org </div>
+          <div css={css`
+            align-items: center;
+            flex-direction: column;     
+            display: inline-flex;    
+            @media(min-width:${tablet}){
+              flex-direction: row;
+            }
+           `}>
+          <a href="http://icfj.org" rel="noreferrer" target="_blank" css={css`
+            color: white;
+            font-family: ubuntu;
+            font-size: 2.5em;
+            margin-right: 2rem;
+            text-decoration: none;
+            `}> 
+              ICFJ.org
+            </a>
+            <Social bp={breakpoints}/>
+            </div>
           <div
             css={css`
               margin: 1rem;
-              font-size: 18px;
+              font-size: 1.7em;
+              color: white;
+              font-family: ubuntu;
             `}
           >
             {" "}
-            Site by TappingBones Ⓣ
+            Site by <Link href="https://tappingbones.com/" rel="noreferrer" target="_blank">TappingBones </Link> Ⓣ 
           </div>
         </div>
       </ThemeProvider>
