@@ -32,10 +32,12 @@ export default function Header(props) {
       width: 300px;
     }
   `
+  const Link = styled.a``
+
   return (
     <HeaderContainer>
       <MenuSlant />
-      <LogoMd src={Logo} />
+      <Link href="https://www.icfj.org/" rel="noreferrer" target="_blank"><LogoMd src={Logo} /></Link>
     </HeaderContainer>
   )
 }

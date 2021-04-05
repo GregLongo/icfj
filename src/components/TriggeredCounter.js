@@ -28,7 +28,7 @@ class TriggeredCounter extends Component {
         trigger: this.ref.current,
         start: "top center",
         end: "bottom top",
-        toggleActions: "play none reverse reverse",
+        toggleActions: "play complete none none",
         markers: false,
       },
     })

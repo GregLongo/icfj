@@ -34,6 +34,7 @@ const Labels = styled.div`
   width: 100%;
   height: 100%;
   font-weight: 600;
+  word-spacing: 100px;
 `
 
 class AnimatedColumn extends Component {
@@ -49,7 +50,7 @@ class AnimatedColumn extends Component {
         trigger: this.ref.current,
         start: "top center",
         end: "bottom top",
-        toggleActions: "play complete reverse reverse",
+        toggleActions: "play complete none none",
         markers: false,
       },
     })

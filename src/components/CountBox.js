@@ -158,7 +158,7 @@ export default function CountBox(props) {
             <span css={mq({ fontSize: ["1em", "1em", "1.5em", "2em"] })}>
               COUNTRIES
             </span>{" "}
-            RESPRESENTED
+            REPRESENTED
           </Label>
         </SubSquare>
         <SubSquare
