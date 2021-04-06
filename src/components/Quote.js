@@ -29,7 +29,7 @@ export default function Quote(props) {
   const QuoteIcon = styled(Icon)`
     position: absolute;
     ${mq({
-      marginTop: ["-160px", "-160px", "-110px", "-220px"],
+      transform: ["translateY(-80px)", "translateY(-60px)", "translateY(-60px)", "translateY(-60px)"],
       width: ["60px", "60px", "150px", "150px"],
       left: ["24px", "24px", "-30px", "-26px"],
     })}
