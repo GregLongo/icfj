@@ -142,13 +142,13 @@ gsap.registerPlugin(ScrollTrigger)
 export default function Home() {
   useEffect(() => {
     //Creates CORS error when not on ICFJ domain. Uncomment For Production
-    const pmFrame = new window.Pmframe({
-      element: "mosaics",
-      page: "https://icfjmosaic.com",
-      minWidth: "300",
-      pmBrand: 1,
-    })
-    pmFrame.init()
+    // const pmFrame = new window.Pmframe({
+    //   element: "mosaics",
+    //   page: "https://icfjmosaic.com",
+    //   minWidth: "300",
+    //   pmBrand: 1,
+    // })
+    // pmFrame.init()
 
     const timer = setTimeout(() => {
       ScrollTrigger.refresh(true)
@@ -464,7 +464,7 @@ export default function Home() {
                 }
               `}
             >
-            <div id="mosaics"></div>
+           {/* <div id="mosaics"></div>*/}
             </FrameEmbed>
             <div
               css={css`
