@@ -34,20 +34,20 @@ export default function CountBox(props) {
   `
   const CounterFive = styled(TriggeredCounter)`
     ${mq({
-      fontSize: ["4em", "4em", "8em", "10em"],
+      fontSize: ["3.5em", "3.5em", "8em", "10em"],
     })}
     color: ${props => props.theme.colors.goldenGrass}
   `
 
   const PercentSign1 = styled.span`
     ${mq({
-      fontSize: ["4em", "4em", "8em", "10em"],
+      fontSize: ["3.5em", "3.5em", "8em", "10em"],
     })}
     color: ${props => props.theme.colors.mineShaft}
   `
   const PercentSign2 = styled.span`
     ${mq({
-      fontSize: ["4em", "4em", "8em", "10em"],
+      fontSize: ["3.5em", "3.5em", "8em", "10em"],
     })}
     color: ${props => props.theme.colors.goldenGrass}
   `
@@ -110,7 +110,7 @@ export default function CountBox(props) {
   `
   const Label = styled.div`
     ${mq({
-      fontSize: ["1em", "1.1em", "1.5em"],
+      fontSize: ["1em", "1em", "1.5em"],
     })}
     padding-bottom: 17%;
     padding-left: 2rem;

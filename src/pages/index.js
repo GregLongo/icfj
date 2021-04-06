@@ -142,13 +142,13 @@ gsap.registerPlugin(ScrollTrigger)
 export default function Home() {
   useEffect(() => {
     //Creates CORS error when not on ICFJ domain. Uncomment For Production
-    // const pmFrame = new window.Pmframe({
-    //   element: "mosaics",
-    //   page: "https://icfjmosaic.com",
-    //   minWidth: "300",
-    //   pmBrand: 1,
-    // })
-    // pmFrame.init()
+    const pmFrame = new window.Pmframe({
+      element: "mosaics",
+      page: "https://icfjmosaic.com",
+      minWidth: "300",
+      pmBrand: 1,
+    })
+    pmFrame.init()
 
     const timer = setTimeout(() => {
       ScrollTrigger.refresh(true)
@@ -205,7 +205,7 @@ export default function Home() {
         <Container
           css={mq({
             marginTop: ["2rem", "2rem", "3rem"],
-            marginBottom: ["-.6rem", "-.7rem", "-1rem", "-1.2rem"],
+            marginBottom: ["-.5rem", "-.6rem", "-.9rem", "-1.2rem"],
             maxWidth: ["100%", "100%", "100%", "1024px"],
           })}
         >
@@ -379,7 +379,7 @@ export default function Home() {
                       margin-left: 5rem;
                       transform: scale(0.8);
                     }
-                    @media (min-width: ${desktop}) {
+                    @media (min-width: ${tablet}) {
                       margin-left: 5rem;
                       margin-bottom: -10rem;
                       transform-origin: top left;
@@ -464,7 +464,7 @@ export default function Home() {
                 }
               `}
             >
-           {/* <div id="mosaics"></div>*/}
+            <div id="mosaics"></div>
             </FrameEmbed>
             <div
               css={css`
@@ -508,11 +508,12 @@ export default function Home() {
             <Quote
               bp={breakpoints}
               css={mq({
-                height: ["25rem", "20rem", "35rem", "40rem"],
+                height: ["25rem", "25rem", "35rem", "40rem"],
                 display: "flex",
                 alignItems: "center",
-                width: "fit-content",
-                // marginTop: '15rem',
+                // width: "fit-content",
+                marginTop: ['5rem','5rem',"0"],
+                marginBottom: ['5rem','5rem',"0"],
                 marginLeft: "auto",
                 marginRight: "auto",
               })}
@@ -1055,7 +1056,7 @@ export default function Home() {
             animation={animationTweet}
             loop={true}
           />
-          <Container id="Innovation">
+                    <Container id="Innovation">
             <TriggeredPendantRight
               bp={breakpoints}
               color="affair"
@@ -1119,10 +1120,10 @@ export default function Home() {
                   color: "white",
                   fontFamily: "interstate-condensed",
                   fontWeight: "500",
-                  fontSize: ["1em", "1.2em", "1.5em"],
+                  fontSize: ["1em", "1.2em", "1.4em"],
                   lineHeight: ["1", "1.5", "2"],
                   textAlign: "right",
-                  marginTop: ["1em", "2em", "2em", "4em"],
+                  marginTop: ["1rem", "2rem", "1.5rem", "4rem"],
                 })}
               >
                 In Nigeria, journalists, fact checkers and social media
@@ -1141,8 +1142,6 @@ export default function Home() {
                 margin-top: 5rem;
                 height: 560px;
                 grid-template-columns: 50% 50%;
-                @media (min-width:${tablet}) {
-                }
               `}
             >
               <TriggeredTextBlock
@@ -1151,10 +1150,10 @@ export default function Home() {
                   color: "white",
                   fontFamily: "interstate-condensed",
                   fontWeight: "500",
-                  fontSize: ["1em", "1.2em", "1.5em"],
+                  fontSize: ["1em", "1.2em", "1.4em"],
                   lineHeight: ["1", "1.5", "2"],
                   textAlign: "left",
-                  paddingTop: ["1em", "2em", "4em"],
+                  paddingTop: ["1em", "2em","1.5em", "4em"],
                 })}
               >
                 Women journalists and data analysts from five countries shed
@@ -1179,9 +1178,9 @@ export default function Home() {
                   bp={breakpoints}
                   css={css`
                     z-index: 1;
-                    transform: translatex(40%);
-                    @media(min-width:${tablet}){
-                    transform: translatex(15%);
+                    transform: translatex(-25%);
+                    @media(min-width:${mobile}){
+                     transform: translatex(25%);
                     }
                   `}
                   src="Catherine.jpg"
@@ -1200,14 +1199,8 @@ export default function Home() {
               css={css`
                 display: grid;
                 margin-top: 5rem;
-                margin-bottom: 10rem;
+                margin-bottom: 3rem;
                 grid-template-columns: 50% 50%;
-                @media (min-width:${mobile}) {
-                  margin-bottom: 0rem;
-                }
-                @media (min-width:${tablet}) {
-                  margin-bottom: -5rem;
-                }
               `}
             >
               <div>
@@ -1216,9 +1209,6 @@ export default function Home() {
                   css={css`
                     z-index: 1;
                     transform: translatex(-15%);
-                    @media (min-width${tablet}) {
-                      transform: translatex(-35%);
-                    }
                   `}
                   src="Sergio.jpg"
                 />
@@ -1236,11 +1226,11 @@ export default function Home() {
                   zIndex: "2",
                   color: "white",
                   fontFamily: "interstate-condensed",
-                  fontSize: ["1em", "1.2em", "1.5em"],
+                  fontSize: ["1em", "1.2em", "1.2em"],
                   fontWeight: "500",
                   lineHeight: ["1", "1.5", "2"],
                   textAlign: "right",
-                  paddingTop: ["1em", "2em", "4em"],
+                  paddingTop: ["1em", "2em","1.5em", "4em"],
                 })}
               >
                 Journalists can more quickly find expert sources of scientific
