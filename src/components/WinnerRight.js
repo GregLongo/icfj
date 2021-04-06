@@ -23,7 +23,7 @@ export default function WinnerRight(props) {
     background: ${props => props.theme.colors.curiousBlue};
     color: white;
     font-family: interstate-condensed;
-    font-size: 1.2em;
+    font-size: 1.4em;
     padding-right: 8rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
