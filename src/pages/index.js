@@ -205,7 +205,7 @@ export default function Home() {
         <Container
           css={mq({
             marginTop: ["2rem", "2rem", "3rem"],
-            marginBottom: ["-.5rem", "-.6rem", "-.9rem", "-1.2rem"],
+            marginBottom: ["-.5rem", "-.5rem", "-.9rem", "-1.2rem"],
             maxWidth: ["100%", "100%", "100%", "1024px"],
           })}
         >
@@ -511,9 +511,6 @@ export default function Home() {
                 height: ["25rem", "25rem", "35rem", "40rem"],
                 display: "flex",
                 alignItems: "center",
-                // width: "fit-content",
-                marginTop: ['5rem','5rem',"0"],
-                marginBottom: ['5rem','5rem',"0"],
                 marginLeft: "auto",
                 marginRight: "auto",
               })}

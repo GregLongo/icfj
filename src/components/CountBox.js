@@ -9,7 +9,7 @@ export default function CountBox(props) {
 
   const CounterOne = styled(TriggeredCounter)`
     ${mq({
-      fontSize: ["2em", "3em", "5em", "8em"],
+      fontSize: ["2em", "3em", "4em", "8em"],
     })}
   `
   const CounterTwo = styled(TriggeredCounter)`
@@ -28,26 +28,26 @@ export default function CountBox(props) {
   `
   const CounterFour = styled(TriggeredCounter)`
     ${mq({
-      fontSize: ["4em", "4em", "8em", "10em"],
+      fontSize: ["4em", "4em", "6em", "10em"],
     })}
     color: ${props => props.theme.colors.mineShaft}
   `
   const CounterFive = styled(TriggeredCounter)`
     ${mq({
-      fontSize: ["3.5em", "3.5em", "8em", "10em"],
+      fontSize: ["3.5em", "3.5em", "6em", "10em"],
     })}
     color: ${props => props.theme.colors.goldenGrass}
   `
 
   const PercentSign1 = styled.span`
     ${mq({
-      fontSize: ["3.5em", "3.5em", "8em", "10em"],
+      fontSize: ["3.5em", "3.5em", "6em", "10em"],
     })}
     color: ${props => props.theme.colors.mineShaft}
   `
   const PercentSign2 = styled.span`
     ${mq({
-      fontSize: ["3.5em", "3.5em", "8em", "10em"],
+      fontSize: ["3.5em", "3.5em", "6em", "10em"],
     })}
     color: ${props => props.theme.colors.goldenGrass}
   `
@@ -103,8 +103,8 @@ export default function CountBox(props) {
       display: flex;
       border-color: transparent transparent white transparent;
       ${mq({
-        alignItems: ["center", "center", "flex-end"],
-        flexDirection: ["column", "column", "row"],
+        alignItems: ["center", "center", "center", "flex-end"],
+        flexDirection: ["column", "column","column", "row"],
       })};
     }
   `
@@ -155,7 +155,7 @@ export default function CountBox(props) {
               text-align: center;
             `}
           >
-            <span css={mq({ fontSize: ["1em", "1em", "1.5em", "2em"] })}>
+            <span css={mq({ fontSize: ["1em", "1em", "1.2em", "2em"] })}>
               COUNTRIES
             </span>{" "}
             REPRESENTED
