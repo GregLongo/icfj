@@ -177,20 +177,23 @@ export default function Home() {
               display: "table-caption",
               fontFamily: "interstate-condensed",
               fontSize: [".75em", ".85em", "1.25em", "1.5em"],
-              maxWidth: ["fit-content", "fit-content", "60px", "130px"],
+              maxWidth: ["10vw", "10vw", "10vw", "130px"],
               lineHeight: "1",
               fontWeight: "200",
               textAlign: "center",
               wordSpacing: "999999px",
               paddingTop: "1rem ",
               paddingBottom: "1rem",
-              paddingRight: ["1rem", "1.5rem", "1.5rem", "4rem"],
+              position: ['absolute','absolute','absolute','relative'],
+              left: ['2vw','2vw','2vw', 'auto'],
+              paddingRight: ["0", "0", "0", "4rem"],
             })}
           >
             ANNUAL REVIEW
           </div>
           <span
             css={mq({
+              paddingLeft: ["6rem", "6rem", "6rem", "0"],
               paddingRight: ["1rem", "2rem", "2rem", "3rem"],
               whiteSpace: "noWrap",
               fontSize: ["1.7em", "2em", "2.5em", "3em"],
@@ -492,7 +495,7 @@ export default function Home() {
                 }
               `}
             >
-              <LazyLoad debounce={false} offsetTop={200}>
+              <LazyLoad debounce={false} offsetTop={400}>
                 <iframe
                   title="vidtwo"
                   src="https://www.youtube.com/embed/f1SBTk3CXhI"
@@ -599,7 +602,7 @@ export default function Home() {
                 }
               `}
             >
-              <LazyLoad debounce={false} offsetTop={200}>
+              <LazyLoad debounce={false} offsetTop={400}>
                 <iframe
                   title="vidfour"
                   width="100%"
@@ -840,7 +843,10 @@ export default function Home() {
           <LanguageTicker
             css={css`
               margin-top: 5rem;
-              margin-bottom: 0rem;
+              margin-bottom: 5rem;
+              @media(min-width:${tablet}){
+               margin-bottom: 0rem;               
+              }
             `}
           >
             <img
@@ -904,7 +910,7 @@ export default function Home() {
                 display: grid;
                 grid-template-columns: 5% 95%;
                 margin-top: 3rem;
-                margin-bottom: -15rem;
+                margin-bottom: -20rem;
                 @media (min-width: ${mobile}) {
                   margin-bottom: -10rem;
                 }
@@ -1087,9 +1093,6 @@ export default function Home() {
                 margin-top: 5rem;
                 height: 560px;
                 grid-template-columns: 50% 50%;
-                @media (min-width${tablet}) {
-                  grid-template-columns: 40% 60%;
-                }
               `}
             >
               <div>
@@ -1098,9 +1101,6 @@ export default function Home() {
                   css={css`
                     z-index: 1;
                     transform: translatex(-15%);
-                    @media (min-width${tablet}) {
-                      transform: translatex(-35%);
-                    }
                   `}
                   src="Hannah.jpg"
                 />
@@ -1141,8 +1141,7 @@ export default function Home() {
                 margin-top: 5rem;
                 height: 560px;
                 grid-template-columns: 50% 50%;
-                @media (min-width${tablet}) {
-                  grid-template-columns: 40% 60%;
+                @media (min-width:${tablet}) {
                 }
               `}
             >
@@ -1180,6 +1179,10 @@ export default function Home() {
                   bp={breakpoints}
                   css={css`
                     z-index: 1;
+                    transform: translatex(40%);
+                    @media(min-width:${tablet}){
+                    transform: translatex(15%);
+                    }
                   `}
                   src="Catherine.jpg"
                 />
@@ -1197,11 +1200,13 @@ export default function Home() {
               css={css`
                 display: grid;
                 margin-top: 5rem;
-                margin-bottom: 3rem;
+                margin-bottom: 10rem;
                 grid-template-columns: 50% 50%;
-                @media (min-width${tablet}) {
-                  grid-template-columns: 40% 60%;
+                @media (min-width:${mobile}) {
                   margin-bottom: 0rem;
+                }
+                @media (min-width:${tablet}) {
+                  margin-bottom: -5rem;
                 }
               `}
             >
@@ -1896,7 +1901,7 @@ export default function Home() {
                 padding-bottom: -20px;
               `}
             >
-              <LazyLoad debounce={false} offsetTop={200}>
+              <LazyLoad debounce={false} offsetTop={400}>
                 <iframe
                   title="vidone"
                   width="100%"
@@ -2142,7 +2147,10 @@ export default function Home() {
           <TriggeredBgColor color="curiousBlue" />
           <div
             css={css`
-             margin-bottom: 0rem;
+              margin-bottom:5rem;
+            @media(min-width:${tablet}){
+               margin-bottom: 0rem;
+              }
             `}
           />
         </Section>
@@ -2682,7 +2690,7 @@ export default function Home() {
                 clip-path: inset(32px);
               `}
             >
-              <LazyLoad debounce={false} offsetTop={200}>
+              <LazyLoad debounce={false} offsetTop={400}>
                 <iframe
                   title="vidthree"
                   width="100%"

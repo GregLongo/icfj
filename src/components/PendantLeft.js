@@ -28,7 +28,7 @@ export default function PendantLeft(props) {
       padding-left: 1.5rem;
     }
     ${mq({
-      paddingLeft: [".5rem", "1rem", "4vw", "calc((100vw - 1024px) / 1.96)"],
+      paddingLeft: [".5rem", "1.5rem", "4vw", "calc((100vw - 1024px) / 1.96)"],
       maxWidth: ["85vw", "86vw", "auto"],
     })}
     &:after {
