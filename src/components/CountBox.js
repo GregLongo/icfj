@@ -28,26 +28,26 @@ export default function CountBox(props) {
   `
   const CounterFour = styled(TriggeredCounter)`
     ${mq({
-      fontSize: ["4em", "4em", "6em", "10em"],
+      fontSize: ["3.3em", "3.3em", "6em", "10em"],
     })}
     color: ${props => props.theme.colors.mineShaft}
   `
   const CounterFive = styled(TriggeredCounter)`
     ${mq({
-      fontSize: ["3.5em", "3.5em", "6em", "10em"],
+      fontSize: ["3.3em", "3.3em", "9em", "10em"],
     })}
     color: ${props => props.theme.colors.goldenGrass}
   `
 
   const PercentSign1 = styled.span`
     ${mq({
-      fontSize: ["3.5em", "3.5em", "6em", "10em"],
+      fontSize: ["3.3em", "3.3em", "6em", "10em"],
     })}
     color: ${props => props.theme.colors.mineShaft}
   `
   const PercentSign2 = styled.span`
     ${mq({
-      fontSize: ["3.5em", "3.5em", "6em", "10em"],
+      fontSize: ["3.3em", "3.3em", "6em", "10em"],
     })}
     color: ${props => props.theme.colors.goldenGrass}
   `
@@ -179,7 +179,7 @@ export default function CountBox(props) {
             <CounterFour val={46} />
             <PercentSign1>%</PercentSign1>
           </span>
-          <Label>
+          <Label css={mq({fontSize:[".8em", ".9em", "1.5em"]})}>
             identified politicians and elected officials as top sources of
             disinformation
           </Label>
@@ -194,7 +194,7 @@ export default function CountBox(props) {
             <CounterFive val={30} />
             <PercentSign2>%</PercentSign2>
           </span>
-          <Label>
+          <Label css={mq({fontSize:[".8em", ".9em", "1.5em"]})}>
             said their organizations did not supply field reporters with
             protective equipment
           </Label>

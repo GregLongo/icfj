@@ -12,7 +12,7 @@ export default function Social(props){
 const mobile = props.bp[1];
 
 const SocialText = styled.a`
-    font-size: 1em;
+    font-size: 1.2em;
     text-decoration: none;
     float: right;
     @media (min-width: ${mobile}) {

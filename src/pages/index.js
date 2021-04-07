@@ -205,7 +205,7 @@ export default function Home() {
         <Container
           css={mq({
             marginTop: ["2rem", "2rem", "3rem"],
-            marginBottom: ["-.5rem", "-.5rem", "-.9rem", "-1.2rem"],
+            marginBottom: ["-.5rem", "-.5rem", "-.5rem", "-1rem"],
             maxWidth: ["100%", "100%", "100%", "1024px"],
           })}
         >
@@ -464,7 +464,7 @@ export default function Home() {
                 }
               `}
             >
-           {/* <div id="mosaics"></div>*/}
+            {/*<div id="mosaics"></div>*/}
             </FrameEmbed>
             <div
               css={css`
@@ -841,10 +841,6 @@ export default function Home() {
           <LanguageTicker
             css={css`
               margin-top: 5rem;
-              margin-bottom: 5rem;
-              @media(min-width:${tablet}){
-               margin-bottom: 0rem;               
-              }
             `}
           >
             <img
@@ -1196,8 +1192,11 @@ export default function Home() {
               css={css`
                 display: grid;
                 margin-top: 5rem;
-                margin-bottom: 3rem;
+                margin-bottom: 5rem;
                 grid-template-columns: 50% 50%;
+                @media(min-width:${tablet}){
+                 margin-bottom: 3rem;
+                }
               `}
             >
               <div>
@@ -1812,8 +1811,8 @@ export default function Home() {
             >
               <span
                 css={mq({
-                  paddingLeft: ["40%", "40%", 0],
-                  paddingRight: ["20%", "20%", 0],
+                  paddingLeft: ["1rem", "1rem", 0],
+                  paddingRight: ["1rem", "1rem", 0],
                 })}
               >
                 Honorees
@@ -2695,7 +2694,10 @@ export default function Home() {
         </Section>
         <div
           css={css`
-            height: 15rem;
+            height: 10rem;
+            @media(min-width:${tablet}){
+             height: 15rem;
+            }
           `}
         />
         <div
@@ -2719,9 +2721,16 @@ export default function Home() {
           <a href="http://icfj.org" rel="noreferrer" target="_blank" css={css`
             color: white;
             font-family: ubuntu;
-            font-size: 2.5em;
+            font-size: 1.7em;
             margin-right: 2rem;
             text-decoration: none;
+            margin-bottom: 1.5rem;
+            margin-top: 1rem;
+            @media(min-width:${tablet}){
+              margin-top: 0;
+              margin-bottom: 0;
+              font-size: 2.5em;        
+            }
             `}> 
               ICFJ.org
             </a>
@@ -2730,9 +2739,14 @@ export default function Home() {
           <div
             css={css`
               margin: 1rem;
-              font-size: 1.7em;
+              font-size: 1em;
               color: white;
               font-family: ubuntu;
+              margin-top: 1.5em;
+              @media(min-width:${tablet}){
+                margin-top: 1rem;
+                font-size: 1.7em;        
+              }
             `}
           >
             {" "}
