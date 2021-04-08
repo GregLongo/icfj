@@ -339,7 +339,7 @@ export default function Home() {
                   the <TextPop>story of the century.</TextPop> At the onset of
                   COVID-19, we galvanized quickly to help them gain access to
                   top epidemiologists and health practitioners, to the world’s
-                  best trainers in digital journalism techniques, and to
+                  best trainers in digital journalism techniques, to
                   disinformation and media sustainability experts. As you’ll see
                   below, tens of thousands of journalists are benefiting from
                   that effort.
@@ -356,7 +356,7 @@ export default function Home() {
                   independent voices.
                 </p>
                 <p>
-                  Our motto is <TextPop>"It Takes a Journalist."</TextPop> Whether
+                  Our motto is <TextPop>It Takes a Journalist.</TextPop> Whether
                   the story is a global pandemic, racial injustice, climate
                   change or government malfeasance, it takes a journalist to
                   bring the public factual information that can mean the
@@ -370,16 +370,16 @@ export default function Home() {
                 <ImageQuery
                   filename="sig.png"
                   css={css`
-                  transform:scale(.7)
+                    overflow: unset !important;
+                    transform-origin: top left;
+                    transform: scale(0.7);
                     @media(min-width:${mobile}) {
-                      margin-left: 5rem;
                       transform: scale(0.6);
                     }
                     @media (min-width: ${tablet}) {
-                      margin-left: 5rem;
+                      margin-left: 7rem;
                       margin-bottom: -10rem;
-                      transform-origin: top left;
-                      transform: scale(0.5);
+                      transform: scale(0.4);
                     }
                   `}
                 />
@@ -511,8 +511,8 @@ export default function Home() {
                 marginRight: "auto",
               })}
             >
-              With ICFJ’s support, trained citizen journalists use our mobile service
-              to produce news and improve lives in isolated communities.”
+              With ICFJ’s support, we are partnering with under-resourced
+              communities to change lives with reliable, crowdsourced news."
               <br></br>
               <span
                 css={css`
@@ -666,8 +666,8 @@ export default function Home() {
                 }
               `}
             >
-              ICFJ gave me and my listeners a global perspective on the way other
-              countries were handling the pandemic.”<br></br>
+              ICFJ gave me and my listeners a global perspective of how other
+              countries were handling the pandemic. ”<br></br>
               <span
                 css={css`
                   opacity: 0.5;
@@ -2368,7 +2368,7 @@ export default function Home() {
                   </OrgPeopleDesc>
 
                   <OrgPeople>SOPHIE SCHMIDT</OrgPeople>
-                  <OrgPeopleDesc>Founder, Rest of World</OrgPeopleDesc>
+                  <OrgPeopleDesc>Founder Rest of World</OrgPeopleDesc>
 
                   <OrgPeople>MARY ANN STERNBERG</OrgPeople>
                   <OrgPeopleDesc>Freelance Writer and Author</OrgPeopleDesc>
@@ -2576,7 +2576,7 @@ export default function Home() {
                 <Donor>Anonymous</Donor>
                 <p>
                   <i>
-                    Note: This list reflects contributions made in 2019. Donations below $5,000 are
+                    * For contributions made in 2019. Donations below $5,000 are
                     acknowledged elsewhere on our website.
                   </i>
                 </p>
@@ -2708,8 +2708,8 @@ export default function Home() {
         >
           <div css={css`
             align-items: center;
-            flex-direction: column;
-            display: inline-flex;
+            flex-direction: column;     
+            display: inline-flex;    
             @media(min-width:${tablet}){
               flex-direction: row;
             }
@@ -2725,9 +2725,9 @@ export default function Home() {
             @media(min-width:${tablet}){
               margin-top: 0;
               margin-bottom: 0;
-              font-size: 2.5em;
+              font-size: 2.5em;        
             }
-            `}>
+            `}> 
               ICFJ.org
             </a>
             <Social bp={breakpoints}/>
@@ -2741,12 +2741,12 @@ export default function Home() {
               margin-top: 1.5em;
               @media(min-width:${tablet}){
                 margin-top: 1rem;
-                font-size: 1.7em;
+                font-size: 1.7em;        
               }
             `}
           >
             {" "}
-            Site by <Link href="https://tappingbones.com/" rel="noreferrer" target="_blank">TappingBones </Link> Ⓣ
+            Site by <Link href="https://tappingbones.com/" rel="noreferrer" target="_blank">TappingBones </Link> Ⓣ 
           </div>
         </div>
       </ThemeProvider>

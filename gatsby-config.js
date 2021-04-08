@@ -7,7 +7,7 @@ const path = require(`path`)
 
 module.exports = {
   /* Your site config here */
-  pathPrefix: `/sites/default/files/annual-report-2020`,
+  // pathPrefix: `/sites/default/files/annual-report-2020`,
   // pathPrefix: `/icfj-bestinshow`,
   plugins: [
     {
@@ -46,6 +46,21 @@ module.exports = {
       resolve: "gatsby-plugin-zopfli",
       options: {
         verbose: true,
+      },
+    },
+     {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "GA-TRACKING_ID",
+        ],
+        gtagConfig: {
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        pluginConfig: {
+          head: false,
+        },
       },
     },
     `gatsby-plugin-sharp`,
